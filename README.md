@@ -26,7 +26,7 @@ the "customisable inputs" tab.
 
 Finally, copy and paste the shortcode wich is showed in the Main Page.
 
-** How to use the shortcode :** 
+__How to use the shortcode :__
 
   [wp-systempay id='form id' template='template name'] 
   *or* 
@@ -38,11 +38,11 @@ Finally, copy and paste the shortcode wich is showed in the Main Page.
   
   If template attribute is empty or isn't given, WS will use the default template "default_form.php"
   
-**How modify forms templates**
+__How modify forms templates__
   
   You can create your own template into the templates/forms_templates repository, please use default-form as sample.
   
-**How modify emails templates**
+__How modify emails templates__
   You can modify the emails template into the templates/emails_templates repository, success email when 
   the transaction is successful and error_email if the there was an error during the transaction.
 
