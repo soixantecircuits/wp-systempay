@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP-systempay
 Plugin URI: http://asso-ela.com/
-Description: 
+Description: WP-Systempay allow you to create totally modular forms wich will manage the confirmation page ,save transactions and send confirmation mails.
 Version: 1.0
 Author: Soixante Circuits : Schobben Thomas, Gabriel Delatre
 Author URI: http://soixantecircuits.fr/

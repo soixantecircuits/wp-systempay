@@ -2,7 +2,7 @@
 
 ## Description
 
-Version 0.1
+Version 1.0
 
 WP-Systempay allow you to create totally modular forms, and then use the shortcode in the wanted page or post to
 show the fom.
