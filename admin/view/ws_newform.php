@@ -1,6 +1,6 @@
 <div class="ws_warp">
-		<div class="page_title"><h1><?php _e("New Form","ws"); ?></h1></div>
-
+		<div id="icon-edit" class="icon32 icon32-posts-event"><br></div><div class="page_title"><h1><?php _e("New Form","ws"); ?></h1></div>
+		<div class="cb"></div>
 		<form method="POST" action="?page=<?php echo $this->newFormPageName; ?>&WS_action=insert">
 			<input id="form_name" class="big_input" type="text"  name="form[name]" value="form_name"/>
 			<input id="css_class" class="big_input" type="text"  name="form[css_class]" value="ws_css_class"/>
@@ -23,12 +23,13 @@
 					<li><a href="#tabs-4"><?php _e("ws configuration","ws"); ?></a></li>
 					<li><a href="#tabs-5"><?php _e("Customizable Inputs","ws"); ?></a></li>
 				</ul>
+				<div class="cb"></div>
 			<?php require_once("ws_inputs_tabs.php"); ?>
 				<div id="tabs-5">
-					<div class="page_title"><h2><?php _e("Customizable Inputs","ws"); ?></h2></div>
-					<div id="ws_customer_inputs">
-						<table>
-							<thead class="table_head">
+					<h2><?php _e("Customizable Inputs","ws"); ?></h2>
+					<div id="ws_customizable_inputs">
+						<table class="wp-list-table widefat fixed pages">
+							<thead>
 								<tr>
 									<th class="short"> </th>
 									<th class="large"><?php _e("Label","ws"); ?></th>

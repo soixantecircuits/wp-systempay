@@ -1,5 +1,8 @@
 <div class="ws_warp">
+		<div id="icon-edit" class="icon32 icon32-posts-event"><br></div>
 		<div class="page_title"><h1><?php _e("Edit Form","ws"); ?></h1></div>
+		<br>
+		<div class="cb"></div>
 		<form method="POST" action="?page=<?php echo $this->editPageName; ?>&WS_action=update&WS_id=<?php echo $_GET["WS_id"];?>">
 			<input type="text"  class="big_input" name="form[name]" value="<?php echo $form_to_update["form_data"]->form_name ;?>"/>
 			<input type="text"  class="big_input" name="form[css_class]" value="<?php echo $form_to_update["form_data"]->form_css_class ;?>"/>
@@ -26,12 +29,13 @@
 					<li><a href="#tabs-4"><?php _e("ws Configuration","ws"); ?> | </a></li>
 					<li><a href="#tabs-5"><?php _e("Customizable Inputs","ws"); ?></a></li>
 				</ul>
+				<div class="cb"></div>
 			<?php require_once("ws_inputs_tabs.php"); ?>
 				<div id="tabs-5">
-						<div class="page_title"><h2><?php _e("Customizable Inputs","ws"); ?></h2></div>
-						<div id="ws_customer_inputs">
-							<table>
-								<thead class="table_head">
+						<h2><?php _e("Customizable Inputs","ws"); ?></h2>
+						<div id="ws_customizable_inputs">
+							<table class="wp-list-table widefat fixed pages">
+								<thead>
 									<tr>
 										<th class="short"> </th>
 										<th class="large"><?php _e("Label","ws"); ?></th>
@@ -54,11 +58,11 @@
 												if ($input->input_fieldset>-1) : ?>
 												<tr id="row_<?php echo $index; ?>" class="<?php echo ($index%2==0) ? 'even' : 'odd';?>">										
 													<td class="delete_row short"><input type="button" class="button" value="-" onClick="WS_deleteRow(<?php echo $index; ?>);"/></td>
-													<td class="large label"><input type="text" name="inputs[<?php echo $index; ?>][label]"  value="<?php echo $input->input_label; ?>"/></td>
+													<td class="post-title page-title column-title"><strong><input type="text" name="inputs[<?php echo $index; ?>][label]"  value="<?php echo $input->input_label; ?>"/></strong></td>
 													<td class="large"><input type="text" name="inputs[<?php echo $index; ?>][name]"  value="<?php echo $input->input_name; ?>"/></td>			
-													<td class="short"><input type="text" name="inputs[<?php echo $index; ?>][value]" value="<?php echo $input->input_value; ?>"/></td>	
-													<td class="short"><input type="text" name="inputs[<?php echo $index; ?>][order]" value="<?php echo $input->input_order; ?>"/></td>
-													<td class="short"><input type="text" name="inputs[<?php echo $index; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/></td>
+													<td class="large"><input type="text" name="inputs[<?php echo $index; ?>][value]" value="<?php echo $input->input_value; ?>"/></td>	
+													<td class="large"><input type="text" name="inputs[<?php echo $index; ?>][order]" value="<?php echo $input->input_order; ?>"/></td>
+													<td class="large"><input type="text" name="inputs[<?php echo $index; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/></td>
 													<?php $hidden=(bool)($input->input_hide); ?>
 													<?php $checked=($hidden)?"checked":""; ?>
 													<td><input type="checkbox" name="inputs[<?php echo $index; ?>][hide]" value="1" <?php echo $checked; ?>/></td>

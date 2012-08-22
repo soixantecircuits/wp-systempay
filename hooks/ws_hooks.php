@@ -19,6 +19,13 @@ function WS_load_admin_scripts() {
 	}
 }
 
+function WS_load_datatables(){
+	if( is_admin() && !is_front_page()) {
+		wp_enqueue_script( 'jquery_ui_tabs', WP_PLUGIN_URL .'/wp-systempay/inc/jquery.datatables.min.js' );
+	}
+}
+
+
 
 
 //shortcodes

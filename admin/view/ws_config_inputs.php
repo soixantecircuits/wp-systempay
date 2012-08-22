@@ -1,4 +1,4 @@
- <div class="page_title"><h3><?php _e("Emails","ws"); ?></h2></div>
+<h3><?php _e("Emails","ws"); ?></h3>
  	<div class="email_choice">
 		<label><?php _e("Email Transport used","ws"); ?> : </label>
 		<?php $transports=array("smtp"=>"SMTP","sendmail"=>"Send Mail"); 
@@ -12,7 +12,7 @@
 <!-- SMTP -->
 
 	<div class="smtp">
-		<div class="page_title"><h4><?php _e("SMTP","ws"); ?></h3></div>
+		<h4><?php _e("SMTP","ws"); ?></h4>
 		<label for="smtp_SMTP"><?php _e("SMTP adress","ws"); ?></label>
 		<input type="text" id="smtp_smtp" name="generalconfig[email][smtp][smtp]" value="<?php echo $generalConfig->email->smtp->smtp; ?>" /><br/>
 		<label for="smtp_port"><?php _e("SMTP Port","ws"); ?></label>
@@ -29,7 +29,7 @@
 	</div>
 <!-- SendMail -->
 	<div class="sendmail">
-		<div class="page_title"><h4><?php _e("SendMail","ws"); ?></h3></div>
+		<h4><?php _e("SendMail","ws"); ?></h4>
 		<label for="smtp_SMTP"><?php _e("SendMail Path","ws"); ?></label>
 		<input type="text" id="smtp_smtp" name="generalconfig[email][sendmail][path]" value="<?php echo $generalConfig->email->sendmail->path; ?>" /><br/>
 	</div>

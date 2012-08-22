@@ -2,10 +2,10 @@
 
 			<!-- Mandatorys Configurations -->	
 			<div id="tabs-1">
-				<div class="page_title"><h2><?php _e("Mandatorys Configurations","ws"); ?></h2></div>
+				<h2><?php _e("Mandatorys Configurations","ws"); ?></h2>
 				<div id="ws_formals">	
-				<table>
-					<thead class="table_head">
+				<table class="wp-list-table widefat fixed pages" >
+					<thead>
 						<tr>
 							<th class="large"><?php _e("Label","ws"); ?></th>
 							<th class="large"><?php _e("Name","ws"); ?></th>
@@ -23,10 +23,10 @@
 			</div>
 			<!-- Optionals configurations -->
 			<div id="tabs-2">
-			<div class="page_title"><h2><?php _e("Optionals Configurations","ws"); ?></h2></div>
+			<h2><?php _e("Optionals Configurations","ws"); ?></h2>
 			<div id="ws_inputs">
-				<table >
-						<thead class="table_head">
+				<table class="wp-list-table widefat fixed pages">
+						<thead>
 						<tr>
 							<th class="large"><?php _e("Label","ws"); ?></th>
 							<th class="large"><?php _e("Name","ws"); ?></th>
@@ -42,10 +42,10 @@
 			</div>
 			<!-- Customer Inputs -->
 			<div id="tabs-3">
-				<div class="page_title"><h2><?php _e("Customer Informations Inputs","ws"); ?></h2></div>
+				<h2><?php _e("Customer Informations Inputs","ws"); ?></h2>
 				<div id="ws_customer_inputs">
-					<table>
-						<thead class="table_head">
+					<table class="wp-list-table widefat fixed pages">
+						<thead>
 							<tr>
 								<th class="large"><?php _e("Label","ws"); ?></th>
 								<th class="large"><?php _e("Name","ws")?></th>
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 			<div id="tabs-4">
-				<div class="page_title"><h2><?php _e("ws configuration","ws"); ?></h2></div>
+				<h2><?php _e("ws configuration","ws"); ?></h2>
 				<?php $generalConfig=$this->Manager->getGeneralConfig();
 					$form_id=$_GET["WS_id"];
 					if(!empty($form_id)) {

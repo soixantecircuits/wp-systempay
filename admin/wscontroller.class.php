@@ -160,7 +160,7 @@ class WSController
 	//configure the Menu
 	public function configureMenu()
 	{
-	  add_menu_page("WP-systempay", "WP-systempay", 'edit_pages', $this->mainPageName, array($this,'mainPage'), WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
+	  add_menu_page(__("WS-Sytempay","WS"), __("WS-Sytempay","WS"), 'edit_pages', $this->mainPageName, array($this,'mainPage'), WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
 	  $newForm=add_submenu_page( $this->mainPageName, __("new Form","WS"), __("add New","WS"), 'edit_pages', $this->newFormPageName , array($this,'newForm') );
 	  $transactionsMenu=add_submenu_page( $this->mainPageName, __("transactions menu","WS"), __("transactions","WS"), 'edit_pages', $this->transactionsPageNameMenu , array($this,'transactionsPageMenu') );
 	  $config=add_submenu_page( $this->mainPageName, __("general Configuration","WS"), __("Config","WS"), 'edit_pages', $this->configPageName , array($this,'configPage') );
@@ -171,6 +171,7 @@ class WSController
 	  /* Using registered $page handle to hook script load */
       add_action('admin_print_styles-'.$editPage, 'WS_load_admin_scripts');
       add_action('admin_print_styles-'.$newForm, 'WS_load_admin_scripts');
+      add_action('admin_print_styles-'.$transactions, 'WS_load_datatables');
 	}
 
 	//if we are on the mainPage
