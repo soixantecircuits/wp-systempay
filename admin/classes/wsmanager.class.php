@@ -12,6 +12,11 @@
 	        	return $WS_forms;
 	        }
 
+	        public function getTransactionGroupes(){
+	        	global $wpdb;
+	        	$WS_forms = $wpdb->get_results($wpdb->prepare( "SELECT transaction_form_name,transaction_form_id FROM $this->transactions_table_name WHERE transaction_form_name IS NOT NULL GROUP BY transaction_form_id;"));
+	        	return $WS_forms;
+	        }
 
 	       	public function getLastFormId() 
 	        {

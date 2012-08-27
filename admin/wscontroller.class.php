@@ -200,8 +200,7 @@ class WSController
 	}
 
 	public function transactionsPageMenu(){
-		//$transactions=$this->Manager->getTransactions();
-		$formlist = $this->Manager->getFormsList();
+		$groupeList = $this->Manager->getTransactionGroupes();
 		require( dirname(__FILE__) . '/view/ws_transactions_menu.php' );
 	}
 	

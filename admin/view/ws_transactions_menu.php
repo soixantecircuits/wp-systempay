@@ -9,20 +9,19 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php foreach ($formlist as $form) : $count++;?>
-			<?php $jump=($count%6==0)?"<div class='cb'></div>":""; ?>
-			<?php echo $jump; ?>
+		<?php foreach ($groupeList as $groupe) :?>
 			<tr>
 				<td class="post-title page-title column-title">
-					<a href="?page=<?php echo $this->transactionsPageName;?>&WS_id=<?php echo $form->form_id; ?>">
-						<strong><?php echo $form->form_name;?></strong>
+					<a href="?page=<?php echo $this->transactionsPageName;?>&WS_id=<?php echo $groupe->transaction_form_id; ?>">
+						<strong><?php echo $groupe->transaction_form_name;?></strong>
 					</a>
 				</td>
 				<td>
-					<p class="transaction_form_id"><?php echo $form->form_id;?></p>
+					<p class="transaction_form_id"><?php echo $groupe->transaction_form_id;?></p>
 				</td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>
 	</table>
+	<div class="updated"><p><?php _e('If the desired group does not appear, please make a new transaction (step needed is to redirect the payment platform, no need to go further).<br/> If the problem persist, go to the table SQL transactions, look transaction_form_id corresponding to the desired form and just change the "transaction_form_name" of one of its transactions.',"WS"); ?></p></div>
 </div>

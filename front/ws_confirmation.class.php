@@ -283,6 +283,7 @@
 			case "systempay" : 
 				//set the transaction identification
 				$transactions_data["transaction_form_id"] = mysql_real_escape_string($form_id);
+				$transactions_data["transaction_form_name"] = mysql_real_escape_string($form_data["form_data"]["form_name"]);
 				$transactions_data["transaction_order_id"] = mysql_real_escape_string($order_id);
 				$transactions_data["transaction_trans_id"] =mysql_real_escape_string($trans_id); 
 				$transactions_data["transaction_plateforme"] =mysql_real_escape_string($plateforme);
@@ -329,7 +330,7 @@
 			$return_url = $this->saved_inputs[$plateforme]["return_url"];
 			$this->create_hidden_form($form_data,$confirmation_form_id,$return_url,$order_id,$trans_id,array("certificate_test","certificate_test","certificate_production","vads_trans_id"));
 			//we redirect to the plateforme page.
-			//parent::add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
+			parent::add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
 		}
 		//else we propose to retry or to cancel
 		else {

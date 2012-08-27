@@ -49,8 +49,8 @@
        $thirdSql = "CREATE TABLE $WS_table_name (
         configuration_id int(255) NOT NULL AUTO_INCREMENT,
         configuration_form_id int(255),
-        configuration_label VARCHAR(55) DEFAULT '',
-        configuration_name VARCHAR(55) DEFAULT '',
+        configuration_label VARCHAR(255) DEFAULT '',
+        configuration_name VARCHAR(255) DEFAULT '',
         configuration_value VARCHAR(255) DEFAULT '',
         configuration_function BOOLEAN,
         configuration_hide BOOLEAN,
@@ -61,10 +61,10 @@
       
       $WS_table_name = $this->transactions_table_name;
        $fourthSql = "CREATE TABLE $WS_table_name (
-
         transaction_id int(255) NOT NULL AUTO_INCREMENT,
         transaction_order_id VARCHAR(255),
         transaction_form_id int(255),
+        transaction_form_name VARCHAR(255),
         transaction_plateforme VARCHAR(255),
         transaction_trans_id int(255),
         transaction_command_statut VARCHAR(255),
