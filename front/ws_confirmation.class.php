@@ -329,7 +329,7 @@
 			$return_url = $this->saved_inputs[$plateforme]["return_url"];
 			$this->create_hidden_form($form_data,$confirmation_form_id,$return_url,$order_id,$trans_id,array("certificate_test","certificate_test","certificate_production","vads_trans_id"));
 			//we redirect to the plateforme page.
-			parent::add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
+			//parent::add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
 		}
 		//else we propose to retry or to cancel
 		else {

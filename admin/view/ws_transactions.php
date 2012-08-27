@@ -44,20 +44,19 @@
 		</tbody>
 	</table>
 </div>
-<script>
-	jQuery(document).ready(function() {
-	   	jQuery('#transactions_table').dataTable( {
-	        "sPaginationType": "full_numbers"
-	        , "bLengthChange": false
-	        ,"iDisplayLength": 20
-			,"oLanguage": {
-			  "oPaginate": {
-			    "sNext": "&#155;"
-			    ,"sPrevious": "&#139;"
-			    ,"sLast": "&#155;&#155;"
-			    ,"sFirst": "&#139;&#139;"
-			  }
-			}
-   		} );
-	} );
-</script>
+	<?php 
+		$options = '
+					"sPaginationType": "full_numbers"
+					, "bLengthChange": false
+			        ,"iDisplayLength": 20
+					,"oLanguage": {
+					  "oPaginate": {
+					    "sNext": "&#155;"
+					    ,"sPrevious": "&#139;"
+					    ,"sLast": "&#155;&#155;"
+					    ,"sFirst": "&#139;&#139;"
+					  }
+					}
+					';
+		$WS->add_inline_js("jQuery('#transactions_table').dataTable({".$options."});")
+	?>

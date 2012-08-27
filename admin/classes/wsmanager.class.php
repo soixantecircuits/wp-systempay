@@ -1,5 +1,10 @@
 <?php class WSManager extends WSTools
 {
+
+		public function __construct(){
+			parent::__construct();
+		}
+		
 	        public function getFormsList() 
 	        {
 	        	global $wpdb;

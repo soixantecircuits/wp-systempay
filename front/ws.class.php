@@ -24,7 +24,6 @@ class WS
 	protected $Systempay;
 	protected $SystempayResults;
 	protected $systempay_results;
-
 	public function __construct() 
 	{
 		$this->setAttributes();
@@ -33,6 +32,11 @@ class WS
 		$this->set_countriesList();
 		$this->arrayRules = array();
 	    add_action( 'wp_footer', array(&$this, 'output_inline_js'), 25 );
+
+	}
+
+	public function add_admin_js(){
+		add_action( 'admin_footer', array(&$this, 'output_inline_js'), 25 );
 	}
 
 	private function setAttributes() {
@@ -150,7 +154,6 @@ class WS
 			echo "</script>";
 			
 			$this->inline_js = '';
-			
 		}
 	}
 
@@ -160,7 +163,6 @@ class WS
 
 		//get the url of the confirmation page for the wanted form
 	public function get_confirmationpage_url($form_id) {
-
 		 (int)$form_id;
 		 $confirmationpage = get_page_by_title($this->confirmationpage_title);
 		 $permalink = get_permalink($confirmationpage->ID);
