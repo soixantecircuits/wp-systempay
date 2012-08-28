@@ -31,42 +31,15 @@
 	        public function deleteForm($form_id) {
 	        	//DELETE configurations
 	        	global $wpdb;
-				$wpdb->query( 
-					$wpdb->prepare( 
-						"
-				         DELETE FROM $this->configurations_table_name
-						 WHERE configuration_form_id = %d
-						"
-						,$form_id
-				 	)
-				);
 				//DELETE INPUTS 
-				$wpdb->query( 
+				$query = $wpdb->query( 
 					$wpdb->prepare( 
 						"
-				         DELETE FROM $this->inputs_table_name
-						 WHERE input_form_id = %d
-						"
-						,$form_id
-				 	)
-				);
-				//DELETE INPUTS 
-				$wpdb->query( 
-					$wpdb->prepare( 
-						"
-				         DELETE FROM $this->form_table_name
-						 WHERE form_id = %d
-						"
-						,$form_id
-				 	)
-				);
-
-				//DELETE INPUTS 
-				$wpdb->query( 
-					$wpdb->prepare( 
-						"
-				         DELETE FROM $this->WSconfig_table_name
-						 WHERE WSconfig_form_id = %d
+				        DELETE form.*,config.*,input.*, wsconfig.* FROM $this->form_table_name AS form
+				        LEFT JOIN $this->configurations_table_name AS config ON config.configuration_form_id = form.form_id
+				        LEFT JOIN $this->inputs_table_name AS input ON input.input_form_id = form.form_id
+				        LEFT JOIN $this->WSconfig_table_name AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id
+				        WHERE form.form_id = %d
 						"
 						,$form_id
 				 	)
@@ -85,11 +58,11 @@
 					,"form_plateforme"=> $form["plateforme"]
 				);
 	    		//insert forms
-		    	$wpdb->insert(
+		    	 $wpdb->insert(
 					$this->form_table_name, 
 					$form_data
 				);
-				$form_id = $this->getLastFormId();
+				$form_id=$wpdb->insert_id;
 		    //INPUTS
 	    		foreach ($inputs as $input) 
 	    		{

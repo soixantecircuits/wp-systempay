@@ -47,7 +47,7 @@ class WSController
 		$this->WSTools= new WSTools();
 		$this->method_saveTransaction = $this->WS->get_method_saveTransaction();
 		if (is_admin()){
-			$this->Manager = new WSManager($this->WS->get_form_table_name(),$this->WS->get_inputs_table_name(),$this->WS->get_configurations_table_name(),$this->WS->get_transactions_table_name());
+			$this->Manager = new WSManager();
 		}	
 	}
 
@@ -131,7 +131,7 @@ class WSController
 			{
 				case "insert" :
 					$this->Manager->newForm($_POST["form"],$_POST["inputs"],$_POST["configurations"],$_POST["generalconfig"]);
-					$this->redirect($this->mainPageName);
+					//$this->redirect($this->mainPageName);
 				break;
 			}
 		}

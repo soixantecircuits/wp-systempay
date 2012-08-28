@@ -41,12 +41,12 @@ class WS
 
 	private function setAttributes() {
 		global $wpdb;
-		$this->form_table_name=$wpdb->prefix . "WS_forms";
-	    $this->inputs_table_name=$wpdb->prefix . "WS_inputs";
-	    $this->configurations_table_name=$wpdb->prefix . "WS_configurations";
-	    $this->generalconfig_table_name=$wpdb->prefix . "WS_generalconfig";
-	    $this->transactions_table_name=$wpdb->prefix."WS_transactions";
-	    $this->WSconfig_table_name=$wpdb->prefix."WS_WSconfig";
+		$this->form_table_name=$wpdb->prefix . "ws_forms";
+	    $this->inputs_table_name=$wpdb->prefix . "ws_inputs";
+	    $this->configurations_table_name=$wpdb->prefix . "ws_configurations";
+	    $this->generalconfig_table_name=$wpdb->prefix . "ws_generalconfig";
+	    $this->transactions_table_name=$wpdb->prefix."ws_transactions";
+	    $this->WSconfig_table_name=$wpdb->prefix."ws_wsconfig";
 	   	$this->mainPage_slug="ws_systempay";
 	   	$this->mainPage_title="Wordpress Sytempay";
 	    $this->confirmationpage_slug="confirmation_page";
@@ -55,11 +55,11 @@ class WS
 	    $this->resultPage_title="Transaction Page Result";
 		$this->resultServerPage_slug="transaction_serve_page";
 	    $this->resultServerPage_title="Transaction Server Page Result";
-	    $this->options_prefixe="WS_option_";
-	    $this->GET_key_confirmation_formid ="WS_form_id";
-	    $this->GET_key_confirmation_previouspage ="WS_previouspage";
+	    $this->options_prefixe="ws_option_";
+	    $this->GET_key_confirmation_formid ="ws_form_id";
+	    $this->GET_key_confirmation_previouspage ="ws_previouspage";
 	    $this->method_saveTransaction="saveTransaction";
-	    $this->confirmation_form_id="WS_confirmation_form";
+	    $this->confirmation_form_id="ws_confirmation_form";
 
 	    $this->inline_js="";
 	}

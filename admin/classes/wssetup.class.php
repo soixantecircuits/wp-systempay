@@ -23,7 +23,8 @@
           form_name VARCHAR(55) DEFAULT '' NOT NULL,
           form_css_class VARCHAR(55) DEFAULT '' NOT NULL,
           form_plateforme VARCHAR(55) DEFAULT '' NOT NULL,
-          UNIQUE KEY id (form_id)
+          UNIQUE KEY the_form_id (form_id)
+          INDEX the_form_name (form_name));
         );";
 
     //we create the second table;
@@ -42,6 +43,7 @@
 		    input_required BOOLEAN,
 		    input_class VARCHAR(255) DEFAULT '',
         UNIQUE KEY id (input_id)
+        INDEX the_form_id (input_form_id));
         );";
 		
     //we create the third table;
@@ -55,8 +57,9 @@
         configuration_function BOOLEAN,
         configuration_hide BOOLEAN,
 		    configuration_required BOOLEAN,
-		  configuration_class VARCHAR(255) DEFAULT '',
+		    configuration_class VARCHAR(255) DEFAULT '',
         UNIQUE KEY id (configuration_id)
+        INDEX the_form_id (configuration_form_id));
         );";
       
       $WS_table_name = $this->transactions_table_name;
@@ -85,6 +88,8 @@
         transaction_customer_email VARCHAR(255),
         transaction_customer_country VARCHAR(255),
         UNIQUE KEY id (transaction_id)
+        INDEX the_form_id (transaction_form_id));
+        INDEX the_form_name (transaction_form_name));
         );";
       
 
@@ -102,6 +107,7 @@
         WSconfig_form_id int(255),
         WSconfig_json Text,
         UNIQUE KEY id (WSconfig_id)
+        INDEX the_form_id (WSconfig_form_id));
         );";
 
        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

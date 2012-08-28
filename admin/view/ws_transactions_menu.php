@@ -23,5 +23,5 @@
 		<?php endforeach;?>
 		</tbody>
 	</table>
-	<div class="updated"><p><?php _e('If the desired group does not appear, please make a new transaction (step needed is to redirect the payment platform, no need to go further).<br/> If the problem persist, go to the table SQL transactions, look transaction_form_id corresponding to the desired form and just change the "transaction_form_name" of one of its transactions.',"WS"); ?></p></div>
+	<div class="updated"><p><?php _e('If the desired group does not appear, please make a new transaction (step needed is when you are redirect the payment platform, no need to go further).<br/> If the problem persist, go to the table SQL transactions, look transaction_form_id corresponding to the desired form and just change the "transaction_form_name" of one of its transactions.',"WS"); ?></p></div>
 </div>
