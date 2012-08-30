@@ -19,7 +19,7 @@ License: GPL
 	//WS CLASSES
 		require_once(dirname(__FILE__)."/front/ws_countries.class.php");
 		require_once(dirname(__FILE__)."/front/ws_gateways.class.php");
-		require_once( dirname(__FILE__) . '/front/WS.class.php' );
+		require_once( dirname(__FILE__) . '/front/ws.class.php' );
 		require_once(dirname(__FILE__)."/front/ws_tools.class.php");
 	//FRONT
 		require_once(dirname(__FILE__)."/front/systempay/ws_systempay_methods.class.php");
@@ -30,7 +30,7 @@ License: GPL
 		require_once(dirname(__FILE__)."/front/ws_confirmation.class.php");
 		require_once(dirname(__FILE__)."/admin/wscontroller.class.php");
 	//BACKOFFICE
-		if (is_admin()) 
+		if (is_admin())
 		{
 			require_once( dirname(__FILE__) . '/ajax/wsajax.class.php' );
 			require_once( dirname(__FILE__) . '/admin/classes/wssetup.class.php' );
