@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP-systempay
+Plugin Name: wp-systempay
 Plugin URI: http://asso-ela.com/
 Description: WP-Systempay allow you to create totally modular forms wich will manage the confirmation page ,save transactions and send confirmation mails.
 Version: 1.0
@@ -64,8 +64,8 @@ License: GPL
 	function WSStart(){
 		$WSController = new WSController();
 	}
-	function myplugin_language_call() {
-	  load_plugin_textdomain( 'WS', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	function ws_language_call() {
+	  load_plugin_textdomain('ws', false, dirname(plugin_basename(__FILE__) ) . '/languages' );
 	}
 //IMPORT HOOKS
 	require_once(dirname(__FILE__) . '/hooks/ws_hooks.php' );

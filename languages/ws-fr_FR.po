@@ -1,0 +1,2190 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: wp-systempay\n"
+
+#: payformcontroller.class.php:145
+msgid "new Form"
+msgstr "Nouveau formulaire"
+
+#: payformcontroller.class.php:145
+msgid "add New"
+msgstr "Ajouter un nouveau"
+
+#: payformcontroller.class.php:146
+msgid "edit Page"
+msgstr "Editer la page"
+
+#: payformcontroller.class.php:147
+msgid "transactions menu"
+msgstr "transactions menu"
+
+#: payformcontroller.class.php:147
+#: payformcontroller.class.php:148
+msgid "transactions"
+msgstr "Transactions"
+
+#: payformcontroller.class.php:149
+msgid "transaction"
+msgstr "Transactions"
+
+#: forms_templates/form_adhere.php:9
+msgid "Informations générales"
+msgstr "Informations générales"
+
+#: forms_templates/form_adhere.php:12
+msgid "Informations personnelles"
+msgstr "Informations personnelles"
+
+#: forms_templates/form_adhere.php:15
+msgid "Adhésion à ELA (valable 12 mois)"
+msgstr "Adhésion à ELA (valable 12 mois)"
+
+#: forms_templates/form_adhere.php:18
+msgid "Faire un don à ELA"
+msgstr "Faire un don à ELA"
+
+#: forms_templates/form_adhere.php:21
+msgid "Abonnement à la revue ELA Infos (4 numéros par an)"
+msgstr "Abonnement à la revue ELA Infos (4 numéros par an)"
+
+#: forms_templates/form_adhere.php:51
+msgid "Envoyer"
+msgstr "Envoyer"
+
+#: forms_templates/form_don.php:4
+msgid "Amount of your donation"
+msgstr "Montant de votre don"
+
+#: forms_templates/form_don.php:9
+#: forms_templates/form_don.php:15
+msgid "Amount after deduction"
+msgstr "Montant après réduction"
+
+#: forms_templates/form_don.php:10
+#: forms_templates/form_don.php:43
+msgid "Continue"
+msgstr "Continuer"
+
+#: forms_templates/form_don.php:14
+msgid "Change the amount"
+msgstr "Choisir un autre montant"
+
+#: forms_templates/form_don.php:21
+msgid "Infos"
+msgstr "Coordonnées"
+
+#: forms_templates/form_don.php:51
+msgid "Conditions"
+msgstr "Réglement"
+
+#: forms_templates/form_subscriptions.php:10
+msgid "General information"
+msgstr "Informations générales"
+
+#: forms_templates/form_subscriptions.php:13
+msgid "Personnal information"
+msgstr "Informations personnelles"
+
+#: forms_templates/form_subscriptions.php:16
+msgid "Subscribe to the magazine (4 editions per year)"
+msgstr "Inscription à ELA info (4 numéros par an)"
+
+#: forms_templates/form_subscriptions.php:19
+msgid "Annuel membership to ELA (12 month long)"
+msgstr "Adhésion à ELA (valable 12 mois)"
+
+#: forms_templates/form_subscriptions.php:22
+msgid "Make a donation to ELA"
+msgstr "Faire un don à ELA"
+
+#: forms_templates/form_subscriptions.php:52
+msgid "Send"
+msgstr "Envoyer"
+
+#: frontend_methods/payform_confirmation.class.php:163
+msgid "Cancel"
+msgstr "Retour"
+
+#: frontend_methods/payform_confirmation.class.php:196
+msgid "The total amount of your transaction is: "
+msgstr "Le montant total de votre transaction sera de :"
+
+#: frontend_methods/payform_confirmation.class.php:211
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: frontend_methods/payform_confirmation.class.php:216
+msgid "The wanted confirmation PayForm is missing"
+msgstr "La page de confirmation du formulaire est manquante"
+
+#: frontend_methods/payform_confirmation.class.php:289
+#: frontend_methods/payform_confirmation.class.php:292
+#: frontend_methods/payform_confirmation.class.php:293
+#: frontend_methods/payform_confirmation.class.php:303
+msgid "On hold"
+msgstr "En attente"
+
+#: frontend_methods/payform_confirmation.class.php:291
+msgid "Processing"
+msgstr "En cours"
+
+#: frontend_methods/payform_confirmation.class.php:326
+msgid "Please wait, you'll be redirected in a few moments."
+msgstr "Veuillez patienter, vous êtes redirigé."
+
+#: frontend_methods/payform_confirmation.class.php:336
+msgid "Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster."
+msgstr "Erreur pendant la sauvegarde de confirmation, veuillez réessayer. Si l&#39;erreur persiste, contactez le webmaster."
+
+#: frontend_methods/payform_confirmation.class.php:430
+msgid "Retry"
+msgstr "Réessayer"
+
+#: frontend_methods/payform_countries.class.php:7
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: frontend_methods/payform_countries.class.php:8
+msgid "&#197;land Islands"
+msgstr "&#197;land Islands"
+
+#: frontend_methods/payform_countries.class.php:9
+msgid "Albania"
+msgstr "Albanie"
+
+#: frontend_methods/payform_countries.class.php:10
+msgid "Algeria"
+msgstr "Algérie"
+
+#: frontend_methods/payform_countries.class.php:11
+msgid "American Samoa"
+msgstr "Samoa américaines "
+
+#: frontend_methods/payform_countries.class.php:12
+msgid "Andorra"
+msgstr "Andorre"
+
+#: frontend_methods/payform_countries.class.php:13
+msgid "Angola"
+msgstr "Angola"
+
+#: frontend_methods/payform_countries.class.php:14
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: frontend_methods/payform_countries.class.php:15
+msgid "Antarctica"
+msgstr "Antartique"
+
+#: frontend_methods/payform_countries.class.php:16
+msgid "Antigua and Barbuda"
+msgstr "Antigua-et-Barbuda"
+
+#: frontend_methods/payform_countries.class.php:17
+msgid "Argentina"
+msgstr "Argentine"
+
+#: frontend_methods/payform_countries.class.php:18
+msgid "Armenia"
+msgstr "Arménie"
+
+#: frontend_methods/payform_countries.class.php:19
+msgid "Aruba"
+msgstr "Aruba"
+
+#: frontend_methods/payform_countries.class.php:20
+msgid "Australia"
+msgstr "Australie"
+
+#: frontend_methods/payform_countries.class.php:21
+msgid "Austria"
+msgstr "Autriche"
+
+#: frontend_methods/payform_countries.class.php:22
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+#: frontend_methods/payform_countries.class.php:23
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: frontend_methods/payform_countries.class.php:24
+msgid "Bahrain"
+msgstr "Barhain"
+
+#: frontend_methods/payform_countries.class.php:25
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: frontend_methods/payform_countries.class.php:26
+msgid "Barbados"
+msgstr "Barbados"
+
+#: frontend_methods/payform_countries.class.php:27
+msgid "Belarus"
+msgstr "Biélorussie"
+
+#: frontend_methods/payform_countries.class.php:28
+msgid "Belgium"
+msgstr "Belgique"
+
+#: frontend_methods/payform_countries.class.php:29
+msgid "Belize"
+msgstr "Bélize"
+
+#: frontend_methods/payform_countries.class.php:30
+msgid "Benin"
+msgstr "Benin"
+
+#: frontend_methods/payform_countries.class.php:31
+msgid "Bermuda"
+msgstr "Bermudes"
+
+#: frontend_methods/payform_countries.class.php:32
+msgid "Bhutan"
+msgstr "Bhoutan"
+
+#: frontend_methods/payform_countries.class.php:33
+msgid "Bolivia"
+msgstr "Bolivie"
+
+#: frontend_methods/payform_countries.class.php:34
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnie Herzegovine"
+
+#: frontend_methods/payform_countries.class.php:35
+msgid "Botswana"
+msgstr "Botswana"
+
+#: frontend_methods/payform_countries.class.php:36
+msgid "Brazil"
+msgstr "Brésil"
+
+#: frontend_methods/payform_countries.class.php:37
+msgid "British Indian Ocean Territory"
+msgstr "Territoire britannique de l&#39;océan Indien"
+
+#: frontend_methods/payform_countries.class.php:38
+msgid "British Virgin Islands"
+msgstr "Îles Vierges britanniques"
+
+#: frontend_methods/payform_countries.class.php:39
+msgid "Brunei"
+msgstr "Brunei"
+
+#: frontend_methods/payform_countries.class.php:40
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+#: frontend_methods/payform_countries.class.php:41
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: frontend_methods/payform_countries.class.php:42
+msgid "Burundi"
+msgstr "Burundi"
+
+#: frontend_methods/payform_countries.class.php:43
+msgid "Cambodia"
+msgstr "Cambodge"
+
+#: frontend_methods/payform_countries.class.php:44
+msgid "Cameroon"
+msgstr "Cameroun"
+
+#: frontend_methods/payform_countries.class.php:45
+msgid "Canada"
+msgstr "Canada"
+
+#: frontend_methods/payform_countries.class.php:46
+msgid "Cape Verde"
+msgstr "Cap-Vert"
+
+#: frontend_methods/payform_countries.class.php:47
+msgid "Cayman Islands"
+msgstr "Îles Caïmans"
+
+#: frontend_methods/payform_countries.class.php:48
+msgid "Central African Republic"
+msgstr "République centrafricaine"
+
+#: frontend_methods/payform_countries.class.php:49
+msgid "Chad"
+msgstr "Tchad"
+
+#: frontend_methods/payform_countries.class.php:50
+msgid "Chile"
+msgstr "Chili"
+
+#: frontend_methods/payform_countries.class.php:51
+msgid "China"
+msgstr "Chine"
+
+#: frontend_methods/payform_countries.class.php:52
+msgid "Christmas Island"
+msgstr "île Christmas"
+
+#: frontend_methods/payform_countries.class.php:53
+msgid "Cocos (Keeling) Islands"
+msgstr "Îles Cocos"
+
+#: frontend_methods/payform_countries.class.php:54
+msgid "Colombia"
+msgstr "Colombie"
+
+#: frontend_methods/payform_countries.class.php:55
+msgid "Comoros"
+msgstr "îles Comores"
+
+#: frontend_methods/payform_countries.class.php:56
+msgid "Congo (Brazzaville)"
+msgstr "République du Congo "
+
+#: frontend_methods/payform_countries.class.php:57
+msgid "Congo (Kinshasa)"
+msgstr "République démocratique du Congo"
+
+#: frontend_methods/payform_countries.class.php:58
+msgid "Cook Islands"
+msgstr "Îles Cook"
+
+#: frontend_methods/payform_countries.class.php:59
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: frontend_methods/payform_countries.class.php:60
+msgid "Croatia"
+msgstr "Croatie"
+
+#: frontend_methods/payform_countries.class.php:61
+msgid "Cuba"
+msgstr "Cuba"
+
+#: frontend_methods/payform_countries.class.php:62
+msgid "Cyprus"
+msgstr "Chipre"
+
+#: frontend_methods/payform_countries.class.php:63
+msgid "Czech Republic"
+msgstr "République tchèque"
+
+#: frontend_methods/payform_countries.class.php:64
+msgid "Denmark"
+msgstr "Danemark"
+
+#: frontend_methods/payform_countries.class.php:65
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: frontend_methods/payform_countries.class.php:66
+msgid "Dominica"
+msgstr "Dominique"
+
+#: frontend_methods/payform_countries.class.php:67
+msgid "Dominican Republic"
+msgstr "République dominicaine "
+
+#: frontend_methods/payform_countries.class.php:68
+msgid "Ecuador"
+msgstr "Équateur"
+
+#: frontend_methods/payform_countries.class.php:69
+msgid "Egypt"
+msgstr "Égypte"
+
+#: frontend_methods/payform_countries.class.php:70
+msgid "El Salvador"
+msgstr "Salvador"
+
+#: frontend_methods/payform_countries.class.php:71
+msgid "Equatorial Guinea"
+msgstr "Guinée équatoriale"
+
+#: frontend_methods/payform_countries.class.php:72
+msgid "Eritrea"
+msgstr "Érythrée"
+
+#: frontend_methods/payform_countries.class.php:73
+msgid "Estonia"
+msgstr "Estonie"
+
+#: frontend_methods/payform_countries.class.php:74
+msgid "Ethiopia"
+msgstr "Ethiopie"
+
+#: frontend_methods/payform_countries.class.php:75
+msgid "Falkland Islands"
+msgstr "Îles Malouines"
+
+#: frontend_methods/payform_countries.class.php:76
+msgid "Faroe Islands"
+msgstr "Îles Féroé"
+
+#: frontend_methods/payform_countries.class.php:77
+msgid "Fiji"
+msgstr "Fidji"
+
+#: frontend_methods/payform_countries.class.php:78
+msgid "Finland"
+msgstr "Finlande "
+
+#: frontend_methods/payform_countries.class.php:79
+msgid "France"
+msgstr "France"
+
+#: frontend_methods/payform_countries.class.php:80
+msgid "French Guiana"
+msgstr "Guyane"
+
+#: frontend_methods/payform_countries.class.php:81
+msgid "French Polynesia"
+msgstr "Polynésie française"
+
+#: frontend_methods/payform_countries.class.php:82
+msgid "French Southern Territories"
+msgstr "Antarctique français"
+
+#: frontend_methods/payform_countries.class.php:83
+msgid "Gabon"
+msgstr "Gabon"
+
+#: frontend_methods/payform_countries.class.php:84
+msgid "Gambia"
+msgstr "Gambie"
+
+#: frontend_methods/payform_countries.class.php:85
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: frontend_methods/payform_countries.class.php:86
+msgid "Germany"
+msgstr "Allemagne"
+
+#: frontend_methods/payform_countries.class.php:87
+msgid "Ghana"
+msgstr "Ghana"
+
+#: frontend_methods/payform_countries.class.php:88
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: frontend_methods/payform_countries.class.php:89
+msgid "Greece"
+msgstr "Grèce"
+
+#: frontend_methods/payform_countries.class.php:90
+msgid "Greenland"
+msgstr "Groenland"
+
+#: frontend_methods/payform_countries.class.php:91
+msgid "Grenada"
+msgstr "Grenade"
+
+#: frontend_methods/payform_countries.class.php:92
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: frontend_methods/payform_countries.class.php:93
+msgid "Guam"
+msgstr "Guam"
+
+#: frontend_methods/payform_countries.class.php:94
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: frontend_methods/payform_countries.class.php:95
+msgid "Guernsey"
+msgstr "Guernesey"
+
+#: frontend_methods/payform_countries.class.php:96
+msgid "Guinea"
+msgstr "Guiné"
+
+#: frontend_methods/payform_countries.class.php:97
+msgid "Guinea-Bissau"
+msgstr "Guinée-Bissau"
+
+#: frontend_methods/payform_countries.class.php:98
+msgid "Guyana"
+msgstr "Guyanne"
+
+#: frontend_methods/payform_countries.class.php:99
+msgid "Haiti"
+msgstr "Haïti"
+
+#: frontend_methods/payform_countries.class.php:100
+msgid "Honduras"
+msgstr "Honduras"
+
+#: frontend_methods/payform_countries.class.php:101
+msgid "Hong Kong"
+msgstr "Hong-Kong"
+
+#: frontend_methods/payform_countries.class.php:102
+msgid "Hungary"
+msgstr "Hongrie"
+
+#: frontend_methods/payform_countries.class.php:103
+msgid "Iceland"
+msgstr "Island"
+
+#: frontend_methods/payform_countries.class.php:104
+msgid "India"
+msgstr "Inde"
+
+#: frontend_methods/payform_countries.class.php:105
+msgid "Indonesia"
+msgstr "Indonésie"
+
+#: frontend_methods/payform_countries.class.php:106
+msgid "Iran"
+msgstr "Iran"
+
+#: frontend_methods/payform_countries.class.php:107
+msgid "Iraq"
+msgstr "Iraq"
+
+#: frontend_methods/payform_countries.class.php:108
+msgid "Ireland"
+msgstr "Irland"
+
+#: frontend_methods/payform_countries.class.php:109
+msgid "Isle of Man"
+msgstr "îles"
+
+#: frontend_methods/payform_countries.class.php:110
+msgid "Israel"
+msgstr "Israël"
+
+#: frontend_methods/payform_countries.class.php:111
+msgid "Italy"
+msgstr "Italie"
+
+#: frontend_methods/payform_countries.class.php:112
+msgid "Ivory Coast"
+msgstr "Côte d'Ivoir"
+
+#: frontend_methods/payform_countries.class.php:113
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: frontend_methods/payform_countries.class.php:114
+msgid "Japan"
+msgstr "Japon"
+
+#: frontend_methods/payform_countries.class.php:115
+msgid "Jersey"
+msgstr "Jersey"
+
+#: frontend_methods/payform_countries.class.php:116
+msgid "Jordan"
+msgstr "Jordanie"
+
+#: frontend_methods/payform_countries.class.php:117
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: frontend_methods/payform_countries.class.php:118
+msgid "Kenya"
+msgstr "Kenya"
+
+#: frontend_methods/payform_countries.class.php:119
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: frontend_methods/payform_countries.class.php:120
+msgid "Kuwait"
+msgstr "Koweït"
+
+#: frontend_methods/payform_countries.class.php:121
+msgid "Kyrgyzstan"
+msgstr "Kirghizistan"
+
+#: frontend_methods/payform_countries.class.php:122
+msgid "Laos"
+msgstr "Laos"
+
+#: frontend_methods/payform_countries.class.php:123
+msgid "Latvia"
+msgstr "Lettonie"
+
+#: frontend_methods/payform_countries.class.php:124
+msgid "Lebanon"
+msgstr "Liban"
+
+#: frontend_methods/payform_countries.class.php:125
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: frontend_methods/payform_countries.class.php:126
+msgid "Liberia"
+msgstr "Liberia"
+
+#: frontend_methods/payform_countries.class.php:127
+msgid "Libya"
+msgstr "Libye"
+
+#: frontend_methods/payform_countries.class.php:128
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: frontend_methods/payform_countries.class.php:129
+msgid "Lithuania"
+msgstr "Lituanie"
+
+#: frontend_methods/payform_countries.class.php:130
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: frontend_methods/payform_countries.class.php:131
+msgid "Macao S.A.R., China"
+msgstr "Macao"
+
+#: frontend_methods/payform_countries.class.php:132
+msgid "Macedonia"
+msgstr "Macédoine"
+
+#: frontend_methods/payform_countries.class.php:133
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: frontend_methods/payform_countries.class.php:134
+msgid "Malawi"
+msgstr "Malawi"
+
+#: frontend_methods/payform_countries.class.php:135
+msgid "Malaysia"
+msgstr "Malaisie"
+
+#: frontend_methods/payform_countries.class.php:136
+msgid "Maldives"
+msgstr "Maldives"
+
+#: frontend_methods/payform_countries.class.php:137
+msgid "Mali"
+msgstr "Mali"
+
+#: frontend_methods/payform_countries.class.php:138
+msgid "Malta"
+msgstr "île de Malte"
+
+#: frontend_methods/payform_countries.class.php:139
+msgid "Marshall Islands"
+msgstr "Îles Marshall"
+
+#: frontend_methods/payform_countries.class.php:140
+msgid "Martinique"
+msgstr "Martinique"
+
+#: frontend_methods/payform_countries.class.php:141
+msgid "Mauritania"
+msgstr "Mauritanie"
+
+#: frontend_methods/payform_countries.class.php:142
+msgid "Mauritius"
+msgstr "Maurice"
+
+#: frontend_methods/payform_countries.class.php:143
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: frontend_methods/payform_countries.class.php:144
+msgid "Mexico"
+msgstr "Méxique"
+
+#: frontend_methods/payform_countries.class.php:145
+msgid "Micronesia"
+msgstr "Micronésie"
+
+#: frontend_methods/payform_countries.class.php:146
+msgid "Moldova"
+msgstr "Moldavie"
+
+#: frontend_methods/payform_countries.class.php:147
+msgid "Monaco"
+msgstr "Monaco"
+
+#: frontend_methods/payform_countries.class.php:148
+msgid "Mongolia"
+msgstr "Mongolie"
+
+#: frontend_methods/payform_countries.class.php:149
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: frontend_methods/payform_countries.class.php:150
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: frontend_methods/payform_countries.class.php:151
+msgid "Morocco"
+msgstr "Maroc"
+
+#: frontend_methods/payform_countries.class.php:152
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: frontend_methods/payform_countries.class.php:153
+msgid "Myanmar"
+msgstr "Birmanie"
+
+#: frontend_methods/payform_countries.class.php:154
+msgid "Namibia"
+msgstr "Namibie"
+
+#: frontend_methods/payform_countries.class.php:155
+msgid "Nauru"
+msgstr "Nauru"
+
+#: frontend_methods/payform_countries.class.php:156
+msgid "Nepal"
+msgstr "Népal"
+
+#: frontend_methods/payform_countries.class.php:157
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#: frontend_methods/payform_countries.class.php:158
+msgid "Netherlands Antilles"
+msgstr "Antilles néerlandaises"
+
+#: frontend_methods/payform_countries.class.php:159
+msgid "New Caledonia"
+msgstr "Nouvelle-Calédonie"
+
+#: frontend_methods/payform_countries.class.php:160
+msgid "New Zealand"
+msgstr "Nouvelle-Zélande"
+
+#: frontend_methods/payform_countries.class.php:161
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: frontend_methods/payform_countries.class.php:162
+msgid "Niger"
+msgstr "Niger"
+
+#: frontend_methods/payform_countries.class.php:163
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: frontend_methods/payform_countries.class.php:164
+msgid "Niue"
+msgstr "Niue"
+
+#: frontend_methods/payform_countries.class.php:165
+msgid "Norfolk Island"
+msgstr "Île Norfolk"
+
+#: frontend_methods/payform_countries.class.php:166
+msgid "North Korea"
+msgstr "Corée du Nord"
+
+#: frontend_methods/payform_countries.class.php:167
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+#: frontend_methods/payform_countries.class.php:168
+msgid "Norway"
+msgstr "Norvège"
+
+#: frontend_methods/payform_countries.class.php:169
+msgid "Oman"
+msgstr "Oman"
+
+#: frontend_methods/payform_countries.class.php:170
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: frontend_methods/payform_countries.class.php:171
+msgid "Palau"
+msgstr "Palau"
+
+#: frontend_methods/payform_countries.class.php:172
+msgid "Palestinian Territory"
+msgstr "Territoire palestinien"
+
+#: frontend_methods/payform_countries.class.php:173
+msgid "Panama"
+msgstr "Panama"
+
+#: frontend_methods/payform_countries.class.php:174
+msgid "Papua New Guinea"
+msgstr "Papouasie-Nouvelle-Guinée"
+
+#: frontend_methods/payform_countries.class.php:175
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: frontend_methods/payform_countries.class.php:176
+msgid "Peru"
+msgstr "Pérou"
+
+#: frontend_methods/payform_countries.class.php:177
+msgid "Philippines"
+msgstr "Philippines"
+
+#: frontend_methods/payform_countries.class.php:178
+msgid "Pitcairn"
+msgstr "Île Pitcairn"
+
+#: frontend_methods/payform_countries.class.php:179
+msgid "Poland"
+msgstr "Pologne"
+
+#: frontend_methods/payform_countries.class.php:180
+msgid "Portugal"
+msgstr "Portugal"
+
+#: frontend_methods/payform_countries.class.php:181
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: frontend_methods/payform_countries.class.php:182
+msgid "Qatar"
+msgstr "Quatar"
+
+#: frontend_methods/payform_countries.class.php:183
+msgid "Reunion"
+msgstr "Réunion"
+
+#: frontend_methods/payform_countries.class.php:184
+msgid "Romania"
+msgstr "Roumanie"
+
+#: frontend_methods/payform_countries.class.php:185
+msgid "Russia"
+msgstr "Russie"
+
+#: frontend_methods/payform_countries.class.php:186
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: frontend_methods/payform_countries.class.php:187
+msgid "Saint Barth&eacute;lemy"
+msgstr "Saint Barthélémy"
+
+#: frontend_methods/payform_countries.class.php:188
+msgid "Saint Helena"
+msgstr "Saint Hélène"
+
+#: frontend_methods/payform_countries.class.php:189
+msgid "Saint Kitts and Nevis"
+msgstr "Saint-Christophe-et-Niévès"
+
+#: frontend_methods/payform_countries.class.php:190
+msgid "Saint Lucia"
+msgstr "Sainte-Lucie"
+
+#: frontend_methods/payform_countries.class.php:191
+msgid "Saint Martin (French part)"
+msgstr "Saint Martin (Française)"
+
+#: frontend_methods/payform_countries.class.php:192
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre-et-Miquelon"
+
+#: frontend_methods/payform_countries.class.php:193
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint-Vincent-et-les-Grenadines"
+
+#: frontend_methods/payform_countries.class.php:194
+msgid "Samoa"
+msgstr "Samoa"
+
+#: frontend_methods/payform_countries.class.php:195
+msgid "San Marino"
+msgstr "San Marino"
+
+#: frontend_methods/payform_countries.class.php:196
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr "Sao Tomé-et-Principe"
+
+#: frontend_methods/payform_countries.class.php:197
+msgid "Saudi Arabia"
+msgstr "Arabie saoudite"
+
+#: frontend_methods/payform_countries.class.php:198
+msgid "Senegal"
+msgstr "Sénégal"
+
+#: frontend_methods/payform_countries.class.php:199
+msgid "Serbia"
+msgstr "Serbie"
+
+#: frontend_methods/payform_countries.class.php:200
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: frontend_methods/payform_countries.class.php:201
+msgid "Sierra Leone"
+msgstr "La Sierra Leone"
+
+#: frontend_methods/payform_countries.class.php:202
+msgid "Singapore"
+msgstr "Singapoure"
+
+#: frontend_methods/payform_countries.class.php:203
+msgid "Slovakia"
+msgstr "Slovakie"
+
+#: frontend_methods/payform_countries.class.php:204
+msgid "Slovenia"
+msgstr "Slovenie"
+
+#: frontend_methods/payform_countries.class.php:205
+msgid "Solomon Islands"
+msgstr "Îles Salomon"
+
+#: frontend_methods/payform_countries.class.php:206
+msgid "Somalia"
+msgstr "Somalie"
+
+#: frontend_methods/payform_countries.class.php:207
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+#: frontend_methods/payform_countries.class.php:208
+msgid "South Georgia/Sandwich Islands"
+msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
+
+#: frontend_methods/payform_countries.class.php:209
+msgid "South Korea"
+msgstr "Corée du Sud"
+
+#: frontend_methods/payform_countries.class.php:210
+msgid "Spain"
+msgstr "Espagne"
+
+#: frontend_methods/payform_countries.class.php:211
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: frontend_methods/payform_countries.class.php:212
+msgid "Sudan"
+msgstr "Soudan"
+
+#: frontend_methods/payform_countries.class.php:213
+msgid "Suriname"
+msgstr "Suriname"
+
+#: frontend_methods/payform_countries.class.php:214
+msgid "Svalbard and Jan Mayen"
+msgstr "Île Jan Mayen"
+
+#: frontend_methods/payform_countries.class.php:215
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: frontend_methods/payform_countries.class.php:216
+msgid "Sweden"
+msgstr "Suède"
+
+#: frontend_methods/payform_countries.class.php:217
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: frontend_methods/payform_countries.class.php:218
+msgid "Syria"
+msgstr "Syrie"
+
+#: frontend_methods/payform_countries.class.php:219
+msgid "Taiwan"
+msgstr "Taïwan"
+
+#: frontend_methods/payform_countries.class.php:220
+msgid "Tajikistan"
+msgstr "Tadjikistan"
+
+#: frontend_methods/payform_countries.class.php:221
+msgid "Tanzania"
+msgstr "Tanzanie"
+
+#: frontend_methods/payform_countries.class.php:222
+msgid "Thailand"
+msgstr "Thaïlande"
+
+#: frontend_methods/payform_countries.class.php:223
+msgid "Timor-Leste"
+msgstr "Timor oriental"
+
+#: frontend_methods/payform_countries.class.php:224
+msgid "Togo"
+msgstr "Togo"
+
+#: frontend_methods/payform_countries.class.php:225
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: frontend_methods/payform_countries.class.php:226
+msgid "Tonga"
+msgstr "Tonga"
+
+#: frontend_methods/payform_countries.class.php:227
+msgid "Trinidad and Tobago"
+msgstr "Trinité-et-Tobago"
+
+#: frontend_methods/payform_countries.class.php:228
+msgid "Tunisia"
+msgstr "Tunisie"
+
+#: frontend_methods/payform_countries.class.php:229
+msgid "Turkey"
+msgstr "Turquie"
+
+#: frontend_methods/payform_countries.class.php:230
+msgid "Turkmenistan"
+msgstr "Turkménistan"
+
+#: frontend_methods/payform_countries.class.php:231
+msgid "Turks and Caicos Islands"
+msgstr "Îles Turques-et-Caïques"
+
+#: frontend_methods/payform_countries.class.php:232
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: frontend_methods/payform_countries.class.php:233
+msgid "U.S. Virgin Islands"
+msgstr "Îles Vierges des États-Unis"
+
+#: frontend_methods/payform_countries.class.php:234
+msgid "US Armed Forces"
+msgstr "Forces armées des États-Unis"
+
+#: frontend_methods/payform_countries.class.php:235
+msgid "US Minor Outlying Islands"
+msgstr "Îles mineures éloignées des États-Unis"
+
+#: frontend_methods/payform_countries.class.php:236
+msgid "Uganda"
+msgstr "Ouganda"
+
+#: frontend_methods/payform_countries.class.php:237
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: frontend_methods/payform_countries.class.php:238
+msgid "United Arab Emirates"
+msgstr "Émirats arabes unis"
+
+#: frontend_methods/payform_countries.class.php:239
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+#: frontend_methods/payform_countries.class.php:240
+msgid "United States"
+msgstr "États-Unis"
+
+#: frontend_methods/payform_countries.class.php:241
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: frontend_methods/payform_countries.class.php:242
+msgid "Uzbekistan"
+msgstr "Ouzbékistan"
+
+#: frontend_methods/payform_countries.class.php:243
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: frontend_methods/payform_countries.class.php:244
+msgid "Vatican"
+msgstr "Vatican"
+
+#: frontend_methods/payform_countries.class.php:245
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: frontend_methods/payform_countries.class.php:246
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: frontend_methods/payform_countries.class.php:247
+msgid "Wallis and Futuna"
+msgstr "Wallis-et-Futuna"
+
+#: frontend_methods/payform_countries.class.php:248
+msgid "Western Sahara"
+msgstr "Sahara occidental"
+
+#: frontend_methods/payform_countries.class.php:249
+msgid "Yemen"
+msgstr "Yémen"
+
+#: frontend_methods/payform_countries.class.php:250
+msgid "Zambia"
+msgstr "Zambie"
+
+#: frontend_methods/payform_countries.class.php:251
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: frontend_methods/payform_forms.class.php:44
+msgid "This field is required"
+msgstr "Ce champ est obligatoire"
+
+#: frontend_methods/payform_forms.class.php:45
+msgid "Your email is not valid"
+msgstr "Votre email n&#39;est pas valide"
+
+#: frontend_methods/payform_forms.class.php:46
+msgid "Your number is not valid"
+msgstr "Le nombre est invalide"
+
+#: frontend_methods/payform_gateways.class.php:26
+#: frontend_methods/systempay/payform_systempay_results.class.php:52
+msgid "currency"
+msgstr "Devise"
+
+#: frontend_methods/payform_gateways.class.php:30
+msgid "currency, 978 for Euro, 840 for American Dolar."
+msgstr "Devise, 978 pour l&#39;Euro, 840 pour les Dollars"
+
+#: frontend_methods/payform_gateways.class.php:34
+#: frontend_methods/systempay/payform_systempay_results.class.php:51
+msgid "amount"
+msgstr "montant"
+
+#: frontend_methods/payform_gateways.class.php:38
+msgid "Amount of the order expressed in the smallest unit of currency. Cents for EURO Ex: 1000 for 10 euros."
+msgstr "Montant de la commande exprimé dans la plus petite unité. Exemple en centimes d'euros : 1000 pour 10 euros."
+
+#: frontend_methods/payform_gateways.class.php:42
+msgid "site_id"
+msgstr "ID du site"
+
+#: frontend_methods/payform_gateways.class.php:46
+msgid "Identifiant Boutique à récupérer dans le Back office Payzen"
+msgstr "Identifiant Boutique à récupérer dans le Back office Payzen"
+
+#: frontend_methods/payform_gateways.class.php:50
+msgid "certificate"
+msgstr "Certificat"
+
+#: frontend_methods/payform_gateways.class.php:54
+msgid "To get from the Payzen BackOffice. Please note this certificate is different depending on the mode TEST or PRODUCTION.The certificate is needed by the function systemPay_GetSignature() ."
+msgstr "À récupérer depuis systempay. Attention, ce dernier change entre TEST et PRODUCTION. Le certificat est nécessaire pour la fonction systemPay_GetSignature()."
+
+#: frontend_methods/payform_gateways.class.php:58
+msgid "operation mode"
+msgstr "Mode opératoire"
+
+#: frontend_methods/payform_gateways.class.php:62
+msgid "operation mode . Value = TEST or PRODUCTION"
+msgstr "Mode opératoire. Valeur = TEST ou PRODUCTION"
+
+#: frontend_methods/payform_gateways.class.php:66
+#: frontend_methods/systempay/payform_systempay_results.class.php:43
+msgid "version"
+msgstr "version"
+
+#: frontend_methods/payform_gateways.class.php:70
+msgid "this parametre MUST BE 'V2'"
+msgstr "Ce paramètre doit valoir V2"
+
+#: frontend_methods/payform_gateways.class.php:74
+#: frontend_methods/systempay/payform_systempay_results.class.php:42
+msgid "signature"
+msgstr "signature"
+
+#: frontend_methods/payform_gateways.class.php:78
+msgid "calculated by the function systempay_GetSignature() / payform_GetSignature from the class Payform"
+msgstr "Calculé par la fonction systempay_GetSignature() / payform_GetSignature from the class PayForm"
+
+#: frontend_methods/payform_gateways.class.php:82
+msgid "transaction date"
+msgstr "Date de transaction"
+
+#: frontend_methods/payform_gateways.class.php:86
+msgid "date of the transaction exprimée sous la forme YYMMDDHHMMSS on the time zone UTC=0"
+msgstr "Date de la transaction exprimé sous la forme YYMMDDHHMMSS sur la zone UTC=0"
+
+#: frontend_methods/payform_gateways.class.php:90
+msgid "transaction id"
+msgstr "ID de transaction"
+
+#: frontend_methods/payform_gateways.class.php:94
+msgid "unique id of the transaction"
+msgstr "L&#39;unique ID de transaction"
+
+#: frontend_methods/payform_gateways.class.php:99
+msgid "page action"
+msgstr "page action"
+
+#: frontend_methods/payform_gateways.class.php:103
+msgid "this parameter MUST BE PAYMENT"
+msgstr "Ce paramètre doit être sur Payment"
+
+#: frontend_methods/payform_gateways.class.php:111
+msgid "This parameter is valued at INTERACTIVE if the entry is made on the card payment platform."
+msgstr "Ce paramètre doit avoir la valeur INTERACTIVE si l&#39;entée est configuré pour accepté les cartes"
+
+#: frontend_methods/payform_gateways.class.php:115
+msgid "payment config"
+msgstr "Configuration du paiement"
+
+#: frontend_methods/payform_gateways.class.php:119
+msgid "This parameter is valued at SINGLE for a unitary payment , MULTI for payement in several times"
+msgstr "Ce paramètre vaut SINGLE pour un paiement unique, MULTI pour un paiement en plusieurs fois"
+
+#: frontend_methods/payform_gateways.class.php:125
+#: frontend_methods/payform_gateways.class.php:157
+msgid "redirect success timeout"
+msgstr "Redirection après succès"
+
+#: frontend_methods/payform_gateways.class.php:129
+msgid "This parameter sets the delay before client reroute on the site merchant in the case of a successful payment. This period is expressed in seconds and must bebetween 0 and 300 seconds."
+msgstr "Ce paramètre indique le temps avant que le client soit renvoyé sur le site marchand dans le cas d'un succès. Cette période s'exprime en seconde et est comprise entre 0 et 300 secondes maximum."
+
+#: frontend_methods/payform_gateways.class.php:133
+msgid "redirect success message"
+msgstr "Message de redirection après un succès"
+
+#: frontend_methods/payform_gateways.class.php:137
+#: frontend_methods/payform_gateways.class.php:161
+msgid "This parameter specifies the message to wait before redirecting to the sitemerchant in the case of a successful payment."
+msgstr "Ce paramètre permet de choisir le message à afficher avant la redirection sur le site."
+
+#: frontend_methods/payform_gateways.class.php:141
+msgid "redirect error timeout"
+msgstr "Redirection après une erreur "
+
+#: frontend_methods/payform_gateways.class.php:145
+msgid "Same that success timeout but in case of error."
+msgstr "Le même que le temps de retour en cas de succès mais pour les erreurs"
+
+#: frontend_methods/payform_gateways.class.php:149
+msgid "redirect error message"
+msgstr "redirect error message"
+
+#: frontend_methods/payform_gateways.class.php:153
+msgid "Same that success message but in case of error."
+msgstr "Même message que pour la réussite mais en cas d&#39;erreur."
+
+#: frontend_methods/payform_gateways.class.php:165
+#: frontend_methods/systempay/payform_systempay_results.class.php:54
+msgid "language"
+msgstr "Langage"
+
+#: frontend_methods/payform_gateways.class.php:171
+msgid "customer's language"
+msgstr "Le langage du client"
+
+#: frontend_methods/payform_gateways.class.php:175
+msgid "capture delay"
+msgstr "Le délai de capture"
+
+#: frontend_methods/payform_gateways.class.php:181
+msgid "This parameter defines the time for giving bank in days. After vacuum payment platform takes a default value defined in the back office 'management tool box'"
+msgstr "Ce paramètre définit le temps donné à la banque en jours. Ce paramètre peut également se configurer dans le back office"
+
+#: frontend_methods/payform_gateways.class.php:185
+msgid "contribution name"
+msgstr "Nom de contribution"
+
+#: frontend_methods/payform_gateways.class.php:191
+msgid "the name used when paying contributions (joomla, oscommerce ...)"
+msgstr "Le nom utilisé du CMS utilisé pendant le paiement (joomla, wordpress, oscommerce, ...)"
+
+#: frontend_methods/payform_gateways.class.php:195
+#: frontend_methods/payform_gateways.class.php:205
+#: frontend_methods/payform_gateways.class.php:215
+#: frontend_methods/systempay/payform_systempay_results.class.php:56
+msgid "order_info"
+msgstr "order_info"
+
+#: frontend_methods/payform_gateways.class.php:201
+#: frontend_methods/payform_gateways.class.php:211
+#: frontend_methods/payform_gateways.class.php:221
+msgid "Free optional fields that may for example be used to store a summary of order"
+msgstr "Un champ optionnel permettant de stocker un résumé de la commande"
+
+#: frontend_methods/payform_gateways.class.php:225
+#: frontend_methods/systempay/payform_systempay_results.class.php:50
+msgid "payment_cards"
+msgstr "payment_cards"
+
+#: frontend_methods/payform_gateways.class.php:231
+msgid "Lists the types of cards offer to the user, separated by ';'. Default value EMPTY is recommended"
+msgstr "Liste des types de cartes utilisées pour la paiement, séparés par &#39;;&#39;. Nous recommandons de laisser EMPTY."
+
+#: frontend_methods/payform_gateways.class.php:235
+msgid "return mode"
+msgstr "Mode de retour"
+
+#: frontend_methods/payform_gateways.class.php:241
+msgid "NONE , GET or POST"
+msgstr "NONE, GET or POST (Get est recommandé pour éviter HTTPS)"
+
+#: frontend_methods/payform_gateways.class.php:245
+msgid "url success"
+msgstr "url success"
+
+#: frontend_methods/payform_gateways.class.php:251
+msgid "URL where the customer is redirected if successful payment,after pressing the button 'return to the store'"
+msgstr "url de retour pour un client une fois un paiement correctement déroulé, après avoir pressé le bouton retour au magasin."
+
+#: frontend_methods/payform_gateways.class.php:256
+#: frontend_methods/systempay/payform_systempay_results.class.php:68
+msgid "url_referral"
+msgstr "url_referral"
+
+#: frontend_methods/payform_gateways.class.php:262
+msgid "URL where the customer is redirected in case of refusal of authorization 02 'contact the card issuer' after pressing the button 'return to the store. '"
+msgstr "url de retour pour un client, une fois un paiement refusé avec le code 02 contact the card issuer, après avoir pressé le bouton retour au magasin."
+
+#: frontend_methods/payform_gateways.class.php:268
+msgid "url refused"
+msgstr "url refused"
+
+#: frontend_methods/payform_gateways.class.php:274
+msgid "URL where the customer is redirected in case of refusal for any other cause that the refusal to allow the pattern 02"
+msgstr "URL de retour en cas de refus"
+
+#: frontend_methods/payform_gateways.class.php:280
+msgid "url cancel"
+msgstr "url cancel"
+
+#: frontend_methods/payform_gateways.class.php:286
+msgid "URL where the customer is redirected if it presses 'cancel and return to the store ' before payment is made."
+msgstr "url de retour en cas d&#39;annulation"
+
+#: frontend_methods/payform_gateways.class.php:290
+msgid "url error"
+msgstr "url error"
+
+#: frontend_methods/payform_gateways.class.php:296
+msgid "URL where the customer is redirected if an error processing internal"
+msgstr "URL de retour pour toutes autres erreurs"
+
+#: frontend_methods/payform_gateways.class.php:300
+msgid "url return"
+msgstr "url return"
+
+#: frontend_methods/payform_gateways.class.php:306
+msgid "Where URL is redirected by default the client after pressing the button to return to the shop ', if the URL corresponding to the scenarios seen above are not filled."
+msgstr "URL de retour ultime. Si aucun des précédents n&#39;est rempli alors c'est ce dernier qui est appelé."
+
+#: frontend_methods/payform_gateways.class.php:311
+msgid "contract"
+msgstr "contrat"
+
+#: frontend_methods/payform_gateways.class.php:317
+msgid "Optional parameter to specify for each network acceptance, merchant to use the contract. The formalism of the parameter is: Network 1 = contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
+msgstr "Paramètre optionnel pour préciser pour qul réseau de marchant le contrat s&#39;applique. Normalement cela se remplit comme suit : Network 1 = contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
+
+#: frontend_methods/payform_gateways.class.php:323
+msgid "title"
+msgstr "Titre"
+
+#: frontend_methods/payform_gateways.class.php:329
+msgid "customer's social title"
+msgstr "Titre social du client"
+
+#: frontend_methods/payform_gateways.class.php:339
+msgid "firstname"
+msgstr "Prénom"
+
+#: frontend_methods/payform_gateways.class.php:344
+#: frontend_methods/payform_gateways.class.php:359
+msgid "customer's name"
+msgstr "Nom du client"
+
+#: frontend_methods/payform_gateways.class.php:354
+msgid "lastname"
+msgstr "Nom"
+
+#: frontend_methods/payform_gateways.class.php:369
+msgid "addresse"
+msgstr "Adresse"
+
+#: frontend_methods/payform_gateways.class.php:375
+#: frontend_methods/payform_gateways.class.php:391
+msgid "customer's addresse"
+msgstr "Adresse du client"
+
+#: frontend_methods/payform_gateways.class.php:385
+msgid "addresse (rest)"
+msgstr "adresse (suite)"
+
+#: frontend_methods/payform_gateways.class.php:401
+msgid "city"
+msgstr "ville"
+
+#: frontend_methods/payform_gateways.class.php:407
+msgid "customer's city"
+msgstr "Ville du client"
+
+#: frontend_methods/payform_gateways.class.php:417
+msgid "zip"
+msgstr "code postal"
+
+#: frontend_methods/payform_gateways.class.php:423
+msgid "customer's zip"
+msgstr "Code postal du client"
+
+#: frontend_methods/payform_gateways.class.php:433
+msgid "country"
+msgstr "Pays"
+
+#: frontend_methods/payform_gateways.class.php:439
+msgid "customer's country"
+msgstr "Pays de l'acheteur"
+
+#: frontend_methods/payform_gateways.class.php:449
+msgid "cell phone"
+msgstr "Numéro de téléphone"
+
+#: frontend_methods/payform_gateways.class.php:455
+msgid "customer's cell phone"
+msgstr "Numéro de téléphone du client"
+
+#: frontend_methods/payform_gateways.class.php:465
+msgid "phone"
+msgstr "Téléphone"
+
+#: frontend_methods/payform_gateways.class.php:471
+msgid "customer's phone"
+msgstr "Téléphone du client"
+
+#: frontend_methods/payform_gateways.class.php:481
+msgid "email"
+msgstr "email"
+
+#: frontend_methods/payform_gateways.class.php:487
+msgid "customer's email"
+msgstr "email du client"
+
+#: frontend_methods/systempay/payform_systempay_methods.class.php:78
+msgid "Warning : the certificate is missing/empty"
+msgstr "Attention : le certificat est manquant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:17
+msgid "Paiement réalisé avec succès"
+msgstr "Paiement réalisé avec succès"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:18
+msgid "Le commerçant doit contacter la banque du porteur"
+msgstr "Le commerçant doit contacter la banque du porteur"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:19
+msgid "Paiement refusé"
+msgstr "Paiement refusé"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:20
+msgid "Annulation client"
+msgstr "Annulation client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:21
+msgid "Erreur de format de la requête"
+msgstr "Erreur de format de la requête"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:22
+msgid "Erreur technique lors du paiement"
+msgstr "Erreur technique lors du paiement"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:26
+msgid "Pas de contrôle effectué"
+msgstr "Pas de contrôle effectué"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:27
+msgid "Tous les contrôles se sont déroulés avec succès"
+msgstr "Tous les contrôles se sont déroulés avec succès"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:28
+msgid "La carte a dépassé l’encours autorisé"
+msgstr "La carte a dépassé l’encours autorisé"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:29
+msgid "La carte appartient à la liste grise du commerçant"
+msgstr "La carte appartient à la liste grise du commerçant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:30
+msgid "Le pays d’émission de la carte appartient à la liste grise du commerçant"
+msgstr "Le pays d’émission de la carte appartient à la liste grise du commerçant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:31
+msgid "L’adresse IP appartient à la liste grise du commerçant"
+msgstr "L’adresse IP appartient à la liste grise du commerçant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:32
+msgid "Le code BIN appartient à la liste grise du commerçant"
+msgstr "Le code BIN appartient à la liste grise du commerçant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:33
+msgid "Détection d'une e-carte bleue"
+msgstr "Détection d'une e-carte bleue"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:34
+msgid "Détection d'une carte commerciale nationale"
+msgstr "Détection d'une carte commerciale nationale"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:35
+msgid "Détection d'une carte commerciale étrangère"
+msgstr "Détection d'une carte commerciale étrangère"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:36
+msgid "La carte est une carte à autorisation systématique"
+msgstr "La carte est une carte à autorisation systématique"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:37
+msgid "Aucun pays ne correspond (pays IP, pays carte, pays client)"
+msgstr "Aucun pays ne correspond (pays IP, pays carte, pays client)"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:38
+msgid "Problème technique rencontré par le serveur lors du traitement d’un des contrôles locaux"
+msgstr "Problème technique rencontré par le serveur lors du traitement d’un des contrôles locaux"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:44
+msgid "merchant_site_id"
+msgstr "ID du site"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:45
+msgid "transaction_id"
+msgstr "ID de transaction"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:46
+msgid "date"
+msgstr "Date"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:47
+msgid "validation_mode"
+msgstr "Mode opératoire"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:48
+msgid "capture_delay"
+msgstr "Le délai de capture"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:49
+msgid "config"
+msgstr "Configuration"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:53
+msgid "ctx_mode"
+msgstr "ctx_mode"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:55
+msgid "order_id"
+msgstr "order_id"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:57
+msgid "cust_email"
+msgstr "email du client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:58
+msgid "cust_id"
+msgstr "ID du site"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:59
+msgid "cust_title"
+msgstr "Titre"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:60
+msgid "cust_name"
+msgstr "Nom"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:61
+msgid "cust_address"
+msgstr "Adresse du client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:62
+msgid "cust_zip"
+msgstr "Code postal du client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:63
+msgid "cust_city"
+msgstr "Ville du client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:64
+msgid "cust_country"
+msgstr "Pays"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:65
+msgid "cust_phone"
+msgstr "Téléphone du client"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:66
+msgid "url_success"
+msgstr "url success"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:67
+msgid "url_refused"
+msgstr "url refused"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:69
+msgid "url_cancel"
+msgstr "url cancel"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:70
+msgid "url_return"
+msgstr "url return"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:71
+msgid "url_error"
+msgstr "url error"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:72
+msgid "identifier"
+msgstr "identifiant"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:73
+msgid "contrib"
+msgstr "contribution"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:74
+msgid "theme_config"
+msgstr "configuration de thème"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:75
+msgid "redirect_success_timeout"
+msgstr "redirect_success_timeout"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:76
+msgid "redirect_success_message"
+msgstr "redirect_success_message"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:77
+msgid "redirect_error_timeout"
+msgstr "redirect_error_timeout"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:78
+msgid "redirect_error_message"
+msgstr "redirect_error_message"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:79
+msgid "return_post_params"
+msgstr "return_post_params"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:80
+msgid "return_get_params"
+msgstr "return_get_params"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:81
+msgid "card_number"
+msgstr "card_number"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:82
+msgid "expiry_month"
+msgstr "expiry_month"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:83
+msgid "expiry_year"
+msgstr "expiry_year"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:84
+msgid "card_cvv"
+msgstr "card_cvv"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:85
+msgid "card_info"
+msgstr "information de carte"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:86
+msgid "card_options"
+msgstr "options de la carte"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:87
+msgid "page_action"
+msgstr "page action"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:88
+msgid "action_mode"
+msgstr "Mode opératoire"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:89
+msgid "return_mode"
+msgstr "Mode de retour"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:90
+msgid "secure_mpi"
+msgstr "secure_mpi"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:91
+msgid "secure_enrolled"
+msgstr "secure_enrolled"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:92
+msgid "secure_cavv"
+msgstr "secure_cavv"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:93
+msgid "secure_eci"
+msgstr "secure_eci"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:94
+msgid "secure_xid"
+msgstr "secure_xid"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:95
+msgid "secure_cavv_alg"
+msgstr "secure_cavv_alg"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:96
+msgid "secure_status"
+msgstr "secure_status"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:97
+msgid "payment_src"
+msgstr "payment_src"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:98
+msgid "user_info"
+msgstr "user_info"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:99
+msgid "contracts"
+msgstr "contrat"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:100
+msgid "empty_params"
+msgstr "empty_params"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:101
+msgid "other"
+msgstr "autre"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:104
+msgid "transaction approuvée ou traitée avec succès"
+msgstr "transaction approuvée ou traitée avec succès"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:105
+msgid "contacter l’émetteur de carte"
+msgstr "contacter l’émetteur de carte"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:106
+msgid "accepteur invalide"
+msgstr "accepteur invalide"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:107
+msgid "conserver la carte"
+msgstr "conserver la carte"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:108
+msgid "ne pas honorer"
+msgstr "ne pas honorer"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:109
+msgid "conserver la carte, conditions spéciales"
+msgstr "conserver la carte, conditions spéciales"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:110
+msgid "approuver après identification"
+msgstr "approuver après identification"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:111
+msgid "transaction invalide"
+msgstr "transaction invalide"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:112
+msgid "montant invalide"
+msgstr "montant invalide"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:113
+msgid "numéro de porteur invalide"
+msgstr "numéro de porteur invalide"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:114
+msgid "erreur de format"
+msgstr "erreur de format"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:115
+msgid "identifiant de l’organisme acquéreur inconnu"
+msgstr "identifiant de l’organisme acquéreur inconnu"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:116
+#: frontend_methods/systempay/payform_systempay_results.class.php:121
+msgid "date de validité de la carte dépassée"
+msgstr "date de validité de la carte dépassée"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:117
+#: frontend_methods/systempay/payform_systempay_results.class.php:125
+msgid "suspicion de fraude"
+msgstr "suspicion de fraude"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:118
+msgid "carte perdue"
+msgstr "carte perdue"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:119
+msgid "carte volée"
+msgstr "carte volée"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:120
+msgid "provision insuffisante ou crédit dépassé"
+msgstr "provision insuffisante ou crédit dépassé"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:122
+msgid "carte absente du fichier"
+msgstr "carte absente du fichier"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:123
+msgid "transaction non permise à ce porteur"
+msgstr "transaction non permise à ce porteur"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:124
+msgid "transaction interdite au terminal"
+msgstr "transaction interdite au terminal"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:126
+msgid "l’accepteur de carte doit contacter l’acquéreur"
+msgstr "l’accepteur de carte doit contacter l’acquéreur"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:127
+msgid "montant de retrait hors limite"
+msgstr "montant de retrait hors limite"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:128
+msgid "règles de sécurité non respectées"
+msgstr "règles de sécurité non respectées"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:129
+msgid "réponse non parvenue ou reçue trop tard"
+msgstr "réponse non parvenue ou reçue trop tard"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:130
+msgid "arrêt momentané du système"
+msgstr "arrêt momentané du système"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:131
+msgid "émetteur de cartes inaccessible"
+msgstr "émetteur de cartes inaccessible"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:132
+msgid "mauvais fonctionnement du système"
+msgstr "mauvais fonctionnement du système"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:133
+msgid "transaction dupliquée"
+msgstr "transaction dupliquée"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:134
+msgid "échéance de la temporisation de surveillance globale"
+msgstr "échéance de la temporisation de surveillance globale"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:135
+msgid "serveur indisponible routage réseau demandé à nouveau"
+msgstr "serveur indisponible routage réseau demandé à nouveau"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:136
+msgid "incident domaine initiateur"
+msgstr "incident domaine initiateur"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:139
+msgid "Le paiement est garanti"
+msgstr "Le paiement est garanti"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:140
+msgid "Le paiement n'est pas garanti"
+msgstr "Le paiement n'est pas garanti"
+
+#: frontend_methods/systempay/payform_systempay_results.class.php:141
+msgid "Suite à une erreur technique, le paiment ne peut pas être garanti"
+msgstr "Suite à une erreur technique, le paiment ne peut pas être garanti"
+
+#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:45
+msgid "Email invalide/vide"
+msgstr "Email invalide/vide"
+
+#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:48
+msgid "Numéro de commande vide"
+msgstr "Numéro de commande vide"
+
+#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:59
+msgid "Votre transaction sur Systempay c'est bien déroulée"
+msgstr "Votre transaction sur Systempay c'est bien déroulée"
+
+#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:63
+msgid "Une erreur c'est produite lors de votre transaction sur systempay"
+msgstr "Une erreur c'est produite lors de votre transaction sur systempay"
+
+#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:87
+msgid "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
+msgstr "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
+
+#: view/payform_edit.php:2
+msgid "Edit Form"
+msgstr "Editer le formulaire"
+
+#: view/payform_edit.php:9
+#: view/payform_newform.php:10
+msgid "Plateforms"
+msgstr "Plateformes"
+
+#: view/payform_edit.php:23
+#: view/payform_inputs_tabs.php:5
+#: view/payform_newform.php:20
+msgid "Mandatorys Configurations"
+msgstr "Configurations obligatoires"
+
+#: view/payform_edit.php:24
+#: view/payform_inputs_tabs.php:26
+#: view/payform_newform.php:21
+msgid "Optionals Configurations"
+msgstr "Configuration optionnelles"
+
+#: view/payform_edit.php:25
+#: view/payform_inputs_tabs.php:45
+#: view/payform_newform.php:22
+msgid "Customer Informations Inputs"
+msgstr "Champs optionnels du formulaire (client/achats/autre)"
+
+#: view/payform_edit.php:26
+#: view/payform_edit.php:30
+#: view/payform_newform.php:23
+#: view/payform_newform.php:27
+msgid "Customizable Inputs"
+msgstr "Champs paramètrables"
+
+#: view/payform_edit.php:36
+#: view/payform_inputs_tabs.php:10
+#: view/payform_inputs_tabs.php:31
+#: view/payform_inputs_tabs.php:50
+#: view/payform_newform.php:33
+#: view/payform_transaction.php:5
+msgid "Label"
+msgstr "Label"
+
+#: view/payform_edit.php:37
+#: view/payform_inputs_tabs.php:11
+#: view/payform_inputs_tabs.php:32
+#: view/payform_inputs_tabs.php:51
+#: view/payform_management.php:11
+#: view/payform_newform.php:34
+#: view/payform_transaction.php:6
+msgid "Name"
+msgstr "Nom"
+
+#: view/payform_edit.php:38
+#: view/payform_inputs_tabs.php:12
+#: view/payform_inputs_tabs.php:33
+#: view/payform_inputs_tabs.php:52
+#: view/payform_newform.php:35
+#: view/payform_transaction.php:7
+msgid "Value"
+msgstr "Valeur"
+
+#: view/payform_edit.php:39
+#: view/payform_inputs_tabs.php:53
+#: view/payform_newform.php:36
+msgid "Order"
+msgstr "Ordre"
+
+#: view/payform_edit.php:40
+#: view/payform_inputs_tabs.php:54
+#: view/payform_newform.php:37
+msgid "Fieldset"
+msgstr "Fieldset"
+
+#: view/payform_edit.php:41
+#: view/payform_inputs_tabs.php:14
+#: view/payform_inputs_tabs.php:35
+#: view/payform_inputs_tabs.php:55
+#: view/payform_newform.php:38
+msgid "Hide"
+msgstr "Caché"
+
+#: view/payform_edit.php:42
+#: view/payform_inputs_tabs.php:56
+#: view/payform_newform.php:39
+msgid "Required"
+msgstr "Requis"
+
+#: view/payform_edit.php:43
+#: view/payform_inputs_tabs.php:57
+#: view/payform_newform.php:40
+msgid "Class"
+msgstr "Class"
+
+#: view/payform_edit.php:44
+#: view/payform_inputs_tabs.php:58
+#: view/payform_newform.php:41
+msgid "Type"
+msgstr "Type"
+
+#: view/payform_edit.php:45
+#: view/payform_inputs_tabs.php:59
+#: view/payform_newform.php:42
+msgid "Options"
+msgstr "Options"
+
+#: view/payform_edit.php:90
+#: view/payform_newform.php:74
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: view/payform_inputs_tabs.php:13
+#: view/payform_inputs_tabs.php:34
+msgid "Function ?"
+msgstr "Fonction ?"
+
+#: view/payform_inputs_tabs.php:15
+#: view/payform_inputs_tabs.php:36
+#: view/payform_inputs_tabs.php:60
+msgid "Description"
+msgstr "Description"
+
+#: view/payform_management.php:5
+msgid "No link"
+msgstr "Pas de lien"
+
+#: view/payform_management.php:12
+msgid "ID"
+msgstr "ID"
+
+#: view/payform_management.php:13
+msgid "css_classe"
+msgstr "css_classe"
+
+#: view/payform_management.php:14
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: view/payform_newform.php:2
+msgid "New Form"
+msgstr "Nouveau formulaire"
+
+#: view/payform_transaction.php:2
+#: view/payform_transaction_details.php:2
+msgid "Transactions"
+msgstr "Transactions"
+
+#: view/payform_transaction.php:10
+#: view/payform_transaction_details.php:32
+msgid "Customer Name"
+msgstr "Nom du client"
+
+#: view/payform_transaction.php:15
+#: view/payform_transaction_details.php:34
+msgid "Customer Address"
+msgstr "Adresse du client"
+
+#: view/payform_transaction.php:20
+#: view/payform_transaction_details.php:36
+msgid "Customer Phone"
+msgstr "Téléphone du client"
+
+#: view/payform_transaction.php:25
+#: view/payform_transaction_details.php:37
+msgid "Customer Cell phone"
+msgstr "Téléphone mobile du client"
+
+#: view/payform_transaction.php:29
+#: view/payform_transaction_details.php:38
+msgid "Customer Email"
+msgstr "Email du client"
+
+#: view/payform_transaction.php:34
+#: view/payform_transaction_details.php:35
+msgid "Customer Country"
+msgstr "Pays du client"
+
+#: view/payform_transaction_details.php:4
+msgid "Detail order"
+msgstr "Détail de la commande"
+
+#: view/payform_transaction_details.php:5
+msgid "Coordinated"
+msgstr "Coordonnées"
+
+#: view/payform_transaction_details.php:6
+msgid "Informations"
+msgstr "Informations"
+
+#: view/payform_transaction_details.php:10
+msgid "Transaction Identification"
+msgstr "Transaction Identification"
+
+#: view/payform_transaction_details.php:11
+msgid "Order Id"
+msgstr "ID de l'ordre"
+
+#: view/payform_transaction_details.php:12
+msgid "Platform"
+msgstr "Plateformes"
+
+#: view/payform_transaction_details.php:13
+msgid "Certificate"
+msgstr "Certificat"
+
+#: view/payform_transaction_details.php:17
+msgid "Transaction Statut"
+msgstr "Statut de la transaction"
+
+#: view/payform_transaction_details.php:18
+msgid "Statut"
+msgstr "Statur"
+
+#: view/payform_transaction_details.php:19
+msgid "Statut details"
+msgstr "Détail du statut"
+
+#: view/payform_transaction_details.php:20
+msgid "Authentification"
+msgstr "Authentification"
+
+#: view/payform_transaction_details.php:21
+msgid "3D Secure"
+msgstr "3D Secure"
+
+#: view/payform_transaction_details.php:24
+msgid "Transaction Information"
+msgstr "Information sur la transaction"
+
+#: view/payform_transaction_details.php:25
+msgid "Date"
+msgstr "Date"
+
+#: view/payform_transaction_details.php:26
+msgid "Amount"
+msgstr "Montant"
+
+#: view/payform_transaction_details.php:27
+msgid "Currency"
+msgstr "Devise"
+
+#: view/payform_transaction_details.php:28
+msgid "Info"
+msgstr "Info"
+
+#: view/payform_transaction_details.php:31
+msgid "Customer Information"
+msgstr "Information du client"
+
+#: view/payform_transaction_details.php:33
+msgid "Customer Card Number"
+msgstr "Numéro de carte du client"
+
+#: view/payform_transaction_details.php:41
+msgid "Additional Information"
+msgstr "Informations personnelles"
+
+#: view/payform_transaction_details.php:43
+msgid "Empty"
+msgstr "Vide"
+
+#: view/payform_transactions.php:5
+msgid "Command id"
+msgstr "Id de la commande"
+
+#: view/payform_transactions.php:6
+msgid "Plateforme"
+msgstr "Plateforme"
+
+#: view/payform_transactions.php:37
+msgid "Details"
+msgstr "Détails"
+
+#: view/payform_transactions_menu.php:3
+msgid "Transactions menu"
+msgstr "Transactions"
+
+#: 
+msgid "The amount of your transaction is:"
+msgstr "Le montant de votre don sera : "
+
+#: 
+msgid "Please find bellow the information about your payment:"
+msgstr "Veuillez trouver ci-dessous les informations vous concernant : "
+
