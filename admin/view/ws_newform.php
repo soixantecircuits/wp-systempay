@@ -53,10 +53,10 @@
 										<td class="short"><input type="text" name="inputs[499][value]" value=""/></td>	
 										<td class="short"><input type="text" name="inputs[499][order]" value="0"/></td>
 										<td class="short"><input type="text" name="inputs[499][fieldset]" value="1"/></td>
-										<td><input type="checkbox" name="inputs[499][hide]" value="1"/></td>
-										<td><input type="checkbox" name="inputs[499][required]" value="1"/></td>
+										<td class="short"><input type="checkbox" name="inputs[499][hide]" value="1"/></td>
+										<td class="short"><input type="checkbox" name="inputs[499][required]" value="1"/></td>
 										<td class="short"><input type="text" name="inputs[499][class]" value=""/></td>
-										<td>
+										<td class="short">
 										<SELECT name="inputs[499][type]" size="1">
 											<?php foreach ($this->select_types as $value) {
 												echo "<OPTION>".$value."</OPTION>";

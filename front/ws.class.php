@@ -41,12 +41,12 @@ class WS
 
 	private function setAttributes() {
 		global $wpdb;
-		$this->form_table_name=$wpdb->prefix . "ws_forms";
-	    $this->inputs_table_name=$wpdb->prefix . "ws_inputs";
-	    $this->configurations_table_name=$wpdb->prefix . "ws_configurations";
-	    $this->generalconfig_table_name=$wpdb->prefix . "ws_generalconfig";
-	    $this->transactions_table_name=$wpdb->prefix."ws_transactions";
-	    $this->WSconfig_table_name=$wpdb->prefix."ws_wsconfig";
+		$this->form_table_name=$wpdb->prefix . "payform_forms";
+	    $this->inputs_table_name=$wpdb->prefix . "payform_inputs";
+	    $this->configurations_table_name=$wpdb->prefix . "payform_configurations";
+	    $this->generalconfig_table_name=$wpdb->prefix . "payform_generalconfig";
+	    $this->transactions_table_name=$wpdb->prefix."payform_transactions";
+	    $this->WSconfig_table_name=$wpdb->prefix."payform_wsconfig";
 	   	$this->mainPage_slug="ws_systempay";
 	   	$this->mainPage_title="Wordpress Sytempay";
 	    $this->confirmationpage_slug="confirmation_page";

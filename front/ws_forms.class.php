@@ -135,7 +135,11 @@
 				case "countrieslist": ?>
 				<select name="<?php echo $input["name"];?>" class="<?php echo $input["class"] ; ?>">
 				<?php foreach ($this->countryList as $key => $value) : ?>
-					<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+					<?php if ($input["value"] == $value){?>
+									<option value="<?php echo $key; ?>" selected="selected"><?php echo $value; ?></option>
+					<?php }else{?>
+									<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+					<?php } ?>
 				<?php endforeach; ?>
 				</select>
 			<?php break;

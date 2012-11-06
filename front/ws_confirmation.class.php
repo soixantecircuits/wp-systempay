@@ -160,7 +160,7 @@
 	}	
 
 	private function getCancelLink() {
-		return "<a class='confirmation_button a-btn' id='confirm_cancel' href='".$_GET[$this->get_GET_key_confirmation_previouspage()]."'>".__('Quitter','WS')."</a>";
+		return "<a class='confirmation_button a-btn' id='confirm_cancel' href='".$_GET[$this->get_GET_key_confirmation_previouspage()]."'>".__('Cancel','ws')."</a>";
 	}
 
 //get the html code of the Confirmation Form
@@ -177,7 +177,7 @@
 
 
 			//we get the additionals inputs informations
-			$additionalsinputs_data=$confirmation_data["inputs_data"];
+			$additionalsinputs_data = $confirmation_data["inputs_data"];
 			$plateforme = $form_data["form_plateforme"];
 			$amount_input_name=$this->saved_inputs[$plateforme]["amount_input_name"];
 			$amount=$this->getAmount($configurations_data,$additionalsinputs_data,$posts,$amount_input_name);
@@ -193,14 +193,19 @@
 			$confirmation_html= "<form method='POST' class='WS_confirmation' id='".$this->get_confirmation_form_id()."' action='".$return_url."'>";
 			$confirmation_html.="<table>";
 			$confirmation_html.="<input type='hidden' name='".$amount_input_name."' value='".$correct_amount."'/>";
-			$confirmation_html.=__("Le montant total de votre transaction est: ","ws").$amount." ".$this->getCurrency($form_id)->alpha3; //to replace by currency
+			$confirmation_html.=__("The amount of your transaction is:","ws")." ".$amount." ".$this->getCurrency($form_id)->alpha3."<br/><br/>"; //to replace by currency
+			$confirmation_html.=__("Please find bellow the information about your payment:","ws")."<br/><br/>"; 
 			foreach ($additionalsinputs_data as $groupe) {
 				foreach ($groupe as $additionalinput){
 						(bool)($additionalinput["hide"]);
 						$value = (empty($additionalinput['value']))?" ":$additionalinput['value'];
 						$confirmation_html.="<tr style='display:none;'><td><input type='hidden' name='".$additionalinput['name']."' value='".$value."'/></tr></td>";
 						if (!$additionalinput["hide"]){
-							$confirmation_html.="<tr><td class='confirmation_label'>".$additionalinput['label']." :</td><td class='confirmation_value'>".$additionalinput['value']." </td></tr>";
+							if($additionalinput['value'] == '')
+								$display = "none";
+							else
+								$display = "table-row";
+							$confirmation_html.="<tr style='display:".$display.";'><td widht='30%' class='confirmation_label'>".$additionalinput['label']." : </td><td width='70%' class='confirmation_value'>".$additionalinput['value']." </td></tr>";
 						}
 				}
 			}
@@ -324,7 +329,7 @@
 		if ($insert) {?>
 			<div class='loading'>
 				<img src='<?php echo WP_PLUGIN_URL;?>/wp-systempay/images/ajax-loader.gif'>
-				<br/><p><?php _e("Merci de patientier, vous serez rediriger d'ici quelques instants.","ws"); ?></p>
+				<br/><p><?php _e("Please wait, you'll be redirected in a few moments.","ws"); ?></p>
 			</div>
 	<?php	//we create the hidden form
 			$return_url = $this->saved_inputs[$plateforme]["return_url"];

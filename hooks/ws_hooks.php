@@ -1,11 +1,11 @@
 <?php 
 //actions 
 add_action('init', 'WSStart');
-add_action('plugins_loaded', 'myplugin_language_call');
+add_action('plugins_loaded', 'ws_language_call');
 
 
 if (is_admin() && !is_front_page()) {
-	wp_enqueue_style( 'WS_css', WP_PLUGIN_URL .'/wp-systempay/css/admin/WS_admin.css' );
+	wp_enqueue_style( 'WS_css', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css' );
 }
 
 //script and style
@@ -25,14 +25,11 @@ function WS_load_datatables(){
 	}
 }
 
-
-
-
 //shortcodes
 
 add_shortcode("wp-systempay-confirmation", "add_WS_confirmation");
-add_shortcode("wp-systempay", "add_WS_shortcode");
-add_shortcode("ws-result", "add_ws_result");
-add_shortcode("ws-server-result", "add_ws_server_result");
+add_shortcode("payform", "add_WS_shortcode");
+add_shortcode("wp-systempay-result", "add_ws_result");
+add_shortcode("wp-systempay-server-result", "add_ws_server_result");
 
 ?>

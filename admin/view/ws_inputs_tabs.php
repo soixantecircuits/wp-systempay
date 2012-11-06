@@ -15,7 +15,7 @@
 							<th class="large"><?php _e("Description","ws"); ?></th>						
 						</tr>
 					</thead>
-					<tbody id="ws_formals_inputs_table">
+					<tbody id="ws_formals_inputs_table" class="loading">
 						<!--Div where we put the formals inputs for the selected plateforme with wsAjax.php-->
 					</tbody>
 				</table>	

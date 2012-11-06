@@ -1,4 +1,5 @@
-<?php class WSManager extends WSTools
+<?php
+class WSManager extends WSTools
 {
 
 		public function __construct(){
@@ -122,6 +123,14 @@
 	    		$where_format = array(
 	    			"%d"
 	    		);
+
+	    		$inputs=stripslashes_deep($inputs);
+	    		
+	    		foreach ($inputs as $input) 
+	    		{
+			   		error_log('$input["label"] : '.$input["label"]);
+					}
+
 
 	    		$form_data = array(
 					"form_name" => $form["name"]

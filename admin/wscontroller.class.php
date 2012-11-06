@@ -17,8 +17,9 @@ class WSController
 	private $_confirmation_form_id;
 	private $_select_types;
 	private $confirmation_shortcode;
-    private $result_shortcode;
-   	private $WS_shortcode;
+  private $result_shortcode;
+  private $WS_shortcode;
+  private $rowIndexCustomInput;
 
 	public function __construct()
 	{
@@ -40,12 +41,13 @@ class WSController
 		$this->transactionDetailsPageName = "WS_transaction";
 		$this->configPageName="WS_config";
 		$this->confirmation_shortcode="WS_confirmation";
-	    $this->result_shortcode="WS_result";
-	    $this->WS_shortcode = "WS";
-	    $this->select_types =array("text","select","radio","checkbox","textarea","countrieslist","email","numeric","amountentry");
+    $this->result_shortcode="WS_result";
+    $this->WS_shortcode = "WS";
+    $this->select_types =array("text","select","radio","checkbox","textarea","countrieslist","email","numeric","amountentry");
 		$this->WS = new WSTools();
 		$this->WSTools= new WSTools();
 		$this->method_saveTransaction = $this->WS->get_method_saveTransaction();
+		$this->rowIndexCustomInput = 500;
 		if (is_admin()){
 			$this->Manager = new WSManager();
 		}	
@@ -88,6 +90,92 @@ class WSController
 	private function userControllPages() 
 	{
 
+	}
+
+	public function printTable($group){?>
+		<?php //title ?>
+		<pre><?php //print_r($group);?></pre>
+		<?php /*TODO : Need to change the model / create one */
+		
+		$input = $group[0];
+
+		// input_fieldset > -1 = mandatory input
+		if($input->input_fieldset > -1) :
+		?>	
+		<div class="group">
+		<input class="" type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][label]" value="<?php echo $input->input_label; ?>"/>
+		<input class="hidden" type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][name]"  value="<?php echo $input->input_name; ?>"/>			
+		<input class="hidden" type="text" name="inputs[<?php echo  $this->rowIndexCustomInput; ?>][value]" value="<?php echo $input->input_value; ?>"/>
+		<input class="hidden" type="text" class="order" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][order]" value="0"/>
+		<input class="hidden" type="text" class="fieldset" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/>
+		<input class="hidden" type="checkbox" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][hide]" value="1" <?php echo $checked; ?>/>
+		<input class="hidden" type="checkbox" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][required]" value="1" <?php echo $checked; ?>/>
+		<input class="hidden" type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/>
+		<SELECT class="hidden" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][type]" size="1">
+				<?php foreach ($this->select_types as $value) {
+					$selected=($input->input_type==$value)?"selected":"" ;
+					echo "<OPTION ".$selected.">".$value."</OPTION>";
+				}?>
+		</SELECT>
+		<input class="hidden" type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][options]" value="<?php echo $input->input_options; ?>"/>
+		<?php $this->rowIndexCustomInput++; ?>
+		<?php //end title?>
+
+		<table class="wp-list-table widefat fixed pages">
+		<thead>
+			<tr>
+				<th class="delete"> </th>
+				<th class="large"><?php _e("Label","ws"); ?></th>
+				<th class="large"><?php _e("Name","ws")?></th>
+				<th class="short"><?php _e("Value","ws")?></th>
+				<th class="short"><?php _e("Order","ws")?></th>
+				<th class="short"><?php _e("Fieldset","ws")?></th>
+				<th class="short check"><?php _e("Hide","ws")?></th>
+				<th class="short check"><?php _e("Required","ws")?></th>
+				<th class="short"><?php _e("Class","ws")?></th>
+				<th class="large"><?php _e("Type","ws")?></th>
+				<th class="large"><?php _e("Options","ws")?></th>
+			</tr>
+		</thead>
+		<tbody id="ws_customizable_inputs_table-<?php echo $group->input_fieldset;?>">
+				<?php foreach ($group as $input) :
+						(int)($input->input_fieldset);
+						if ($input->input_order > 0): ?>
+						<tr id="row_<?php echo $this->rowIndexCustomInput; ?>" class="<?php echo ($this->rowIndexCustomInput%2==0) ? 'even' : 'odd';?>">										
+							<td class="delete_row short"><input type="button" class="button" value="-"/></td>
+							<td class="post-title page-title column-title"><strong><input type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][label]"  value="<?php echo $input->input_label; ?>"/></strong></td>
+							<td class="large"><input type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][name]"  value="<?php echo $input->input_name; ?>"/></td>			
+							<td class="short"><input type="text" name="inputs[<?php echo  $this->rowIndexCustomInput; ?>][value]" value="<?php echo $input->input_value; ?>"/></td>	
+							<td class="short"><input type="text" class="order" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][order]" value="<?php echo $input->input_order; ?>"/></td>
+							<td class="short"><input type="text" class="fieldset" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/></td>
+							<?php $hidden=(bool)($input->input_hide); ?>
+							<?php $checked=($hidden)?"checked":""; ?>
+							<td class="short check"><input type="checkbox" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][hide]" value="1" <?php echo $checked; ?>/></td>
+							<?php $required=(bool)($input->input_required); ?>
+							<?php $checked=($required)?"checked":""; ?>
+							<td class="short check"><input type="checkbox" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][required]" value="1" <?php echo $checked; ?>/></td>
+							<td class="short"><input type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/></td>
+							<td class="large">
+								<SELECT name="inputs[<?php echo $this->rowIndexCustomInput; ?>][type]" size="1">
+									<?php foreach ($this->select_types as $value) {
+										$selected=($input->input_type==$value)?"selected":"" ;
+										echo "<OPTION ".$selected.">".$value."</OPTION>";
+									}?>
+								</SELECT>
+							</td>
+							<td class="large"><input type="text" name="inputs[<?php echo $this->rowIndexCustomInput; ?>][options]" value="<?php echo $input->input_options; ?>"/></td>
+						</tr>
+						<?php $this->rowIndexCustomInput++; ?>
+				<?php endif; ?> 
+			  <?php endforeach; ?>
+			</tr>
+		</tbody>
+	</table>
+	<input type="button" class="addRow" class="button" value="+">
+	<input type="button" class="removeTable" class="button" value="<?php _e("- Remove the whole table !","ws");?>">
+	</div>
+	<?php
+	endif;
 	}
 
 	private function mainControll() 

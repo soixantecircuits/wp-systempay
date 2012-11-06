@@ -13,7 +13,7 @@ ul.subsubsub li.ui-tabs-selected a{
 
 .ws_warp #btn_newform{
 	display:block;
-	width: 10%
+	width: 10%;
 }
 
 .ws_warp .delete_row input{
@@ -21,29 +21,71 @@ ul.subsubsub li.ui-tabs-selected a{
 	width: 10px;
 }
 
+.ws_warp input.addRow {
+	display: block;
+	padding: 4px 8px;
+	float: right;
+}
+
+td.short.check{
+	text-align: center;
+}
+
+td.short input[type="checkbox"], td.short input[type="radio"]{
+	width: 16px !important;
+	text-align: center;
+}
+
+.short.check {
+	width: 21px !important;
+}
+
+input.hidden, select.hidden{
+	display: none;
+}
+
+#tabs tbody.loading{
+	background-image: url("../../images/ajax-loader.gif");
+	padding: 10px 0px;
+	display: block !important;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	width: 100%;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: 49%;
+}
+
+.ws_warp div.group {
+	margin: 0px 0px 40px 0px;
+}
+
+
+
   .ws_warp #addRow {
  	float:right;
  }
 
  .ws_warp #submit {
  	display:block;
- 	width:10%;
- 	height:30px;
  	margin:auto;
  	margin-top: 2%;
+ 	width:10%;
+ 	height:30px;
  }
 
  .ws_warp .cb {
    	clear:both;
-   	padding:0;
    	margin:0;
+   	padding:0;
    	width:0px;
    	height:0px;
  }
 
 .ws_warp .radio_admin li {
-	padding-left: 1%;
 	float:left;
+	padding-left: 1%;
 }
 
 
@@ -59,8 +101,13 @@ ul.subsubsub li.ui-tabs-selected a{
 
 
 #ws_customizable_inputs .short {
-	width:5%;
+	width:4%;
 }
+
+#ws_customizable_inputs .delete {
+	width:7px;
+}
+
 
 #ws_customizable_inputs .large {
 	width:8%;
@@ -110,18 +157,18 @@ ul.subsubsub li.ui-tabs-selected a{
 }
 
 .ws_warp .dataTables_info,.ws_warp .dataTables_paginate{
-	padding-top: 10px;
 	float:right;
 	clear:both;
+	padding-top: 10px;
 }
 
 .ws_warp .paginate_button {
-	border-color: #E3E3E3;
-	color:#21759B;
-	background:#EEE url('../../images/menu-bits.gif?ver=20100610') repeat-x scroll left -379px;
-	padding:3px 6px;
-	font-size: 12px;
 	margin-left: 2px;
+	padding:3px 6px;
+	border-color: #E3E3E3;
+	background:#EEE url('../../images/menu-bits.gif?ver=20100610') repeat-x scroll left -379px;
+	color:#21759B;
+	font-size: 12px;
 }
 
 .ws_warp .paginate_button_disabled{
@@ -129,3 +176,33 @@ ul.subsubsub li.ui-tabs-selected a{
 }
 
 
+td.large input, td.short input{
+	width: 100%;
+}
+
+td.large select, td.short select{
+	width: 100%;
+}
+
+#transactions_table th{
+	cursor: pointer;
+	font-size: 12px;
+}
+
+#transactions_table .amount{
+	width: 65px !important;
+}
+
+#transactions_table .action{
+	width: 75px !important;
+	text-align: center;
+}
+
+#transactions_table .country{
+	width: 50px !important;
+	text-align: center;
+}
+
+#transactions_table tr.even{
+	background-color: #EEF0F1;
+}

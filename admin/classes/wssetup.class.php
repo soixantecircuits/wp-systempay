@@ -2,7 +2,7 @@
 
     public function install() {
       $this->createDB();
-      $content=__("If you want that Payfom works, please don't change the subpages");
+      $content=__("If you want that Payfom works, please don't change the subpages", "ws");
       $this->createPage($this->mainPage_slug,$this->mainPage_title,$content);
       $content="[wp-systempay-confirmation]";
       $this->createPage($this->confirmationpage_slug,$this->confirmationpage_title,$content);

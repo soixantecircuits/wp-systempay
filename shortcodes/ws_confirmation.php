@@ -1,6 +1,6 @@
 <?php
 function add_WS_confirmation($atts, $content) {
-	wp_enqueue_style( 'WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/WS_confirmation.css');
+	wp_enqueue_style( 'WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
 	$WS = new WSTools();
 	$WSConfirmation= new WSConfirmation;
 	$form_id = $_GET[$WS->get_GET_key_confirmation_formid()];

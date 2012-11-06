@@ -55,13 +55,14 @@ input#confirm_confirm.a-btn.confirmation_button{
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
+	padding-top: 0px;
 }
 
 #confirm_cancel{
+	padding-top: 4px;
 	text-decoration: none;
 	clear: none;
 	color: white;
-	padding: 0px;
 	margin: 22px 0px 0px 86px;
 	display: block;
 	float: left;
