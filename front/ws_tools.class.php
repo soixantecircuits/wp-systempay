@@ -1,4 +1,6 @@
-<?php class WSTools extends WS {
+<?php
+
+ class WSTools extends WS {
 
 	public function __construct() {
 		parent::__construct();

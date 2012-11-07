@@ -1,4 +1,5 @@
-<?php class WSDeactive extends WSTools{
+<?php 
+class WSDeactive extends WSTools{
 
    	public function deactive() {
    	  $this->deletePage($this->confirmationpage_slug,$this->confirmationpage_title);
@@ -16,4 +17,5 @@
 		    wp_delete_post($the_page_id); // this will trash, not delete
 		}
 	}
-}?>
+}
+?>

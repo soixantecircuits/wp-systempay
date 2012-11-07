@@ -1,4 +1,6 @@
-<?php class WSForms extends WSTools  {
+<?php 
+
+class WSForms extends WSTools  {
 	
 	public function getFormByName($name,$template){ 
 		$form_id = $this->getFormIdByName($name);

@@ -1,5 +1,6 @@
-<?php class WSConfirmation extends WSTools{
+<?php 
 
+class WSConfirmation extends WSTools{
 	public function __construct() {
 		parent::__construct();
 	}
@@ -465,4 +466,4 @@
 
 	}
 }
-
+?>

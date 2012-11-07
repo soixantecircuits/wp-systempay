@@ -317,6 +317,4 @@ class WSManager extends WSTools
 	    	}
 			
 }
-
-
 ?>

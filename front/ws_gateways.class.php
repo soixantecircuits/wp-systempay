@@ -1,4 +1,5 @@
 <?php
+
 class WSGateways{
 	private $_gateways;
 	private $_Payfrom;

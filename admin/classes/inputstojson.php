@@ -75,6 +75,4 @@ function mergeConfigurations($configs_to_update,$form_from_sql){
 	}
 	return false;
 }
-
-
-
+?>
