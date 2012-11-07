@@ -1,4 +1,9 @@
-<?php class WSSetup extends WSTools{
+<?php
+  /* Adding db version */
+  global $wp_sytempay_db_version;
+  $wp_sytempay_db_version = "1.0";
+
+class WSSetup extends WSTools{
 
     public function install() {
       $this->createDB();
@@ -16,20 +21,23 @@
     private function createDB() 
     {
       global $wpdb;
+      global $installed_ver;
+
+      
     //we create the first table;
        $WS_table_name = $this->form_table_name;
-       $firstSql = "CREATE TABLE $WS_table_name (
+       $form_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           form_id int(255) NOT NULL AUTO_INCREMENT,
           form_name VARCHAR(55) DEFAULT '' NOT NULL,
           form_css_class VARCHAR(55) DEFAULT '' NOT NULL,
           form_plateforme VARCHAR(55) DEFAULT '' NOT NULL,
-          UNIQUE KEY the_form_id (form_id)
-          INDEX the_form_name (form_name));
+          UNIQUE KEY the_form_id (form_id),
+          INDEX the_form_name (form_name)
         );";
 
     //we create the second table;
        $WS_table_name = $this->inputs_table_name;
-       $secondSql = "CREATE TABLE $WS_table_name (
+       $inputs_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
         input_id int(255) NOT NULL AUTO_INCREMENT,
         input_form_id int(255),
         input_label Text,
@@ -42,13 +50,13 @@
         input_options Text,
 		    input_required BOOLEAN,
 		    input_class VARCHAR(255) DEFAULT '',
-        UNIQUE KEY id (input_id)
-        INDEX the_form_id (input_form_id));
+        PRIMARY KEY id (input_id),
+        KEY the_form_id (input_form_id)
         );";
 		
     //we create the third table;
        $WS_table_name = $this->configurations_table_name;
-       $thirdSql = "CREATE TABLE $WS_table_name (
+       $configurations_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
         configuration_id int(255) NOT NULL AUTO_INCREMENT,
         configuration_form_id int(255),
         configuration_label VARCHAR(255) DEFAULT '',
@@ -58,12 +66,12 @@
         configuration_hide BOOLEAN,
 		    configuration_required BOOLEAN,
 		    configuration_class VARCHAR(255) DEFAULT '',
-        UNIQUE KEY id (configuration_id)
-        INDEX the_form_id (configuration_form_id));
+        PRIMARY KEY id (configuration_id),
+        KEY the_form_id (configuration_form_id)
         );";
       
       $WS_table_name = $this->transactions_table_name;
-       $fourthSql = "CREATE TABLE $WS_table_name (
+       $transactions_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
         transaction_id int(255) NOT NULL AUTO_INCREMENT,
         transaction_order_id VARCHAR(255),
         transaction_form_id int(255),
@@ -87,36 +95,47 @@
         transaction_customer_cellphone VARCHAR(255),
         transaction_customer_email VARCHAR(255),
         transaction_customer_country VARCHAR(255),
-        UNIQUE KEY id (transaction_id)
-        INDEX the_form_id (transaction_form_id));
-        INDEX the_form_name (transaction_form_name));
+        PRIMARY KEY id (transaction_id),
+        KEY the_form_id (transaction_form_id)),
+        KEY the_form_name (transaction_form_name)
         );";
       
 
       $WS_table_name = $this->generalconfig_table_name;
-       $fifthSql = "CREATE TABLE $WS_table_name (
+       $generalconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
         generalconfig_id int(255) NOT NULL AUTO_INCREMENT,
         generalconfig_json Text,
-        UNIQUE KEY id (generalconfig_id)
-        
+        PRIMARY KEY id (generalconfig_id)
         );";
 
-        $WS_table_name = $this->WSconfig_table_name;
-       $sixthSql = "CREATE TABLE $WS_table_name (
+      $WS_table_name = $this->WSconfig_table_name;
+       $WSconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
         WSconfig_id int(255) NOT NULL AUTO_INCREMENT,
         WSconfig_form_id int(255),
         WSconfig_json Text,
-        UNIQUE KEY id (WSconfig_id)
-        INDEX the_form_id (WSconfig_form_id));
+        PRIMARY KEY id (WSconfig_id),
+        KEY the_form_id (WSconfig_form_id)
         );";
 
-       require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-       dbDelta($firstSql);
-       dbDelta($secondSql);
-       dbDelta($thirdSql);
-       dbDelta($fourthSql);
-       dbDelta($fifthSql);
-       dbDelta($sixthSql);
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+       
+        //create process
+        dbDelta($form_table_name);
+        dbDelta($inputs_table_name);
+        dbDelta($configurations_table_name);
+        dbDelta($transactions_table_name);
+        dbDelta($generalconfig_table_name);
+        dbDelta($WSconfig_table_name);
+
+        add_option("wp_sytempay_db_version", $wp_sytempay_db_version);
+
+        global $wpdb;
+        $installed_ver = get_option( "wp_sytempay_db_version" );
+
+        if( $installed_ver != $wp_sytempay_db_version ) {
+          update_option( "wp_sytempay_db_version", $wp_sytempay_db_version );
+        }
+
     }
 
 

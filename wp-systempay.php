@@ -11,7 +11,7 @@ License: GPL
 
 /*---------------------------------------------------------------
 -----------------------------SWIFT_MAILER--------------------------*/
-	require_once(dirname(__FILE__)."/inc/swift_mailer/lib/swift_required.php");
+	  require_once(dirname(__FILE__)."/inc/swift_mailer/lib/swift_required.php");
 /*---------------------------------------------------------------
 -----------------------------CLASSES--------------------------*/
 	//SYSTEMPAY CLASSES
@@ -60,14 +60,23 @@ License: GPL
 //ACTIVATION HOOK
 	register_activation_hook(__FILE__, "WS_install");
 	register_deactivation_hook(__FILE__, 'WS_deactive' );
-//FUNCTIONS USED WHEN INIT
+	//FUNCTIONS USED WHEN INIT
 	function WSStart(){
 		$WSController = new WSController();
 	}
 	function ws_language_call() {
 	  load_plugin_textdomain('ws', false, dirname(plugin_basename(__FILE__) ) . '/languages' );
 	}
-//IMPORT HOOKS
+
+	function ws_update_db_check() {
+    global $wp_sytempay_db_version;
+    if (get_site_option('wp_sytempay_db_version') != $wp_sytempay_db_version) {
+        WS_install();
+    }
+	}
+	add_action('plugins_loaded', 'myplugin_update_db_check');
+
+	//IMPORT HOOKS
 	require_once(dirname(__FILE__) . '/hooks/ws_hooks.php' );
 
 
