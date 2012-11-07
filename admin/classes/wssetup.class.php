@@ -16,6 +16,7 @@
     private function createDB() 
     {
       global $wpdb;
+        error_log("creating DB....");
     //we create the first table;
        $WS_table_name = $this->form_table_name;
        $firstSql = "CREATE TABLE $WS_table_name (
@@ -23,8 +24,8 @@
           form_name VARCHAR(55) DEFAULT '' NOT NULL,
           form_css_class VARCHAR(55) DEFAULT '' NOT NULL,
           form_plateforme VARCHAR(55) DEFAULT '' NOT NULL,
-          UNIQUE KEY the_form_id (form_id)
-          INDEX the_form_name (form_name));
+          PRIMARY KEY the_form_id (form_id)
+          KEY the_form_name (form_name));
         );";
 
     //we create the second table;
@@ -42,8 +43,8 @@
         input_options Text,
 		    input_required BOOLEAN,
 		    input_class VARCHAR(255) DEFAULT '',
-        UNIQUE KEY id (input_id)
-        INDEX the_form_id (input_form_id));
+        PRIMARY KEY id (input_id)
+        KEY the_form_id (input_form_id));
         );";
 		
     //we create the third table;
@@ -58,8 +59,8 @@
         configuration_hide BOOLEAN,
 		    configuration_required BOOLEAN,
 		    configuration_class VARCHAR(255) DEFAULT '',
-        UNIQUE KEY id (configuration_id)
-        INDEX the_form_id (configuration_form_id));
+        PRIMARY KEY id (configuration_id)
+        KEY the_form_id (configuration_form_id));
         );";
       
       $WS_table_name = $this->transactions_table_name;
@@ -87,8 +88,8 @@
         transaction_customer_cellphone VARCHAR(255),
         transaction_customer_email VARCHAR(255),
         transaction_customer_country VARCHAR(255),
-        UNIQUE KEY id (transaction_id)
-        INDEX the_form_id (transaction_form_id));
+        PRIMARY KEY id (transaction_id)
+        INDEX the_form_id (transaction_form_id)
         INDEX the_form_name (transaction_form_name));
         );";
       
@@ -97,8 +98,7 @@
        $fifthSql = "CREATE TABLE $WS_table_name (
         generalconfig_id int(255) NOT NULL AUTO_INCREMENT,
         generalconfig_json Text,
-        UNIQUE KEY id (generalconfig_id)
-        
+        PRIMARY KEY id (generalconfig_id)
         );";
 
         $WS_table_name = $this->WSconfig_table_name;
@@ -106,7 +106,7 @@
         WSconfig_id int(255) NOT NULL AUTO_INCREMENT,
         WSconfig_form_id int(255),
         WSconfig_json Text,
-        UNIQUE KEY id (WSconfig_id)
+        PRIMARY KEY id (WSconfig_id)
         INDEX the_form_id (WSconfig_form_id));
         );";
 
@@ -117,6 +117,7 @@
        dbDelta($fourthSql);
        dbDelta($fifthSql);
        dbDelta($sixthSql);
+       error_log("All DB created....");
     }
 
 

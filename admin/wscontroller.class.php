@@ -1,4 +1,7 @@
 <?php
+/**
+ ** Class WSController
+*/
 class WSController 
 {
 	private $_mainPageName;

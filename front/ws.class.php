@@ -8,31 +8,30 @@ class WS
 	protected $resultPage_slug;
 	protected $resultPage_title;
 	protected $confirmationpage_title;
-    protected $confirmationpage_slug;
+  protected $confirmationpage_slug;
 	protected $resultServerPage_slug;
 	protected $resultServerPage_title;
-    protected $options_prefixe;
-    protected $GET_key_confirmation_formid;
-    protected $GET_key_confirmation_previouspage;
-    protected $method_saveTransaction;
-    protected $confirmation_form_id;
-    protected $inline_js;
-    protected $Gateways;
-    protected $saved_inputs;
-    protected $countryList;
+  protected $options_prefixe;
+  protected $GET_key_confirmation_formid;
+  protected $GET_key_confirmation_previouspage;
+  protected $method_saveTransaction;
+  protected $confirmation_form_id;
+  protected $inline_js;
+  protected $Gateways;
+  protected $saved_inputs;
+  protected $countryList;
 	protected $arrayRules;
 	protected $Systempay;
 	protected $SystempayResults;
 	protected $systempay_results;
-	public function __construct() 
-	{
+
+	public function __construct() {
 		$this->setAttributes();
-	    $this->Systempay = new WSSystempay($this->options_prefixe);
-	    $this->set_saved_inputs();
+	  $this->Systempay = new WSSystempay($this->options_prefixe);
+	  $this->set_saved_inputs();
 		$this->set_countriesList();
 		$this->arrayRules = array();
-	    add_action( 'wp_footer', array(&$this, 'output_inline_js'), 25 );
-
+	  add_action( 'wp_footer', array(&$this, 'output_inline_js'), 25 );
 	}
 
 	public function add_admin_js(){
