@@ -8,6 +8,8 @@
 class WS 
 {
     protected $form_table_name;
+    protected $mainPage_title;
+    protected $mainPage_slug;
     protected $inputs_table_name;
     protected $configurations_table_name;
     protected $transactions_table_name;
@@ -29,18 +31,18 @@ class WS
     protected $Gateways;
     protected $saved_inputs;
     protected $countryList;
-    protected $arrayRules;
     protected $Systempay;
     protected $SystempayResults;
     protected $systempay_results;
 
     public function __construct()
     {
+        error_log("WS constructor called");
         $this->setAttributes();
         $this->Systempay = new WSSystempay($this->options_prefixe);
+        error_log("ws : going there");
         $this->set_saved_inputs();
         $this->set_countriesList();
-        $this->arrayRules = array();
         add_action('wp_footer', array(&$this, 'output_inline_js'), 25);
     }
 

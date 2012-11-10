@@ -14,6 +14,8 @@ $wp_sytempay_db_version = "1.0";
 
 class WSSetup extends WSTools
 {
+
+    protected $systempay;
     /**
      * Install the plugin
      * 

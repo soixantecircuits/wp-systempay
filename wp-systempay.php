@@ -67,7 +67,8 @@ function WS_deactive()
  */
 function WS_install()
 {
-    $WSSetup = new WSSetup();
+    $systempay = new WS();
+    $WSSetup = new WSSetup($systempay);
     $WSSetup->install();
 }
 
