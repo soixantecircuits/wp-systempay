@@ -3,33 +3,31 @@
 		<div class="cb"></div>
 
 		<div class="result_server_link">
-			<p><?php _e("Link for server-side feedbacks:", "WS"); ?>
-				<?php $link = $this->WS->get_resultServerPage_url(); 
-				if (isset($link)) { ?> <a href="<?php echo $link; ?>"><?php echo $link; ?></a> <?php } 
-				else { _e("No link","WS"); }?>
+			<span class="label label-info"><?php _e("Info", "ws");?></span><p><?php _e("Link for server-side feedbacks:", "ws"); ?>
+				<?php echo $this->WS->get_resultServerPage_url();?>
 			</p>
 		</div>
-		<table class="wp-list-table widefat fixed pages">
+		<table class="table table-striped wp-list-table widefat fixed pages">
 			<thead>
 				<tr>
-					<th><p><?php _e("Name","ws");?></p></th>
-					<th><?php _e("ID","ws");?></th>
-					<th><?php _e("css_classe","ws");?></th>
-					<th><?php _e("Shortcode","ws");?></th>
+					<th><?php _e("Name", "ws");?></th>
+					<th><?php _e("ID", "ws");?></th>
+					<th><?php _e("CSS class", "ws");?></th>
+					<th><?php _e("Shortcode", "ws");?></th>
 					<th></th>
 				</tr>
 			</thead>
 			<?php foreach ($this->Manager->getFormsList() as $form) : $count++;?>
 			<tbody>
 				<tr class="<?php echo ($count%2==0) ? 'even' : 'odd';?>">
-					<td><p><a href="?page=<?php echo $this->editPageName;?>&WS_action=edit&WS_id=<?php echo $form->form_id; ?>"><?php echo $form->form_name; ?></a></p></td>
-					<td><p><?php echo $form->form_id; ?></p></td>
-					<td><p><?php echo $form->form_css_class; ?></p></td>
-					<td><p><?php echo "[wp-systempay id=".$form->form_id." template='']" ?></p></td>
-					<td><a class ="button" href="?page=<?php echo $this->mainPageName;?>&WS_action=delete&WS_id=<?php echo $form->form_id; ?>">delete</a></td>
+					<td><a href="?page=<?php echo $this->editPageName;?>&WS_action=edit&WS_id=<?php echo $form->form_id; ?>"><?php echo $form->form_name; ?></a></td>
+					<td><?php echo $form->form_id; ?></td>
+					<td><?php echo $form->form_css_class; ?></td>
+					<td><?php echo "[wp-systempay id=".$form->form_id." template='']" ?></td>
+					<td class="action"><a class="btn btn-danger" href="?page=<?php echo $this->mainPageName;?>&WS_action=delete&WS_id=<?php echo $form->form_id; ?>"><?php _e("Delete", "ws"); ?> <i class="icon-minus icon-white"></i></a></td>
 				</tr>
 			</tbody>
 			<?php endforeach; ?>
 		</table>
-		<a class="button" id="btn_newform" href="?page=<?php echo $this->newFormPageName;?>">new Form</a>
+		<a class="btn-primary btn" id="btn_newform" href="?page=<?php echo $this->newFormPageName;?>"><?php _e("New form", "ws");?> <i class="icon-plus icon-white"></i></a>
 </div>

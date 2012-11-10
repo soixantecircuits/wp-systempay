@@ -9,6 +9,7 @@ Author URI: http://soixantecircuits.fr/
 License: GPL
 */
 
+require_once dirname(__FILE__)."/admin/helper.php";
 /*---------------------------------------------------------------
 -----------------------------SWIFT_MAILER--------------------------*/
 require_once dirname(__FILE__)."/inc/swift_mailer/lib/swift_required.php";
@@ -19,7 +20,7 @@ require_once dirname(__FILE__)."/front/systempay/ws_systempay_currencies.class.p
 //WS CLASSES
 require_once dirname(__FILE__)."/front/ws_countries.class.php";
 require_once dirname(__FILE__)."/front/ws_gateways.class.php";
-require_once dirname(__FILE__) . '/front/ws.class.php';
+require_once dirname(__FILE__)."/front/ws.class.php";
 require_once dirname(__FILE__)."/front/ws_tools.class.php";
 //FRONT
 require_once dirname(__FILE__)."/front/systempay/ws_systempay_methods.class.php";
@@ -32,10 +33,10 @@ require_once dirname(__FILE__)."/admin/wscontroller.class.php";
 //BACKOFFICE
     
 if (is_admin()) {
-    include_once dirname(__FILE__) . '/ajax/wsajax.class.php';
-    include_once dirname(__FILE__) . '/admin/classes/wssetup.class.php';
-    include_once dirname(__FILE__) . '/admin/classes/wsdeactive.class.php';
-    include_once dirname(__FILE__) . '/admin/classes/wsmanager.class.php';
+    include_once dirname(__FILE__)."/ajax/wsajax.class.php";
+    include_once dirname(__FILE__)."/admin/classes/wssetup.class.php";
+    include_once dirname(__FILE__)."/admin/classes/wsdeactive.class.php";
+    include_once dirname(__FILE__)."/admin/classes/wsmanager.class.php";
 }
 
 /**---------------------------------------------------------------
@@ -106,7 +107,7 @@ function WS_Update_Db_check()
         WS_install();
     }
 }
-add_action('plugins_loaded', 'WS_update_db_check');
+//add_action('plugins_loaded', 'WS_update_db_check');
 
 //IMPORT HOOKS
 require_once dirname(__FILE__) . '/hooks/ws_hooks.php';

@@ -1,5 +1,3 @@
-
-
 			<!-- Mandatorys Configurations -->	
 			<div id="tabs-1">
 				<h2><?php _e("Mandatorys Configurations","ws"); ?></h2>

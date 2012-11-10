@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class WSCountries{
 	private $_countriesList;

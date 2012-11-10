@@ -1,4 +1,4 @@
-<?php 
+<?php
 function inputsToJSON($form_to_update,$WS_formals_inputs,$WS_additionals_inputs,$WS_customer_inputs) {
 	//set the inputs with the datas from database .
 	if (!empty($form_to_update)) {

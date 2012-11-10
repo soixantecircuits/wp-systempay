@@ -28,20 +28,20 @@
 				<div id="tabs-5">
 					<h2><?php _e("Customizable Inputs","ws"); ?></h2>
 					<div id="ws_customizable_inputs">
-						<table class="wp-list-table widefat fixed pages">
+						<table class="table wp-list-table widefat fixed pages">
 							<thead>
 								<tr>
 									<th class="short"> </th>
-									<th class="large"><?php _e("Label","ws"); ?></th>
-									<th class="large"><?php _e("Name","ws")?></th>
-									<th class="large"><?php _e("Value","ws")?></th>
-									<th class="short"><?php _e("Order","ws")?></th>
-									<th class="short"><?php _e("Fieldset","ws")?></th>
-									<th class="short"><?php _e("Hide","ws")?></th>
-									<th class="short"><?php _e("Required","ws")?></th>
-									<th class="short"><?php _e("Class","ws")?></th>
-									<th class="short"><?php _e("Type","ws")?></th>
-									<th class="short"><?php _e("Options","ws")?></th>
+									<th class="large"><?php _e("Label", "ws"); ?></th>
+									<th class="large"><?php _e("Name", "ws")?></th>
+									<th class="large"><?php _e("Value", "ws")?></th>
+									<th class="short"><?php _e("Order", "ws")?></th>
+									<th class="short"><?php _e("Fieldset", "ws")?></th>
+									<th class="short"><?php _e("Hide", "ws")?></th>
+									<th class="short"><?php _e("Required", "ws")?></th>
+									<th class="short"><?php _e("Class", "ws")?></th>
+									<th class="short"><?php _e("Type", "ws")?></th>
+									<th class="short"><?php _e("Options", "ws")?></th>
 								</tr>
 							</thead>
 							<tbody id="ws_customizable_inputs_table">

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class WSConfirmation extends WSTools{
 	public function __construct() {

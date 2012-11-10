@@ -251,13 +251,13 @@ class WSController
 	//configure the Menu
 	public function configureMenu()
 	{
-	  add_menu_page(__("WS-Sytempay","WS"), __("WS-Sytempay","WS"), 'edit_pages', $this->mainPageName, array($this,'mainPage'), WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
-	  $newForm=add_submenu_page( $this->mainPageName, __("new Form","WS"), __("add New","WS"), 'edit_pages', $this->newFormPageName , array($this,'newForm') );
-	  $transactionsMenu=add_submenu_page( $this->mainPageName, __("transactions menu","WS"), __("transactions","WS"), 'edit_pages', $this->transactionsPageNameMenu , array($this,'transactionsPageMenu') );
-	  $config=add_submenu_page( $this->mainPageName, __("general Configuration","WS"), __("Config","WS"), 'edit_pages', $this->configPageName , array($this,'configPage') );
-	  $editPage=add_submenu_page(null, __("edit Page","WS"),null, 'edit_pages', $this->editPageName , array($this,'editPage') );
-	  $transactions= add_submenu_page(null, __("transactions","WS"),null, 'edit_pages', $this->transactionsPageName , array($this,'transactionsPage'));
-	  $transction_details=add_submenu_page( null, __("transaction","WS"),null, 'edit_pages', $this->transactionDetailsPageName , array($this,'transactionDetailsPage'));
+	  add_menu_page(__("WS-Sytempay","ws"), __("WS-Sytempay", "ws"), 'edit_pages', $this->mainPageName, array($this,'mainPage'), WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
+	  $newForm            = add_submenu_page($this->mainPageName, __("New form", "ws"), __("Add new", "ws"), 'edit_pages', $this->newFormPageName , array($this, 'newForm'));
+	  $transactionsMenu   = add_submenu_page($this->mainPageName, __("Transactions menu", "ws"), __("transactions", "ws"), 'edit_pages', $this->transactionsPageNameMenu, array($this, 'transactionsPageMenu'));
+	  $config             = add_submenu_page($this->mainPageName, __("general Configuration", "ws"), __("Config","ws"), 'edit_pages', $this->configPageName, array($this,'configPage') );
+	  $editPage           = add_submenu_page(null, __("Edit page", "ws"), null, 'edit_pages', $this->editPageName, array($this,'editPage') );
+	  $transactions       = add_submenu_page(null, __("transactions", "ws"), null, 'edit_pages', $this->transactionsPageName, array($this, 'transactionsPage'));
+	  $transction_details = add_submenu_page(null, __("transaction", "ws"), null, 'edit_pages', $this->transactionDetailsPageName, array($this, 'transactionDetailsPage'));
 	  
 	  /* Using registered $page handle to hook script load */
       add_action('admin_print_styles-'.$editPage, 'WS_load_admin_scripts');

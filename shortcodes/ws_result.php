@@ -1,6 +1,10 @@
 <?php
-function add_ws_result($atts, $content) {
-		$ResultManager = new WSSystempayAnalyzer();
-		$ResultManager->showResult();
+/**
+ * WS_Add_result add result to the database 
+ */
+function WS_Add_result($atts, $content)
+{
+    $ResultManager = new WSSystempayAnalyzer();
+    $ResultManager->showResult();
 }
 ?>

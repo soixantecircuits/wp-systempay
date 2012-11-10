@@ -1,5 +1,4 @@
-			
-			<form id="subscription_form" class="<?php echo $this->getCssClass($form_id);?>" action="<?php echo $this->get_confirmationpage_url($form_id) ?>" method="post"> 
+		<form id="subscription_form" class="<?php echo $this->getCssClass($form_id);?>" action="<?php echo $this->get_confirmationpage_url($form_id) ?>" method="post"> 
 			<?php foreach ($additionalsinputs_data as $group) : ?>
 				<?php $index = 0; ?>
 				<fieldset class="fielset_form"><legend>

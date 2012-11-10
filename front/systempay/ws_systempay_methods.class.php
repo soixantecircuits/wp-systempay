@@ -1,7 +1,7 @@
 <?php class WSSystempay {
 
 	private $_options_prefixe;
-	public $CurrenciesManager;
+	public  $CurrenciesManager;
 
 	public function __construct($options_prefixe){
 		$this->options_prefixe=$options_prefixe;
@@ -13,12 +13,10 @@
 		// ouverture/lock 
 
 		$option_name = $this->options_prefixe.'systempay_transid' ;
-		$newvalue=0;
-		if (!($last_id=get_option($option_name)))
+		$newvalue    = 0;
+		if (!($last_id = get_option($option_name)))
 		{ 
-		    $deprecated = ' ';
-		    $autoload = 'no';
-		    add_option( $option_name, $newvalue, $deprecated, $autoload );
+		    update_option($option_name, $newvalue);
 		}
 		// lecture/incrémentation
 		$count = (int)$last_id;

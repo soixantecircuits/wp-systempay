@@ -1,4 +1,4 @@
-<?php 
+<?php
 class WSDeactive extends WSTools{
 
    	public function deactive() {

@@ -1,6 +1,9 @@
-
 .ws_warp {
 	margin: 4px 15px 0 0;
+}
+
+.btn{
+  text-decoration: none;
 }
 
 ul.subsubsub li.ui-tabs-selected a{
@@ -9,11 +12,6 @@ ul.subsubsub li.ui-tabs-selected a{
 
 .ws_warp .page_title{
 	float:left;
-}
-
-.ws_warp #btn_newform{
-	display:block;
-	width: 10%;
 }
 
 .ws_warp .delete_row input{
@@ -27,8 +25,24 @@ ul.subsubsub li.ui-tabs-selected a{
 	float: right;
 }
 
+.result_server_link .label{
+  float:left;
+  margin: 0px 5px 0px 0px;
+}
+.result_server_link p{
+  line-height: 18px;  
+}
+
 td.short.check{
 	text-align: center;
+}
+
+.table td{
+  vertical-align: middle !important;
+}
+
+.table td.action{
+  text-align: right;
 }
 
 td.short input[type="checkbox"], td.short input[type="radio"]{

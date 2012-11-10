@@ -6,7 +6,7 @@
 		parent::__construct();
 	}
 
-		//Method used to transform the inputs from SQL to an array
+	//Method used to transform the inputs from SQL to an array
 	public function inputsObjectToArray($inputs_object,$prefixe) {
 			$inputs_array = array();
 			if ($inputs_object) {

@@ -1,4 +1,3 @@
-			
 			<form id="subscription_form" class="<?php echo $this->getCssClass($form_id);?>" action="<?php echo $this->get_confirmationpage_url($form_id) ?>" method="post"> 
 			<?php foreach ($additionalsinputs_data as $group) : ?>
 				<?php $index = 0; ?>
@@ -41,5 +40,5 @@
 				</fieldset>
 
 	<?php endforeach; ?>
-					<input id="buttonSend" type="submit" value="<?php _e("Envoyer","ela"); ?>" name="submit" />
-				</form>
+	<input id="buttonSend" type="submit" value="<?php _e("Envoyer","ela"); ?>" name="submit" />
+	</form>

@@ -93,6 +93,4 @@ if(!@class_exists('SystempayCurrenciesManager', false)) {
 		}
 	}
 }
-
-		
 ?>
