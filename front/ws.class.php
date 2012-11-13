@@ -85,7 +85,7 @@ class WS
 
     public function get_generalconfig_table_name()
     {
-        return $this->get_generalconfig_table_name();
+        return $this->generalconfig_table_name;
     }
 
     public function add_admin_js()
@@ -262,13 +262,13 @@ class WS
     {
         //error_log("this->resultPage_title : ".var_dump($this));
         $resultPage = get_page_by_title($this->resultPage_title);
-        if (!$resultPage) {
+        if (!is_object($resultPage)) {
             $resultPage = get_page_by_path($this->resultPage_slug);
-            if (!$resultPage) {
+            if (!is_object($resultPage)) {
                 $resultPage = get_page($this->resultPage_id);
             }
         }
-        if (!$resultPage) {
+        if (is_object($resultPage)) {
             $permalink = get_permalink($resultPage->ID);
             return $permalink;
         } else {

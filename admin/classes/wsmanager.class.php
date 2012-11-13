@@ -17,14 +17,14 @@ class WSManager extends WSTools
     public function getTransactionGroupes()
     {
         global $wpdb;
-        $WS_forms = $wpdb->get_results($wpdb->prepare( "SELECT transaction_form_name, transaction_form_id FROM $this->getSystempay()->get_transactions_table_name() WHERE transaction_form_name IS NOT NULL GROUP BY transaction_form_id;"));
+        $WS_forms = $wpdb->get_results($wpdb->prepare( "SELECT transaction_form_name, transaction_form_id FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_form_name IS NOT NULL GROUP BY transaction_form_id;"));
         return $WS_forms;
     }
 
     public function getLastFormId() 
     {
         global $wpdb;
-        $lastId = $wpdb->get_var($wpdb->prepare( "SELECT form_id FROM $this->getSystempay()->get_form_table_name() ORDER BY form_id DESC"));  
+        $lastId = $wpdb->get_var($wpdb->prepare( "SELECT form_id FROM ".$this->getSystempay()->get_form_table_name()." ORDER BY form_id DESC"));  
         if (empty($lastId)) {
             return 1;
         }
@@ -38,13 +38,11 @@ class WSManager extends WSTools
       //DELETE INPUTS 
       $query = $wpdb->query( 
           $wpdb->prepare( 
-              "
-                  DELETE form.*,config.*,input.*, wsconfig.* FROM $this->getSystempay()->get_form_table_name() AS form
-                  LEFT JOIN $this->getSystempay()->get_configurations_table_name() AS config ON config.configuration_form_id = form.form_id
-                  LEFT JOIN $this->getSystempay()->get_inputs_table_name() AS input ON input.input_form_id = form.form_id
-                  LEFT JOIN $this->getSystempay()->get_WSconfig_table_name() AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id
-                  WHERE form.form_id = %d
-              "
+              "DELETE form.*,config.*,input.*, wsconfig.* FROM ".$this->getSystempay()->get_form_table_name()." AS form"
+                  ." LEFT JOIN ".$this->getSystempay()->get_configurations_table_name()." AS config ON config.configuration_form_id = form.form_id"
+                  ." LEFT JOIN ".$this->getSystempay()->get_inputs_table_name()." AS input ON input.input_form_id = form.form_id"
+                  ." LEFT JOIN ".$this->getSystempay()->get_WSconfig_table_name()." AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id"
+                  ." WHERE form.form_id = %d"
               ,$form_id
           )
       );
@@ -233,8 +231,8 @@ class WSManager extends WSTools
 
         //insert input
         $wpdb->insert(
-            $this->getSystempay()->get_WSconfig_table_name()
-            , $WSconfig_data
+            $this->getSystempay()->get_WSconfig_table_name(),
+            $WSconfig_data
         );
     }
 
@@ -257,39 +255,39 @@ class WSManager extends WSTools
             ,"%s"
         );
 
-        $wpdb->update( 
-            $this->getSystempay()->get_WSconfig_table_name()
-            ,$WSconfig_data
-            ,$where
-            ,$data_formats
-            ,$where_format
+        $wpdb->update(
+            $this->getSystempay()->get_WSconfig_table_name(),
+            $WSconfig_data,
+            $where,
+            $data_formats,
+            $where_format
         );
     }
 
     public function getTransactions()
     {
         global $wpdb;
-        $transactions_object = $wpdb->get_results("SELECT * FROM $this->getSystempay()->get_transactions_table_name()");
+        $transactions_object = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_transactions_table_name());
         return $transactions_object;
     }
 
     public function getTransactionsByIdForm($id)
     {
           global $wpdb;
-          $transactions_object = $wpdb->get_results("SELECT * FROM $this->getSystempay()->get_transactions_table_name() WHERE transaction_form_id = $id");
+          $transactions_object = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_form_id = ".$id);
           return $transactions_object;
     }
 
     public function getTransactionByIdTransaction($id)
     {
           global $wpdb;
-          $transaction_object = $wpdb->get_row("SELECT * FROM $this->getSystempay()->get_transactions_table_name() WHERE transaction_id = $id");
+          $transaction_object = $wpdb->get_row("SELECT * FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_id = ".$id);
           return $transaction_object;
     }
 
     public function getInputsById($id) {
           global $wpdb;
-          $transaction_object = $wpdb->get_results("SELECT * FROM $this->getSystempay()->get_inputs_table_name() WHERE input_form_id = $id");
+          $transaction_object = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = ".$id);
           return $transaction_object;
     }
 
@@ -312,12 +310,12 @@ class WSManager extends WSTools
             "%s"
         );
 
-        $wpdb->update( 
-            $this->get_generalconfig_table_name()
-            ,$config_data
-            ,$where
-            ,$data_formats
-            ,$where_format
+        $wpdb->update(
+            $this->get_generalconfig_table_name(),
+            $config_data,
+            $where,
+            $data_formats,
+            $where_format
         );
     } 
 }

@@ -67,19 +67,20 @@
         return $inputs_array;
     }
 
-    /**get the form datas of the SQL database
+    /**
+    * get the form datas of the SQL database
     */
     public function getFormDataObjectById($form_id)
     {
         global $wpdb;
         (int)($form_id);
-        $form_data = $wpdb->get_row("SELECT * FROM $this->getSystempay()->get_form_table_name() WHERE form_id = $form_id");
+        $form_data = $wpdb->get_row("SELECT * FROM ".$this->getSystempay()->get_form_table_name()." WHERE form_id = ".$form_id);
         return $form_data;
     }
     public function getFormIdByName($name)
     {
         global $wpdb;
-        $form_id = $wpdb->get_row("SELECT form_id FROM $this->getSystempay()->get_form_table_name() WHERE form_name = '$name'","ARRAY_N");
+        $form_id = $wpdb->get_row("SELECT form_id FROM ".$this->getSystempay()->get_form_table_name()." WHERE form_name = '".$name."'","ARRAY_N");
         return $form_id[0];
     }
     /** get the formals inputs datas of the SQL database
@@ -88,7 +89,7 @@
     {
         global $wpdb;
         (int)($form_id);
-        $configurations_data = $wpdb->get_results("SELECT * FROM $this->getSystempay()->get_configurations_table_name() WHERE configuration_form_id = $form_id");
+        $configurations_data = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = ".$form_id);
         return $configurations_data;
     }
 
@@ -98,11 +99,11 @@
     {
         global $wpdb;
         (int)($form_id);
-        $fieldsets = $wpdb->get_results("SELECT DISTINCT input_fieldset FROM $this->getSystempay()->get_inputs_table_name() WHERE input_form_id = $form_id ORDER BY input_fieldset;");
+        $fieldsets = $wpdb->get_results("SELECT DISTINCT input_fieldset FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = ".$form_id." ORDER BY input_fieldset;");
         $groupes=array();
         foreach ($fieldsets as $fieldset) {
             $number = $fieldset->input_fieldset;
-            $input_get = $wpdb->get_results("SELECT * FROM $this->getSystempay()->get_inputs_table_name() WHERE input_form_id = $form_id AND input_fieldset = $number ORDER BY input_order;");
+            $input_get = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = ".$form_id." AND input_fieldset = ".$number." ORDER BY input_order;");
             array_push($groupes, $input_get);
         }
         return $groupes;
@@ -208,7 +209,7 @@
     {
         $configurations_data = $this->getConfigurationsArrayById($form_id);
         foreach ($configurations_data as $configuration) {
-            if ($configuration["name"]==$needed_name) {
+            if ($configuration["name"] == $needed_name) {
                 return $configuration;
             }
         }
@@ -218,7 +219,7 @@
     public function getLastGeneralConfigId()
     {
         global $wpdb;
-        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM $this->getSystempay()->get_generalconfig_table_name() ORDER BY generalconfig_id DESC")); 
+        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM ".$this->getSystempay()->get_generalconfig_table_name()." ORDER BY generalconfig_id DESC")); 
         if (empty($lastId)) {
             return false;
         }
@@ -231,7 +232,7 @@
         $config_id = $this->getLastGeneralConfigId();
         if (!empty($config_id)) {
             (int)($config_id);
-            return json_decode($wpdb->get_var($wpdb->prepare("SELECT generalconfig_json FROM $this->getSystempay()->get_generalconfig_table_name() WHERE generalconfig_id='$config_id'")));
+            return json_decode($wpdb->get_var($wpdb->prepare("SELECT generalconfig_json FROM ".$this->getSystempay()->get_generalconfig_table_name()." WHERE generalconfig_id='".$config_id."'")));
         }
         return false;
     }
@@ -240,7 +241,7 @@
     {
         global $wpdb;
         (int)($form_id);
-        $WSconfig_data = $wpdb->get_var("SELECT WSconfig_id FROM $this->getSystempay()->get_WSconfig_table_name() WHERE WSconfig_form_id = $form_id");
+        $WSconfig_data = $wpdb->get_var("SELECT WSconfig_id FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id);
         return $WSconfig_data;
     }
     
@@ -248,7 +249,7 @@
     {
         global $wpdb;
         (int)($form_id);
-        $WSconfig_data = $wpdb->get_var("SELECT WSconfig_json FROM $this->getSystempay()->get_WSconfig_table_name() WHERE WSconfig_form_id = $form_id");
+        $WSconfig_data = $wpdb->get_var("SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id);
         return json_decode($WSconfig_data);
     }
 

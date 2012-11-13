@@ -9,6 +9,8 @@
 */
 class WSController 
 {
+    public $WS;
+
     private $_mainPageName;
     private $_editPageName;
     private $_newFormPageName;
@@ -20,7 +22,7 @@ class WSController
     private $_result_shortcode;
     private $_WS_shortcode;
     private $_select_types;
-    public $WS;
+    
     private $_WSTools;
     private $_method_saveTransaction;
     private $_rowIndexCustomInput;
@@ -36,9 +38,99 @@ class WSController
         $this->setupAdminAttributes();
         $this->userControllPages();
         if (is_admin()) {
-          $this->adminControllPages();
+            $this->adminControllPages();
             add_action('admin_menu', array($this,'ConfigureMenu'));
         }
+    }
+
+    public function get_mainPageName()
+    {
+        return $this->_mainPageName;
+    }
+
+    public function get_editPageName()
+    {
+        return $this->_editPageName;
+    }
+
+    public function get_newFormPageName()
+    {
+        return $this->_newFormPageName;
+    }
+
+    public function get_transactionsPageName()
+    {
+        return $this->_transactionsPageName;
+    }
+
+    public function get_transactionsPageNameMenu()
+    {
+        return $this->_transactionsPageNameMenu;
+    }
+
+    public function get_transactionDetailsPageName()
+    {
+        return $this->_transactionDetailsPageName;
+    }
+
+    public function get_configPageName()
+    {
+        return $this->_configPageName;
+    }
+
+    public function get_confirmation_shortcode()
+    {
+        return $this->_confirmation_shortcode;
+    }
+
+    public function get_result_shortcode()
+    {
+        return $this->_result_shortcode;
+    }
+
+    public function get_WS_shortcode()
+    {
+        return $this->_WS_shortcode;
+    }
+
+    public function get_select_types()
+    {
+        return $this->_select_types;
+    }
+    
+    public function get_WSTools()
+    {
+        return $this->_WSTools;
+    }
+
+    public function get_method_saveTransaction()
+    {
+        return $this->_method_saveTransaction;
+    }
+
+    public function get_rowIndexCustomInput()
+    {
+        return $this->_rowIndexCustomInput;
+    }
+
+    public function get_confirmation_form_id()
+    {
+        return $this->_confirmation_form_id;
+    }
+
+    public function get_plateformes()
+    {
+        return $this->_plateformes;
+    }
+
+    public function get_Manager()
+    {
+        return $this->_Manager;
+    }
+
+    public function get_AjaxManager()
+    {
+        return $this->_AjaxManager;
     }
 
     //setup the attributes
@@ -54,42 +146,29 @@ class WSController
         $this->_result_shortcode           = "WS_result";
         $this->_WS_shortcode               = "WS";
         $this->_select_types               = array("text","select","radio","checkbox","textarea","countrieslist","email","numeric","amountentry");
-        $this->WS                         = new WS();
+        $this->WS                          = new WS();
         $this->_WSTools                    = new WSTools($this->WS);
         $this->_method_saveTransaction     = $this->WS->get_method_saveTransaction();
         $this->_rowIndexCustomInput        = 500;
         if (is_admin()) {
             $this->_Manager = new WSManager($this->WS);
-            //var_dump($this->_WSTools->_systempay);
         } 
-    }
-
-    public function get_WS_shortcode(){
-        return $this->_WS_shortcode;
-    }
-
-    public function get_confirmation_shortcode(){
-        return $this->_confirmation_shortcode;
-    }
-
-    public function get_result_shortcode(){
-        return $this->_result_shortcode;
     }
 
     private function adminControllPages() 
     {
         if ($page = $_GET["page"]) {
             switch($page) {
-            case $this->mainPageName :
+            case $this->_mainPageName :
                 $this->mainControll();
                 break;
-            case $this->editPageName :
+            case $this->_editPageName :
                 $this->editControll();
                 break;
-            case $this->newFormPageName :
+            case $this->_newFormPageName :
                 $this->newFormControll();
                 break;
-            case $this->configPageName :
+            case $this->_configPageName :
                 $this->configControll();
                 break;  
             }
@@ -122,8 +201,8 @@ class WSController
             <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/>
             <SELECT class="hidden" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][type]" size="1">
             <?php 
-            foreach ($this->select_types as $value) {
-                    $selected=($input->input_type==$value)?"selected":"" ;
+            foreach ($this->_select_types as $value) {
+                    $selected = ($input->input_type == $value)?"selected":"" ;
                     echo "<OPTION ".$selected.">".$value."</OPTION>";
             }
             ?>
@@ -290,6 +369,7 @@ class WSController
     public function editPage() 
     { 
         $form_to_update = $this->_WSTools->getFormObjectById($_GET["WS_id"]);
+
         if (!empty($form_to_update["form_data"]->form_id)) :
             include dirname(__FILE__) . '/view/ws_edit.php';
         else:

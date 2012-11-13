@@ -23,10 +23,10 @@
 					<td><?php echo $form->form_id; ?></td>
 					<td><?php echo $form->form_css_class; ?></td>
 					<td><?php echo "[wp-systempay id=".$form->form_id." template='']" ?></td>
-					<td class="action"><a class="btn btn-danger" href="?page=<?php echo $this->mainPageName;?>&WS_action=delete&WS_id=<?php echo $form->form_id; ?>"><?php _e("Delete", "ws"); ?> <i class="icon-minus icon-white"></i></a></td>
+					<td class="action"><a class="btn btn-danger" href="?page=<?php echo $this->_mainPageName;?>&WS_action=delete&WS_id=<?php echo $form->form_id; ?>"><?php _e("Delete", "ws"); ?> <i class="icon-minus icon-white"></i></a></td>
 				</tr>
 			</tbody>
 			<?php endforeach; ?>
 		</table>
-		<a class="btn-primary btn" id="btn_newform" href="?page=<?php echo $this->newFormPageName;?>"><?php _e("New form", "ws");?> <i class="icon-plus icon-white"></i></a>
+		<a class="btn-primary btn" id="btn_newform" href="?page=<?php echo $this->_newFormPageName;?>"><?php _e("New form", "ws");?> <i class="icon-plus icon-white"></i></a>
 </div>

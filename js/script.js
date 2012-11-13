@@ -1,6 +1,12 @@
 jQuery(document).ready(function() {
 	if(jQuery("#tabs").length >= 1) {
-		jQuery("#tabs").tabs();
+		jQuery("#tabs").tabs({
+			show: function( event, ui ){
+				//should be replace by bootstrap plugin
+				jQuery("#tabs .active").removeClass('active');
+				jQuery(ui.tab).parent().addClass('active');
+			}
+		});
 	}
 });
 
@@ -149,7 +155,7 @@ function createConfigurationsCorps(configurations_data, firstIndex) {
 		function =="1") {
 			isFunction = "yes";
 		}
-		configurations_html += '<td class="large label"><input type="text" name="configurations[' + inputIndex + '][label]" value="' + formalInput.label + '"/></td>';
+		configurations_html += '<td class="large"><input type="text" name="configurations[' + inputIndex + '][label]" value="' + formalInput.label + '"/></td>';
 		configurations_html += '<td class="large"><p>' + formalInput.name + '</p></td>';
 		configurations_html += '<td>';
 		if(formalInput.
