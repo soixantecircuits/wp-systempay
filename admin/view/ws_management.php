@@ -19,7 +19,7 @@
 			<?php foreach ($this->_Manager->getFormsList() as $form) : $count++;?>
 			<tbody>
 				<tr class="<?php echo ($count%2==0) ? 'even' : 'odd';?>">
-					<td><a href="?page=<?php echo $this->editPageName;?>&WS_action=edit&WS_id=<?php echo $form->form_id; ?>"><?php echo $form->form_name; ?></a></td>
+					<td><a href="?page=<?php echo $this->_editPageName;?>&WS_action=edit&WS_id=<?php echo $form->form_id; ?>"><?php echo $form->form_name; ?></a></td>
 					<td><?php echo $form->form_id; ?></td>
 					<td><?php echo $form->form_css_class; ?></td>
 					<td><?php echo "[wp-systempay id=".$form->form_id." template='']" ?></td>
