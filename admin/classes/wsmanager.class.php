@@ -11,11 +11,6 @@ class WSManager extends WSTools
     {
         global $wpdb;
         $WS_forms = $wpdb->get_results("SELECT * FROM ".$this->getSystempay()->get_form_table_name());
-        error_log("SELECT * FROM ".$this->getSystempay()->get_form_table_name());
-        
-        /* Todo add getter / setter fir _systempay object */
-
-        var_dump($this->getSystempay());
         return $WS_forms;
     }
 
