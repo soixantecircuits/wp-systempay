@@ -18,12 +18,12 @@ class WSSetup
 
     public function __construct($systempay) 
     {
-        $_systempay = $systempay;
+        $this->$_systempay = $systempay;
     }
 
     public function getSystempay()
     {
-        return $this->getSystempay();
+        return $this->$_systempay;
     }
 
     public function setSystempay($systempay)
@@ -42,13 +42,13 @@ class WSSetup
         //ob_start();
         $this->_createDB();
         $content=__("If you want that Payfom works, please don't change the subpages", "ws");
-        $this->_createPage($this->getSystempay()->mainPage_slug, $this->getSystempay()->mainPage_title, $content);
+        $this->_createPage($this->getSystempay()->get_mainPage_slug(), $this->getSystempay()->get_mainPage_title(), $content);
         $content="[wp-systempay-confirmation]";
-        $this->_createPage($this->getSystempay()->confirmationpage_slug, $this->getSystempay()->confirmationpage_title, $content);
+        $this->_createPage($this->getSystempay()->get_confirmationpage_slug(), $this->getSystempay()->get_confirmationpage_title(), $content);
         $content="[wp-systempay-result]";
-        $this->_createPage($this->getSystempay()->resultPage_slug, $this->getSystempay()->resultPage_title, $content);
+        $this->_createPage($this->getSystempay()->get_resultPage_slug(), $this->getSystempay()->get_resultPage_title(), $content);
         $content="[wp-systempay-server-result]"; 
-        $this->_createPage($this->getSystempay()->resultServerPage_slug, $this->getSystempay()->resultServerPage_title, $content);
+        $this->_createPage($this->getSystempay()->get_resultServerPage_slug(), $this->getSystempay()->get_resultServerPage_title(), $content);
         $this->_createConfigs();
         add_action('admin_notices', array( $this, '_adminInstallnotice'));
         //trigger_error(ob_get_contents(),E_USER_ERROR);
@@ -66,8 +66,8 @@ class WSSetup
         global $wp_sytempay_db_version;
 
         //we create the first table;
-        $WS_table_name = $this->getSystempay()->form_table_name;
-        $form_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_form_table_name();
+        $form_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           form_id int(255) NOT NULL AUTO_INCREMENT,
           form_name VARCHAR(55) DEFAULT '' NOT NULL,
           form_css_class VARCHAR(55) DEFAULT '' NOT NULL,
@@ -77,8 +77,8 @@ class WSSetup
         );";
 
         //we create the second table;
-        $WS_table_name = $this->getSystempay()->inputs_table_name;
-        $inputs_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_inputs_table_name();
+        $inputs_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           input_id int(255) NOT NULL AUTO_INCREMENT,
           input_form_id int(255),
           input_label Text,
@@ -96,8 +96,8 @@ class WSSetup
         );";
 
         //we create the third table;
-        $WS_table_name = $this->getSystempay()->configurations_table_name;
-        $configurations_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_configurations_table_name();
+        $configurations_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           configuration_id int(255) NOT NULL AUTO_INCREMENT,
           configuration_form_id int(255),
           configuration_label VARCHAR(255) DEFAULT '',
@@ -111,8 +111,8 @@ class WSSetup
           KEY the_form_id (configuration_form_id)
         );";
 
-        $WS_table_name = $this->getSystempay()->transactions_table_name;
-        $transactions_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_transactions_table_name();
+        $transactions_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           transaction_id int(255) NOT NULL AUTO_INCREMENT,
           transaction_order_id VARCHAR(255),
           transaction_form_id int(255),
@@ -142,15 +142,15 @@ class WSSetup
         );";
 
 
-        $WS_table_name = $this->getSystempay()->generalconfig_table_name;
-        $generalconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_generalconfig_table_name();
+        $generalconfig_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           generalconfig_id int(255) NOT NULL AUTO_INCREMENT,
           generalconfig_json Text,
           PRIMARY KEY id (generalconfig_id)
         );";
 
-        $WS_table_name = $this->getSystempay()->WSconfig_table_name;
-        $WSconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
+        $table_name = $this->getSystempay()->get_WSconfig_table_name();
+        $ws_config_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           WSconfig_id int(255) NOT NULL AUTO_INCREMENT,
           WSconfig_form_id int(255),
           WSconfig_json Text,
@@ -166,7 +166,7 @@ class WSSetup
         dbDelta($configurations_table_name);
         dbDelta($transactions_table_name);
         dbDelta($generalconfig_table_name);
-        dbDelta($WSconfig_table_name);
+        dbDelta($ws_config_table_name);
 
         update_option("wp_sytempay_db_version", $wp_sytempay_db_version);
 
@@ -237,7 +237,7 @@ class WSSetup
         } else {
             // the plugin may have been previously active and the page may just be trashed...
             $the_page_id = $the_page->ID;
-            if ($the_page_title == $this->getSystempay()->mainPage_title) {
+            if ($the_page_title == $this->getSystempay()->get_mainPage_title()) {
                 update_option("WS_main_page", $the_page_id);
             }
             //make sure the page is not trashed...
@@ -278,7 +278,7 @@ class WSSetup
         );
         //insert input
         $wpdb->insert(
-            $this->generalconfig_table_name, 
+            $this->get_generalconfig_table_name(), 
             $generalConfigs_data
         );
     }
@@ -292,7 +292,7 @@ class WSSetup
     private function _configExist() 
     {
         global $wpdb;
-        $config = $wpdb->get_results("SELECT * FROM $this->generalconfig_table_name");
+        $config = $wpdb->get_results("SELECT * FROM $this->get_generalconfig_table_name()");
         if (sizeof($config)>0) return true;
         return false;
     }

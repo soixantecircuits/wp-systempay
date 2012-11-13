@@ -34,6 +34,10 @@ class WS
     protected $Systempay;
     protected $SystempayResults;
     protected $systempay_results;
+    protected $WSconfig_table_name;
+    protected $generalconfig_table_name;
+
+
 
     public function __construct()
     {
@@ -44,9 +48,49 @@ class WS
         add_action('wp_footer', array(&$this, 'output_inline_js'), 25);
     }
 
+    public function get_mainPage_title()
+    {
+        return $this->mainPage_title;
+    }
+    
+    public function get_mainPage_slug()
+    {
+        return $this->mainPage_slug; 
+    }
+    
+    public function get_resultPage_slug()
+    {
+        return $this->resultPage_slug;
+    }
+    
+    public function get_resultPage_title()
+    {
+        return $this->resultPage_title;
+    }
+    
+    public function get_resultServerPage_slug()
+    {
+        return $this->resultServerPage_slug;    
+    }
+    
+    public function get_resultServerPage_title()
+    {
+        return $this->resultServerPage_title;
+    }
+
+    public function get_WSconfig_table_name()
+    {
+        return $this->WSconfig_table_name;
+    }
+
+    public function get_generalconfig_table_name()
+    {
+        return $this->get_generalconfig_table_name();
+    }
+
     public function add_admin_js()
     {
-      add_action('admin_footer', array(&$this, 'output_inline_js'), 25);
+        add_action('admin_footer', array(&$this, 'output_inline_js'), 25);
     }
 
     private function setAttributes()
@@ -56,8 +100,8 @@ class WS
         $this->inputs_table_name         = $wpdb->prefix . "payform_inputs";
         $this->configurations_table_name = $wpdb->prefix . "payform_configurations";
         $this->generalconfig_table_name  = $wpdb->prefix . "payform_generalconfig";
-        $this->transactions_table_name   = $wpdb->prefix."payform_transactions";
-        $this->WSconfig_table_name       = $wpdb->prefix."payform_wsconfig";
+        $this->transactions_table_name   = $wpdb->prefix . "payform_transactions";
+        $this->WSconfig_table_name       = $wpdb->prefix . "payform_wsconfig";
         $this->mainPage_slug             = "ws_systempay";
         $this->mainPage_title            = "Wordpress Sytempay";
         $this->confirmationpage_slug     = "confirmation_page";

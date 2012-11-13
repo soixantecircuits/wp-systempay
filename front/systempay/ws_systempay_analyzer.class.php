@@ -90,14 +90,14 @@ class WSSystempayAnalyzer extends WSTools
     public function get_cust_email($order_id)
     {
         global $wpdb;
-        $mail = $wpdb->get_row("SELECT transaction_customer_email FROM $this->getSystempay()->transactions_table_name  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
+        $mail = $wpdb->get_row("SELECT transaction_customer_email FROM $this->getSystempay()->get_transactions_table_name()  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
         return $mail[0];
     }
 
     public function get_form_id($order_id)
     {
         global $wpdb;
-        $formid = $wpdb->get_var("SELECT transaction_form_id FROM $this->getSystempay()->transactions_table_name  WHERE transaction_order_id = '$order_id'");
+        $formid = $wpdb->get_var("SELECT transaction_form_id FROM $this->getSystempay()->get_transactions_table_name()  WHERE transaction_order_id = '$order_id'");
         return $formid;
     }
 
@@ -105,7 +105,7 @@ class WSSystempayAnalyzer extends WSTools
     public function get_amount($order_id)
     {
         global $wpdb;
-        $amount     = $wpdb->get_row("SELECT transaction_command_currency,transaction_command_amount FROM $this->getSystempay()->transactions_table_name  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
+        $amount     = $wpdb->get_row("SELECT transaction_command_currency,transaction_command_amount FROM $this->getSystempay()->get_transactions_table_name()  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
         $the_amount = array( "amount"=>$amount[1],"currency"=>$amount[0]);
         return $the_amount;
     }
@@ -113,7 +113,7 @@ class WSSystempayAnalyzer extends WSTools
     public function get_date($order_id)
     {
         global $wpdb;
-        $the_date = $wpdb->get_row("SELECT transaction_command_date FROM $this->getSystempay()->transactions_table_name  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
+        $the_date = $wpdb->get_row("SELECT transaction_command_date FROM $this->getSystempay()->get_transactions_table_name()  WHERE transaction_order_id = '$order_id'", "ARRAY_N");
         return $the_date[0];
     }
 } //end class

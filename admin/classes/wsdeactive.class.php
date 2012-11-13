@@ -4,10 +4,10 @@ class WSDeactive extends WSTools
 
     public function deactive()
     {
-        $this->deletePage($this->getSystempay()->confirmationpage_slug, $this->getSystempay()->confirmationpage_title);
-        $this->deletePage($this->getSystempay()->resultPage_slug,       $this->getSystempay()->resultPage_title);
-        $this->deletePage($this->getSystempay()->resultServerPage_slug, $this->getSystempay()->resultServerPage_title);
-        $this->deletePage($this->getSystempay()->mainPage_slug,         $this->getSystempay()->mainPage_title);
+        $this->deletePage($this->getSystempay()->get_confirmationpage_slug(), $this->getSystempay()->get_confirmationpage_title());
+        $this->deletePage($this->getSystempay()->get_resultPage_slug(),       $this->getSystempay()->get_resultPage_title());
+        $this->deletePage($this->getSystempay()->get_resultServerPage_slug(), $this->getSystempay()->get_resultServerPage_title());
+        $this->deletePage($this->getSystempay()->get_mainPage_slug(),         $this->getSystempay()->get_mainPage_title());
     }
 
     public function deletePage($the_page_name, $the_page_title)

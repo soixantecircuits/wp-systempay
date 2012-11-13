@@ -331,7 +331,7 @@ class WSConfirmation extends WSTools
         //insert the datas in the db
         $wpdb->show_errors(
             $insert = $wpdb->insert(
-                $this->getSystempay()->transactions_table_name,
+                $this->getSystempay()->get_transactions_table_name(),
                 $transactions_data
             )
         );
