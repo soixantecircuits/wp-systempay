@@ -1,6 +1,6 @@
 <?php
 /**
- *  add_WS_confirmation print the confirmation page
+ *  WS_Add_confirmation print the confirmation page
  * 
  * @return void
  * 
@@ -8,8 +8,8 @@
 function WS_Add_confirmation($atts, $content)
 {
     wp_enqueue_style('WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
-    $WS = new WSTools();
-    $WSConfirmation = new WSConfirmation;
+    $WS = new WS();
+    $WSConfirmation = new WSConfirmation($WS);
     $form_id = $_GET[$WS->get_GET_key_confirmation_formid()];
     $method = $_GET["WS_method"];
     //if we are on the save tansaction Method

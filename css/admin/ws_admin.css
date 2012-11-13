@@ -41,6 +41,10 @@ td.short.check{
   vertical-align: middle !important;
 }
 
+.table th{
+  font-family: Arial;
+}
+
 .table td.action{
   text-align: right;
 }

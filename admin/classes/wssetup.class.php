@@ -12,10 +12,25 @@ $wp_sytempay_db_version = "1.0";
  * @return void
  */
 
-class WSSetup extends WSTools
+class WSSetup
 {
+    private $_systempay;
 
-    protected $systempay;
+    public function __construct($systempay) 
+    {
+        $_systempay = $systempay;
+    }
+
+    public function getSystempay()
+    {
+        return $this->getSystempay();
+    }
+
+    public function setSystempay($systempay)
+    {
+        $this->_systempay = $systempay;
+    }
+
     /**
      * Install the plugin
      * 
@@ -27,13 +42,13 @@ class WSSetup extends WSTools
         //ob_start();
         $this->_createDB();
         $content=__("If you want that Payfom works, please don't change the subpages", "ws");
-        $this->_createPage($this->mainPage_slug, $this->mainPage_title, $content);
+        $this->_createPage($this->getSystempay()->mainPage_slug, $this->getSystempay()->mainPage_title, $content);
         $content="[wp-systempay-confirmation]";
-        $this->_createPage($this->confirmationpage_slug, $this->confirmationpage_title, $content);
+        $this->_createPage($this->getSystempay()->confirmationpage_slug, $this->getSystempay()->confirmationpage_title, $content);
         $content="[wp-systempay-result]";
-        $this->_createPage($this->resultPage_slug, $this->resultPage_title, $content);
+        $this->_createPage($this->getSystempay()->resultPage_slug, $this->getSystempay()->resultPage_title, $content);
         $content="[wp-systempay-server-result]"; 
-        $this->_createPage($this->resultServerPage_slug, $this->resultServerPage_title, $content);
+        $this->_createPage($this->getSystempay()->resultServerPage_slug, $this->getSystempay()->resultServerPage_title, $content);
         $this->_createConfigs();
         add_action('admin_notices', array( $this, '_adminInstallnotice'));
         //trigger_error(ob_get_contents(),E_USER_ERROR);
@@ -51,7 +66,7 @@ class WSSetup extends WSTools
         global $wp_sytempay_db_version;
 
         //we create the first table;
-        $WS_table_name = $this->form_table_name;
+        $WS_table_name = $this->getSystempay()->form_table_name;
         $form_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           form_id int(255) NOT NULL AUTO_INCREMENT,
           form_name VARCHAR(55) DEFAULT '' NOT NULL,
@@ -62,7 +77,7 @@ class WSSetup extends WSTools
         );";
 
         //we create the second table;
-        $WS_table_name = $this->inputs_table_name;
+        $WS_table_name = $this->getSystempay()->inputs_table_name;
         $inputs_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           input_id int(255) NOT NULL AUTO_INCREMENT,
           input_form_id int(255),
@@ -81,7 +96,7 @@ class WSSetup extends WSTools
         );";
 
         //we create the third table;
-        $WS_table_name = $this->configurations_table_name;
+        $WS_table_name = $this->getSystempay()->configurations_table_name;
         $configurations_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           configuration_id int(255) NOT NULL AUTO_INCREMENT,
           configuration_form_id int(255),
@@ -96,7 +111,7 @@ class WSSetup extends WSTools
           KEY the_form_id (configuration_form_id)
         );";
 
-        $WS_table_name = $this->transactions_table_name;
+        $WS_table_name = $this->getSystempay()->transactions_table_name;
         $transactions_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           transaction_id int(255) NOT NULL AUTO_INCREMENT,
           transaction_order_id VARCHAR(255),
@@ -127,14 +142,14 @@ class WSSetup extends WSTools
         );";
 
 
-        $WS_table_name = $this->generalconfig_table_name;
+        $WS_table_name = $this->getSystempay()->generalconfig_table_name;
         $generalconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           generalconfig_id int(255) NOT NULL AUTO_INCREMENT,
           generalconfig_json Text,
           PRIMARY KEY id (generalconfig_id)
         );";
 
-        $WS_table_name = $this->WSconfig_table_name;
+        $WS_table_name = $this->getSystempay()->WSconfig_table_name;
         $WSconfig_table_name = "CREATE TABLE IF NOT EXISTS $WS_table_name (
           WSconfig_id int(255) NOT NULL AUTO_INCREMENT,
           WSconfig_form_id int(255),
@@ -180,7 +195,7 @@ class WSSetup extends WSTools
             $the_page = get_page_by_path($the_page_slug);
         }
 
-        if ($the_page_title != $this->mainPage_title) {
+        if ($the_page_title != $this->getSystempay()->mainPage_title) {
             $mainPage = get_option('WS_main_page');
         } else {
             $mainPage = null;
@@ -197,7 +212,7 @@ class WSSetup extends WSTools
             $_p['post_parent']    = $mainPage;
             $_p['post_category']  = array(1); // the default 'Uncategorised'
 
-            if ($the_page_title == $this->mainPage_title) {
+            if ($the_page_title == $this->getSystempay()->mainPage_title) {
                 update_option('WS_main_page', $the_page, '', 'yes');
             }
             // Insert the post into the database
@@ -205,16 +220,16 @@ class WSSetup extends WSTools
 
             switch ($the_page_slug) {
             case 'transaction_serve_page':
-                $this->resultServerPage_id = $the_page_id;
+                $this->getSystempay()->resultServerPage_id = $the_page_id;
                 break;
             case 'transaction_page':
-                $this->resultPage_id = $the_page_id;
+                $this->getSystempay()->resultPage_id = $the_page_id;
                 break;
             case 'confirmation_page':
-                $this->confirmationpage_id = $the_page_id;
+                $this->getSystempay()->confirmationpage_id = $the_page_id;
                 break; 
             case 'ws_systempay':
-                $this->mainPage_id = $the_page_id;
+                $this->getSystempay()->mainPage_id = $the_page_id;
                 break;              
             default:
                 break;
@@ -222,7 +237,7 @@ class WSSetup extends WSTools
         } else {
             // the plugin may have been previously active and the page may just be trashed...
             $the_page_id = $the_page->ID;
-            if ($the_page_title == $this->mainPage_title) {
+            if ($the_page_title == $this->getSystempay()->mainPage_title) {
                 update_option("WS_main_page", $the_page_id);
             }
             //make sure the page is not trashed...

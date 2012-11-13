@@ -4,7 +4,8 @@
  */
 function WS_Add_result($atts, $content)
 {
-    $ResultManager = new WSSystempayAnalyzer();
+    $ws = new WS();
+    $ResultManager = new WSSystempayAnalyzer($ws);
     $ResultManager->showResult();
 }
 ?>

@@ -6,16 +6,24 @@
 
 add_action('init', 'WS_start');
 add_action('plugins_loaded', 'WS_language_call');
-function load_custom_wp_admin_style($hook) {
-  //error_log("hook : ".$hook." : ".strlen(strstr($hook,"ws-sytempay")));
-  if (('toplevel_page_WS_main' !== $hook) && (strlen(strstr($hook,"ws-sytempay"))<=0))
-        return;
-  wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
-  wp_enqueue_style('WS_iconCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/icon.bootstrap.min.css');
+/**
+ * load_custom_wp_admin_style
+ * 
+ * load the the admin CSS
+ * 
+ */
+
+function load_custom_wp_admin_style($hook)
+{
+    //error_log("hook : ".$hook." : ".strlen(strstr($hook,"ws-sytempay")));
+    if (('toplevel_page_WS_main' !== $hook) && (strlen(strstr($hook, "ws-sytempay"))<=0))
+          return;
+    wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
+    wp_enqueue_style('WS_iconCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
 }
 
 if (is_admin() && !is_front_page()) {
-    add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style', 200);
+    add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style', 200);
 }
 
 /**

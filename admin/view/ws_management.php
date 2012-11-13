@@ -3,9 +3,8 @@
 		<div class="cb"></div>
 
 		<div class="result_server_link">
-			<span class="label label-info"><?php _e("Info", "ws");?></span><p><?php _e("Link for server-side feedbacks:", "ws"); ?>
-				<?php echo $this->WS->get_resultServerPage_url();?>
-			</p>
+			<div class="alert alert-info"><span class="label label-info"><?php _e("Info", "ws");?></span><?php _e("Link for server-side feedbacks:", "ws"); ?>
+				<?php echo $this->WS->get_resultServerPage_url();?></div>
 		</div>
 		<table class="table table-striped wp-list-table widefat fixed pages">
 			<thead>
@@ -17,7 +16,7 @@
 					<th></th>
 				</tr>
 			</thead>
-			<?php foreach ($this->Manager->getFormsList() as $form) : $count++;?>
+			<?php foreach ($this->_Manager->getFormsList() as $form) : $count++;?>
 			<tbody>
 				<tr class="<?php echo ($count%2==0) ? 'even' : 'odd';?>">
 					<td><a href="?page=<?php echo $this->editPageName;?>&WS_action=edit&WS_id=<?php echo $form->form_id; ?>"><?php echo $form->form_name; ?></a></td>

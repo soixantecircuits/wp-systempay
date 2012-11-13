@@ -15,7 +15,7 @@ class WSForms extends WSTools  {
 		$form_data = $WS_data["form_data"];
 		$additionalsinputs_data = $WS_data["inputs_data"];
 		if ($template){
-			$path=dirname(__FILE__)."/../templates/forms_templates/".$template;
+			$path = dirname(__FILE__)."/../templates/forms_templates/".$template;
 		}
 		else {
 			$path=dirname(__FILE__)."/../templates/forms_templates/default_form.php";

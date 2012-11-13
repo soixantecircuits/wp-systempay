@@ -40,8 +40,7 @@ class WSAjax
 
   function getJSONInputs() 
   {
-    require(dirname(__FILE__)."/../admin/classes/inputstojson.php");
-    error_log("wsajax : going there");
+    require dirname(__FILE__)."/../admin/classes/inputstojson.php";
     $systempay = new WS();
     $WSTools = new WSTools($systempay);
     $WS_plateformes=$WSTools->getSavedInputs();

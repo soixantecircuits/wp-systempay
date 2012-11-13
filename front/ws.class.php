@@ -37,10 +37,8 @@ class WS
 
     public function __construct()
     {
-        error_log("WS constructor called");
         $this->setAttributes();
         $this->Systempay = new WSSystempay($this->options_prefixe);
-        error_log("ws : going there");
         $this->set_saved_inputs();
         $this->set_countriesList();
         add_action('wp_footer', array(&$this, 'output_inline_js'), 25);
@@ -54,26 +52,26 @@ class WS
     private function setAttributes()
     {
         global $wpdb;
-        $this->form_table_name=$wpdb->prefix . "payform_forms";
-        $this->inputs_table_name=$wpdb->prefix . "payform_inputs";
-        $this->configurations_table_name=$wpdb->prefix . "payform_configurations";
-        $this->generalconfig_table_name=$wpdb->prefix . "payform_generalconfig";
-        $this->transactions_table_name=$wpdb->prefix."payform_transactions";
-        $this->WSconfig_table_name=$wpdb->prefix."payform_wsconfig";
-        $this->mainPage_slug="ws_systempay";
-        $this->mainPage_title="Wordpress Sytempay";
-        $this->confirmationpage_slug="confirmation_page";
-        $this->confirmationpage_title="Confirmation Page";
-        $this->resultPage_slug="transaction_page";
-        $this->resultPage_title="Transaction Page Result";
-        $this->resultServerPage_slug="transaction_serve_page";
-        $this->resultServerPage_title="Transaction Server Page Result";
-        $this->options_prefixe="ws_option_";
-        $this->GET_key_confirmation_formid ="ws_form_id";
-        $this->GET_key_confirmation_previouspage ="ws_previouspage";
-        $this->method_saveTransaction="saveTransaction";
-        $this->confirmation_form_id="ws_confirmation_form";
-        $this->inline_js="";
+        $this->form_table_name           = $wpdb->prefix . "payform_forms";
+        $this->inputs_table_name         = $wpdb->prefix . "payform_inputs";
+        $this->configurations_table_name = $wpdb->prefix . "payform_configurations";
+        $this->generalconfig_table_name  = $wpdb->prefix . "payform_generalconfig";
+        $this->transactions_table_name   = $wpdb->prefix."payform_transactions";
+        $this->WSconfig_table_name       = $wpdb->prefix."payform_wsconfig";
+        $this->mainPage_slug             = "ws_systempay";
+        $this->mainPage_title            = "Wordpress Sytempay";
+        $this->confirmationpage_slug     = "confirmation_page";
+        $this->confirmationpage_title    = "Confirmation Page";
+        $this->resultPage_slug           = "transaction_page";
+        $this->resultPage_title          = "Transaction Page Result";
+        $this->resultServerPage_slug     = "transaction_serve_page";
+        $this->resultServerPage_title    = "Transaction Server Page Result";
+        $this->options_prefixe           = "ws_option_";
+        $this->GET_key_confirmation_formid = "ws_form_id";
+        $this->GET_key_confirmation_previouspage = "ws_previouspage";
+        $this->method_saveTransaction = "saveTransaction";
+        $this->confirmation_form_id = "ws_confirmation_form";
+        $this->inline_js = "";
     }
 
     public function set_saved_inputs()
@@ -88,7 +86,7 @@ class WS
 
     function _error_set_saved()
     {
-        echo '<div class="updated"><p>'.__("Sorry we could not find the requiered page, try reinstalling the plugin", "ws").'</p></div>';
+        echo '<div class="updated"><p>WP-Systempay:<br/>'.__("Sorry we could not find the requiered page, try reinstalling the plugin", "ws").'</p></div>';
     }
     
 
