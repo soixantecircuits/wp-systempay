@@ -240,9 +240,16 @@
     public function WSConfigExist($form_id)
     {
         global $wpdb;
+        error_log("foo : ". $this->getSystempay()->get_WSconfig_table_name());
+
         (int)($form_id);
         $WSconfig_data = $wpdb->get_var("SELECT WSconfig_id FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id);
-        return $WSconfig_data;
+        if ($WSconfig_data != "") {
+            return true;  
+        } else {
+            return false;
+        }
+        
     }
     
     public function getFormWSConfig($form_id)

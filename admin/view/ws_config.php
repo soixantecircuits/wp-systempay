@@ -5,7 +5,7 @@
 	<form method="POST" action="?page=<?php echo $this->configPageName; ?>&WS_action=update" >
 		<?php require_once("ws_config_inputs.php"); ?>
 		<div class="submit">
-			<input class="button" type="submit" value="<?php _e('Save','ws'); ?>" /><br/>
+			<input class="btn btn-success" type="submit" value="<?php _e('Save','ws'); ?>" /><br/>
 		</div>
 	</form>
 </div>

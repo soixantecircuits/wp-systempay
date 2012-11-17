@@ -69,9 +69,9 @@ class WSSetup
         $table_name = $this->getSystempay()->get_form_table_name();
         $form_table_name = "CREATE TABLE IF NOT EXISTS $table_name (
           form_id int(255) NOT NULL AUTO_INCREMENT,
-          form_name VARCHAR(55) DEFAULT '' NOT NULL,
-          form_css_class VARCHAR(55) DEFAULT '' NOT NULL,
-          form_plateforme VARCHAR(55) DEFAULT '' NOT NULL,
+          form_name VARCHAR(55) NOT NULL,
+          form_css_class VARCHAR(55) DEFAULT 'ws_css_class' NOT NULL,
+          form_plateforme VARCHAR(55) NOT NULL,
           PRIMARY KEY the_form_id (form_id),
           KEY the_form_name (form_name)
         );";

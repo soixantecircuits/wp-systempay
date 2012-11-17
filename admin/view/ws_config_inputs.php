@@ -1,35 +1,63 @@
-<h3><?php _e("Emails","ws"); ?></h3>
- 	<div class="email_choice">
-		<label><?php _e("Email Transport used","ws"); ?> : </label>
-		<?php $transports=array("smtp"=>"SMTP","sendmail"=>"Send Mail"); 
-			foreach ($transports as $key => $value) { 
-				$selected=($key==$generalConfig->email->transport)?"checked":" ";
-		?>
-				<input type="radio" name="generalconfig[email][transport]" value="<?php echo $key; ?>" <?php echo $selected; ?> /><?php _e($value,"ws"); ?>
-		<?php }
-		?>
-	</div>
+<?php
+$generalConfig = $this->get_Manager()->getGeneralConfig();
+$form_id = $_GET["WS_id"];
+if (!empty($form_id)) {
+    $generalConfig = $this->_WSTools->mergeWSConfigs($form_id);
+}
+?>
+  <div class="email_choice">
+    <h4><?php _e("Set your prefered method to send email", "ws")?></h4>
+    <p><?php _e("Email Transport used:", "ws"); ?></p>
+    <?php 
+    $transports = array("smtp"=>"SMTP", "sendmail"=>"Send Mail"); 
+    foreach ($transports as $key => $value) {
+        $selected = ($key == $generalConfig->email->transport) ? "checked" : " ";
+        ?>
+        <label class="radio">
+            <input type="radio" name="generalconfig[email][transport]" value="<?php echo $key; ?>" <?php echo $selected; ?> /><?php _e($value, "ws"); ?>
+        </label>
+        <?php 
+    }
+    ?>
+  </div>
 <!-- SMTP -->
 
-	<div class="smtp">
-		<h4><?php _e("SMTP","ws"); ?></h4>
-		<label for="smtp_SMTP"><?php _e("SMTP adress","ws"); ?></label>
-		<input type="text" id="smtp_smtp" name="generalconfig[email][smtp][smtp]" value="<?php echo $generalConfig->email->smtp->smtp; ?>" /><br/>
-		<label for="smtp_port"><?php _e("SMTP Port","ws"); ?></label>
-		<input type="text" id="smtp_smtp" name="generalconfig[email][smtp][port]" value="<?php echo $generalConfig->email->smtp->port; ?>" /><br/>
-		<label for="smtp_ssl"><?php _e("SSL","ws"); ?></label>
-		<?php 	$smtp_ssl=(bool)($generalConfig->email->smtp->ssl); 
-				$checked= ($smtp_ssl)?"checked":""; ?>
-		<input type="checkbox" id="smtp_ssl" name="generalconfig[email][smtp][ssl]" value="1" <?php echo $checked; ?>/><br/>
-		<label for="smtp_username"><?php _e("Username","ws"); ?></label>
-		<input type="text" id="smtp_username" name="generalconfig[email][smtp][username]" value="<?php echo $generalConfig->email->smtp->username; ?>" /><br/>
-		<label for="smtp_password"><?php _e("Password","ws"); ?></label>
-		<input type="password" id="smtp_password" name="generalconfig[email][smtp][password]" value="<?php echo $generalConfig->email->smtp->password; ?>" /><br/>
-		
-	</div>
+  <div class="smtp form-inline">
+    <h5><?php _e("SMTP", "ws"); ?></h5>
+
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Address", "ws"); ?></span>
+        <input type="text" class="span2" placeholder="email server" id="smtp_smtp" name="generalconfig[email][smtp][smtp]" value="<?php echo $generalConfig->email->smtp->smtp; ?>" />
+    </div>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Port", "ws"); ?></span>
+        <input type="text" class="span2" placeholder="port" id="smtp_smtp" name="generalconfig[email][smtp][port]" value="<?php echo $generalConfig->email->smtp->port; ?>" />
+    </div>
+    <?php   
+        $smtp_ssl=(bool)($generalConfig->email->smtp->ssl); 
+        $checked= ($smtp_ssl)?"checked":""; ?>
+        <div class="input-prepend input-append">
+            <span class="add-on"><?php _e("SSL", "ws"); ?></span>
+            <span class="add-on"><input type="checkbox" id="smtp_ssl" name="generalconfig[email][smtp][ssl]" value="1" <?php echo $checked; ?>/>
+        </span>
+        </div>
+    <br/><br/>
+    <div class="input-prepend">
+        <span class="add-on">@</span>
+        <input class="span2" placeholder="mail@domain.com" type="text" id="smtp_username" name="generalconfig[email][smtp][username]" value="<?php echo $generalConfig->email->smtp->username; ?>" />
+    </div>    
+    <div class="input-prepend">
+        <span class="add-on">password</span>
+        <input class="span2" placeholder="password" type="password" id="smtp_password" name="generalconfig[email][smtp][password]" value="<?php echo $generalConfig->email->smtp->password; ?>" />
+    </div>
+    
+  </div>
 <!-- SendMail -->
-	<div class="sendmail">
-		<h4><?php _e("SendMail","ws"); ?></h4>
-		<label for="smtp_SMTP"><?php _e("SendMail Path","ws"); ?></label>
-		<input type="text" id="smtp_smtp" name="generalconfig[email][sendmail][path]" value="<?php echo $generalConfig->email->sendmail->path; ?>" /><br/>
-	</div>
+  <div class="sendmail">
+    <h5><?php _e("SendMail", "ws"); ?></h5>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Path", "ws"); ?></span>
+        <input placeholder="/usr/sbin/sendmail" type="text" id="smtp_smtp" name="generalconfig[email][sendmail][path]" value="<?php echo $generalConfig->email->sendmail->path; ?>" />
+    </div>
+  </div>
+  <br/><br/>

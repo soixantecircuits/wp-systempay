@@ -1,5 +1,5 @@
 .ws_warp {
-	margin: 4px 15px 0 0;
+  margin: 4px 15px 0 0;
 }
 
 .btn{
@@ -7,22 +7,26 @@
 }
 
 ul.subsubsub li.ui-tabs-selected a{
-	color:#000;
+  color:#000;
+}
+
+#adminmenu .wp-submenu-wrap ul{
+  margin: 0 0 0px 0px;
 }
 
 .ws_warp .page_title{
-	float:left;
+  float:left;
 }
 
 .ws_warp .delete_row input{
-	display: block;
-	width: 10px;
+  display: block;
+  width: 10px;
 }
 
 .ws_warp input.addRow {
-	display: block;
-	padding: 4px 8px;
-	float: right;
+  display: block;
+  padding: 4px 8px;
+  float: right;
 }
 
 .result_server_link .label{
@@ -34,7 +38,11 @@ ul.subsubsub li.ui-tabs-selected a{
 }
 
 td.short.check{
-	text-align: center;
+  text-align: center;
+}
+
+th.short.cut{
+  width: 90px;
 }
 
 .table td{
@@ -50,177 +58,206 @@ td.short.check{
 }
 
 td.short input[type="checkbox"], td.short input[type="radio"]{
-	width: 16px !important;
-	text-align: center;
+  width: 16px !important;
+  text-align: center;
 }
 
 .short.check {
-	width: 21px !important;
+  width: 21px !important;
 }
 
 input.hidden, select.hidden{
-	display: none;
+  display: none;
 }
 
 #tabs tbody.loading{
-	background-image: url("../../images/ajax-loader.gif");
-	padding: 10px 0px;
-	display: block !important;
-	text-align: center;
-	margin: 0 auto;
-	width: 100%;
-	width: 100%;
-	position: absolute;
-	background-repeat: no-repeat;
-	background-position: 49%;
+  background-image: url("../../images/ajax-loader.gif");
+  padding: 10px 0px;
+  display: block !important;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 49%;
 }
 
 .ws_warp div.group {
-	margin: 0px 0px 40px 0px;
+  margin: 0px 0px 40px 0px;
+  padding: 10px 10px;
+  background: #EEE;
+  cursor: move;
 }
 
+button.delete_row{
+  padding: 3px 6px;  
+}
 
+#btn_newform{
+  float: right;
+}
 
-  .ws_warp #addRow {
- 	float:right;
+tbody.ui-sortable tr{
+  cursor: move;
+}
+ .ws_warp .addRow {
+  float:right;
  }
 
- .ws_warp #submit {
- 	display:block;
- 	margin:auto;
- 	margin-top: 2%;
- 	width:10%;
- 	height:30px;
+ .ws_warp #submit, .ws_warp #submit_top {
+  color:#fff;
+  float:right;
+ }
+
+ #addTable{
+  float: right;
+  margin-bottom: 10px;
  }
 
  .ws_warp .cb {
-   	clear:both;
-   	margin:0;
-   	padding:0;
-   	width:0px;
-   	height:0px;
+    clear:both;
+    margin:0;
+    padding:0;
+    width:0px;
+    height:0px;
  }
 
 .ws_warp .radio_admin li {
-	float:left;
-	padding-left: 1%;
+  float:left;
+  padding-left: 1%;
 }
 
 
 .ws_warp .plateformes_label {
-	float:left;
-	width:10%;
+  float:left;
+  width:10%;
 }
 
 .ws_warp .plateformes_select {
-	float:left;
-	width:30%;
+  width:auto;
 }
 
 
 #ws_customizable_inputs .short {
-	width:4%;
+  width:4%;
 }
 
 #ws_customizable_inputs .delete {
-	width:7px;
+  width:7px;
+}
+
+#ws_customizable_inputs td.delete_row, #ws_customizable_inputs th.delete_row {
+  width: 4px !important;
 }
 
 
 #ws_customizable_inputs .large {
-	width:8%;
+  width:8%;
 }
 #ws_customizable_inputs tbody input {
-	width: 100%;
+  width: 100%;
 }
 
 #ws_customizable_inputs tbody .delete_row input {
-	width: 10px;
+  width: 10px;
 }
 
 
 .ws_warp .sorting_asc{
-	background: #F1F1F1 url("../../images/sort_asc.png") no-repeat;
-	background-position: center right ;
+  background: #F1F1F1 url("../../images/sort_asc.png") no-repeat;
+  background-position: center right ;
 }
 
 
 .ws_warp .sorting_desc{
-	background: #F1F1F1 url("../../images/sort_desc.png") no-repeat;
-	background-position: center right ;
+  background: #F1F1F1 url("../../images/sort_desc.png") no-repeat;
+  background-position: center right ;
 }
 
 .ws_warp .sorting_desc:hover{
-	color:#D54E21;
+  color:#D54E21;
 }
 
 .ws_warp .sorting_asc:hover{
-	color:#D54E21;
+  color:#D54E21;
 }
 
 
 .ws_warp .sorting, .ws_warp .sorting_asc,.ws_warp .sorting_desc{
-	color:#21759B;
+  color:#21759B;
 }
 
 .ws_warp .sorting:hover{
-	background: #F1F1F1 url("../../images/sort_asc.png") no-repeat;
-	background-position: center right ;
-	color:#333;
+  background: #F1F1F1 url("../../images/sort_asc.png") no-repeat;
+  background-position: center right ;
+  color:#333;
 }
 
 .ws_warp .dataTables_filter{
-	float:right;
-	padding-bottom: 10px;
+  float:right;
+  padding-bottom: 10px;
 }
 
 .ws_warp .dataTables_info,.ws_warp .dataTables_paginate{
-	float:right;
-	clear:both;
-	padding-top: 10px;
+  float:right;
+  clear:both;
+  padding-top: 10px;
 }
 
 .ws_warp .paginate_button {
-	margin-left: 2px;
-	padding:3px 6px;
-	border-color: #E3E3E3;
-	background:#EEE url('../../images/menu-bits.gif?ver=20100610') repeat-x scroll left -379px;
-	color:#21759B;
-	font-size: 12px;
+  margin-left: 2px;
+  padding:3px 6px;
+  border-color: #E3E3E3;
+  background:#EEE url('../../images/menu-bits.gif?ver=20100610') repeat-x scroll left -379px;
+  color:#21759B;
+  font-size: 12px;
 }
 
 .ws_warp .paginate_button_disabled{
-	color:#AAA;
+  color:#AAA;
+}
+.fieldset_name{
+  height: 35px;
 }
 
+.page_title h1{
+  font-size: 1.6em;
+  margin: 0.2em 0em 0.67em;
+}
 
-td.large input, td.short input{
-	width: 100%;
+form.form-inline input[type="text"],form.form-inline input[type="password"]{
+  height:30px;
+}
+
+td.large input[type="text"],td.large input[type="select"], td.short input[type="select"], td.short input[type="text"], td.large input[type="password"], td.short input[type="password"]{
+  width: 100%;
+  height: 30px;
 }
 
 td.large select, td.short select{
-	width: 100%;
+  width: 100%;
 }
 
 #transactions_table th{
-	cursor: pointer;
-	font-size: 12px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 #transactions_table .amount{
-	width: 65px !important;
+  width: 65px !important;
 }
 
 #transactions_table .action{
-	width: 75px !important;
-	text-align: center;
+  width: 75px !important;
+  text-align: center;
 }
 
 #transactions_table .country{
-	width: 50px !important;
-	text-align: center;
+  width: 50px !important;
+  text-align: center;
 }
 
 #transactions_table tr.even{
-	background-color: #EEF0F1;
+  background-color: #EEF0F1;
 }

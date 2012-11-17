@@ -33,82 +33,89 @@ class WSManager extends WSTools
 
     public function deleteForm($form_id)
     {
-      //DELETE configurations
-      global $wpdb;
-      //DELETE INPUTS 
-      $query = $wpdb->query( 
-          $wpdb->prepare( 
-              "DELETE form.*,config.*,input.*, wsconfig.* FROM ".$this->getSystempay()->get_form_table_name()." AS form"
-                  ." LEFT JOIN ".$this->getSystempay()->get_configurations_table_name()." AS config ON config.configuration_form_id = form.form_id"
-                  ." LEFT JOIN ".$this->getSystempay()->get_inputs_table_name()." AS input ON input.input_form_id = form.form_id"
-                  ." LEFT JOIN ".$this->getSystempay()->get_WSconfig_table_name()." AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id"
-                  ." WHERE form.form_id = %d"
-              ,$form_id
-          )
-      );
+        //DELETE configurations
+        global $wpdb;
+        //DELETE INPUTS 
+        $query = $wpdb->query( 
+            $wpdb->prepare( 
+                "DELETE form.*,config.*,input.*, wsconfig.* FROM ".$this->getSystempay()->get_form_table_name()." AS form"
+                    ." LEFT JOIN ".$this->getSystempay()->get_configurations_table_name()." AS config ON config.configuration_form_id = form.form_id"
+                    ." LEFT JOIN ".$this->getSystempay()->get_inputs_table_name()." AS input ON input.input_form_id = form.form_id"
+                    ." LEFT JOIN ".$this->getSystempay()->get_WSconfig_table_name()." AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id"
+                    ." WHERE form.form_id = %d"
+                ,$form_id
+            )
+        );
     }
 
-    public function newForm($form,$inputs,$configurations,$WS_config)
+    public function newForm($form, $inputs, $configurations, $WS_config)
     { 
-      global $wpdb;
-      //FORMS
-      //prepare form          
-      $form_data = array(
-           "form_name" => $form["name"]
-          ,"form_css_class" => $form["css_class"]
-          ,"form_plateforme"=> $form["plateforme"]
-      );
-      //insert forms
-      $wpdb->insert(
-          $this->getSystempay()->get_form_table_name(), 
-          $form_data
-      );
-      $form_id = $wpdb->insert_id;
-      
-      //INPUTS
-      foreach ($inputs as $input) 
-      {
-          //prepare input
-          $inputs_data = array(
-                  "input_form_id" => $form_id
-                  ,"input_label" => $input["label"]
-                  ,"input_name" => $input["name"]
-                  ,"input_value" => $input["value"]
-                  ,"input_order" => $input["order"]
-                  ,"input_hide" => $input["hide"]
-                  ,"input_required" => $input["required"]
-                  ,"input_class" => $input["class"]
-                  ,"input_type" => $input["type"]
-                  ,"input_fieldset" => $input["fieldset"]
-                  ,"input_options" => $input["options"]
-          );
-          //insert input
-          $wpdb->insert(
-              $this->getSystempay()->get_inputs_table_name(), 
-              $inputs_data
-          );
-      }
-  //configurationS  
-      foreach ($configurations as $configuration) 
-      {
-          $configurations_data = array(
-                  "configuration_form_id" => $form_id
-                  ,"configuration_label" => $configuration["label"]
-                  ,"configuration_name" => $configuration["name"]
-                  ,"configuration_value" => $configuration["value"]
-                  ,"configuration_function" => $configuration["function"]
-                  ,"configuration_hide" => $configuration["hide"]
-                  ,"configuration_required" => $configuration["required"]
-                  ,"configuration_class" => $configuration["class"]
-          );
-          //insert input
-          $wpdb->insert(
-              $this->getSystempay()->get_configurations_table_name(), 
-              $configurations_data
-          );
-      }
-      //WS Config
-      $this->insertWSConfigs($form_id, $WS_config);
+        global $wpdb;
+        //FORMS
+        //prepare form          
+        $inputs         = stripslashes_deep($inputs);
+        $form           = stripslashes_deep($form);
+        $configurations = stripslashes_deep($configurations);
+        $WS_config      = stripslashes_deep($WS_config);
+
+        $form_data = array(
+             "form_name" => $form["name"]
+            ,"form_css_class" => $form["css_class"]
+            ,"form_plateforme"=> $form["plateforme"]
+        );
+
+        
+
+        //insert forms
+        $wpdb->insert(
+            $this->getSystempay()->get_form_table_name(), 
+            $form_data
+        );
+        $form_id = $wpdb->insert_id;
+        
+        //INPUTS
+        foreach ($inputs as $input) 
+        {
+            //prepare input
+            $inputs_data = array(
+                    "input_form_id" => $form_id
+                    ,"input_label" => $input["label"]
+                    ,"input_name" => $input["name"]
+                    ,"input_value" => $input["value"]
+                    ,"input_order" => $input["order"]
+                    ,"input_hide" => $input["hide"]
+                    ,"input_required" => $input["required"]
+                    ,"input_class" => $input["class"]
+                    ,"input_type" => $input["type"]
+                    ,"input_fieldset" => $input["fieldset"]
+                    ,"input_options" => $input["options"]
+            );
+            //insert input
+            $wpdb->insert(
+                $this->getSystempay()->get_inputs_table_name(), 
+                $inputs_data
+            );
+        }
+    //configurationS  
+        foreach ($configurations as $configuration) {
+            $configurations_data = array(
+                    "configuration_form_id" => $form_id
+                    ,"configuration_label" => $configuration["label"]
+                    ,"configuration_name" => $configuration["name"]
+                    ,"configuration_value" => $configuration["value"]
+                    ,"configuration_function" => $configuration["function"]
+                    ,"configuration_hide" => $configuration["hide"]
+                    ,"configuration_required" => $configuration["required"]
+                    ,"configuration_class" => $configuration["class"]
+            );
+            //insert input
+            $wpdb->insert(
+                $this->getSystempay()->get_configurations_table_name(), 
+                $configurations_data
+            );
+        }
+        //WS Config
+        $this->insertWSConfigs($form_id, $WS_config);
     }
 
     public function updateForm($form_id, $form, $inputs, $configurations, $WS_config)
@@ -117,6 +124,12 @@ class WSManager extends WSTools
         //FORMS
 
         //prepare form  
+        $inputs         = stripslashes_deep($inputs);
+        $form           = stripslashes_deep($form);
+        $configurations = stripslashes_deep($configurations);
+        $WS_config      = stripslashes_deep($WS_config);
+
+
         $where = array(
           "form_id" => $form_id
         );  
@@ -124,30 +137,22 @@ class WSManager extends WSTools
           "%d"
         );
 
-        $inputs=stripslashes_deep($inputs);
-        
-        foreach ($inputs as $input) 
-        {
-            error_log('$input["label"] : '.$input["label"]);
-        }
-
-
         $form_data = array(
-             "form_name" => $form["name"]
-            ,"form_css_class" => $form["css_class"]
-            ,"form_plateforme"=> $form["plateforme"]
+             "form_name" => $form["name"],
+             "form_css_class" => $form["css_class"],
+             "form_plateforme"=> $form["plateforme"]
         );
         $data_formats = array(
+             "%s",
+             "%s",
              "%s"
-            ,"%s"
-            ,"%s"
         );
         $wpdb->update( 
-            $this->getSystempay()->get_form_table_name() 
-            ,$form_data
-            ,$where
-            ,$data_formats
-            ,$where_format
+            $this->getSystempay()->get_form_table_name(),
+            $form_data,
+            $where,
+            $data_formats,
+            $where_format
         );
       
         //Update WSConfig
@@ -159,15 +164,14 @@ class WSManager extends WSTools
         }
 
       //UPDATE configurations (delete all then insert them)
-        $wpdb->query( 
-            $wpdb->prepare( 
-                "
-                 DELETE FROM $this->getSystempay()->get_configurations_table_name()
-                 WHERE configuration_form_id = %d
-                "
-                ,$form_id
+        $wpdb->query(
+            $wpdb->prepare(
+                "DELETE FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = %d",
+                $form_id
             )
         );
+        
+        
         foreach ($configurations as $configuration) 
         {
             $configurations_data = array(
@@ -189,16 +193,12 @@ class WSManager extends WSTools
         //UPDATE INPUTS (delete all then insert them)
         $wpdb->query( 
             $wpdb->prepare( 
-                "
-                 DELETE FROM $this->getSystempay()->get_inputs_table_name()
-                 WHERE input_form_id = %d
-                "
-                , $form_id
+                "DELETE FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = %d",
+                $form_id
             )
         );
 
-        foreach ($inputs as $input) 
-        {
+        foreach ($inputs as $input) {
             $inputs_data = array(
                 "input_form_id" => $form_id
                 ,"input_label" => $input["label"]
@@ -246,13 +246,13 @@ class WSManager extends WSTools
             "%d"
         );
         $WSconfig_data = array(
-            "WSconfig_form_id" => $form_id
-          , "WSconfig_json"=>json_encode($WS_config)
+            "WSconfig_form_id" => $form_id,
+            "WSconfig_json"=>json_encode($WS_config)
         );
 
         $data_formats = array(
-             "%d"
-            ,"%s"
+             "%d",
+             "%s"
         );
 
         $wpdb->update(

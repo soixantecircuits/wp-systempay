@@ -7,8 +7,8 @@
               <th class="large"><?php _e("Label", "ws"); ?></th>
               <th class="large"><?php _e("Name", "ws"); ?></th>
               <th class="large"><?php _e("Value", "ws"); ?></th>
-              <th class="short"><?php _e("Function ?", "ws"); ?></th>
-              <th class="short"><?php _e("Hide", "ws"); ?></th>
+              <th class="short cut"><?php _e("Function ?", "ws"); ?></th>
+              <th class="short cut"><?php _e("Hide", "ws"); ?></th>
               <th class="large"><?php _e("Description", "ws"); ?></th>           
             </tr>
           </thead>
@@ -18,6 +18,7 @@
         </table>  
         </div>
       </div>
+
       <!-- Optionals configurations -->
       <div id="tabs-2">
       <div id="ws_inputs">
@@ -27,15 +28,17 @@
               <th class="large"><?php _e("Label", "ws"); ?></th>
               <th class="large"><?php _e("Name", "ws"); ?></th>
               <th class="large"><?php _e("Value", "ws"); ?></th>
-              <th class="short"><?php _e("Function ?", "ws"); ?></th>
-              <th class="short"><?php _e("Hide", "ws"); ?></th>
+              <th class="short cut"><?php _e("Function ?", "ws"); ?></th>
+              <th class="short cut"><?php _e("Hide", "ws"); ?></th>
               <th class="large"><?php _e("Description", "ws"); ?></th>
             </tr>
             </thead>
-            <tbody id="ws_inputs_table"></tbody>
+            <tbody id="ws_inputs_table">
+            </tbody>
         </table>
       </div>
       </div>
+
       <!-- Customer Inputs -->
       <div id="tabs-3">
         <div id="ws_customer_inputs">
@@ -61,13 +64,14 @@
           </table>
         </div>
       </div>
+
       <div id="tabs-4">
-<?php 
-          $generalConfig = $this->get_Manager()->getGeneralConfig();
-          $form_id = $_GET["WS_id"];
-          if (!empty($form_id)) {
-              $generalConfig = $this->_WSTools->mergeWSConfigs($form_id);
-          }
-?>
+        <?php require_once "ws_custom_inputs.php"; ?>        
+      </div>  
+
+      <div id="tabs-5">
         <?php require_once "ws_config_inputs.php"; ?>
       </div>
+
+      
+

@@ -183,35 +183,40 @@ class WSController
     public function printTable($group)
     {
         
-        /*TODO : Need to change the model / create one */
-        
         $input = $group[0];
+        /**
+         * TODO : Need to change the model / create one 
+         * 
+         * THIS REALLY SUCKS
+         * 
+         * input_fieldset > -1 = mandatory input
+         */
 
-        // input_fieldset > -1 = mandatory input
         if($input->input_fieldset > -1) :
             ?>  
             <div class="group">
-            <input class="" type="text" name="inputs[<?php echo $this->__rowIndexCustomInput; ?>][label]" value="<?php echo $input->input_label; ?>"/>
-            <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][name]"  value="<?php echo $input->input_name; ?>"/>     
-            <input class="hidden" type="text" name="inputs[<?php echo  $this->_rowIndexCustomInput; ?>][value]" value="<?php echo $input->input_value; ?>"/>
-            <input class="hidden" type="text" class="order" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][order]" value="0"/>
-            <input class="hidden" type="text" class="fieldset" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/>
-            <input class="hidden" type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][hide]" value="1" <?php echo $checked; ?>/>
-            <input class="hidden" type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][required]" value="1" <?php echo $checked; ?>/>
-            <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/>
-            <SELECT class="hidden" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][type]" size="1">
-            <?php 
-            foreach ($this->_select_types as $value) {
-                    $selected = ($input->input_type == $value)?"selected":"" ;
-                    echo "<OPTION ".$selected.">".$value."</OPTION>";
-            }
-            ?>
-            </SELECT>
-            <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][options]" value="<?php echo $input->input_options; ?>"/>
-            <?php $this->_rowIndexCustomInput++; ?>
-            <?php //end title?>
-
-            <table class="wp-list-table widefat fixed pages">
+            <div class="fieldset_name ">
+                <input class="" type="text" placeholder="<?php _e("Choose a nice fieldset name", "ws"); ?>" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][label]" value="<?php echo $input->input_label; ?>"/>
+                <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][name]"  value="<?php echo $input->input_name; ?>"/>     
+                <input class="hidden" type="text" name="inputs[<?php echo  $this->_rowIndexCustomInput; ?>][value]" value="<?php echo $input->input_value; ?>"/>
+                <input class="hidden" type="text" class="order" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][order]" value="0"/>
+                <input class="hidden" type="text" class="fieldset" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/>
+                <input class="hidden" type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][hide]" value="1" <?php echo $checked; ?>/>
+                <input class="hidden" type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][required]" value="1" <?php echo $checked; ?>/>
+                <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/>
+                <select class="hidden" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][type]" size="1">
+                <?php 
+                foreach ($this->_select_types as $value) {
+                        $selected = ($input->input_type == $value)?"selected":"" ;
+                        echo "<OPTION ".$selected.">".$value."</OPTION>";
+                }
+                ?>
+                </select>
+                <input class="hidden" type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][options]" value="<?php echo $input->input_options; ?>"/>
+                <?php $this->_rowIndexCustomInput++; ?>
+                <?php //end title?>
+            </div>
+            <table class="table wp-list-table widefat fixed pages">
             <thead>
               <tr>
                 <th class="delete"> </th>
@@ -234,23 +239,23 @@ class WSController
                       if ($input->input_order > 0) : 
                   ?>
                       <tr id="row_<?php echo $this->_rowIndexCustomInput; ?>" class="<?php echo ($this->_rowIndexCustomInput%2==0) ? 'even' : 'odd';?>">                    
-                        <td class="delete_row short"><input type="button" class="button" value="-"/></td>
-                        <td class="post-title page-title column-title"><strong><input type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][label]"  value="<?php echo $input->input_label; ?>"/></strong></td>
+                        <td class="delete_row short"><button class="btn btn-warning delete_row"><i class="icon-minus icon-white"></i></button></td>
+                        <td class="large"><input type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][label]"  value="<?php echo $input->input_label; ?>"/></td>
                         <td class="large"><input type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][name]"  value="<?php echo $input->input_name; ?>"/></td>     
                         <td class="short"><input type="text" name="inputs[<?php echo  $this->_rowIndexCustomInput; ?>][value]" value="<?php echo $input->input_value; ?>"/></td> 
                         <td class="short"><input type="text" class="order" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][order]" value="<?php echo $input->input_order; ?>"/></td>
                         <td class="short"><input type="text" class="fieldset" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][fieldset]" value="<?php echo $input->input_fieldset; ?>"/></td>
-                        <?php $hidden=(bool)($input->input_hide); ?>
-                        <?php $checked=($hidden)?"checked":""; ?>
+                        <?php $hidden  = (bool)($input->input_hide); ?>
+                        <?php $checked = ($hidden)?"checked":""; ?>
                         <td class="short check"><input type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][hide]" value="1" <?php echo $checked; ?>/></td>
-                        <?php $required=(bool)($input->input_required); ?>
-                        <?php $checked=($required)?"checked":""; ?>
+                        <?php $required = (bool)($input->input_required); ?>
+                        <?php $checked = ($required)?"checked":""; ?>
                         <td class="short check"><input type="checkbox" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][required]" value="1" <?php echo $checked; ?>/></td>
                         <td class="short"><input type="text" name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][class]" value="<?php echo $input->input_class; ?>"/></td>
                         <td class="large">
                           <SELECT name="inputs[<?php echo $this->_rowIndexCustomInput; ?>][type]" size="1">
                             <?php 
-                            foreach ($this->select_types as $value) {
+                            foreach ($this->_select_types as $value) {
                                 $selected=($input->input_type==$value)?"selected":"" ;
                                 echo "<OPTION ".$selected.">".$value."</OPTION>";
                             }
@@ -265,8 +270,8 @@ class WSController
                 </tr>
               </tbody>
             </table>
-            <input type="button" class="addRow" class="button" value="+">
-            <input type="button" class="removeTable" class="button" value="<?php _e("- Remove the whole table !", "ws");?>">
+            <button class="addRow btn btn-primary"><?php _e("Add a row", "ws"); ?><i class="icon-plus icon-white"></i></button>
+            <button class="removeTable btn btn-danger"><?php _e("Remove the whole table !", "ws");?><i class="icon-trash icon-white"></i></button>
             </div>
         <?php
         endif;
@@ -294,7 +299,7 @@ class WSController
         if ($WS_action = $_GET["WS_action"]) {
             switch($WS_action) {
             case "update":
-                if (empty($_GET["WS_id"])) {
+                if (empty($_GET["WS_id"]) || !isset($_POST["form"])) {
                     return false;
                 }
                 $this->_Manager->updateForm($_GET["WS_id"], $_POST["form"], $_POST["inputs"], $_POST["configurations"], $_POST["generalconfig"]);
@@ -310,8 +315,10 @@ class WSController
         if ($WS_action = $_GET["WS_action"]) {
             switch($WS_action) {
             case "insert" :
-                $this->_Manager->newForm($_POST["form"], $_POST["inputs"], $_POST["configurations"], $_POST["generalconfig"]);
-                //$this->redirect($this->mainPageName);
+                if (isset($_POST["inputs"])) {
+                    $this->_Manager->newForm($_POST["form"], $_POST["inputs"], $_POST["configurations"], $_POST["generalconfig"]);
+                    //$this->redirect($this->mainPageName);
+                }
                 break;
             }
         }
@@ -322,7 +329,9 @@ class WSController
         if ($WS_action = $_GET["WS_action"]) {
             switch($WS_action) {
             case "update" :
-                $this->_Manager->updateGeneralConfig();
+                if (isset($_POST["inputs"])) {
+                    $this->_Manager->updateGeneralConfig();
+                }
                 break;
             }
         }
@@ -339,7 +348,13 @@ class WSController
     //configure the Menu
     public function configureMenu()
     {
-        add_menu_page(__("WS-Sytempay", "ws"), __("WS-Sytempay", "ws"), 'edit_pages', $this->_mainPageName, array($this,'mainPage'), WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
+        add_menu_page(__("WS-Sytempay", "ws"),
+                      __("WS-Sytempay", "ws"), 
+                      'edit_pages',
+                       $this->_mainPageName,
+                       array($this, 'mainPage'),
+                       WP_PLUGIN_URL .'/wp-systempay/images/WS.png');
+        $all_the_forms      = add_submenu_page($this->_mainPageName, __("All the payment forms", "ws"), __("List all", "ws"), 'edit_pages', $this->_mainPageName, array($this, 'mainPage'));
         $newForm            = add_submenu_page($this->_mainPageName, __("New form", "ws"), __("Add new", "ws"), 'edit_pages', $this->_newFormPageName, array($this, 'newForm'));
         $transactionsMenu   = add_submenu_page($this->_mainPageName, __("Transactions menu", "ws"), __("transactions", "ws"), 'edit_pages', $this->_transactionsPageNameMenu, array($this, 'transactionsPageMenu'));
         $config             = add_submenu_page($this->_mainPageName, __("general Configuration", "ws"), __("Config", "ws"), 'edit_pages', $this->_configPageName, array($this, 'configPage'));
