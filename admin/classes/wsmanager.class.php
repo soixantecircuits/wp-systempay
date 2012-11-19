@@ -116,6 +116,8 @@ class WSManager extends WSTools
         }
         //WS Config
         $this->insertWSConfigs($form_id, $WS_config);
+        
+        return $form_id;
     }
 
     public function updateForm($form_id, $form, $inputs, $configurations, $WS_config)

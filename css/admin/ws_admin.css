@@ -41,6 +41,10 @@ td.short.check{
   text-align: center;
 }
 
+td > div.alert{
+  margin-bottom: 0px;
+}
+
 th.short.cut{
   width: 90px;
 }

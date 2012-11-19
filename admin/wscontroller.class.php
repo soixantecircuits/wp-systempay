@@ -316,8 +316,8 @@ class WSController
             switch($WS_action) {
             case "insert" :
                 if (isset($_POST["inputs"])) {
-                    $this->_Manager->newForm($_POST["form"], $_POST["inputs"], $_POST["configurations"], $_POST["generalconfig"]);
-                    //$this->redirect($this->mainPageName);
+                    $id = $this->_Manager->newForm($_POST["form"], $_POST["inputs"], $_POST["configurations"], $_POST["generalconfig"]);
+                    $this->redirect($this->_editPageName."&WS_action=edit&WS_id=".$id);
                 }
                 break;
             }
