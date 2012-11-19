@@ -20,6 +20,10 @@ jQuery(document).ready(function() {
   });
 
   WS_inputs_index = Math.max.apply(null, index);
+  if (WS_inputs_index < 0) {
+    WS_inputs_index = 1;
+  }
+
   forms.inputIndex = WS_inputs_index + 1;
 });
 

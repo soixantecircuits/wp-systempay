@@ -96,7 +96,8 @@ class WSManager extends WSTools
                 $inputs_data
             );
         }
-    //configurationS  
+        
+        //configurations
         foreach ($configurations as $configuration) {
             $configurations_data = array(
                     "configuration_form_id" => $form_id
