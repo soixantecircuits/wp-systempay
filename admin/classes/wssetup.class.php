@@ -195,7 +195,7 @@ class WSSetup
             $the_page = get_page_by_path($the_page_slug);
         }
 
-        if ($the_page_title != $this->getSystempay()->mainPage_title) {
+        if ($the_page_title != $this->getSystempay()->get_mainPage_title()) {
             $mainPage = get_option('WS_main_page');
         } else {
             $mainPage = null;
@@ -212,7 +212,7 @@ class WSSetup
             $_p['post_parent']    = $mainPage;
             $_p['post_category']  = array(1); // the default 'Uncategorised'
 
-            if ($the_page_title == $this->getSystempay()->mainPage_title) {
+            if ($the_page_title == $this->getSystempay()->get_mainPage_title()) {
                 update_option('WS_main_page', $the_page, '', 'yes');
             }
             // Insert the post into the database
@@ -220,16 +220,16 @@ class WSSetup
 
             switch ($the_page_slug) {
             case 'transaction_serve_page':
-                $this->getSystempay()->resultServerPage_id = $the_page_id;
+                $this->getSystempay()->setResultServerPage_id($the_page_id);
                 break;
             case 'transaction_page':
-                $this->getSystempay()->resultPage_id = $the_page_id;
+                $this->getSystempay()->setResultPage_id($the_page_id);
                 break;
             case 'confirmation_page':
-                $this->getSystempay()->confirmationpage_id = $the_page_id;
+                $this->getSystempay()->setConfirmationpage_id($the_page_id);
                 break; 
             case 'ws_systempay':
-                $this->getSystempay()->mainPage_id = $the_page_id;
+                $this->getSystempay()->setMainPage_id($the_page_id);
                 break;              
             default:
                 break;

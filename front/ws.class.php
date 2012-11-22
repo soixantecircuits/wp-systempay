@@ -88,6 +88,26 @@ class WS
         return $this->generalconfig_table_name;
     }
 
+    public function setResultServerPage_id($the_page_id)
+    {
+        $this->resultServerPage_id = $the_page_id;
+    }
+                
+    public function setResultPage_id($the_page_id)
+    {
+        $this->resultPage_id = $the_page_id;
+    }
+
+    public function setConfirmationpage_id($the_page_id)
+    {
+        $this->confirmationpage_id = $the_page_id;
+    }
+        
+    public function setMainPage_id($the_page_id)
+    {
+        $this->mainPage_id = $the_page_id;
+    }
+     
     public function add_admin_js()
     {
         add_action('admin_footer', array(&$this, 'output_inline_js'), 25);
