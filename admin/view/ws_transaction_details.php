@@ -1,7 +1,7 @@
 <div class="ws_warp">
-	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br></div><div class="page_title"><h1><?php _e("Details of the transaction","WS"); ?></h1></div>
+	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br></div><div class="page_title"><h1><?php _e("Details of the transaction", "ws"); ?></h1></div>
 	<div class="cb"></div>
-	<h2><?php _e("Transaction Identification","WS"); ?></h2>
+	<h2><?php _e("Transaction Identification", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">
 		<thead>
 			<th><?php _e("Order Id"); ?></th>
@@ -14,7 +14,7 @@
 			<td><p> <?php echo $transaction_data->transaction_command_certificat;?></p></td>
 		</tbody>
 	</table>
-	<h2><?php _e("Transaction Statut","WS"); ?></h2>
+	<h2><?php _e("Transaction Statut", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">
 		<thead>
 			<th><?php _e("Statut"); ?></th>
@@ -29,7 +29,7 @@
 			<td><p><?php echo $transaction_data->transaction_command_3dsecure;?></p></td>
 		</tbody>	
 	</table>
-	<h2><?php _e("Transaction Information","WS"); ?></h2>
+	<h2><?php _e("Transaction Information", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">		
 		<thead>
 			<th><?php _e("Date"); ?></th>
@@ -45,7 +45,7 @@
 		</tbody>
 
 	</table>
-	<h2><?php _e("Customer Information","WS"); ?></h2>
+	<h2><?php _e("Customer Information", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">		
 		<thead>
 			<th><?php _e("Customer Name"); ?></th>
@@ -68,11 +68,11 @@
 	
 	</table>
 	<div class="transaction_detail_box">
-		<h2><?php _e("Additional Information","ws"); ?></h2>
-		<?php $other_infos=json_decode($transaction_data->transaction_otherinfos_json);
-			(empty($other_infos))?_e("Empty","ws"):"";
+		<h2><?php _e("Additional Information", "ws"); ?></h2>
+		<?php $other_infos = json_decode($transaction_data->transaction_otherinfos_json);
+			(empty($other_infos))?_e("Empty", "ws"):"";
 			foreach ($other_infos as $info) :?>
-				<p><strong><?php echo $info["label"]; ?> :</strong> <?php echo $info["value"]; ?></p>
+				<p><strong><?php echo $info->label; ?> :</strong> <?php echo $info->value; ?></p>
 		<?php endforeach;?>
 	</div>
 </div>

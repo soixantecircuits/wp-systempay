@@ -401,7 +401,6 @@ class WSController
     public function transactionsPage()
     {
         $WS_id = $_GET["WS_id"];
-        //$WS    = new WS();
         $this->WS->add_admin_js();
         $transactions = $this->_Manager->getTransactionsByIdForm($WS_id);
         include dirname(__FILE__) . '/view/ws_transactions.php';

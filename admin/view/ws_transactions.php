@@ -1,7 +1,7 @@
 <div class="ws_warp">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br></div><div class="page_title"><h1><?php _e("Transactions","ws"); ?></h1></div>
 	<div class="cb"></div>
-	<table id="transactions_table" class="wp-list-table widefat fixed pages">
+	<table id="transactions_table" class="table wp-list-table widefat fixed pages">
 		<thead>
 			<tr>
 				<th><?php _e("id","ws"); ?></th>
@@ -30,8 +30,8 @@
 				<td class="amount"><?php echo $transaction_data->transaction_command_amount.' '.$transaction_data->transaction_command_currency;?></td>
 				<td><?php echo $transaction_data->transaction_customer_name;?></td>
 				<td><?php echo $transaction_data->transaction_customer_address;?></td>
-				<td><?php echo $infos->vads_cust_zip;?></td>
-				<td><?php echo $infos->vads_cust_city;?></td>
+				<td><?php echo $infos[5]->value; //zip?></td>
+				<td><?php echo $infos[4]->value; //city?></td>
 				<td><?php if(!empty($transaction_data->transaction_customer_cellphone)) {
 											echo $transaction_data->transaction_customer_cellphone;
 									}
@@ -40,7 +40,7 @@
 									}	?></td>
 				<td><a href="mailto:<?php echo $transaction_data->transaction_customer_email; ?>"><?php echo $transaction_data->transaction_customer_email;?></a></td>
 				<td class="country"><?php echo $transaction_data->transaction_customer_country;?></td>
-				<td class="action"><a class="button" href="?page=<?php echo $this->transactionDetailsPageName;?>&transaction_id=<?php echo $transaction_data->transaction_id; ?>"><?php _e("Details","ws"); ?></a></td>
+				<td class="action"><a class="btn btn-infos" href="?page=<?php echo $this->_transactionDetailsPageName;?>&transaction_id=<?php echo $transaction_data->transaction_id; ?>"><?php _e("Details","ws"); ?></a></td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
@@ -59,5 +59,5 @@
 					   ,"sFirst": "&#139;&#139;"
 					  }
 					}';
-		$WS->add_inline_js("jQuery('#transactions_table').dataTable({".$options."});")
+		$this->WS->add_inline_js("jQuery('#transactions_table').dataTable({".$options."});")
 	?>

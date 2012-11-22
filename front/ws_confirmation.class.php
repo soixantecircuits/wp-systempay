@@ -330,7 +330,7 @@ class WSConfirmation extends WSTools
         }
         //get the other infos and change them into json
         $inputs_data = $form_data["inputs_data"];
-        $transactions_data["transaction_otherinfos_json"] = $this->createOtherInfosJson($inputs_data, $datas, $transactions_data);
+        $transactions_data["transaction_otherinfos_json"] = $this->createOtherInfosJson($inputs_data, $transactions_data);
         //insert the datas in the db
         $wpdb->show_errors(
             $insert = $wpdb->insert(
@@ -360,7 +360,12 @@ class WSConfirmation extends WSTools
             $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test","certificate_test", "certificate_production", "vads_trans_id"));
         }
     }
-
+    /**
+     * 
+     * This function has to be redesigned
+     * 
+     * 
+     */
     private function createOtherInfosJson($inputs_data, $transactions_data)
     {
         $infos = array();
@@ -368,15 +373,15 @@ class WSConfirmation extends WSTools
             foreach ($groupe as $input) {
                 $unique = true;
                 foreach ($transactions_data as $transaction_data) {
-                    if ($input["value"]==$transaction_data) {
-                        $unique=false;
+                    if ($input["value"] == $transaction_data) {
+                        $unique = false;
                     }
                 }
-                $info=array(
-                  "label"=>$input["label"],
-                  "value"=>$input["value"]
-                );
-                if ($unique == true) {
+                if ($unique && $input["label"] != "vads_amount") {
+                    $info = array(
+                          "label" => $input["label"],
+                          "value" => $input["value"]
+                    );
                     array_push($infos, $info);
                 }
             }
@@ -386,19 +391,19 @@ class WSConfirmation extends WSTools
             $unique = true;
             foreach ($infos as $info) {
                 if ($value == $info["value"]) {
-                    $unique=false;
+                    $unique = false;
                 }
             }
             foreach ($transactions_data as $transaction_data) {
-                if ($value==$transaction_data) {
-                    $unique=false;
+                if ($value == $transaction_data) {
+                    $unique = false;
                 }
             }
-            $info=array(
-              "label"=>$key
-              ,"value"=>$value
-            );
-            if ($unique) {
+            if ($unique && $key != "vads_amount") {
+                 $info = array(
+                      "label" => $key
+                      ,"value" => $value
+                );
                 array_push($infos, $info);
             }   
         }

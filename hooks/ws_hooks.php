@@ -16,7 +16,7 @@ add_action('plugins_loaded', 'WS_language_call');
 function load_custom_wp_admin_style($hook)
 {
     error_log("hook : ".$hook." : ".strlen(strstr($hook,"ws-sytempay")));
-    if (('toplevel_page_WS_main' !== $hook) && (strlen(strstr($hook, "admin_page_WS_edit"))<=0) && (strlen(strstr($hook, "ws-sytempay"))<=0))
+    if (('toplevel_page_WS_main' !== $hook) && (strlen(strstr($hook, "admin_page_WS_edit"))<=0) && (strlen(strstr($hook, "ws-sytempay"))<=0) && (strlen(strstr($hook, "admin_page_WS_transactions"))<=0) )
           return;
     wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
     wp_enqueue_style('WS_iconCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
