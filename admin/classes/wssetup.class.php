@@ -18,12 +18,12 @@ class WSSetup
 
     public function __construct($systempay) 
     {
-        $this->$_systempay = $systempay;
+        $this->_systempay = $systempay;
     }
 
     public function getSystempay()
     {
-        return $this->$_systempay;
+        return $this->_systempay;
     }
 
     public function setSystempay($systempay)
