@@ -61,3 +61,12 @@ if (!empty($form_id)) {
     </div>
   </div>
   <br/><br/>
+  <!-- Format order -->
+  <div class="sendmail">
+    <h5><?php _e("Custom order format", "ws"); ?></h5>
+    <div class="input-prepend input-append">
+        <span class="add-on"><?php _e("Name", "ws"); ?></span>
+        <input placeholder = "<?php _e("Simple name", "ws");?>" type="text" id="order_format_name" name="generalconfig[order_format][name]" value="<?php echo $generalConfig->order_format->name; ?>" />
+        <span class="add-on"><?php _e("Format : time-name-trans_id", "ws"); ?></span>
+    </div>
+  </div>

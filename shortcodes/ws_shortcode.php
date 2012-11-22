@@ -4,14 +4,15 @@ function WS_Add_payform($atts, $content)
     extract(
         shortcode_atts(
             array(
-              'id' => ''
-              ,"template"=>''
-              ,'name' => '')
-            , $atts
+              'id' => '',
+              "template"=>'',
+              'name' => ''),
+            $atts
         )
     );
-    $form_id =$id;
-    $WSForms = new WSForms();
+    $form_id = $id;
+    $WS = new WS();
+    $WSForms = new WSForms($WS);
     if (!empty($name)) {
         if (!empty($template)) {
             echo $WSForms->getFormByName($name, $template);

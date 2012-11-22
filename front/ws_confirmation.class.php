@@ -110,8 +110,8 @@ class WSConfirmation extends WSTools
             if ($is_function) {
                 $function_name = $input_array["value"];
                 $isExcluded    = $this->is_excluded($function_name, $excludes);
-                if (method_exists($this->getSystempay()->Systempay, $function_name) && (!$isExcluded)) {
-                    $input_array["value"] = $this->$plateforme->$function_name($form_id,$posts);
+                if (method_exists($this->getSystempay()->getSystempayEl(), $function_name) && (!$isExcluded)) {
+                    $input_array["value"] = $this->getSystempay()->getSystempayEl()->$function_name($form_id, $posts);
                 }
             }
             array_push($new_inputs_array, $input_array);
@@ -164,7 +164,7 @@ class WSConfirmation extends WSTools
 
     private function getCancelLink()
     {
-        return "<a class='confirmation_button a-btn' id='confirm_cancel' href='".$_GET[$this->get_GET_key_confirmation_previouspage()]."'>".__('Cancel', 'ws')."</a>";
+        return "<a class='confirmation_button a-btn' id='confirm_cancel' href='".$_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()]."'>".__('Cancel', 'ws')."</a>";
     }
 
     /**
@@ -186,18 +186,20 @@ class WSConfirmation extends WSTools
             //we get the additionals inputs informations
             $additionalsinputs_data = $confirmation_data["inputs_data"];
             $plateforme             = $form_data["form_plateforme"];
-            $amount_input_name      = $this->saved_inputs[$plateforme]["amount_input_name"];
+            $saved_inputs           = $this->getSystempay()->getSavedInputs();
+            $amount_input_name      = $saved_inputs[$plateforme]["amount_input_name"];
             $amount                 = $this->getAmount($configurations_data, $additionalsinputs_data, $posts, $amount_input_name);
+
             switch ($plateforme) {
             case 'systempay':
                 $correct_amount = floatval($amount)*100;
                 break;
             default:
-                $correct_amount=$amount;
+                $correct_amount = $amount;
                 break;
             }
           
-            $confirmation_html  = "<form method='POST' class='WS_confirmation' id='".$this->get_confirmation_form_id()."' action='".$return_url."'>";
+            $confirmation_html  = "<form method='POST' class='WS_confirmation' id='".$this->getSystempay()->get_confirmation_form_id()."' action='".$return_url."'>";
             $confirmation_html .= "<table>";
             $confirmation_html .= "<input type='hidden' name='".$amount_input_name."' value='".$correct_amount."'/>";
             $confirmation_html .= __("The amount of your transaction is:", "ws")." ".$amount." ".$this->getCurrency($form_id)->alpha3."<br/><br/>"; //to replace by currency
@@ -232,7 +234,7 @@ class WSConfirmation extends WSTools
 
     public function getAmount($configurations_data, $inputs_data, $post_inputs, $amount_input_name)
     {
-        $amount=0;
+        $amount = 0;
         foreach ($configurations_data as $configuration) {
             if ($configuration["name"] == $amount_input_name) {
                 (float)($configuration["value"]);
@@ -289,9 +291,10 @@ class WSConfirmation extends WSTools
         $form_data         = $this->getConfirmFormArrayById($form_id, $datas, true);
         $plateforme        = $form_data["form_data"]["form_plateforme"];
         $transactions_data = array();
-        //creatE the datas to save for each plateforme
-        $trans_id          = $this->getSystempay()->Systempay->systemPay_GetTransId();
-        $order_id          = $this->generateOrderId("ELA", $trans_id);
+        //create the datas to save for each plateforme
+        $trans_id          = $this->getSystempay()->getSystempayEl()->systemPay_GetTransId();
+        //$order_id          = $this->generateOrderId("ELA", $trans_id);
+        $order_id          = $this->generateOrderId($this->getOrderString($form_id), $trans_id);
         $amount            = floatval(mysql_real_escape_string($datas["vads_amount"]))/100;
 
         switch ($plateforme) {
@@ -344,10 +347,11 @@ class WSConfirmation extends WSTools
               <br/><p><?php _e("Please wait, you'll be redirected in a few moments.", "ws"); ?></p>
             </div>
         <?php //we create the hidden form
-            $return_url = $this->getSystempay()->saved_inputs[$plateforme]["return_url"];
+            $saved_inputs           = $this->getSystempay()->getSavedInputs();
+            $return_url             = $saved_inputs[$plateforme]["return_url"];
             $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
             //we redirect to the plateforme page.
-            parent::add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
+            $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
             //else we propose to retry or to cancel
         } else {
             _e("Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster.", "ws");
@@ -419,7 +423,7 @@ class WSConfirmation extends WSTools
                 case "systempay" :
                     //we prepare the signature and set it to the good input
                     if ($configuration["name"] == "signature") {
-                        $signature = $this->getSystempay()->Systempay->WS_GetSignature($configurations_data, $inputs_data, $order_id, $trans_id);
+                        $signature = $this->getSystempay()->getSystempayEl()->WS_GetSignature($configurations_data, $inputs_data, $order_id, $trans_id);
                         echo "<input type='hidden' name='".$configuration["name"]."' value='".$signature."'/>";
                     //we set the amount to centimes 
                     } else if ($configuration["name"] == "vads_amount") {
@@ -459,7 +463,7 @@ class WSConfirmation extends WSTools
 
     private function generateOrderId($name, $trans_id)
     {
-        $time=date("d-m-Y"); 
+        $time = date("d-m-Y"); 
         return $time."-".$name."-".$trans_id;
     }
 

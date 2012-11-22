@@ -60,7 +60,9 @@ function WS_load_datatables()
 
 //shortcodes
 add_shortcode("wp-systempay-confirmation", "WS_Add_confirmation");
+/*NEED TO REMOVE THAT DEPRECATED*/
 add_shortcode("payform", "WS_Add_payform");
+add_shortcode("wp-systempay", "WS_Add_payform");
 add_shortcode("wp-systempay-result", "WS_Add_result");
 add_shortcode("wp-systempay-server-result", "WS_Add_Server_result");
 ?>

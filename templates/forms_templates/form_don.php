@@ -18,7 +18,7 @@
             <div class="cb"></div>
             <br/>
             <div class="title_phase" id="don_phasetwo">
-              <p>2. <?php _e("Infos","ws"); ?></p>
+              <p>2. <?php _e("Infos", "ws"); ?></p>
             </div>
             <div id="don_formulairebox">
               <div class="general_form">

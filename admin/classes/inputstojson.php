@@ -46,7 +46,7 @@ function mergeInputs($inputs_to_update, $form_from_sql){
     return false;
 }
 
-function mergeConfigurations($configs_to_update,$form_from_sql){
+function mergeConfigurations($configs_to_update, $form_from_sql){
     $array_to_update=array();
     $saved_inputs = array();
     foreach ($configs_to_update as $config_to_update) {

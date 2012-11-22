@@ -93,6 +93,25 @@
         return $configurations_data;
     }
 
+    public function getOrderString($form_id){
+        global $wpdb;
+        /**
+         *   TODO  
+         *   Need to add custom global config for each field
+         */
+        if (!empty($form_id)) {
+            (int)($form_id);
+            $generalconfig = json_decode($wpdb->get_var($wpdb->prepare("SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id)));
+            return $generalconfig->order_format->name;
+        } else {
+            /**
+             * If we find nothing we return random char : 
+             */
+            return substr(md5(microtime()), rand(0,26), 5);    
+        }
+        
+    }
+
     /**get the additionals inputs datas of the SQL database
     */
     public function getAdditionalsInputsObjectById($form_id)
@@ -197,7 +216,7 @@
         case 'systempay':
             $currency = $this->getConfigurationByName($form_id, "vads_currency");
             $numeric  = $currency["value"];
-            return $this->Systempay->CurrenciesManager->findCurrencyByNumCode($numeric);
+            return $this->getSystempay()->getSystempayEl()->CurrenciesManager->findCurrencyByNumCode($numeric);
             break;
         default:
             break;
@@ -240,8 +259,6 @@
     public function WSConfigExist($form_id)
     {
         global $wpdb;
-        error_log("foo : ". $this->getSystempay()->get_WSconfig_table_name());
-
         (int)($form_id);
         $WSconfig_data = $wpdb->get_var("SELECT WSconfig_id FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id);
         if ($WSconfig_data != "") {

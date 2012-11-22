@@ -8,6 +8,9 @@
 function WS_Add_confirmation($atts, $content)
 {
     wp_enqueue_style('WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
+    if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
+            wp_enqueue_style(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css");
+    }
     $WS = new WS();
     $WSConfirmation = new WSConfirmation($WS);
     $form_id = $_GET[$WS->get_GET_key_confirmation_formid()];
@@ -18,7 +21,7 @@ function WS_Add_confirmation($atts, $content)
         {
         case $WS->get_method_saveTransaction() :
             if (!empty($form_id)) {
-                $WSConfirmation->saveTransaction($form_id, $_POST, $WSConfirmation->get_confirmation_form_id());
+                $WSConfirmation->saveTransaction($form_id, $_POST, $WSConfirmation->getSystempay()->get_confirmation_form_id());
             }
             break;
         }

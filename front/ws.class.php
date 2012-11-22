@@ -133,11 +133,18 @@ class WS
         echo '<div class="updated"><p>WP-Systempay:<br/>'.__("Sorry we could not find the requiered page, try reinstalling the plugin", "ws").'</p></div>';
     }
     
-
     private function set_countriesList()
     {
         $this->Countries   = new WSCountries();
         $this->countryList = $this->Countries->get_countries();
+    }
+
+    public function getSystempayEl(){
+        return $this->Systempay;
+    }
+
+    public function getCountries(){
+        return $this->countryList;   
     }
 
     //get the manually saved inputs

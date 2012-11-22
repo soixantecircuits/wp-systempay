@@ -1,81 +1,88 @@
 .ws_confirmation .confirmation_buttons {
-	padding-top: 1em;
-	text-align: center;
+  padding-top: 1em;
+  text-align: center;
 }
 
 .ws_confirmation table {
-	width: 50%;
-	margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
 .ws_confirmation table tr {
-	
+  
 }
 
 .ws_confirmation table .confirmation_label {
-	width: 30%;
-	color:#6E6A6B;
-	padding : 3px 0px;
-	font-weight: bold;
-	text-align: right;
+  width: 30%;
+  color:#6E6A6B;
+  padding : 3px 0px;
+  font-weight: bold;
+  text-align: right;
 }
 
 .ws_confirmation table .confirmation_value {
-	width: 70%;
-	padding-left: 1em;
-	text-align: left;
+  width: 70%;
+  padding-left: 1em;
+  text-align: left;
 }
 
 
 .ws_confirmation .confirmation_buttons .confirmation_button {
-	display: inline;
-	vertical-align: middle;
-	overflow: none;
-	font-family: Arial;
-	font-size: 16px;
-	text-decoration: none;
-	color:#6E6A6B;
-	padding: 10px;
-	border:2px solid #B5B5B5;
-	background-color: #fff;
+  display: inline;
+  vertical-align: middle;
+  overflow: none;
+  font-family: Arial;
+  font-size: 16px;
+  text-decoration: none;
+  color:#6E6A6B;
+  padding: 10px;
+  border:2px solid #B5B5B5;
+  background-color: #fff;
 }
 
 .ws_confirmation .confirmation_buttons .confirmation_button:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 input#confirm_confirm.a-btn.confirmation_button{
-	float: left;
-	display: block;
-	width: 222px;
-	height: 31px !important;
-	color: white;
-	clear:none;
-	margin: 22px;
-	text-decoration: none;
-	text-align: center;
-	cursor: pointer;
-	padding-top: 0px;
+  float: left;
+  padding: 3px 8px;
+  display: block;
+  width: auto;
+  color: white;
+  clear: none;
+  margin: 22px 0px 20px 22px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  background: #DDD;
+  border: none;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
 }
 
-#confirm_cancel{
-	padding-top: 4px;
-	text-decoration: none;
-	clear: none;
-	color: white;
-	margin: 22px 0px 0px 86px;
-	display: block;
-	float: left;
-	color:#fff;
-	text-align: center;
-	font-weight:normal !important; 
-	background:url(bgBoutonForum_cancel.jpg) repeat-x !important;
-	border: 1px solid #ff0f9a !important;
+#confirm_cancel {
+  padding: 3px 11px;
+  clear: none;
+  color: white;
+  margin: 22px 0px 0px 86px;
+  display: block;
+  float: left;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  background: #DDD;
+  border: 0px solid #FF0F9A !important;
+}
+
+#confirm_cancel a{
+	  text-decoration: none;
 }
 
 .loading{
-	width: 35%;
-	margin: auto;
-	padding-bottom: 2em;
-	text-align:center;
+  width: 35%;
+  margin: auto;
+  padding-bottom: 2em;
+  text-align:center;
 }

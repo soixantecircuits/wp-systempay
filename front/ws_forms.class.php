@@ -2,6 +2,10 @@
 
 class WSForms extends WSTools  
 {
+    public function __construct($systempay)
+    {
+        parent::__construct($systempay);
+    }
   
     public function getFormByName($name, $template)
     { 
@@ -12,9 +16,13 @@ class WSForms extends WSTools
     public function getFormById($form_id, $template)
     { 
         (int)($form_id);
-        wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
+        if(file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
+        		wp_enqueue_style(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css");
+        } else {
+        		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
+      	}
         wp_enqueue_script('wp_footer', WP_PLUGIN_URL .'/wp-systempay/inc/jquery.validate.min.js');
-        $WS_data=parent::getFormArrayById($form_id);
+        $WS_data   = parent::getFormArrayById($form_id);
         $form_data = $WS_data["form_data"];
         $additionalsinputs_data = $WS_data["inputs_data"];
         if ($template) {
@@ -50,7 +58,7 @@ class WSForms extends WSTools
             $rules = $rules.$this->arrayRules[$i][1].': {'.$value.$end;
         }
 
-        parent::add_inline_js(
+        $this->getSystempay()->add_inline_js(
             "jQuery('.".$form_data["form_css_class"]."').validate({
               rules: {
                 ".$rules."
@@ -160,7 +168,7 @@ class WSForms extends WSTools
         case "countrieslist": ?>
             <select name="<?php echo $input["name"];?>" class="<?php echo $input["class"] ; ?>">
             <?php 
-            foreach ($this->countryList as $key => $value) :
+            foreach ($this->getSystempay()->getCountries() as $key => $value) :
                 if ($input["value"] == $value) {?>
                     <option value="<?php echo $key; ?>" selected="selected"><?php echo $value; ?></option>
             <?php 

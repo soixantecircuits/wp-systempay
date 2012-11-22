@@ -43,6 +43,7 @@ td.short.check{
 
 td > div.alert{
   margin-bottom: 0px;
+  padding: 8px 8px 8px 8px;
 }
 
 th.short.cut{
