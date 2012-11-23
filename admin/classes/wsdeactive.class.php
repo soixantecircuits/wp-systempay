@@ -2,6 +2,11 @@
 class WSDeactive extends WSTools
 {
 
+    public function __construct($systempay)
+    {
+        parent::__construct($systempay);
+    }
+
     public function deactive()
     {
         $this->deletePage($this->getSystempay()->get_confirmationpage_slug(), $this->getSystempay()->get_confirmationpage_title());

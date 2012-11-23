@@ -56,7 +56,8 @@ if (is_admin()) {
  */
 function WS_deactive()
 {
-    $WSDeactive= new WSDeactive();
+    $systempay = new WS();
+    $WSDeactive= new WSDeactive($systempay);
     $WSDeactive->deactive();
 }
 

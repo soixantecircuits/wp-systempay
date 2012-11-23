@@ -356,7 +356,7 @@ class WSConfirmation extends WSTools
         } else {
             _e("Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster.", "ws");
             $form_id = $_GET[$this->getSystempay()->get_GET_key_confirmation_formid()];
-            $return_url=$this->get_confirmationpage_url($form_id)."&WS_method=".$this->get_method_saveTransaction();
+            $return_url = $this->getSystempay()->get_confirmationpage_url($form_id)."&WS_method=".$this->get_method_saveTransaction();
             $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test","certificate_test", "certificate_production", "vads_trans_id"));
         }
     }

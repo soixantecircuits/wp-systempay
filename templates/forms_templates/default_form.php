@@ -1,7 +1,7 @@
 <form class="<?php echo $this->getCssClass($form_id);?>" method="POST" action="<?php echo $this->getSystempay()->get_confirmationpage_url($form_id); ?>">
+<table class="wp-systempay">
 <?php
   foreach ($additionalsinputs_data as $groupe) : ?>
-  <table class="wp-systempay">
   	<tr>
   		<td class="general_label"><?php _e("Montant", "ws");?></td>
   		<td><p class="alignleft"><input type="text" id="donation_box" value="50" name="vads_amount"/><strong class="currency">&#8364;</strong></p>
@@ -18,8 +18,8 @@
     </tr>
   <?php endif; ?>
 <?php   endforeach; ?>
-  </table>
 <?php endforeach; ?>
+  </table>
   <div class="wp-systempay submit-box">
      <input type="submit" class="wp-systempay-continue" value="<?php _e('Continue', "ws"); ?>" />
   </div>
