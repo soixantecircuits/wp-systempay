@@ -278,7 +278,7 @@ class WSSetup
         );
         //insert input
         $wpdb->insert(
-            $this->get_generalconfig_table_name(), 
+            $this->getSystempay()->get_generalconfig_table_name(), 
             $generalConfigs_data
         );
     }

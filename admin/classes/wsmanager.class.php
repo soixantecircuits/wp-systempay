@@ -314,7 +314,7 @@ class WSManager extends WSTools
         );
 
         $wpdb->update(
-            $this->get_generalconfig_table_name(),
+            $this->getSystempay()->get_generalconfig_table_name(),
             $config_data,
             $where,
             $data_formats,
