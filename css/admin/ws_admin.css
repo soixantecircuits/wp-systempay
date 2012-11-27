@@ -230,7 +230,7 @@ tbody.ui-sortable tr{
   margin: 0.2em 0em 0.67em;
 }
 
-form.form-inline input[type="text"],form.form-inline input[type="password"]{
+form.form-inline input[type="text"],form.form-inline input[type="password"],form.form-inline input[type="email"]{
   height:30px;
 }
 
