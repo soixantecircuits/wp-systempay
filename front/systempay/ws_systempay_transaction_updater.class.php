@@ -69,7 +69,11 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             */
             if ($update) :
                 $this->message = __("Everything went well", "ws");
-                return true;
+            else :
+                if (WP_DEBUG === true) {
+                    global $wpdb;
+                    error_log($wpdb->last_error());
+                }
             endif;
 
             $to_email = $this->get_cust_email($order_id);
@@ -78,9 +82,16 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
                 $this->message = $this->sendMail($order_id, $to_email);
             else :
                 $this->message = __("Email is not valid, or empty", "ws");
+                if (WP_DEBUG === true) {
+                    error_log($this->message);
+                }
             endif;
         else:
             $this->message = __("No order id", "ws");
+            if (WP_DEBUG === true) {
+                error_log($this->message);
+            }
+            
         endif;
 
         return $this->message;
