@@ -1,12 +1,14 @@
 <form class="<?php echo $this->getCssClass($form_id);?>" method="POST" action="<?php echo $this->getSystempay()->get_confirmationpage_url($form_id); ?>">
 <table class="wp-systempay">
+<tr>
+      <td class="general_label"><?php _e("Montant", "ws");?></td>
+      <td><p class="alignleft"><input type="text" id="donation_box" value="50" name="vads_amount"/><strong class="currency">&#8364;</strong></p>
+      </td>
+    </tr>
+</table>
+<table class="wp-systempay">
 <?php
-  foreach ($additionalsinputs_data as $groupe) : ?>
-  	<tr>
-  		<td class="general_label"><?php _e("Montant", "ws");?></td>
-  		<td><p class="alignleft"><input type="text" id="donation_box" value="50" name="vads_amount"/><strong class="currency">&#8364;</strong></p>
-  		</td>
-  	</tr>
+  foreach ($additionalsinputs_data as $groupe) :?>
 <?php foreach($groupe as $input): 
     (bool)($input["hide"]);
     if ((!empty($input["name"])) && (!$input["hide"])) : ?>

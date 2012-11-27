@@ -63,9 +63,7 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             );
 
             $update = $wpdb->update($this->getSystempay()->get_transactions_table_name(), $form_data, $where, $data_formats, $where_format);
-            if (WP_DEBUG === true) {
-                    error_log("update = ".$this->getSystempay()->get_transactions_table_name());
-            }
+
             /**
             * if we correctly update the transaction we return;
             */
@@ -144,7 +142,11 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             $transport = Swift_SendmailTransport::newInstance($emailConfig->sendmail->path);
             break;
         default :
-            $transport=null;
+            /**
+             * We use the default Unix system
+             * 
+             */
+            $transport = Swift_SendmailTransport::newInstance("/usr/sbin/sendmail -bs");    
             break;
         endswitch;
 
