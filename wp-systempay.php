@@ -73,6 +73,41 @@ function WS_install()
     $WSSetup->install();
 }
 
+/**
+ * Install the plugin
+ * 
+ * @return void
+ */
+function WS_update()
+{
+    $systempay = new WS();
+    $WSSetup = new WSSetup($systempay);
+    $WSSetup->update();
+}
+
+function WS_Should_update()
+{
+    add_action('admin_notices', 'should_update_message');
+}
+function should_update_message()
+{
+    $url = "?page=WS_main&WS_action=updatedb";
+    echo '<div class="updated"><p>WP-Systempay:<br/>'.sprintf(__("Hey, they've been update on database, you should run the <a href='%s'>update script now</a> ! Thanks", "ws"), $url).'</p></div>';
+}
+
+
+
+
+/**
+ * Then action with update scrip :
+ * Execute your upgrade logic here
+ * 
+ * 
+ * Then update the version value
+ * 
+ * update_option(MYPLUGIN_VERSION_KEY, $new_version);
+ */
+
 register_activation_hook(__FILE__, "WS_install");
 register_deactivation_hook(__FILE__, 'WS_deactive');
 
@@ -81,7 +116,7 @@ register_deactivation_hook(__FILE__, 'WS_deactive');
  * 
  * @return void
  */
-function WS_start()
+function WS_Start()
 {
     $WSController = new WSController();
 }
@@ -105,11 +140,10 @@ function WS_Update_Db_check()
 {
     global $wp_sytempay_db_version;
     if (get_site_option('wp_sytempay_db_version') != $wp_sytempay_db_version) {
-        include_once  dirname(__FILE__) . '/admin/classes/wssetup.class.php';
-        WS_install();
+        WS_Should_update();
     }
 }
-//add_action('plugins_loaded', 'WS_update_db_check');
+add_action('plugins_loaded', 'WS_Update_Db_check');
 
 //IMPORT HOOKS
 require_once dirname(__FILE__) . '/hooks/ws_hooks.php';

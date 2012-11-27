@@ -5,10 +5,17 @@
 * 
 */
 
-class WSSystempayTransactionUpdater extends WSSystempayAnalyzer 
+class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
 {
 
     public $message;
+
+    public function __construct($systempay)
+    {
+        parent::__construct($systempay);
+        $this->set_results_array();
+        $this->message = "";
+    }
 
     /** updateTransaction update the transaction
     * 
@@ -57,32 +64,41 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             * if we correctly update the transaction we return;
             */
             if ($update) :
-                $this->message = __("Everything is fine", "ws");
+                $this->message = __("Everything went well", "ws");
                 return true;
             endif;
 
             $to_email = $this->get_cust_email($order_id);
+
             if (!empty($to_email)) :
                 $this->message = $this->sendMail($order_id, $to_email);
             else :
-                $this->message = __("Email invalide/vide", "ws");
+                $this->message = __("Email is not valid, or empty", "ws");
             endif;
         else:
-            $this->message = __("Numéro de commande vide", "ws");
+            $this->message = __("No order id", "ws");
         endif;
 
         return $this->message;
     }
 
 
-    public function sendMail($order_id,$to_email)
+    public function sendMail($order_id, $to_email)
     {
         if ($this->get_or_post("vads_result") == "00") {
             $content = $this->get_success_mail();
-            $subject = __("Votre transaction sur Systempay c'est bien déroulée", "ws");
+            if ($emailConfig->setup->title_success != "") {
+                $subject = __($emailConfig->setup->title_success, "ws");
+            } else {
+                $subject = __("Your payement went well", "ws");
+            }
         } else {
             $content = $this->get_error_mail();
-            $subject = __("Une erreur c'est produite lors de votre transaction sur systempay", "ws");
+            if ($emailConfig->setup->title_error != "") {
+                $subject = __($emailConfig->setup->title_error, "ws");
+            } else {
+                $subject = __("An error occured while making the transaction with your Bank account", "ws");
+            }
         }
         return $this->useSwiftMailer($order_id, $to_email, $subject, $content);
     }
@@ -90,8 +106,8 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     private function useSwiftMailer($order_id, $to_email, $subject, $content)
     {
         //use the swiftMailer library to send the mail.
-        $form_id     = $this->get_form_id($order_id);
-        $emailConfig = $this->getFormWSConfig($form_id)->email;
+        $form_id          = $this->get_form_id($order_id);
+        $emailConfig      = $this->getFormWSConfig($form_id)->email;
         switch ($emailConfig->transport) :
         case "smtp" : 
             $SMTPEmail    = $emailConfig->smtp->username;
@@ -121,13 +137,28 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
         $Email = Swift_Message::newInstance();
         $Email->setSubject($subject);
         $Email->setTo($to_email);
-        $Email->setFrom(array($SMTPEmail => $FromName));
+        
+        ($emailConfig->setup->email_admin) ? $bccEmail = $emailConfig->setup->email_admin : $email_admin = get_bloginfo("admin_email");
+        $Email->setBcc($bccEmail);
+
+        ($emailConfig->setup->email != "") ? $email_admin = $emailConfig->setup->email : $email_admin = get_bloginfo("admin_email");
+        ($emailConfig->setup->email != "") ? $name = $emailConfig->setup->name : $name = get_bloginfo("name");
+        $Email->setFrom(array($email_admin => $name));
+
         $Email->setBody($content, 'text/html');
         //send it
         if ($Mailer->send($Email) == 1) {
-            return __("Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt.", "ws");
+            if ($emailConfig->setup->msg_success != "") {
+                return __($emailConfig->setup->msg_success, "ws");
+            } else {
+                return __("An email has been sent, you will get it soon. Thank you very much.", "ws");    
+            }
         } else {
-            return __("Erreur lors de l'envoi de l'e-mail.", "ws");
+            if ($emailConfig->setup->msg_error != "") {
+                return __($emailConfig->setup->msg_error, "ws");
+            } else {
+                return __("An error occured while sending the email.", "ws");
+            }
         }
     }
 
@@ -135,7 +166,13 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     public function get_success_mail()
     {
         ob_start(); 
-        include_once dirname(__FILE__)."/../../templates/emails_templates/success_email.php";
+
+        if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/emails_templates/success_email.php")) {
+            include_once get_stylesheet_directory()."/wp-systempay/templates/emails_templates/success_email.php";
+        } else {
+            include_once dirname(__FILE__)."/../../templates/emails_templates/success_email.php";    
+        }
+        
         $mail = ob_get_clean(); 
         return $mail;
     }
@@ -144,7 +181,13 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     {
         ob_start(); 
         $order_id = $this->get_or_post("vads_order_id");
-        include_once dirname(__FILE__)."/../../templates/emails_templates/error_email.php";
+
+        if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/emails_templates/error_email.php")) {
+            include_once get_stylesheet_directory()."/wp-systempay/templates/emails_templates/error_email.php";
+        } else {
+            include_once dirname(__FILE__)."/../../templates/emails_templates/error_email.php";
+        }
+    
         $mail = ob_get_clean(); 
         return $mail;
     }

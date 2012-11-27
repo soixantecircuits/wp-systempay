@@ -22,7 +22,7 @@ function inputsToJSON($form_to_update, $WS_formals_inputs, $WS_additionals_input
 }
 
 function mergeInputs($inputs_to_update, $form_from_sql){
-    $array_to_update=array();
+    $array_to_update = array();
     foreach ($inputs_to_update as $input_to_update) {
         foreach ($form_from_sql["inputs_data"][0] as $input_saved) {
             if ($input_to_update["name"] == $input_saved->input_name) {

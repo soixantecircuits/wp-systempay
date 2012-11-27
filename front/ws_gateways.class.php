@@ -331,7 +331,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_return_mode"
                           ,"label"=>__("return mode", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => "GET"
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -437,13 +437,13 @@ class WSGateways{
               ,"customer_infos" => array(
                         array( 
                           "name"=>"vads_cust_title"
-                          ,"label"=>__("title", "ws")
+                          ,"label"=>__("Title", "ws")
                           ,"value" => "1;0"
                           ,"function" =>false
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>1
-                          ,"description"=>__("customer's social title", "ws")
+                          ,"description"=>__("Customer's social title", "ws")
                           ,"type"=>"radio"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -453,12 +453,12 @@ class WSGateways{
                         )
                         ,array( 
                             "name"=>"vads_cust_first_name"
-                            ,"label"=>__("firstname", "ws")
+                            ,"label"=>__("Firstname", "ws")
                             ,"value" => ""
                             ,"order"=>2
                             ,"hide"=>false
                             ,"required"=>false
-                            ,"description"=>__("customer's name", "ws")
+                            ,"description"=>__("Customer's name", "ws")
                             ,"type"=>"text"
                             ,"amount"=>0
                             ,"fieldset"=>-1
@@ -468,28 +468,43 @@ class WSGateways{
                         )
                         ,array( 
                             "name"=>"vads_cust_last_name"
-                            ,"label"=>__("lastname", "ws")
+                            ,"label"=>__("Lastname", "ws")
                             ,"value" => ""
                             ,"order"=>3
                             ,"hide"=>false
                             ,"required"=>false
-                            ,"description"=>__("customer's name", "ws")
+                            ,"description"=>__("Customer's name", "ws")
                             ,"type"=>"text"
                             ,"amount"=>0
                             ,"fieldset"=>-1
                             ,"options"=>""
                             ,"class"=>""
                             ,"required"=>true
-                        )
-                        ,array( 
-                          "name"=>"vads_ship_to_street"
-                          ,"label"=>__("addresse", "ws")
+                        ),array( 
+                          "name"=>"vads_cust_address"
+                          ,"label"=>__("Address", "ws")
                           ,"value" => ""
                           ,"function" =>false
                           ,"hide"=>false
                           ,"required"=>false
+                          ,"order"=>5
+                          ,"description"=>__("Customer's address", "ws")
+                          ,"type"=>"text"
+                          ,"amount"=>0
+                          ,"fieldset"=>-1
+                          ,"options"=>""
+                          ,"class"=>""
+                          ,"required"=>false
+                        )
+                        ,array( 
+                          "name"=>"vads_ship_to_street"
+                          ,"label"=>__("Shipping address", "ws")
+                          ,"value" => ""
+                          ,"function" =>false
+                          ,"hide"=>true
+                          ,"required"=>false
                           ,"order"=>4
-                          ,"description"=>__("customer's addresse", "ws")
+                          ,"description"=>__("Customer's address", "ws")
                           ,"type"=>"text"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -499,13 +514,13 @@ class WSGateways{
                         )
                         ,array( 
                           "name"=>"vads_ship_to_street2"
-                          ,"label"=>__("addresse (rest)", "ws")
+                          ,"label"=>__("Shipping address (rest)", "ws")
                           ,"value" => ""
                           ,"function" =>false
-                          ,"hide"=>false
+                          ,"hide"=>true
                           ,"required"=>false
                           ,"order"=>5
-                          ,"description"=>__("customer's addresse", "ws")
+                          ,"description"=>__("Customer's address", "ws")
                           ,"type"=>"text"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -521,7 +536,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>6
-                          ,"description"=>__("customer's city", "ws")
+                          ,"description"=>__("Customer's city", "ws")
                           ,"type"=>"text"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -537,7 +552,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>7
-                          ,"description"=>__("customer's zip", "ws")
+                          ,"description"=>__("Customer's zip", "ws")
                           ,"type"=>"text"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -553,7 +568,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>8
-                          ,"description"=>__("customer's country", "ws")
+                          ,"description"=>__("Customer's country", "ws")
                           ,"type"=>"countrieslist"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -569,7 +584,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>9
-                          ,"description"=>__("customer's cell phone", "ws")
+                          ,"description"=>__("Customer's cell phone", "ws")
                           ,"type"=>"numeric"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -585,7 +600,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>10
-                          ,"description"=>__("customer's phone", "ws")
+                          ,"description"=>__("Customer's phone", "ws")
                           ,"type"=>"numeric"
                           ,"amount"=>0
                           ,"fieldset"=>-1
@@ -601,7 +616,7 @@ class WSGateways{
                           ,"hide"=>false
                           ,"required"=>false
                           ,"order"=>11
-                          ,"description"=>__("customer's email", "ws")
+                          ,"description"=>__("Customer's email", "ws")
                           ,"type"=>"email"
                           ,"amount"=>0
                           ,"fieldset"=>-1

@@ -148,7 +148,7 @@ class WS
         }
     }
 
-    function _error_set_saved()
+    private function _error_set_saved()
     {
         echo '<div class="updated"><p>WP-Systempay:<br/>'.__("Sorry we could not find the requiered page, try reinstalling the plugin", "ws").'</p></div>';
     }
@@ -318,7 +318,7 @@ class WS
             $permalink = get_permalink($resultPage->ID);
             return $permalink;
         } else {
-            return __("No link","WS");
+            return __("No link", "ws");
         }
     }
 

@@ -16,7 +16,7 @@ class WSForms extends WSTools
     public function getFormById($form_id, $template)
     { 
         (int)($form_id);
-        if(file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
+        if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
         		wp_enqueue_style(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css");
         } else {
         		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
@@ -26,7 +26,7 @@ class WSForms extends WSTools
         $form_data = $WS_data["form_data"];
         $additionalsinputs_data = $WS_data["inputs_data"];
         if ($template) {
-            if ( file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template) ) {
+            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template) ) {
                 $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template ;
             } else {
                 $path = dirname(__FILE__)."/../templates/forms_templates/".$template; 

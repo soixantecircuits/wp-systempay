@@ -4,8 +4,8 @@
  * 
  */
 
-add_action('init', 'WS_start');
-add_action('plugins_loaded', 'WS_language_call');
+add_action('init', 'WS_Start');
+add_action('plugins_loaded', 'WS_Language_call');
 /**
  * load_custom_wp_admin_style
  * 

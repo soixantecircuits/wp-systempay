@@ -145,7 +145,7 @@ class WSController
         $this->_confirmation_shortcode     = "WS_confirmation";
         $this->_result_shortcode           = "WS_result";
         $this->_WS_shortcode               = "WS";
-        $this->_select_types               = array("text","select","radio","checkbox","textarea","countrieslist","email","numeric","amountentry");
+        $this->_select_types               = array("text", "select", "radio", "checkbox", "textarea", "countrieslist", "email", "numeric", "amountentry");
         $this->WS                          = new WS();
         $this->_WSTools                    = new WSTools($this->WS);
         $this->_method_saveTransaction     = $this->WS->get_method_saveTransaction();
@@ -288,6 +288,8 @@ class WSController
                 }
                 $this->_Manager->deleteForm($_GET["WS_id"]);
                 break;
+            case "updatedb":
+                $this->_Manager->updatedb();
             }
         }
     }

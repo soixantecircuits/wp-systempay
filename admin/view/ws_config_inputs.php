@@ -7,6 +7,15 @@ if (!empty($form_id)) {
 ?>
   <div class="email_choice">
     <h4><?php _e("Set your prefered method to send email", "ws")?></h4>
+    <p><?php _e("Email sender information:", "ws"); ?></p>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("From / name", "ws"); ?></span>
+        <input type="text" class="span2" placeholder="email server" id="smtp_smtp" name="generalconfig[email][setup][from]" value="<?php echo $generalConfig->email->setup->from; ?>" />
+    </div>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Email", "ws"); ?></span>
+        <input type="email" class="span2" placeholder="port" id="smtp_smtp" name="generalconfig[email][setup][email]" value="<?php echo $generalConfig->email->setup->email; ?>" />
+    </div>
     <p><?php _e("Email Transport used:", "ws"); ?></p>
     <?php 
     $transports = array("smtp"=>"SMTP", "sendmail"=>"Send Mail"); 
@@ -69,4 +78,27 @@ if (!empty($form_id)) {
         <input placeholder = "<?php _e("Simple name", "ws");?>" type="text" id="order_format_name" name="generalconfig[order_format][name]" value="<?php echo $generalConfig->order_format->name; ?>" />
         <span class="add-on"><?php _e("Format : time-name-trans_id", "ws"); ?></span>
     </div>
+  </div>
+  <div class="sendmail">
+    <h5><?php _e("Custom settings", "ws"); ?></h5>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Email success Title", "ws"); ?></span>
+        <input placeholder = "<?php _e("Title of successful email", "ws");?>" type="text" id="email_success_title" name="generalconfig[email][setup][title_success]" value="<?php echo $generalConfig->email->setup->title_success; ?>" />
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Email error Title", "ws"); ?></span>
+        <input placeholder = "<?php _e("Title of error email", "ws");?>" type="text" id="email_error_title" name="generalconfig[email][setup][title_error]" value="<?php echo $generalConfig->email->setup->title_error; ?>" />
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Message success return", "ws"); ?></span>
+        <input placeholder = "<?php _e("Message for successful payment", "ws");?>" type="text" id="msg_success_title" name="generalconfig[email][setup][msg_success]" value="<?php echo $generalConfig->email->setup->msg_success; ?>" />
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Message error return", "ws"); ?></span>
+        <input placeholder = "<?php _e("Message for error during payment", "ws");?>" type="text" id="msg_error_title" name="generalconfig[email][setup][msg_error]" value="<?php echo $generalConfig->email->setup->msg_error; ?>" />
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Email admin", "ws"); ?></span>
+        <input placeholder = "<?php _e("Email of this payment account manager", "ws");?>" type="text" id="email_admin" name="generalconfig[email][setup][email_admin]" value="<?php echo $generalConfig->email->setup->email_admin; ?>" />
+    </div><div class="clear-fix"></div><br/>
   </div>

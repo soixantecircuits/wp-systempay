@@ -4,7 +4,7 @@
  * 
  */
 global $wp_sytempay_db_version;
-$wp_sytempay_db_version = "1.0";
+$wp_sytempay_db_version = "1.1.1";
 
 /**
  * WSSetup allow to setup the install
@@ -41,13 +41,13 @@ class WSSetup
     {
         //ob_start();
         $this->_createDB();
-        $content=__("If you want that Payfom works, please don't change the subpages", "ws");
+        $content = __("If you want that Payfom works, please don't change the subpages", "ws");
         $this->_createPage($this->getSystempay()->get_mainPage_slug(), $this->getSystempay()->get_mainPage_title(), $content);
-        $content="[wp-systempay-confirmation]";
+        $content = "[wp-systempay-confirmation]";
         $this->_createPage($this->getSystempay()->get_confirmationpage_slug(), $this->getSystempay()->get_confirmationpage_title(), $content);
-        $content="[wp-systempay-result]";
+        $content = "[wp-systempay-result]";
         $this->_createPage($this->getSystempay()->get_resultPage_slug(), $this->getSystempay()->get_resultPage_title(), $content);
-        $content="[wp-systempay-server-result]"; 
+        $content = "[wp-systempay-server-result]"; 
         $this->_createPage($this->getSystempay()->get_resultServerPage_slug(), $this->getSystempay()->get_resultServerPage_title(), $content);
         $this->_createConfigs();
         add_action('admin_notices', array( $this, '_adminInstallnotice'));
@@ -132,6 +132,7 @@ class WSSetup
           transaction_command_amount int(255),
           transaction_customer_name VARCHAR(255),
           transaction_customer_address VARCHAR(255),
+          transaction_customer_shipping_address VARCHAR(255),
           transaction_customer_phone VARCHAR(255),
           transaction_customer_cellphone VARCHAR(255),
           transaction_customer_email VARCHAR(255),
@@ -169,8 +170,7 @@ class WSSetup
         dbDelta($ws_config_table_name);
 
         update_option("wp_sytempay_db_version", $wp_sytempay_db_version);
-
-        global $wpdb;
+ 
         $installed_ver = get_option("wp_sytempay_db_version");
 
         if ( $installed_ver != $wp_sytempay_db_version ) {
@@ -272,7 +272,7 @@ class WSSetup
                     ) 
             )
         );
-        $generalconfig=json_encode($generalconfig);
+        $generalconfig       = json_encode($generalconfig);
         $generalConfigs_data = array(
           "generalconfig_json" => $generalconfig
         );
