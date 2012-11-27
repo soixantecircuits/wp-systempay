@@ -18,15 +18,15 @@ function WS_Add_payform($atts, $content)
     $WSForms = new WSForms($WS);
     if (!empty($name)) {
         if (!empty($template)) {
-            echo $WSForms->getFormByName($name, $template);
+            return $WSForms->getFormByName($name, $template);
         } else {
-            echo $WSForms->getFormByName($name, false);
+            return $WSForms->getFormByName($name, false);
         }
     } else if (!empty($form_id)) {
         if (!empty($template)) {
-            echo $WSForms->getFormById($form_id, $template);
+            return $WSForms->getFormById($form_id, $template);
         } else {
-            echo $WSForms->getFormById($form_id, false);
+            return $WSForms->getFormById($form_id, false);
         }
     }
 }
