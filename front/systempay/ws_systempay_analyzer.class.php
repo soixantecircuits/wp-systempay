@@ -97,7 +97,7 @@ class WSSystempayAnalyzer extends WSTools
     public function get_form_id($order_id)
     {
         global $wpdb;
-        $formid = $wpdb->get_var("SELECT transaction_form_id FROM ."$this->getSystempay()->get_transactions_table_name()." WHERE transaction_order_id = '".$order_id."'");
+        $formid = $wpdb->get_var("SELECT transaction_form_id FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_order_id = '".$order_id."'");
         return $formid;
     }
 
