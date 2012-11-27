@@ -101,6 +101,7 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     {
         if ($this->get_or_post("vads_result") == "00") {
             $content = $this->get_success_mail();
+            error_log(print_r($emailConfig,true));
             if ($emailConfig->setup->title_success != "") {
                 $subject = __($emailConfig->setup->title_success, "ws");
             } else {

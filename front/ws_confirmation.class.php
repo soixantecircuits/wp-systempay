@@ -203,7 +203,7 @@ class WSConfirmation extends WSTools
             $confirmation_html .= "<table>";
             $confirmation_html .= "<input type='hidden' name='".$amount_input_name."' value='".$correct_amount."'/>";
             $confirmation_html .= __("The amount of your transaction is:", "ws")." ".$amount." ".$this->getCurrency($form_id)->alpha3."<br/><br/>"; //to replace by currency
-            $confirmation_html .= __("Please find bellow the information about your payment:", "ws")."<br/><br/>"; 
+            $confirmation_html .= __("Please find bellow the information about your payement:", "ws")."<br/><br/>"; 
             foreach ($additionalsinputs_data as $groupe) {
                 foreach ($groupe as $additionalinput) {
                     (bool)($additionalinput["hide"]);
