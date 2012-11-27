@@ -29,9 +29,9 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             error_log(print_r($_POST, true));
         }
 
-        $order_id = $this->get_or_post("vads_order_id");
+        $order_id           = $this->get_or_post("vads_order_id");
         $payment_certificat = $this->get_or_post("vads_payment_certificate");
-        $cardnumber = $this->get_or_post("vads_card_number");
+        $cardnumber         = $this->get_or_post("vads_card_number");
 
         if (!empty($order_id)) :
             global $wpdb;
@@ -45,25 +45,27 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             );
 
             $form_data = array(
-              "transaction_command_statut" => mysql_real_escape_string($this->get_vads_result())
-              ,"transaction_command_extrastatut" => mysql_real_escape_string($this->get_vads_extra_results())
-              ,"transaction_command_auth" => mysql_real_escape_string($this->get_vads_auth())
-              ,"transaction_command_3dsecure" => mysql_real_escape_string($this->get_vads_warranty_result())
-              ,"transaction_command_certificat" => mysql_real_escape_string($payment_certificat)
-              ,"transaction_command_cardnumber" => mysql_real_escape_string($cardnumber)
+              "transaction_command_statut" => mysql_real_escape_string($this->get_vads_result()),
+              "transaction_command_extrastatut" => mysql_real_escape_string($this->get_vads_extra_results()),
+              "transaction_command_auth" => mysql_real_escape_string($this->get_vads_auth()),
+              "transaction_command_3dsecure" => mysql_real_escape_string($this->get_vads_warranty_result()),
+              "transaction_command_certificat" => mysql_real_escape_string($payment_certificat),
+              "transaction_command_cardnumber" => mysql_real_escape_string($cardnumber)
             );
 
             $data_formats = array(
+              "%s",
+              "%s",
+              "%s",
+              "%s",
+              "%s",
               "%s"
-              ,"%s"
-              ,"%s"
-              ,"%s"
-              ,"%s"
-              ,"%s"
             );
 
-            $update = $wpdb->update($this->transactions_table_name, $form_data, $where, $data_formats, $where_format);
-
+            $update = $wpdb->update($this->getSystempay()->get_transactions_table_name(), $form_data, $where, $data_formats, $where_format);
+            if (WP_DEBUG === true) {
+                    error_log("update = ".$this->getSystempay()->get_transactions_table_name());
+            }
             /**
             * if we correctly update the transaction we return;
             */
@@ -91,7 +93,6 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             if (WP_DEBUG === true) {
                 error_log($this->message);
             }
-            
         endif;
 
         return $this->message;
