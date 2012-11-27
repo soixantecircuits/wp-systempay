@@ -287,7 +287,6 @@ class WS
     //get the url of the result page 
     public function get_resultPage_url()
     {
-        //error_log("this->resultPage_title : ".var_dump($this));
         $resultPage = get_page_by_title($this->resultPage_title);
         if (!is_object($resultPage)) {
             $resultPage = get_page_by_path($this->resultPage_slug);

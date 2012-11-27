@@ -26,7 +26,7 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     public function updateTransaction()
     {
         if (WP_DEBUG === true) {
-            error_log($_POST);
+            error_log(print_r($_POST, true));
         }
 
         $order_id = $this->get_or_post("vads_order_id");
