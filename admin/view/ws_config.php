@@ -1,5 +1,5 @@
 <div class="ws_warp">
-	<?php $generalConfig=$this->Manager->getGeneralConfig(); ?>
+	<?php $generalConfig = $this->get_Manager()->getGeneralConfig(); ?>
 	<div id="icon-options-general" class="icon32"><br></div><div class="page_title"><h1><?php _e("General Configurations","ws"); ?></h1></div>
 	<div class="cb"></div>
 	<form method="POST" action="?page=<?php echo $this->configPageName; ?>&WS_action=update" >
