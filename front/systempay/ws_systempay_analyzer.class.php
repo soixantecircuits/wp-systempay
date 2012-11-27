@@ -16,7 +16,7 @@ class WSSystempayAnalyzer extends WSTools
         $this->message = "";
     }
 
-    private function set_results_array()
+    public function set_results_array()
     {
         $this->SystempayResults        = new WSSystempayResults();
         $this->systempay_results_array = $this->SystempayResults->get_results();
