@@ -25,6 +25,10 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     */
     public function updateTransaction()
     {
+        if (WP_DEBUG === true) {
+            error_log($_POST);
+        }
+
         $order_id = $this->get_or_post("vads_order_id");
         $payment_certificat = $this->get_or_post("vads_payment_certificate");
         $cardnumber = $this->get_or_post("vads_card_number");
