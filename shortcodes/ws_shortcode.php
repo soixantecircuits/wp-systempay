@@ -1,4 +1,7 @@
 <?php
+/**
+ * WS_Add_result add result to the database 
+ */
 function WS_Add_payform($atts, $content) 
 { 
     extract(

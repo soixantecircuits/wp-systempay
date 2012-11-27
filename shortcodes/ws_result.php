@@ -6,6 +6,6 @@ function WS_Add_result($atts, $content)
 {
     $ws = new WS();
     $ResultManager = new WSSystempayAnalyzer($ws);
-    $ResultManager->showResult();
+    return $ResultManager->showResult();
 }
 ?>

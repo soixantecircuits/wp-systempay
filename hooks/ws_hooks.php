@@ -5,6 +5,7 @@
  */
 
 add_action('init', 'WS_Start');
+add_action('init', 'ws_register_shortcodes');
 add_action('plugins_loaded', 'WS_Language_call');
 /**
  * load_custom_wp_admin_style
@@ -58,11 +59,19 @@ function WS_load_datatables()
     }
 }
 
-//shortcodes
-add_shortcode("wp-systempay-confirmation", "WS_Add_confirmation");
-/*NEED TO REMOVE THAT DEPRECATED*/
-add_shortcode("payform", "WS_Add_payform");
-add_shortcode("wp-systempay", "WS_Add_payform");
-add_shortcode("wp-systempay-result", "WS_Add_result");
-add_shortcode("wp-systempay-server-result", "WS_Add_Server_result");
+
+function ws_register_shortcodes()
+{
+    
+    //shortcodes
+    add_shortcode("wp-systempay-confirmation", "WS_Add_confirmation");
+    /*NEED TO REMOVE THAT DEPRECATED*/
+    add_shortcode("payform", "WS_Add_payform");
+    /*NEED TO REMOVE THAT DEPRECATED*/
+    add_shortcode("wp-systempay", "WS_Add_payform");
+    add_shortcode("wp-systempayResult", "WS_Add_result");
+    add_shortcode("wp-systempay-server-result", "WS_Add_Server_result");
+}
+
+
 ?>

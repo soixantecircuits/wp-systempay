@@ -84,7 +84,7 @@ class WSSystempayAnalyzer extends WSTools
 
     public function showResult()
     {
-         return "<p>".$this->message."<br/>".$this->get_vads_result()."</p>";
+        return "<p>".$this->message."<br/>".$this->get_vads_result()."</p>";
     }
 
     public function get_cust_email($order_id)
