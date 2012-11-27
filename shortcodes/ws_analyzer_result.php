@@ -9,7 +9,8 @@
 
 function WS_Add_Server_result()
 {
-    $Updater = new WSSystempayTransactionUpdater();
+    $ws = new WS();
+    $Updater = new WSSystempayTransactionUpdater($ws);
     $Updater->updateTransaction();
     $Updater->showResult();
 }
