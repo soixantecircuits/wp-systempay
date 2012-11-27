@@ -90,7 +90,7 @@ class WSSystempayAnalyzer extends WSTools
     public function get_cust_email($order_id)
     {
         global $wpdb;
-        $mail = $wpdb->get_row("SELECT transaction_customer_email FROM ."$this->getSystempay()->get_transactions_table_name()." WHERE transaction_order_id = '".$order_id."'", "ARRAY_N");
+        $mail = $wpdb->get_row("SELECT transaction_customer_email FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_order_id = '".$order_id."'", "ARRAY_N");
         return $mail[0];
     }
 
