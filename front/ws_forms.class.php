@@ -1,5 +1,4 @@
 <?php
-
 class WSForms extends WSTools  
 {
     public function __construct($systempay)
@@ -36,9 +35,12 @@ class WSForms extends WSTools
         }
 
         if (file_exists($path)) {
+            ob_start(); 
             include_once $path;
+            $form_render = ob_get_clean(); 
+            return $form_render;
         } else {
-            _e("No template file found", "ws");
+            return __("No template file found", "ws");
         }
 
         $rules = '';
@@ -171,12 +173,12 @@ class WSForms extends WSTools
                 if ($input["value"] == $value) {?>
                     <option value="<?php echo $key; ?>" selected="selected"><?php echo $value; ?></option>
             <?php 
-                } else { ?>
-                    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                } else {?>
+                    <option value="<?php echo $key;?>"><?php echo $value;?></option>
             <?php
-                } ?>
+                }?>
             <?php 
-            endforeach; ?>
+            endforeach;?>
             </select>
             <?php 
             break;
