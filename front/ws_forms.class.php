@@ -83,7 +83,6 @@ class WSForms extends WSTools
     public function addRule($type, $value)
     {
         array_push($this->arrayRules, array($type,$value));
-        //print_r($this->arrayRules);
     }
     
     public function getFormType($input)

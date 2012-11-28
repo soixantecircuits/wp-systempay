@@ -32,10 +32,10 @@
 	<h2><?php _e("Transaction Information", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">		
 		<thead>
-			<th><?php _e("Date"); ?></th>
-			<th><?php _e("Amount"); ?></th>
-			<th><?php _e("Currency"); ?></th>
-			<th><?php _e("Infos"); ?></th>
+			<th><?php _e("Date", "ws"); ?></th>
+			<th><?php _e("Amount", "ws"); ?></th>
+			<th><?php _e("Currency", "ws"); ?></th>
+			<th><?php _e("Infos", "ws"); ?></th>
 		</thead>
 		<tbody>
 			<td><p><?php echo $transaction_data->transaction_command_date;?></p></td>
@@ -48,18 +48,22 @@
 	<h2><?php _e("Customer Information", "ws"); ?></h2>
 	<table class="wp-list-table widefat fixed pages">		
 		<thead>
-			<th><?php _e("Customer Name"); ?></th>
-			<th><?php _e("Customer Card Number"); ?></th>
-			<th><?php _e("Customer Address"); ?></th>
-			<th><?php _e("Customer Country"); ?></th>
-			<th><?php _e("Customer Phone"); ?></th>
-			<th><?php _e("Customer Cell Phone"); ?></th>
-			<th><?php _e("Customer Email"); ?></th>
+			<th><?php _e("Customer Name", "ws"); ?></th>
+			<th><?php _e("Customer Card Number", "ws"); ?></th>
+			<th><?php _e("Customer Address", "ws"); ?></th>
+			<th><?php _e("Customer Zip", "ws"); ?></th>
+			<th><?php _e("Customer City", "ws"); ?></th>
+			<th><?php _e("Customer Country", "ws"); ?></th>
+			<th><?php _e("Customer Phone", "ws"); ?></th>
+			<th><?php _e("Customer Cell Phone", "ws"); ?></th>
+			<th><?php _e("Customer Email", "ws"); ?></th>
 		</thead>
 		<tbody>
 			<td><p><?php echo $transaction_data->transaction_customer_name;?></p></td>
 			<td><p><?php echo $transaction_data->transaction_command_cardnumber;?></p></td>
 			<td><p><?php echo $transaction_data->transaction_customer_address;?></p></td>
+			<td><p><?php echo $transaction_data->transaction_customer_zip;?></p></td>
+			<td><p><?php echo $transaction_data->transaction_customer_city;?></p></td>
 			<td><p><?php echo $transaction_data->transaction_customer_country;?></p></td>
 			<td><p><?php echo $transaction_data->transaction_customer_phone;?></p></td>
 			<td><p><?php echo $transaction_data->transaction_customer_cellphone;?></p></td>
@@ -70,7 +74,7 @@
 	<div class="transaction_detail_box">
 		<h2><?php _e("Additional Information", "ws"); ?></h2>
 		<?php $other_infos = json_decode($transaction_data->transaction_otherinfos_json);
-			(empty($other_infos))?_e("Empty", "ws"):"";
+			(empty($other_infos))?_e("No additionnal input", "ws"):"";
 			foreach ($other_infos as $info) :?>
 				<p><strong><?php echo $info->label; ?> :</strong> <?php echo $info->value; ?></p>
 		<?php endforeach;?>

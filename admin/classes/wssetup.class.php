@@ -3,8 +3,8 @@
  * db version 
  * 
  */
-global $wp_sytempay_db_version;
-$wp_sytempay_db_version = "1.1.1";
+global $wp_systempay_db_version;
+$wp_systempay_db_version = "1.1.2";
 
 /**
  * WSSetup allow to setup the install
@@ -63,7 +63,7 @@ class WSSetup
     private function _createDB() 
     {
         global $wpdb;
-        global $wp_sytempay_db_version;
+        global $wp_systempay_db_version;
 
         //we create the first table;
         $table_name = $this->getSystempay()->get_form_table_name();
@@ -132,6 +132,8 @@ class WSSetup
           transaction_command_amount int(255),
           transaction_customer_name VARCHAR(255),
           transaction_customer_address VARCHAR(255),
+          transaction_customer_zip VARCHAR(255),
+          transaction_customer_city VARCHAR(255),
           transaction_customer_shipping_address VARCHAR(255),
           transaction_customer_phone VARCHAR(255),
           transaction_customer_cellphone VARCHAR(255),
@@ -169,12 +171,12 @@ class WSSetup
         dbDelta($generalconfig_table_name);
         dbDelta($ws_config_table_name);
 
-        update_option("wp_sytempay_db_version", $wp_sytempay_db_version);
+        update_option("wp_systempay_db_version", $wp_systempay_db_version);
  
-        $installed_ver = get_option("wp_sytempay_db_version");
+        $installed_ver = get_option("wp_systempay_db_version");
 
-        if ( $installed_ver != $wp_sytempay_db_version ) {
-            update_option("wp_sytempay_db_version", $wp_sytempay_db_version);
+        if ( $installed_ver != $wp_systempay_db_version ) {
+            update_option("wp_systempay_db_version", $wp_systempay_db_version);
         }
     }
 

@@ -322,6 +322,8 @@ class WSConfirmation extends WSTools
             $transactions_data["transaction_command_cardnumber"] = __("En Attente", "ws");
             $transactions_data["transaction_customer_name"]      = mysql_real_escape_string($datas["vads_cust_last_name"])." ".mysql_real_escape_string($datas["vads_cust_first_name"]);
             $transactions_data["transaction_customer_address"]   = mysql_real_escape_string($datas["vads_cust_address"]);
+            $transactions_data["transaction_customer_zip"]       = mysql_real_escape_string($datas["vads_cust_zip"]);
+            $transactions_data["transaction_customer_city"]      = mysql_real_escape_string($datas["vads_cust_city"]);
             $transactions_data["transaction_customer_shipping_address"]   = mysql_real_escape_string($datas["vads_ship_to_street"])." ".mysql_real_escape_string($datas["vads_ship_to_street2"]);
             $transactions_data["transaction_customer_phone"]     = mysql_real_escape_string($datas["vads_cust_phone"]);
             $transactions_data["transaction_customer_cellphone"] = mysql_real_escape_string($datas["vads_cust_cell_phone"]);

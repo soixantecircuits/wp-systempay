@@ -328,24 +328,36 @@ class WSManager extends WSTools
         $this->insertDbOption();
         $this->addfield();    
     
-        global $wp_sytempay_db_version;        
-        update_option("wp_sytempay_db_version", $wp_sytempay_db_version);
+        global $wp_systempay_db_version;        
+        update_option("wp_systempay_db_version", $wp_systempay_db_version);
         //trigger_error(ob_get_contents(),E_USER_ERROR);
         wp_redirect( admin_url()."admin.php?page=WS_main" ); exit;
     }
 
     public function addfield()
     {
-        $table_name = $this->getSystempay()->get_transactions_table_name();
+        $transaction_table = $this->getSystempay()->get_transactions_table_name();
 
-        $ws_add_shipping = "ALTER TABLE $table_name ADD
-          transaction_customer_shipping_address VARCHAR(200);";
-
-        include_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-        //create process
-        global $wpdb;
-        $res = $wpdb->query($ws_add_shipping);
+        $installed_ver = get_option("wp_systempay_db_version");
+        
+        if (version_compare($installed_ver,  "1.1.1", "<")) {
+            $ws_add_shipping = "ALTER TABLE $transaction_table ADD
+              transaction_customer_shipping_address VARCHAR(200);";
+            //create process
+            global $wpdb;
+            $res = $wpdb->query($ws_add_shipping);
+        }
+        
+        if (version_compare($installed_ver, "1.1.2", "<")) {
+            $ws_add_shipping = "ALTER TABLE $transaction_table
+                                ADD (
+                                      transaction_customer_city VARCHAR(200),
+                                      transaction_customer_zip VARCHAR(200)
+                                    );";
+            global $wpdb;
+            $res = $wpdb->query($ws_add_shipping);  
+        }      
+        
     }
 
     /**
@@ -356,29 +368,33 @@ class WSManager extends WSTools
      * */
     private function insertDbOption() 
     {
-        global $wpdb;
-        //prepare input
-        $form_to_update = $wpdb->get_results("SELECT input_form_id FROM ".$this->getSystempay()->get_inputs_table_name()." GROUP BY input_form_id");
+        $installed_ver = get_option("wp_systempay_db_version");
+        if (version_compare($installed_ver,  "1.1.1", "<")) {
+            global $wpdb;
+            //prepare input
+            
+            $form_to_update = $wpdb->get_results("SELECT input_form_id FROM ".$this->getSystempay()->get_inputs_table_name()." GROUP BY input_form_id");
 
-        foreach ($form_to_update as $key => $value) {
-            $data_to_update = array( 
-                        "input_form_id"=>$value->input_form_id,    
-                        "input_name"=>"vads_cust_address",
-                        "input_label"=>__("Address", "ws"),
-                        "input_value" => "",
-                        "input_hide"=>false,
-                        "input_required"=>false,
-                        "input_order"=>5,
-                        "input_type"=>"text",
-                        "input_fieldset"=>-1,
-                        "input_options"=>"",
-                        "input_class"=>""
-                      );
+            foreach ($form_to_update as $key => $value) {
+                $data_to_update = array( 
+                            "input_form_id"=>$value->input_form_id,    
+                            "input_name"=>"vads_cust_address",
+                            "input_label"=>__("Address", "ws"),
+                            "input_value" => "",
+                            "input_hide"=>false,
+                            "input_required"=>false,
+                            "input_order"=>5,
+                            "input_type"=>"text",
+                            "input_fieldset"=>-1,
+                            "input_options"=>"",
+                            "input_class"=>""
+                          );
 
-            $wpdb->insert(
-                $this->getSystempay()->get_inputs_table_name(), 
-                $data_to_update
-            );                    
+                $wpdb->insert(
+                    $this->getSystempay()->get_inputs_table_name(), 
+                    $data_to_update
+                );                    
+            }
         }
     }
 }

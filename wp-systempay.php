@@ -138,8 +138,8 @@ function WS_Language_call()
  */
 function WS_Update_Db_check()
 {
-    global $wp_sytempay_db_version;
-    if (get_site_option('wp_sytempay_db_version') != $wp_sytempay_db_version) {
+    global $wp_systempay_db_version;
+    if (get_site_option('wp_systempay_db_version') != $wp_systempay_db_version) {
         WS_Should_update();
     }
 }
