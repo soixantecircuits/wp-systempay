@@ -58,12 +58,12 @@ class WSSystempay
         $certificate = null;
         $fields      = array();
         foreach ($merged_configurations as $configuration) {
-            $fields[$configuration["name"]] = esc_attr($configuration["value"]);
+            $fields[$configuration["name"]] = $configuration["value"];
         }
 
         foreach ($merged_inputs as $groupe) {
             foreach ($groupe as $input) {
-                $fields[$input["name"]] = esc_attr($input["value"]);
+                $fields[$input["name"]] = $input["value"];
             }
         }
 
