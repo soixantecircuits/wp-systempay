@@ -288,22 +288,17 @@ class WS
     //get the url of the result page 
     public function get_resultPage_url()
     {
-        error_log("foo : ".$this->resultPage_title);
         $resultPage = get_page_by_title($this->resultPage_title);
         if (!is_object($resultPage)) {
-            error_log("foo 2: ".$this->resultPage_slug);
             $resultPage = get_page_by_path($this->resultPage_slug);
             if (!is_object($resultPage)) {
-                error_log("foo 3: ".$this->resultPage_id);
                 $resultPage = get_page($this->resultPage_id);
             }
         }
         if (is_object($resultPage)) {
-            error_log("foo 4: ".$resultPage);
             $permalink = get_permalink($resultPage->ID);
             return $permalink;
         } else {
-            error_log("foo 5:  fail");
             return '';
         }
     }
