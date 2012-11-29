@@ -6,7 +6,7 @@ class WSSystempay
     public  $CurrenciesManager;
 
     public function __construct($options_prefixe){
-        $this->options_prefixe=$options_prefixe;
+        $this->options_prefixe = $options_prefixe;
         $this->CurrenciesManager = new SystempayCurrenciesManager();
     }
 

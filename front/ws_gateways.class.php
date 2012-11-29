@@ -11,7 +11,7 @@ class WSGateways{
     {
         $this->return_url = $result_page_url;
         $this->createSystempayCurrencies($systempayCurrencies);
-        $this->createGateways();
+        $this->createGateways($systempayCurrencies);
     }
 
     public function get_gateways()
@@ -28,9 +28,9 @@ class WSGateways{
         $this->systempayCurrencies = $array_currencies;
     }
 
-    public function createGateways()
+    public function createGateways($systempayCurrencies)
     {
-        $SystempayCurrencies = new SystempayCurrenciesManager();
+        //$SystempayCurrencies = new SystempayCurrenciesManager();
         $this->_gateways      = array(
             "systempay"=> array(
               "return_url" => "https://paiement.systempay.fr/vads-payment/"
@@ -44,7 +44,7 @@ class WSGateways{
                           ,"hide"=>true
                           ,"description"=>__("currency", "ws")
                           ,"admin_type"=>"select"
-                          ,"admin_options"=>json_encode($this->systempayCurrencies)
+                          ,"admin_options"=>json_encode($systempayCurrencies)
                           ,"admin_value"=>""
                         )
                         ,array( 
@@ -344,7 +344,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_success"
                           ,"label"=>__("url success", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -358,7 +358,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_referral"
                           ,"label"=>__("url_referral", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -371,7 +371,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_refused"
                           ,"label"=>__("url refused", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -384,7 +384,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_cancel"
                           ,"label"=>__("url cancel", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -397,7 +397,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_error"
                           ,"label"=>__("url error", "ws")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
@@ -410,7 +410,7 @@ class WSGateways{
                         ,array( 
                           "name"=>"vads_url_return"
                           ,"label"=>__("url return")
-                          ,"value" => $this->return_url
+                          ,"value" => $this->_return_url
                           ,"function" =>false
                           ,"hide"=>true
                           ,"required"=>false
