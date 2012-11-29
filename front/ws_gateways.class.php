@@ -185,7 +185,7 @@ class WSGateways{
                         array(
                           "name"=>"vads_redirect_success_timeout"
                           ,"label"=>__("redirect success timeout", "ws")
-                          ,"value" => "1"
+                          ,"value" => "0"
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("This parameter sets the delay before client reroute on the site merchant in the case of a successful payment. This period is expressed in seconds and must bebetween 0 and 300 seconds.", "ws")
@@ -196,7 +196,7 @@ class WSGateways{
                         ,array(
                           "name"=>"vads_redirect_success_message"
                           ,"label"=>__("redirect success message", "ws")
-                          ,"value" => "1"
+                          ,"value" => __("The payement has been made, you'll be redirected to the website soon.", "ws")
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("This parameter specifies the message to wait before redirecting to the sitemerchant in the case of a successful payment.", "ws")
@@ -207,7 +207,7 @@ class WSGateways{
                         ,array(
                           "name"=>"vads_redirect_error_timeout"
                           ,"label"=>__("redirect error timeout", "ws")
-                          ,"value" => "1"
+                          ,"value" => "0"
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("Same that success timeout but in case of error.", "ws")
@@ -218,7 +218,7 @@ class WSGateways{
                         ,array(
                           "name"=>"vads_redirect_error_message"
                           ,"label"=>__("redirect error message", "ws")
-                          ,"value" => "1"
+                          ,"value" => __("Sorry, it has been an error during the payement. Please try again later. We did not charge you for this operation.", "ws")
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("Same that success message but in case of error.", "ws")
@@ -229,7 +229,7 @@ class WSGateways{
                         ,array(
                           "name"=>"redirect_success_message"
                           ,"label"=>__("redirect success timeout", "ws")
-                          ,"value" => "1"
+                          ,"value" => __("You'll be redirected soon.", "ws")
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("This parameter specifies the message to wait before redirecting to the sitemerchant in the case of a successful payment.", "ws")
