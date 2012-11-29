@@ -46,6 +46,10 @@ class WSSystempay
         $contenu_signature .= $key; // On ajoute le certificat à la fin de la chaîne.
         $signature = sha1($contenu_signature);
 
+        if(WP_DEBUG === true){
+            error_log($contenu_signature);
+        }
+
         return($signature);
     }
 
