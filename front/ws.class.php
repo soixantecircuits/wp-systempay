@@ -142,7 +142,6 @@ class WS
     {
         if ($this->get_resultPage_url() != '') {
             $this->Gateways     = new WSGateways($this->get_resultPage_url(), $this->Systempay->CurrenciesManager->getCurrencies());
-            error_log(print_r($this->Gateways,true));
             $this->saved_inputs = $this->Gateways->get_gateways();
         } else {
             add_action('admin_notices',  array($this, '_error_set_saved'));

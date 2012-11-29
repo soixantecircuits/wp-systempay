@@ -11,7 +11,7 @@ class WSGateways{
     {
         $this->return_url = $result_page_url;
         $this->createSystempayCurrencies($systempayCurrencies);
-        $this->createGateways($systempayCurrencies);
+        $this->createGateways();
     }
 
     public function get_gateways()
@@ -23,15 +23,14 @@ class WSGateways{
     {
         $array_currencies = array();
         foreach ($systempayCurrencies as $currency) {
-            $array_currencies[$currency->alpha3]=$currency->num;
+            $array_currencies[$currency->alpha3] = $currency->num;
         }
-        $this->systempayCurrencies = $array_currencies;
+        $this->_systempayCurrencies = $array_currencies;
     }
 
-    public function createGateways($systempayCurrencies)
+    public function createGateways()
     {
-        //$SystempayCurrencies = new SystempayCurrenciesManager();
-        error_log("foo");
+        $SystempayCurrencies = new SystempayCurrenciesManager();
         $this->_gateways      = array(
             "systempay"=> array(
               "return_url" => "https://paiement.systempay.fr/vads-payment/"
@@ -45,7 +44,7 @@ class WSGateways{
                           ,"hide"=>true
                           ,"description"=>__("currency", "ws")
                           ,"admin_type"=>"select"
-                          ,"admin_options"=>json_encode($systempayCurrencies)
+                          ,"admin_options"=>json_encode($this->_systempayCurrencies)
                           ,"admin_value"=>""
                         )
                         ,array( 
