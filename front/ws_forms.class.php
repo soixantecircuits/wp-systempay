@@ -16,7 +16,7 @@ class WSForms extends WSTools
     { 
         (int)($form_id);
         if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
-        		wp_enqueue_style(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css");
+        		wp_enqueue_style('WS_template_css', get_bloginfo("stylesheet_directory")."/wp-systempay/templates/forms_templates/styles.css");
         } else {
         		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
       	}
@@ -29,18 +29,13 @@ class WSForms extends WSTools
                 $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template ;
             } else {
                 $path = dirname(__FILE__)."/../templates/forms_templates/".$template; 
+            }
+        } else {
+            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/default_form.php") ) {
+                $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/default_form.php";
+            } else {
+                $path = dirname(__FILE__)."/../templates/forms_templates/default_form.php"; 
             }       
-        } else {
-            $path = dirname(__FILE__)."/../templates/forms_templates/default_form.php";
-        }
-
-        if (file_exists($path)) {
-            ob_start(); 
-            include_once $path;
-            $form_render = ob_get_clean(); 
-            return $form_render;
-        } else {
-            return __("No template file found", "ws");
         }
 
         $rules = '';
@@ -61,17 +56,32 @@ class WSForms extends WSTools
         }
 
         $this->getSystempay()->add_inline_js(
-            "jQuery('.".$form_data["form_css_class"]."').validate({
+            "var validatorForm = jQuery('.".$form_data["form_css_class"]."').validate({
+              errorClass: 'error',
+              validClass: 'valid',
               rules: {
                 ".$rules."
                 }
               });
+            $('#vads_amount').rules('add', {
+                minlength: 1,
+                number: true
+            });
           jQuery.extend(jQuery.validator.messages, {
             required: '".__('This field is requiered', 'ws')."',
             email: '".__('Your email is not valid', 'ws')."',
             number: '".__('This is not a number', 'ws')."'
           });
         ");
+
+        if (file_exists($path)) {
+            ob_start(); 
+            include_once $path;
+            $form_render = ob_get_clean(); 
+            return $form_render;
+        } else {
+            return __("No template file found", "ws");
+        }
     }
     
     public function getCssClass($form_id)
@@ -102,7 +112,6 @@ class WSForms extends WSTools
             $options =split(";", $input["options"]);
             $index = 0;
             ?>
-            <ul>
             <?php
             foreach ($options as $option) : ?>
                 <?php
@@ -110,13 +119,13 @@ class WSForms extends WSTools
                 $checked = ($values[$index] == '1')?"checked":"";?>
                 <?php 
                 $optionegal = split("=", $option); ?>
-                <li class="<?php echo $input["class"] ; ?>">
-                  <input id="radio-<?php echo $input["name"] ; ?>" class="form-radio" type="<?php echo $type ?>" name="<?php echo $input["name"] ; ?>" value="<?php echo $option ?>" <?php  echo $checked;?>/><?php echo $optionegal[0] ?>
-                </li>
+                <label class='radio <?php echo $input["class"];?>'>
+                  <input id="radio-<?php echo $input["name"] ; ?>" class="form-radio <?php echo $input["class"] ; ?>" type="<?php echo $type ?>" name="<?php echo $input["name"] ; ?>" value="<?php echo $option ?>" <?php echo $checked;?>>
+                  <?php echo $optionegal[0] ?>
+                </label>
               <?php
                 $index++; 
             endforeach; ?>
-            </ul>
        <?php   
             break;
         case "checkbox" : 
@@ -124,20 +133,20 @@ class WSForms extends WSTools
             $values = str_replace(" ", "", $values);
             $options =split(";", $input["options"]);
             $index = 0; ?>
-            <ul>
             <?php
             foreach ($options as $option) :
                 $optionegal =split("=", $option);?>
-                <li class="<?php echo $input["class"] ; ?>">
+                
                   <?php 
                       $type = ($input["hide"]==1)?"hidden":"checkbox";
                       $checked = ($values[$index] == '1')?"checked":"";
                   ?>
-                  <input type="<?php echo $type; ?>" name="<?php echo $input['name'];?>[]" <?php  echo $checked;?> value="<?php echo $option ; ?>"><?php echo $optionegal[0] ; ?>
-                </li>
+                  <label class="checkbox <?php echo $input["class"];?>">
+                  <input class="form-checkbox <?php echo $input["class"] ; ?>" type="<?php echo $type; ?>" name="<?php echo $input['name'];?>" <?php  echo $checked;?> value="<?php echo $option ; ?>">
+                  <?php echo $optionegal[0] ; ?>
+                  </label>
               <?php $index++; 
             endforeach; ?>
-            </ul>         
         <?php
             break;
         case "text" :?>
