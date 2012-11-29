@@ -31,6 +31,7 @@ class WSGateways{
     public function createGateways($systempayCurrencies)
     {
         //$SystempayCurrencies = new SystempayCurrenciesManager();
+        error_log("foo");
         $this->_gateways      = array(
             "systempay"=> array(
               "return_url" => "https://paiement.systempay.fr/vads-payment/"
