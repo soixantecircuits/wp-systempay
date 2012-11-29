@@ -436,26 +436,26 @@ class WSConfirmation extends WSTools
                     //we prepare the signature and set it to the good input
                     if ($configuration["name"] == "signature") {
                         $signature = $this->getSystempay()->getSystempayEl()->WS_GetSignature($configurations_data, $inputs_data, $order_id, $trans_id);
-                        echo "<input type='hidden' name='".$configuration["name"]."' value='".$signature."'/>";
+                        echo "<input type='hidden' name='".esc_attr($configuration["name"])."' value='".esc_attr($signature)."'/>";
                     //we set the amount to centimes 
                     } else if ($configuration["name"] == "vads_amount") {
                         $amount = floatval($configuration["value"]);
-                        echo "<input type='hidden' name='".$configuration["name"]."' value='".$amount."'/>";
+                        echo "<input type='hidden' name='".esc_attr($configuration["name"])."' value='".esc_attr($amount)."'/>";
                     } else {
-                        echo "<input type='hidden' name='".$configuration["name"]."' value='".$configuration["value"]."'/>";
+                        echo "<input type='hidden' name='".esc_attr($configuration["name"])."' value='".esc_attr($configuration["value"])."'/>";
                     }
                     break;
                 default :
-                    echo "<input type='hidden' name='".$configuration["name"]."' value='".$configuration["value"]."'/>";
+                    echo "<input type='hidden' name='".esc_attr($configuration["name"])."' value='".esc_attr($configuration["value"])."'/>";
                     break;
                 endswitch;
             }
         }
         foreach ($inputs_data as $groupe) {
             foreach ($groupe as $input) {
-                $isEmpty=$this->isemptyValue($input, "value");
+                $isEmpty = $this->isemptyValue($input, "value");
                 if (!$isEmpty) {
-                    echo "<input type='hidden' name='".$input["name"]."' value='".$input["value"]."' />";
+                    echo "<input type='hidden' name='".esc_attr($input["name"])."' value='".esc_attr($input["value"])."' />";
                 }
             }
         }

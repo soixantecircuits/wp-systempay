@@ -31,7 +31,7 @@ class WSSystempay
         return($trans_id);
     }
 
-    public function systempay_GetSignature($field,$key)
+    public function systempay_GetSignature($field, $key)
     {
         ksort($field); // tri des paramétres par ordre alphabétique
         $contenu_signature = "";
@@ -51,15 +51,15 @@ class WSSystempay
 
     public function WS_GetSignature($merged_configurations, $merged_inputs, $order_id, $trans_id) 
     {
-        $certificate=null;
-        $fields=array();
+        $certificate = null;
+        $fields      = array();
         foreach ($merged_configurations as $configuration) {
-            $fields[$configuration["name"]]=$configuration["value"];
+            $fields[$configuration["name"]] = esc_attr($configuration["value"]);
         }
 
         foreach ($merged_inputs as $groupe) {
             foreach ($groupe as $input) {
-                $fields[$input["name"]] = $input["value"];
+                $fields[$input["name"]] = esc_attr($input["value"]);
             }
         }
 
