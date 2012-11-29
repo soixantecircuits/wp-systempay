@@ -16,7 +16,7 @@ class WSGateways{
 
     public function get_gateways()
     {
-        return $this->gateways;
+        return $this->_gateways;
     }
 
     public function createSystempayCurrencies($systempayCurrencies)
@@ -31,7 +31,7 @@ class WSGateways{
     public function createGateways()
     {
         $SystempayCurrencies = new SystempayCurrenciesManager();
-        $this->gateways      = array(
+        $this->_gateways      = array(
             "systempay"=> array(
               "return_url" => "https://paiement.systempay.fr/vads-payment/"
               ,"amount_input_name" =>"vads_amount"

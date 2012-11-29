@@ -140,7 +140,7 @@ class WSSetup
           transaction_customer_email VARCHAR(255),
           transaction_customer_country VARCHAR(255),
           PRIMARY KEY id (transaction_id),
-          KEY the_form_id (transaction_form_id)),
+          KEY the_form_id (transaction_form_id),
           KEY the_form_name (transaction_form_name)
         );";
 
