@@ -14,7 +14,6 @@
             <option value="<?php echo $key ;?>"><?php echo $key;?></option>
           <?php endforeach; ?>
         </select>
-
       <div class="cb"></div>
       <div id="tabs">
         <ul class='nav nav-tabs subsubsub'>
