@@ -291,10 +291,10 @@ class WS
         error_log("foo : ".$this->resultPage_title);
         $resultPage = get_page_by_title($this->resultPage_title);
         if (!is_object($resultPage)) {
-            error_log("foo 2: ".$this->resultPage_title);
+            error_log("foo 2: ".$this->resultPage_slug);
             $resultPage = get_page_by_path($this->resultPage_slug);
             if (!is_object($resultPage)) {
-                error_log("foo 3: ".$this->resultPage_title);
+                error_log("foo 3: ".$this->resultPage_id);
                 $resultPage = get_page($this->resultPage_id);
             }
         }
