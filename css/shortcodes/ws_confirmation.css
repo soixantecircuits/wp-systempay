@@ -44,7 +44,7 @@
   text-decoration: underline;
 }
 
-input#confirm_confirm.a-btn.confirmation_button{
+.confirmation_button{
   float: left;
   padding: 3px 8px;
   display: block;
@@ -62,7 +62,7 @@ input#confirm_confirm.a-btn.confirmation_button{
   font-weight: normal;
 }
 
-#confirm_cancel {
+.confirm_cancel {
   padding: 3px 11px;
   clear: none;
   color: white;
@@ -76,7 +76,7 @@ input#confirm_confirm.a-btn.confirmation_button{
   border: 0px solid #FF0F9A !important;
 }
 
-#confirm_cancel a{
+.confirm_cancel a{
 	  text-decoration: none;
 }
 

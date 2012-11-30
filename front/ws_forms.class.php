@@ -24,6 +24,9 @@ class WSForms extends WSTools
         $WS_data   = parent::getFormArrayById($form_id);
         $form_data = $WS_data["form_data"];
         $additionalsinputs_data = $WS_data["inputs_data"];
+
+        $additionalsinputs_data = $this->prepare_data($additionalsinputs_data);
+
         if ($template) {
             if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template) ) {
                 $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template ;

@@ -19,7 +19,7 @@ function load_custom_wp_admin_style($hook)
     if (('toplevel_page_WS_main' !== $hook) && (strlen(strstr($hook, "admin_page_WS_edit"))<=0) && (strlen(strstr($hook, "ws-sytempay"))<=0) && (strlen(strstr($hook, "admin_page_WS_transactions"))<=0) )
           return;
     wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
-    wp_enqueue_style('WS_iconCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
 }
 
 if (is_admin() && !is_front_page()) {

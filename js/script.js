@@ -119,6 +119,8 @@ function WS_ajax_fillTables(data) {
         }));
       });
       forms.inputIndex++;
+      tab.find("td:gt(0)").find(".order").val("1");
+
       tab.find("tbody").sortable({
         helper: fixHelper,
         stop: function(event, ui) {

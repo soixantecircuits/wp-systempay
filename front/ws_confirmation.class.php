@@ -162,9 +162,9 @@ class WSConfirmation extends WSTools
         return $WS_form;
     } 
 
-    private function getCancelLink()
+    private function getCancelLink($class = "")
     {
-        return "<a class='confirmation_button a-btn' id='confirm_cancel' href='".$_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()]."'>".__('Cancel', 'ws')."</a>";
+        return "<a class='btn confirmation_button a-btn $class' href='".$_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()]."'>".__('Cancel', 'ws')."</a>";
     }
 
     /**
@@ -182,7 +182,6 @@ class WSConfirmation extends WSTools
             /** we get the formals inputs informations*/
             $configurations_data = $confirmation_data["configurations_data"];
 
-
             //we get the additionals inputs informations
             $additionalsinputs_data = $confirmation_data["inputs_data"];
             $plateforme             = $form_data["form_plateforme"];
@@ -199,36 +198,23 @@ class WSConfirmation extends WSTools
                 break;
             }
           
-            $confirmation_html  = "<form method='POST' class='WS_confirmation' id='".$this->getSystempay()->get_confirmation_form_id()."' action='".$return_url."'>";
-            $confirmation_html .= "<table>";
-            $confirmation_html .= "<input type='hidden' name='".$amount_input_name."' value='".$correct_amount."'/>";
-            $confirmation_html .= __("The amount of your transaction is:", "ws")." ".$amount." ".$this->getCurrency($form_id)->alpha3."<br/><br/>"; //to replace by currency
-            $confirmation_html .= __("Please find bellow the information about your payement:", "ws")."<br/><br/>"; 
-            foreach ($additionalsinputs_data as $groupe) {
-                foreach ($groupe as $additionalinput) {
-                    (bool)($additionalinput["hide"]);
-                    $value = (empty($additionalinput['value']))?" ":$additionalinput['value'];
-                    $confirmation_html.="<tr style='display:none;'><td><input type='hidden' name='".$additionalinput['name']."' value='".$value."'/></tr></td>";
-                    if (!$additionalinput["hide"]) {
-                        if ($additionalinput['value'] == '') {
-                            $display = "none";
-                        } else {
-                            $display = "table-row";
-                        }
-                        $confirmation_html.="<tr style='display:".$display.";'><td widht='30%' class='confirmation_label'>".$additionalinput['label']." : </td><td width='70%' class='confirmation_value'>".$additionalinput['value']." </td></tr>";
-                    }
-                }
+            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/confirmation.php") ) {
+                $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/confirmation.php";
+            } else {
+                $path = dirname(__FILE__)."/../templates/forms_templates/confirmation.php"; 
+            }       
+
+            if (file_exists($path)) {
+                ob_start(); 
+                include_once $path;
+                $confirmation_html = ob_get_clean(); 
+            } else {
+                $confirmation_html = __("No template file found", "ws");
             }
 
-            $confirmation_html.= "</table>";
-            $confirmation_html.= "<div class='confirmation_buttons'>";
-            $confirmation_html.= $this->getCancelLink();
-            $confirmation_html.= "<input type='submit' class='a-btn confirmation_button' id='confirm_confirm' value='".__('Confirm', "ws")."' />";
-            $confirmation_html.= "</div>";
-            $confirmation_html.= "</form>";
             return $confirmation_html;
         else :
-            _e("The wanted confirmation WS is missing", "ws");
+            _e("The wanted confirmation ID is missing", "ws");
         endif;
     }
 

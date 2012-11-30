@@ -9,12 +9,12 @@ function WS_Add_confirmation($atts, $content)
 {
     wp_enqueue_style('WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
     if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
-            wp_enqueue_style(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css");
+        wp_enqueue_style("WS_style", get_bloginfo("stylesheet_directory")."/wp-systempay/templates/forms_templates/styles.css");
     }
-    $WS = new WS();
+    $WS             = new WS();
     $WSConfirmation = new WSConfirmation($WS);
-    $form_id = $_GET[$WS->get_GET_key_confirmation_formid()];
-    $method = $_GET["WS_method"];
+    $form_id        = $_GET[$WS->get_GET_key_confirmation_formid()];
+    $method         = $_GET["WS_method"];
     //if we are on the save tansaction Method
     if (!empty($method)) {
         switch($method) 

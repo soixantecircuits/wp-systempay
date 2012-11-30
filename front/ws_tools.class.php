@@ -17,8 +17,24 @@
     }
 
     public function setSystempay($systempay)
-    {
+    {   
         $this->_systempay = $systempay;
+    }
+
+    public function prepare_data($groupinputs)
+    {
+        $index_fieldset = 0;
+        foreach ($groupinputs as $group) {
+            $index_input = 0;
+            foreach ($group as $input) {
+                if (($input["name"] == "") && ($index_input > 0)) {
+                    unset($groupinputs[$index_fieldset]);
+                }
+                $index_input++;
+            }
+            $index_fieldset++;
+        }
+        return $groupinputs;
     }
 
     /**Method used to transform the inputs from SQL to an array
