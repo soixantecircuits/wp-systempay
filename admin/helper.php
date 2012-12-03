@@ -7,13 +7,37 @@
  * @return integer value of the id
  * 
  */ 
-function get_ID_by_slug($page_slug)
+
+function get_id_by_post_name($post_name)
 {
-    $page = get_page_by_path($page_slug);
-    if ($page) {
-        return $page->ID;
-    } else {
-        return null;
-    }
+    global $wpdb;
+    $id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$post_name."'");
+    return $id;
+}
+
+function get_page_by_post_name($post_name)
+{
+    $page_id = get_id_by_post_name($post_name);
+    return get_page($page_id);
+}
+
+function print_page_list($config_name, $page_id)
+{?>
+  <select class="chosen" name="generalconfig[pages][<?php echo $config_name;?>][id]"> 
+    <option value=""><?php  _e( __('Select page', "ws") ); ?></option> 
+    <?php 
+      $pages = get_pages(); 
+      foreach ( $pages as $page ) {
+          $option = '<option value="'.$page->ID.'"';
+          if ($page->ID == $page_id) {
+            $option .= ' selected="selected"'; 
+          } 
+          $option .= '>'.$page->post_title;
+          $option .= '</option>';
+          echo $option;
+      }
+    ?>
+</select>
+<?php
 }
 ?>

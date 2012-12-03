@@ -30,6 +30,7 @@ class WSGateways{
 
     public function createGateways()
     {
+        $documentation = "https://systempay.cyberpluspaiement.com/html/Doc/2.2_Guide_d_implementation_formulaire_Paiement_V2.pdf";
         $SystempayCurrencies = new SystempayCurrenciesManager();
         $this->_gateways      = array(
             "systempay"=> array(
@@ -164,7 +165,7 @@ class WSGateways{
                           ,"value" => "INTERACTIVE"
                           ,"function" =>false
                           ,"hide"=>true
-                          ,"description"=>__("This parameter is valued at INTERACTIVE if the entry is made on the card payment platform.", "ws")."<a href='https://systempay.cyberpluspaiement.com/html/Doc/2.2_Guide_d_implementation_formulaire_Paiement_V2.pdf'>documentation</a>"
+                          ,"description"=>sprintf(__("This parameter is valued at INTERACTIVE if the entry is made on the card payment platform. See <a href='%s'>documentation</a>", "ws"), $documentation)
                           ,"admin_type"=>"texte"
                           ,"admin_options"=>""
                           ,"admin_value"=>""
@@ -175,7 +176,7 @@ class WSGateways{
                           ,"value" => "SINGLE"
                           ,"function" =>false
                           ,"hide"=>true
-                          ,"description"=>__("This parameter is valued at SINGLE for a unitary payment , MULTI for payement in several times", "ws")."<a href='https://systempay.cyberpluspaiement.com/html/Doc/2.2_Guide_d_implementation_formulaire_Paiement_V2.pdf'>documentation </a>"
+                          ,"description"=>sprintf(__("This parameter is valued at SINGLE for a unitary payment , MULTI for payement in several times. See <a href='%s'>documentation</a>", "ws"), $documentation)
                           ,"admin_type"=>"texte"
                           ,"admin_options"=>""
                           ,"admin_value"=>""

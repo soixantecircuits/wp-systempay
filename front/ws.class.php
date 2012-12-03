@@ -122,13 +122,13 @@ class WS
         $this->generalconfig_table_name  = $wpdb->prefix . "payform_generalconfig";
         $this->transactions_table_name   = $wpdb->prefix . "payform_transactions";
         $this->WSconfig_table_name       = $wpdb->prefix . "payform_wsconfig";
-        $this->mainPage_slug             = "ws_systempay";
+        $this->mainPage_slug             = "wordpress-sytempay";
         $this->mainPage_title            = "Wordpress Sytempay";
-        $this->confirmationpage_slug     = "confirmation_page";
+        $this->confirmationpage_slug     = "confirmation-page";
         $this->confirmationpage_title    = "Confirmation Page";
-        $this->resultPage_slug           = "transaction_page";
+        $this->resultPage_slug           = "transaction-page-result";
         $this->resultPage_title          = "Transaction Page Result";
-        $this->resultServerPage_slug     = "transaction_serve_page";
+        $this->resultServerPage_slug     = "transaction-serve-page-result";
         $this->resultServerPage_title    = "Transaction Server Page Result";
         $this->options_prefixe           = "ws_option_";
         $this->GET_key_confirmation_formid = "ws_form_id";
@@ -148,9 +148,9 @@ class WS
         }
     }
 
-    private function _error_set_saved()
+    public function _error_set_saved()
     {
-        echo '<div class="updated"><p>WP-Systempay:<br/>'.__("Sorry we could not find the requiered page, try reinstalling the plugin", "ws").'</p></div>';
+        echo '<div class="updated"><p>WP-Systempay:<br/>'.__("Sorry we could not find the requiered page, try to reinstall the plugin or setup the pages in the option tab", "ws").'</p></div>';
     }
     
     private function set_countriesList()
@@ -260,14 +260,18 @@ class WS
         return get_permalink($post->ID);
     }
 
-      //get the url of the confirmation page for the wanted form
+    /**
+    *   get the url of the confirmation page for the wanted form
+    *   TODO : need to cleanup that function
+    */
+
     public function get_confirmationpage_url($form_id)
     {
         (int)$form_id;
         $confirmationpage = get_page_by_title($this->confirmationpage_title);
         $permalink = get_permalink($confirmationpage->ID);
         if (!empty($form_id)) {
-            $previous_get_key=$this->get_GET_key_confirmation_previouspage();
+            $previous_get_key = $this->get_GET_key_confirmation_previouspage();
             $previous_page = $_GET[$previous_get_key];
             if (empty($previous_page)) {
                 $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$this->curPageURL();
@@ -285,31 +289,33 @@ class WS
     } 
 
     //get the url of the result page 
-    public function get_resultPage_url()
+    public function get_resultPage_url($form_id = NULL)
     {
         $resultPage = get_page_by_title($this->resultPage_title);
         if (!is_object($resultPage)) {
-            $resultPage = get_page_by_path($this->resultPage_slug);
+            $resultPage = get_page_by_post_name($this->resultPage_slug);
             if (!is_object($resultPage)) {
-                $resultPage = get_page($this->resultPage_id);
+                $form_config = $this->getFormWSConfig($_REQUEST["WS_id"]);
+                $resultPage = get_page($form_config->pages->return->id);
             }
         }
         if (is_object($resultPage)) {
             $permalink = get_permalink($resultPage->ID);
             return $permalink;
         } else {
-            return '';
+            return __("No link", "ws");
         }
     }
     
     //get the url of the result page 
-    public function get_resultServerPage_url()
+    public function get_resultServerPage_url($form_id = NULL)
     {
         $resultPage = get_page_by_title($this->resultServerPage_title);
         if (!is_object($resultPage)) {
-            $resultPage = get_page_by_path($this->resultServerPage_slug);
+            $resultPage = get_page_by_post_name($this->resultServerPage_slug);
             if (!is_object($resultPage)) {
-                $resultPage = get_page($this->resultServerPage_id);
+                $form_config = $this->getFormWSConfig($_REQUEST["WS_id"]);
+                $resultPage = get_page($form_config->pages->analysis->id);
             }
         }
         
@@ -320,6 +326,15 @@ class WS
             return __("No link", "ws");
         }
     }
+
+    public function getFormWSConfig($form_id)
+    {
+        global $wpdb;
+        (int)($form_id);
+        $WSconfig_data = $wpdb->get_var("SELECT WSconfig_json FROM ".$this->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id);
+        return json_decode($WSconfig_data);
+    }
+
 
     public function resultPage_url()
     {

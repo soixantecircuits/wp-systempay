@@ -102,3 +102,24 @@ if (!empty($form_id)) {
         <input placeholder = "<?php _e("Email of this payment account manager", "ws");?>" type="text" id="email_admin" name="generalconfig[email][setup][email_admin]" value="<?php echo $generalConfig->email->setup->email_admin; ?>" />
     </div><div class="clear-fix"></div><br/>
   </div>
+  <div class="sendmail">
+    <h5><?php _e("Custom pages", "ws"); ?></h5>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Confirmation page", "ws"); ?></span>
+        <?php 
+        $page_name = "confirm";
+        print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Return page", "ws"); ?></span>
+        <?php
+        $page_name = "return";
+        print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+    </div><div class="clear-fix"></div><br/>
+    <div class="input-prepend">
+        <span class="add-on"><?php _e("Analysis page", "ws"); ?></span>
+        <?php
+        $page_name = "analysis";
+        print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+    </div>
+  </div>

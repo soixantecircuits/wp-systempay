@@ -2,6 +2,13 @@
   margin: 4px 15px 0 0;
 }
 
+a.chzn-single{
+  border-radius: 0px !important;
+  height: 28px !important;
+  line-height: 29px !important;
+}
+
+
 .btn{
   text-decoration: none;
 }

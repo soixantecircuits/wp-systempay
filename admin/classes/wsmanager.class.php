@@ -166,60 +166,63 @@ class WSManager extends WSTools
             $this->updateWSConfigs($form_id, $WS_config);
         }
 
-      //UPDATE configurations (delete all then insert them)
-        $wpdb->query(
-            $wpdb->prepare(
-                "DELETE FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = %d",
-                $form_id
-            )
-        );
-        
-        
-        foreach ($configurations as $configuration) 
-        {
-            $configurations_data = array(
-                "configuration_form_id" => $form_id
-                ,"configuration_label" => $configuration["label"]
-                ,"configuration_name" => $configuration["name"]
-                ,"configuration_value" => $configuration["value"]
-                ,"configuration_function" => $configuration["function"]
-                ,"configuration_hide" => $configuration["hide"]
-                ,"configuration_required" => $configuration["required"]
-                ,"configuration_class" => $configuration["class"]
+        if (isset($configurations) && count($configurations) > 0) {
+            //UPDATE configurations (delete all then insert them)
+            $wpdb->query(
+                $wpdb->prepare(
+                    "DELETE FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = %d",
+                    $form_id
+                )
             );
-                //insert input
-            $wpdb->insert(
-                $this->getSystempay()->get_configurations_table_name(), 
-                $configurations_data
-            );
-        }
-        //UPDATE INPUTS (delete all then insert them)
-        $wpdb->query( 
-            $wpdb->prepare( 
-                "DELETE FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = %d",
-                $form_id
-            )
-        );
 
-        foreach ($inputs as $input) {
-            $inputs_data = array(
-                "input_form_id" => $form_id
-                ,"input_label" => $input["label"]
-                ,"input_name" => $input["name"]
-                ,"input_value" => $input["value"]
-                ,"input_order" => $input["order"]
-                ,"input_hide" => $input["hide"]
-                ,"input_required" => $input["required"]
-                ,"input_class" => $input["class"]
-                ,"input_type" => $input["type"]
-                ,"input_fieldset" => $input["fieldset"]
-                ,"input_options" => $input["options"]
+            foreach ($configurations as $configuration) {
+                $configurations_data = array(
+                    "configuration_form_id" => $form_id
+                    ,"configuration_label" => $configuration["label"]
+                    ,"configuration_name" => $configuration["name"]
+                    ,"configuration_value" => $configuration["value"]
+                    ,"configuration_function" => $configuration["function"]
+                    ,"configuration_hide" => $configuration["hide"]
+                    ,"configuration_required" => $configuration["required"]
+                    ,"configuration_class" => $configuration["class"]
+                );
+                    //insert input
+                $wpdb->insert(
+                    $this->getSystempay()->get_configurations_table_name(), 
+                    $configurations_data
+                );
+            }
+        }
+
+        if (isset($inputs) && count($inputs) > 0) {
+            //UPDATE INPUTS (delete all then insert them) - DIRTY HACK, to modify
+            $wpdb->query( 
+                $wpdb->prepare( 
+                    "DELETE FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = %d",
+                    $form_id
+                )
             );
-            //insert input
-            $wpdb->insert(
-                $this->getSystempay()->get_inputs_table_name(), 
-                $inputs_data
-            );
+
+            foreach ($inputs as $input) {
+                $inputs_data = array(
+                    "input_form_id" => $form_id
+                    ,"input_label" => $input["label"]
+                    ,"input_name" => $input["name"]
+                    ,"input_value" => $input["value"]
+                    ,"input_order" => $input["order"]
+                    ,"input_hide" => $input["hide"]
+                    ,"input_required" => $input["required"]
+                    ,"input_class" => $input["class"]
+                    ,"input_type" => $input["type"]
+                    ,"input_fieldset" => $input["fieldset"]
+                    ,"input_options" => $input["options"]
+                );
+                //insert input
+                $wpdb->insert(
+                    $this->getSystempay()->get_inputs_table_name(), 
+                    $inputs_data
+                );
+            }
         }
     }
 

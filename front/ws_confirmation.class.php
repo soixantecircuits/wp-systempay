@@ -224,7 +224,7 @@ class WSConfirmation extends WSTools
         foreach ($configurations_data as $configuration) {
             if ($configuration["name"] == $amount_input_name) {
                 (float)($configuration["value"]);
-                $amount+=$configuration["value"];
+                $amount += $configuration["value"];
             }
         }
 
@@ -238,25 +238,25 @@ class WSConfirmation extends WSTools
                                 $input["value"] = $input["value"].$value[$i];
                                 if ($i != ($c -1)) $input["value"]  =$input["value"].";"; //pas de point ';' à la dernière
                             }
-                            $options=$this->splitMultipleOptions($input["value"]);
+                            $options = $this->splitMultipleOptions($input["value"]);
 
                             foreach ($options as $option) {
-                                $amount+=(float)($option["amount"]);
+                                $amount += (float)($option["amount"]);
                             }
                             break;
                         case "radio" :
-                            $option = $this->splitOption($value);
-                            $amount+=(float)($option["amount"]);
+                            $option  = $this->splitOption($value);
+                            $amount += (float)($option["amount"]);
                             break;
                         case "select" :
-                            $option = $this->splitOption($value);
-                            $amount+=(float)($option["amount"]);
+                            $option  = $this->splitOption($value);
+                            $amount += (float)($option["amount"]);
                             break;
                         case "amountentry":
-                            $amount=(float)($input["value"]);
+                            $amount = (float)($input["value"]);
                             break;
                         default:
-                            $amount+=(float)($input["option"]);
+                            $amount += (float)($input["option"]);
                             break;
                         }
                     }

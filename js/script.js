@@ -4,6 +4,9 @@ var forms = {
 
 var WS_inputs_index = 1000; //we put a large int , cause we don't know how many inputs would be loaded
 jQuery(document).ready(function() {
+
+  jQuery(".chosen").chosen();
+
   if(jQuery("#tabs").length >= 1) {
     jQuery("#tabs").tabs({
       show: function(event, ui) {
@@ -45,83 +48,43 @@ function WS_ajax_fillTables(data) {
   jQuery.post(ajaxurl, data, function(response) {
     //console.debug(response);
     var configurations = createFormalsConfigurations(response, 0)
-    jQuery("#ws_formals_inputs_table").html(configurations.html);
-    var additionalsConf = createAdditionalsConfigurations(response, configurations.last_index);
-    jQuery("#ws_inputs_table").html(additionalsConf.html);
-    var customerInputs = createCustomerInputs(response, 0);
-    jQuery("#ws_customer_inputs_table").html(customerInputs.html);
+    if(configurations !== undefined) {
+      jQuery("#ws_formals_inputs_table").html(configurations.html);
+      var additionalsConf = createAdditionalsConfigurations(response, configurations.last_index);
+      jQuery("#ws_inputs_table").html(additionalsConf.html);
+      var customerInputs = createCustomerInputs(response, 0);
+      jQuery("#ws_customer_inputs_table").html(customerInputs.html);
 
-    jQuery("#ws_formals_inputs_table.loading").removeClass("loading");
+      jQuery("#ws_formals_inputs_table.loading").removeClass("loading");
 
-    jQuery("#ws_customer_inputs tbody").sortable({
-      helper: fixHelper,
-      stop: function(event, ui) {
-        jQuery("#ws_customer_inputs .order").each(function(i, el) {
-          jQuery(el).val(i);
-        });
-      }
-    }).disableSelection();
+      jQuery("#ws_customer_inputs tbody").sortable({
+        helper: fixHelper,
+        stop: function(event, ui) {
+          jQuery("#ws_customer_inputs .order").each(function(i, el) {
+            jQuery(el).val(i);
+          });
+        }
+      }).disableSelection();
 
-    jQuery("#ws_customizable_inputs").sortable({
-      stop: function(event, ui) {
-        var lastfirstParent = [{}];
-        var fieldset = 0;
+      jQuery("#ws_customizable_inputs").sortable({
+        stop: function(event, ui) {
+          var lastfirstParent = [{}];
+          var fieldset = 0;
 
-        jQuery("#ws_customizable_inputs .fieldset").each(function(i, el) {
-          if(lastfirstParent !== jQuery(el).closest(".group")[0]) {
-            fieldset++;
-            jQuery(el).val(fieldset);
-          } else {
-            jQuery(el).val(fieldset);
-          }
-          lastfirstParent = jQuery(el).closest(".group")[0];
+          jQuery("#ws_customizable_inputs .fieldset").each(function(i, el) {
+            if(lastfirstParent !== jQuery(el).closest(".group")[0]) {
+              fieldset++;
+              jQuery(el).val(fieldset);
+            } else {
+              jQuery(el).val(fieldset);
+            }
+            lastfirstParent = jQuery(el).closest(".group")[0];
 
-        });
-      }
-    }).disableSelection();
+          });
+        }
+      }).disableSelection();
 
-    jQuery(".group tbody").sortable({
-      helper: fixHelper,
-      stop: function(event, ui) {
-        ui.item.parent().find('.order').each(function(i, el) {
-          jQuery(el).val(i);
-        });
-      }
-    }).disableSelection();
-
-    assign_button();
-
-    jQuery("button#addTable").click(function(e) {
-      e.preventDefault();
-      var tab = jQuery(".group:last").clone();
-      //remove all row except the first one
-      tab.find('tr').not(':last').not(':first').remove();
-      //update fieldset value
-      tab.find(".fieldset").each(function(el, index) {
-        jQuery(this).val(Number(jQuery(this).val()) + 1);
-      });
-
-      tab.find('input').not(".fieldset").each(function(el, index) {
-        jQuery(this).val('');
-      });
-
-      //update name value
-      tab.find('.fieldset_name').children().each(function(el, index) {
-        jQuery(this).attr('name', jQuery(this).attr('name').replace(/\d+/g, function(match, $1) {
-          return forms.inputIndex;
-        }));
-      });
-      forms.inputIndex++;
-      //update the last row
-      tab.find("td:gt(0)").each(function(el, index) {
-        jQuery(this).children().attr('name', jQuery(this).children().attr('name').replace(/\d+/g, function(match, $1) {
-          return forms.inputIndex;
-        }));
-      });
-      forms.inputIndex++;
-      tab.find("td:gt(0)").find(".order").val("1");
-
-      tab.find("tbody").sortable({
+      jQuery(".group tbody").sortable({
         helper: fixHelper,
         stop: function(event, ui) {
           ui.item.parent().find('.order').each(function(i, el) {
@@ -129,14 +92,60 @@ function WS_ajax_fillTables(data) {
           });
         }
       }).disableSelection();
-      jQuery(".group:last").parent().append(tab);
 
       assign_button();
 
-      return false;
-    });
+      jQuery("button#addTable").click(function(e) {
+        e.preventDefault();
+        var tab = jQuery(".group:last").clone();
+        //remove all row except the first one
+        tab.find('tr').not(':last').not(':first').remove();
+        //update fieldset value
+        tab.find(".fieldset").each(function(el, index) {
+          jQuery(this).val(Number(jQuery(this).val()) + 1);
+        });
 
+        tab.find('input').not(".fieldset").each(function(el, index) {
+          jQuery(this).val('');
+        });
 
+        //update name value
+        tab.find('.fieldset_name').children().each(function(el, index) {
+          jQuery(this).attr('name', jQuery(this).attr('name').replace(/\d+/g, function(match, $1) {
+            return forms.inputIndex;
+          }));
+        });
+        forms.inputIndex++;
+        //update the last row
+        tab.find("td:gt(0)").each(function(el, index) {
+          jQuery(this).children().attr('name', jQuery(this).children().attr('name').replace(/\d+/g, function(match, $1) {
+            return forms.inputIndex;
+          }));
+        });
+        forms.inputIndex++;
+        tab.find("td:gt(0)").find(".order").val("1");
+
+        tab.find("tbody").sortable({
+          helper: fixHelper,
+          stop: function(event, ui) {
+            ui.item.parent().find('.order').each(function(i, el) {
+              jQuery(el).val(i);
+            });
+          }
+        }).disableSelection();
+        jQuery(".group:last").parent().append(tab);
+
+        assign_button();
+
+        return false;
+      });
+    } else {
+      jQuery('<div/>', {
+        class: 'alert alert-error',
+        html: '<p>An error occured.</p>'
+      }).appendTo('#ws_formals');
+      jQuery("#ws_formals_inputs_table.loading").removeClass("loading");
+    }
   });
 }
 
@@ -220,15 +229,28 @@ function WS_admin_ajax_load_inputs(datas) {
 }
 
 function createFormalsConfigurations(inputsGetted, firstIndex) {
-  inputsGetted = JSON.parse(inputsGetted, false);
-  var configurations_data = inputsGetted.formals_infos;
-  return createConfigurationsCorps(configurations_data, firstIndex);
+  try
+  {
+    inputsGetted = JSON.parse(inputsGetted, false);
+    var configurations_data = inputsGetted.formals_infos;
+    return createConfigurationsCorps(configurations_data, firstIndex);
+  }
+  catch(err) {
+     console.log("Sorry the JSON is not valid");
+  }
 }
 
 function createAdditionalsConfigurations(inputsGetted, firstIndex) {
-  inputsGetted = JSON.parse(inputsGetted, false);
-  var configurations_data = inputsGetted.additionals_infos;
-  return createConfigurationsCorps(configurations_data, firstIndex);
+  try
+  {
+    inputsGetted = JSON.parse(inputsGetted, false);
+    var configurations_data = inputsGetted.additionals_infos;
+    return createConfigurationsCorps(configurations_data, firstIndex);
+  }
+  catch(err) {
+    console.log("Sorry the JSON is not valid");
+  }
+  
 }
 
 function createConfigurationsCorps(configurations_data, firstIndex) {
@@ -307,54 +329,58 @@ function createConfigurationsCorps(configurations_data, firstIndex) {
 }
 
 function createCustomerInputs(inputsGetted, firstIndex) {
-  inputsGetted = JSON.parse(inputsGetted, false);
-  var additionalsInputs = inputsGetted.customer_infos;
-  var inputIndex = firstIndex;
-  var customerInputs_html = '';
-  additionalsInputs.sort(SortByOrder);
+  try{
+    inputsGetted = JSON.parse(inputsGetted, false);
+    var additionalsInputs = inputsGetted.customer_infos;
+    var inputIndex = firstIndex;
+    var customerInputs_html = '';
+    additionalsInputs.sort(SortByOrder);
 
-  for(var i = 0; i < additionalsInputs.length; i++) {
-    additionalInput = additionalsInputs[i];
-    var new_class = (i % 2 == 0) ? "even" : "odd";
-    customerInputs_html += '<tr id="row_' + inputIndex + '" class=' + new_class + '>';
-    customerInputs_html += '<td class="large"><input type="text" name="inputs[' + inputIndex + '][label]"  value="' + additionalInput.label + '"/></td>';
-    customerInputs_html += '<td class="large">';
-    customerInputs_html += '<p>' + additionalInput.name + '</p>';
-    customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][name]" value=' + additionalInput.name + '>';
-    customerInputs_html += '</td>';
-    customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][value]" value="' + additionalInput.value + '"/></td>';
-    customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][order]" class="order" value="' + additionalInput.order + '"/></td>';
-    customerInputs_html += '<td class="short">';
-    customerInputs_html += '<p>' + additionalInput.fieldset + '</p>';
-    customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][fieldset]" value=' + additionalInput.fieldset + '>';
-    customerInputs_html += '</td>';
-    if(additionalInput.hide == "1") {
-      customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][hide]" value="1" checked></td>';
-    } else {
-      customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][hide]" value="1"></td>';
+    for(var i = 0; i < additionalsInputs.length; i++) {
+      additionalInput = additionalsInputs[i];
+      var new_class = (i % 2 == 0) ? "even" : "odd";
+      customerInputs_html += '<tr id="row_' + inputIndex + '" class=' + new_class + '>';
+      customerInputs_html += '<td class="large"><input type="text" name="inputs[' + inputIndex + '][label]"  value="' + additionalInput.label + '"/></td>';
+      customerInputs_html += '<td class="large">';
+      customerInputs_html += '<p>' + additionalInput.name + '</p>';
+      customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][name]" value=' + additionalInput.name + '>';
+      customerInputs_html += '</td>';
+      customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][value]" value="' + additionalInput.value + '"/></td>';
+      customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][order]" class="order" value="' + additionalInput.order + '"/></td>';
+      customerInputs_html += '<td class="short">';
+      customerInputs_html += '<p>' + additionalInput.fieldset + '</p>';
+      customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][fieldset]" value=' + additionalInput.fieldset + '>';
+      customerInputs_html += '</td>';
+      if(additionalInput.hide == "1") {
+        customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][hide]" value="1" checked></td>';
+      } else {
+        customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][hide]" value="1"></td>';
 
+      }
+
+      if(additionalInput.required == "1") { // colin      
+        customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][required]" value="1" checked></td>';
+      } else {
+        customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][required]" value="1"></td>';
+
+      }
+      customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][class]" value="' + additionalInput.class + '"/></td>';
+      customerInputs_html += '<td class="short">';
+      customerInputs_html += '<p>' + additionalInput.type + '</p>';
+      customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][type]" value=' + additionalInput.type + '>';
+      customerInputs_html += '</td>';
+      customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][options]" value="' + additionalInput.options + '"/></td>'
+      customerInputs_html += '<td class="large description"><p>' + additionalInput.description + '</p></td>';
+      customerInputs_html += '</tr>';
+      inputIndex++;
     }
 
-    if(additionalInput.required == "1") { // colin      
-      customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][required]" value="1" checked></td>';
-    } else {
-      customerInputs_html += '<td class="short"><input type="checkbox" name="inputs[' + inputIndex + '][required]" value="1"></td>';
-
+    var infos = {
+      "html": customerInputs_html,
+      "last_index": inputIndex
     }
-    customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][class]" value="' + additionalInput.class + '"/></td>';
-    customerInputs_html += '<td class="short">';
-    customerInputs_html += '<p>' + additionalInput.type + '</p>';
-    customerInputs_html += '<input type="hidden" name="inputs[' + inputIndex + '][type]" value=' + additionalInput.type + '>';
-    customerInputs_html += '</td>';
-    customerInputs_html += '<td class="short"><input type="text" name="inputs[' + inputIndex + '][options]" value="' + additionalInput.options + '"/></td>'
-    customerInputs_html += '<td class="large description"><p>' + additionalInput.description + '</p></td>';
-    customerInputs_html += '</tr>';
-    inputIndex++;
+    return infos;
+  } catch(err) {
+     console.log("Sorry the JSON is not valid");
   }
-
-  var infos = {
-    "html": customerInputs_html,
-    "last_index": inputIndex
-  }
-  return infos;
 }

@@ -20,6 +20,7 @@ function load_custom_wp_admin_style($hook)
           return;
     wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
     wp_enqueue_style('bootstrap', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
+    wp_enqueue_style('chosen', WP_PLUGIN_URL .'/wp-systempay/css/admin/chosen.css');
 }
 
 if (is_admin() && !is_front_page()) {
@@ -41,6 +42,7 @@ function WS_load_admin_scripts()
         wp_enqueue_script('jquery_ui_core', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.core.js');
         wp_enqueue_script('jquery_ui_widget', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.widget.js');
         wp_enqueue_script('jquery_ui_tabs', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.tabs.js');
+        wp_enqueue_script('jquery_chosen', WP_PLUGIN_URL .'/wp-systempay/inc/chosen.jquery.min.js');
     }
 }
 
