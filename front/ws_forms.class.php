@@ -110,20 +110,19 @@ class WSForms extends WSTools
             break;
         case "radio" : ?> 
             <?php
-            $values = split(";", $input["value"]); 
-            $values = str_replace(" ", "", $values);
-            $options =split(";", $input["options"]);
+            $value = $input["value"];
+            $options = split(";", $input["options"]);
             $index = 0;
             ?>
             <?php
             foreach ($options as $option) : ?>
                 <?php
-                $type    = ($input["hide"])?"hidden":"radio";
-                $checked = ($values[$index] == '1')?"checked":"";?>
-                <?php 
-                $optionegal = split("=", $option); ?>
-                <label class='radio <?php echo $input["class"];?>'>
-                  <input id="radio-<?php echo $input["name"] ; ?>" class="form-radio <?php echo $input["class"] ; ?>" type="<?php echo $type ?>" name="<?php echo $input["name"] ; ?>" value="<?php echo $option ?>" <?php echo $checked;?>>
+                $type       = ($input["hide"])?"hidden":"radio";
+                $optionegal = split("=", $option);
+                $checked    = ($optionegal[1] == $value)? "checked" : "";
+                ?>
+                <label class = 'radio <?php echo $input["class"];?>'>
+                  <input id = "radio-<?php echo $input["name"] ; ?>" class="form-radio <?php echo $input["class"] ; ?>" type = "<?php echo $type ?>" name = "<?php echo $input["name"] ; ?>" value = "<?php echo $optionegal[1]; ?>" <?php echo $checked;?>>
                   <?php echo $optionegal[0] ?>
                 </label>
               <?php
@@ -132,20 +131,18 @@ class WSForms extends WSTools
        <?php   
             break;
         case "checkbox" : 
-            $values = split(";", $input["value"]);         
-            $values = str_replace(" ", "", $values);
-            $options =split(";", $input["options"]);
+            $values  = split(";", $input["value"]);         
+            $values  = str_replace(" ", "", $values);
+            $options = split(";", $input["options"]);
             $index = 0; ?>
             <?php
             foreach ($options as $option) :
-                $optionegal =split("=", $option);?>
-                
-                  <?php 
                       $type = ($input["hide"]==1)?"hidden":"checkbox";
+                      $optionegal = split("=", $option);
                       $checked = ($values[$index] == '1')?"checked":"";
                   ?>
                   <label class="checkbox <?php echo $input["class"];?>">
-                  <input class="form-checkbox <?php echo $input["class"] ; ?>" type="<?php echo $type; ?>" name="<?php echo $input['name'];?>" <?php  echo $checked;?> value="<?php echo $option ; ?>">
+                  <input class="form-checkbox <?php echo $input["class"] ; ?>" type="<?php echo $type; ?>" name="<?php echo $input['name'];?>[]" <?php  echo $checked;?> value="<?php echo $optionegal[1] ; ?>">
                   <?php echo $optionegal[0] ; ?>
                   </label>
               <?php $index++; 
@@ -169,10 +166,13 @@ class WSForms extends WSTools
         case "select" : ?>
             <select name="<?php echo $input["name"];?>" class="<?php echo $input["class"] ; ?>">
             <?php
-            $options =split(";", $input["options"]);
+            $value = $input["value"];
+            $options = split(";", $input["options"]);
             foreach ($options as $option) :
-                $optionegal =split("=", $option); ?>
-                <option value="<?php echo $option ?>"><?php echo $optionegal[0] ?></option>
+                $optionegal = split("=", $option);
+                $selected    = ($optionegal[1] == $value)? "selected" : "";
+                ?>
+                <option value="<?php echo $optionegal[1] ?>" <?php echo $selected ?>><?php echo $optionegal[0] ?></option>
             <?php
             endforeach; ?>
             </select>

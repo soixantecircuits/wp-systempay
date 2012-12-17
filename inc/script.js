@@ -4,8 +4,9 @@ var forms = {
 
 var WS_inputs_index = 1000; //we put a large int , cause we don't know how many inputs would be loaded
 jQuery(document).ready(function() {
-
   jQuery(".chosen").chosen();
+  jQuery( "#vtabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+  jQuery( "#vtabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );  
 
   if(jQuery("#tabs").length >= 1) {
     jQuery("#tabs").tabs({
@@ -136,9 +137,9 @@ function WS_ajax_fillTables(data) {
         jQuery(".group:last").parent().append(tab);
 
         assign_button();
-
         return false;
       });
+      check_configuration();
     } else {
       jQuery('<div/>', {
         class: 'alert alert-error',
@@ -147,6 +148,48 @@ function WS_ajax_fillTables(data) {
       jQuery("#ws_formals_inputs_table.loading").removeClass("loading");
     }
   });
+}
+
+function check_configuration(){
+
+  var exp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/; 
+  if(!(jQuery('input[name="configurations[26][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  if(!(jQuery('input[name="configurations[27][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  if(!(jQuery('input[name="configurations[28][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  if(!(jQuery('input[name="configurations[29][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  if(!(jQuery('input[name="configurations[30][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  if(!(jQuery('input[name="configurations[31][value]"]').val().match(exp))){
+      addAlert('Url Should be a URL, check tab 2');
+  }
+  
+  if(jQuery('input[name="configurations[2][value]"]').val() == ""){
+      addAlert('You should verify the site ID, plugin can not work like this.');
+  }
+  if(jQuery('input[name="configurations[3][value]"]').val() == ""){
+      addAlert('You should verify the test certificate, plugin can not work like this.');
+  }
+  if(jQuery('input[name="configurations[4][value]"]').val() == ""){
+      addAlert('You should verify the production certificate, plugin can not work like this.');
+  }
+  //jQuery(".alert").alert();
+}
+
+function addAlert(msg){
+  jQuery(".ws_warp").before(jQuery('<div/>', {
+        class: 'alert fade in alert-error',
+        html: '<button type="button" class="close" data-dismiss="alert">&times;</button><p>'+msg+'</p>'
+      })
+    );
 }
 
 function assign_button() {

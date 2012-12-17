@@ -1,3 +1,40 @@
+<?php
+
+function getOptionName($input){
+
+  switch ($input["type"]) {
+    case 'select':
+      $options = split(";", $input["options"]);
+      $value = $input["value"];
+      foreach ($options as $option) :
+          $optionegal = split("=", $option);
+          if ($optionegal[1] == $value){
+            $name = $optionegal[0];
+          }
+      endforeach;
+      break;
+    case 'checkbox':
+      $options = split(";", $input["options"]);
+      $space = 0;
+      foreach ($input['value'] as $value) {
+        foreach ($options as $option) :
+            $optionegal = split("=", $option);
+            if ($optionegal[1] == $value){
+              $virgule = ($space > 0) ?  ", " : "";
+              $name.=$virgule.$optionegal[0];
+              $space++;
+            }
+        endforeach;
+      }
+      break;
+    default:
+      $name = $input['value'];
+      break;
+  }
+  return $name;
+}
+
+?>
 <form method='POST' class='WS_confirmation' id='<?php echo $this->getSystempay()->get_confirmation_form_id();?>' action='<?php echo $return_url;?>'>
   <table>
     <tbody>
@@ -8,15 +45,27 @@
             foreach ($groupe as $additionalinput) {
                 (bool)($additionalinput["hide"]);
                 $value = (empty($additionalinput['value']))?" ":$additionalinput['value'];?>
+                if ($additionalinput["type"] == "checkbox") {
+                    foreach ($value as $val) {?>
+                      <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>[]' value='<?php echo $val ?>'></tr></td>      
+                <?php
+                    }  
+                } else { 
+                ?>
                 <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>' value='<?php echo $value ?>'></tr></td>
                 <?php
+                }
                 if (!$additionalinput["hide"]) {
                     if ($additionalinput['value'] == '') {
                         $display = "none";
                     } else {
                         $display = "table-row";
                     }?>
-                    <tr style='display:"<?php echo $display;?>"'><td widht='30%' class='confirmation_label'><?php echo $additionalinput['label']; ?>: </td><td width='70%' class='confirmation_value'><?php echo $additionalinput['value'];?></td></tr>
+                    <tr style='display:<?php echo $display;?>'><td widht='30%' class='confirmation_label'><?php echo $additionalinput['label']; ?>: </td><td width='70%' class='confirmation_value'>
+                        <?php 
+                            echo getOptionName($additionalinput);
+                        ?>
+                    </td></tr>
                     <?php
                 }
             }

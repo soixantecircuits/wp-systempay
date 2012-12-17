@@ -1,5 +1,5 @@
 <div class="ws_warp">
-  <div id="icon-edit-pages" class="icon32 icon32-posts-page"><br></div><div class="page_title"><h1><?php _e("Transactions","ws"); ?></h1></div>
+  <div id="icon-edit-pages" class="icon32 icon32-posts-page"><br></div><div class="page_title"><h1><?php _e("Transactions","ws"); ?>  </h1></div>
   <div class="cb"></div>
   <table id="transactions_table" class="table wp-list-table widefat fixed pages">
     <thead>
@@ -14,7 +14,6 @@
         <th><?php _e("City", "ws"); ?></th>
         <th><?php _e("Phone", "ws"); ?></th>
         <th><?php _e("Email", "ws"); ?></th>
-        <th class="country"><?php _e("Country", "ws"); ?></th>
         <th class="action"><?php _e("Actions", "ws"); ?></th>
       </tr>
     </thead>
@@ -45,7 +44,6 @@
                       echo $transaction_data->transaction_customer_phone;
                   } ?></td>
         <td><a href="mailto:<?php echo $transaction_data->transaction_customer_email; ?>"><?php echo $transaction_data->transaction_customer_email;?></a></td>
-        <td class="country"><?php echo $transaction_data->transaction_customer_country;?></td>
         <td class="action"><a class="btn btn-infos" href="?page=<?php echo $this->_transactionDetailsPageName;?>&transaction_id=<?php echo $transaction_data->transaction_id; ?>"><?php _e("Details", "ws"); ?></a></td>
       </tr>
     <?php endforeach; ?>

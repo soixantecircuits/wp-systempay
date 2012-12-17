@@ -269,6 +269,13 @@ class WS
     {
         (int)$form_id;
         $confirmationpage = get_page_by_title($this->confirmationpage_title);
+        if (!is_object($confirmationpage)) {
+            $confirmationpage = get_page_by_post_name($this->resultPage_slug);
+            if (!is_object($resultPage)) {
+                $form_config = $this->getFormWSConfig($form_id);
+                $confirmationpage = get_page($form_config->pages->confirm->id);
+            }
+        }
         $permalink = get_permalink($confirmationpage->ID);
         if (!empty($form_id)) {
             $previous_get_key = $this->get_GET_key_confirmation_previouspage();

@@ -60,18 +60,11 @@ class WSConfirmation extends WSTools
                     if ($key == $input["name"]) {
                         switch($input["type"]) {
                         case "checkbox":
-                            $input["value"]="";
-                            for ($i = 0, $c = count($value); $i < $c; $i++) {
-                                $input["value"] .= $value[$i];
-                                if ($i != ($c -1)) $input["value"]  .= ";"; //pas de point ';' à la dernière
-                            }
-                            $options        = $this->splitMultipleOptions($input["value"]);
-                            $i              = 0;
-                            $input["value"] = "";
-                            foreach ($options as $option) {
-                                $virgule = ($i>0)?", ":"";
-                                $input["value"].=$virgule.$option["value"];
-                                $i++;
+                            $input["value"] = array();
+                            foreach($value as $val_input) {
+                                if(trim($val_input) != "")  {  
+                                    array_push($input["value"], $val_input);
+                                }  
                             }
                             break;
                         case "radio" :
@@ -350,7 +343,7 @@ class WSConfirmation extends WSTools
             }
             $form_id = $_GET[$this->getSystempay()->get_GET_key_confirmation_formid()];
             $return_url = $this->getSystempay()->get_confirmationpage_url($form_id)."&WS_method=".$this->getSystempay()->get_method_saveTransaction();
-            $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test","certificate_test", "certificate_production", "vads_trans_id"));
+            $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
         }
     }
     /**
@@ -403,12 +396,73 @@ class WSConfirmation extends WSTools
         return json_encode($infos);
     }
 
-    private function create_hidden_form($confirmation_datas, $confirmation_form_id, $return_url, $order_id, $trans_id,$excludeds)
+    private function getOptionName($input){
+      switch ($input["type"]) {
+        case 'select':
+          $options = split(";", $input["options"]);
+          $value = $input["value"];
+          foreach ($options as $option) :
+              $optionegal = split("=", $option);
+              if ($optionegal[1] == $value){
+                $name = $optionegal[0];
+              }
+          endforeach;
+          break;
+        case 'checkbox':
+          $options = split(";", $input["options"]);
+          $space = 0;
+          foreach ($input['value'] as $value) {
+            foreach ($options as $option) :
+                $optionegal = split("=", $option);
+                if ($optionegal[1] == $value){
+                  $virgule = ($space > 0) ?  ", " : "";
+                  $name.=$virgule.$optionegal[0];
+                  $space++;
+                }
+            endforeach;
+          }
+          break;
+        default:
+          $name = $input['value'];
+          break;
+      }
+      $name = (($name == "")||($name == " ")) ? "NC" : $name;
+      return $name;
+    }
+
+    private function create_form_to_custom_info($configurations_data, $inputs_data)
+    {
+        /**
+         * 21 is a magic number used to retrieve the vads_order_info default value. 
+         */
+        $vads_order_info = $configurations_data[21]["value"];
+        foreach ($inputs_data as $data) {
+            if ($data[0]['fieldset'] > -1) {
+                foreach ($data as $input) {
+                    $space = ($vads_order_info != "") ? ", " : "";
+                    $vads_order_info .= $space.$input["label"]." : ".$this->getOptionName($input);
+                }
+            }
+        }
+        return $vads_order_info;
+    }
+
+    private function alterConfiguration($configurations_data, $inputs_data)
+    {
+        $configurations_data[21]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+        return $configurations_data;
+    }
+
+    private function create_hidden_form($confirmation_datas, $confirmation_form_id, $return_url, $order_id, $trans_id, $excludeds)
     {
         $form_data           = $confirmation_datas["form_data"];
         $plateforme          = $form_data["form_plateforme"];
         $configurations_data = $confirmation_datas["configurations_data"];
+        /**
+         * This allow us to export custom info to the gateway plateform. Kind of spagheti code. Should be rewrite. 
+         */
         $inputs_data         = $confirmation_datas["inputs_data"];
+        $configurations_data = $this->alterConfiguration($configurations_data, $inputs_data);
         echo "<form id='".$confirmation_form_id."' action='".$return_url."' method='post'>";
         //create unique inputs (transID,Order id);
         $this->createSpecialsInputs($plateforme, $order_id, $trans_id);
@@ -422,6 +476,10 @@ class WSConfirmation extends WSTools
                     //we prepare the signature and set it to the good input
                     if ($configuration["name"] == "signature") {
                         $signature = $this->getSystempay()->getSystempayEl()->WS_GetSignature($configurations_data, $inputs_data, $order_id, $trans_id);
+                        if($signature == "")
+                        {
+                            trigger_error(__("Signature is empty, check your certificate please.", "ws"),E_USER_ERROR);
+                        }   
                         echo "<input type='hidden' name='".esc_attr($configuration["name"])."' value='".esc_attr($signature)."'/>";
                     //we set the amount to centimes 
                     } else if ($configuration["name"] == "vads_amount") {
@@ -440,13 +498,14 @@ class WSConfirmation extends WSTools
         foreach ($inputs_data as $groupe) {
             foreach ($groupe as $input) {
                 $isEmpty = $this->isemptyValue($input, "value");
-                if (!$isEmpty) {
+                if ((!$isEmpty) && ($input["fieldset"] < 0)) {
                     echo "<input type='hidden' name='".esc_attr($input["name"])."' value='".esc_attr($input["value"])."' />";
                 }
             }
         }
+        
         echo $this->getCancelLink();
-        echo "<input type='submit' class='a-btn confirmation_button' id='confirm_confirm' value='".__("R&eacute;essayer", "ws")."' />";
+        echo "<input type='submit' class='a-btn confirmation_button' id='confirm_confirm' value='".__("Retry", "ws")."' />";
         
         echo "</form>";
     }
