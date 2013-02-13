@@ -15,6 +15,7 @@ function WS_Add_confirmation($atts, $content)
     $WSConfirmation = new WSConfirmation($WS);
     $form_id        = $_GET[$WS->get_GET_key_confirmation_formid()];
     $method         = $_GET["WS_method"];
+    $_POST          = stripslashes_deep($_POST);
     //if we are on the save tansaction Method
     if (!empty($method)) {
         switch($method) 

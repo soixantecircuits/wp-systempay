@@ -280,10 +280,22 @@ class WS
         if (!empty($form_id)) {
             $previous_get_key = $this->get_GET_key_confirmation_previouspage();
             $previous_page = $_GET[$previous_get_key];
+            /*ToFix*/
+            $mobile = isset($_GET["mobile"]) ? $_GET["mobile"] : false;
             if (empty($previous_page)) {
-                $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$this->curPageURL();
+                if ($mobile) {
+                    $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$this->curPageURL()."&mobile=true";
+                }
+                else {
+                    $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$this->curPageURL();    
+                }
             } else {
-                $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$previous_page;
+                if ($mobile) {
+                    $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$previous_page."&mobile=true";
+                } else {
+                    $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$previous_page;    
+                }
+                
             }
         }
         return $permalink;

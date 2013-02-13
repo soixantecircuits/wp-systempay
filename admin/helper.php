@@ -28,7 +28,7 @@ function print_page_list($config_name, $page_id)
     <?php 
       $pages = get_pages(); 
       foreach ( $pages as $page ) {
-          $option = '<option value="'.$page->ID.'"';
+          $option = '<option data-url="'.get_permalink($page->ID).'" value="'.$page->ID.'"';
           if ($page->ID == $page_id) {
             $option .= ' selected="selected"'; 
           } 
@@ -40,4 +40,5 @@ function print_page_list($config_name, $page_id)
 </select>
 <?php
 }
+
 ?>

@@ -34,6 +34,11 @@ function getOptionName($input){
   return $name;
 }
 
+
+$mobile = isset($_GET["mobile"]) ? $_GET["mobile"] : false;
+if ($mobile) {
+  $return_url = $return_url."&mobile=true";
+}
 ?>
 <form method='POST' class='WS_confirmation' id='<?php echo $this->getSystempay()->get_confirmation_form_id();?>' action='<?php echo $return_url;?>'>
   <table>
@@ -47,12 +52,12 @@ function getOptionName($input){
                 $value = (empty($additionalinput['value']))?" ":$additionalinput['value'];?>
                 if ($additionalinput["type"] == "checkbox") {
                     foreach ($value as $val) {?>
-                      <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>[]' value='<?php echo $val ?>'></tr></td>      
+                      <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>[]' value='<?php echo esc_attr($val); ?>'></tr></td>      
                 <?php
                     }  
                 } else { 
                 ?>
-                <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>' value='<?php echo $value ?>'></tr></td>
+                <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>' value='<?php echo esc_attr($value); ?>'></tr></td>
                 <?php
                 }
                 if (!$additionalinput["hide"]) {

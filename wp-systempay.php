@@ -9,10 +9,9 @@ Author URI: http://soixantecircuits.fr/
 License: GPL
 */
 
+define( 'WPSYSTEMPAY_PATH', plugin_dir_path(__FILE__) );
+
 require_once dirname(__FILE__)."/admin/helper.php";
-/*---------------------------------------------------------------
------------------------------SWIFT_MAILER--------------------------*/
-require_once dirname(__FILE__)."/inc/swift_mailer/lib/swift_required.php";
 /*---------------------------------------------------------------
 -----------------------------CLASSES--------------------------*/
 //SYSTEMPAY CLASSES
@@ -147,4 +146,6 @@ add_action('plugins_loaded', 'WS_Update_Db_check');
 
 //IMPORT HOOKS
 require_once dirname(__FILE__) . '/hooks/ws_hooks.php';
+
+
 ?>

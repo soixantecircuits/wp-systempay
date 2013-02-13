@@ -3,6 +3,10 @@
  * 
  */
 
+/*---------------------------------------------------------------
+-----------------------------SWIFT_MAILER--------------------------*/
+require_once WPSYSTEMPAY_PATH."inc/swift_mailer/lib/swift_required.php";
+
 class WSSystempayAnalyzer extends WSTools
 {
     public $message;
@@ -116,5 +120,85 @@ class WSSystempayAnalyzer extends WSTools
         $the_date = $wpdb->get_row("SELECT transaction_command_date FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_order_id = '".$order_id."'", "ARRAY_N");
         return $the_date[0];
     }
+
+    public function useSwiftMailer($order_id, $to_email, $subject, $content)
+    {
+        //use the swiftMailer library to send the mail.
+        $form_id          = $this->get_form_id($order_id);
+        $emailConfig      = $this->getFormWSConfig($form_id)->email;
+        switch ($emailConfig->transport) :
+        case "smtp" : 
+            $SMTPEmail    = $emailConfig->smtp->username;
+            $SMTPPassword = $emailConfig->smtp->password;
+            $FromName     = get_bloginfo('name'); //displayed name
+            //create the transport
+            $smtp         = $emailConfig->smtp->smtp;
+            $port         = $emailConfig->smtp->port;
+            if ($emailConfig->smtp->ssl) {
+                $transport = Swift_SmtpTransport::newInstance($smtp, $port, 'ssl');
+            } else {
+                $transport = Swift_SmtpTransport::newInstance($smtp, $port);
+            }
+            $transport->setUsername($SMTPEmail);
+            $transport->setPassword($SMTPPassword);
+            break;
+        case "sendmail":
+            if($emailConfig->sendmail->path != ""){
+                $transport = Swift_SendmailTransport::newInstance($emailConfig->sendmail->path);
+            } else {
+                $transport = Swift_SendmailTransport::newInstance("/usr/sbin/sendmail -bs");        
+            }
+            break;
+        default :
+            /**
+             * We use the default Unix system
+             * 
+             */
+            $transport = Swift_SendmailTransport::newInstance("/usr/sbin/sendmail -bs");    
+            break;
+        endswitch;
+
+        $Mailer = Swift_Mailer::newInstance($transport);
+        //create the email
+        $Email = Swift_Message::newInstance();
+        $Email->setSubject($subject);
+        
+        if($emailConfig->setup->active->tax) {
+            $Email->setTo($to_email);    
+        }
+        
+        if($emailConfig->setup->active->admin){
+            $bccEmail = ($emailConfig->setup->email_admin != "") ? $emailConfig->setup->email_admin : get_bloginfo("admin_email");
+            $Email->setBcc($bccEmail);    
+        }
+        
+
+        $email_admin = ($emailConfig->setup->email != "") ? $emailConfig->setup->email : get_bloginfo("admin_email");
+        $name = ($emailConfig->setup->email != "") ? $emailConfig->setup->name : get_bloginfo("name");
+        $Email->setFrom(array($email_admin => $name));
+        $Email->setBody($content, 'text/html');
+        //send it
+        if($emailConfig->setup->active->tax || $emailConfig->setup->active->admin ) {
+            if ($Mailer->send($Email, $failures) == 1) {
+                if($emailConfig->setup->active->tax){
+                    if ($emailConfig->setup->msg_success != "") {
+                        return __($emailConfig->setup->msg_success, "ws");
+                    } else {
+                        return __("An email has been sent, you will get it soon. Thank you very much.", "ws");    
+                    } 
+                } else {
+                        return __("Thank you very much.", "ws");    
+                }   
+            } else {
+                $error = print_r($failures, true);
+                if ($emailConfig->setup->msg_error != "") {
+                    return __($emailConfig->setup->msg_error, "ws")." ".$error;
+                } else {
+                    return __("An error occured while sending the confirmation email.", "ws")." ".$error;
+                }
+            }
+        }
+    }
+
 } //end class
 ?>

@@ -5,7 +5,6 @@ if (!empty($form_id)) {
     $generalConfig = $this->_WSTools->mergeWSConfigs($form_id);
 }
 ?>
-
 <div class="tabbable tabs-left" id="vtabs">
     <ul class="nav nav-tabs">
         <li><a href="#vtabs-1"><?php _e("Mail setup", "ws");?></a></li>
@@ -40,7 +39,7 @@ if (!empty($form_id)) {
       </div>
     <!-- SMTP -->
       <div class="smtp form-inline">
-        <h5><?php _e("SMTP", "ws"); ?></h5>
+        <h4><?php _e("SMTP", "ws"); ?></h4>
 
         <div class="input-prepend">
             <span class="add-on"><?php _e("Address", "ws"); ?></span>
@@ -50,12 +49,9 @@ if (!empty($form_id)) {
             <span class="add-on"><?php _e("Port", "ws"); ?></span>
             <input type="text" class="span2" placeholder="port" id="smtp_smtp" name="generalconfig[email][smtp][port]" value="<?php echo $generalConfig->email->smtp->port; ?>" />
         </div>
-        <?php   
-            $smtp_ssl=(bool)($generalConfig->email->smtp->ssl); 
-            $checked= ($smtp_ssl)?"checked":""; ?>
             <div class="input-prepend input-append">
                 <span class="add-on"><?php _e("SSL", "ws"); ?></span>
-                <span class="add-on"><input type="checkbox" id="smtp_ssl" name="generalconfig[email][smtp][ssl]" value="1" <?php echo $checked; ?>/>
+                <span class="add-on"><input type="checkbox" id="smtp_ssl" name="generalconfig[email][smtp][ssl]" value="1" <?php  checked($generalConfig->email->smtp->ssl,true); ?>/>
             </span>
             </div>
         <br/><br/>
@@ -70,7 +66,7 @@ if (!empty($form_id)) {
       </div>
     <!-- SendMail -->
       <div class="sendmail">
-        <h5><?php _e("SendMail", "ws"); ?></h5>
+        <h4><?php _e("SendMail", "ws"); ?></h4>
         <div class="input-prepend">
             <span class="add-on"><?php _e("Path", "ws"); ?></span>
             <input placeholder="/usr/sbin/sendmail" type="text" id="smtp_smtp" name="generalconfig[email][sendmail][path]" value="<?php echo $generalConfig->email->sendmail->path; ?>" />
@@ -81,7 +77,7 @@ if (!empty($form_id)) {
   <div id="vtabs-2">
   <!-- Format order -->
       <div class="sendmail">
-        <h5><?php _e("Custom order format", "ws"); ?></h5>
+        <h4><?php _e("Custom order format", "ws"); ?></h4>
         <div class="input-prepend input-append">
             <span class="add-on"><?php _e("Name", "ws"); ?></span>
             <input placeholder = "<?php _e("Simple name", "ws");?>" type="text" id="order_format_name" name="generalconfig[order_format][name]" value="<?php echo $generalConfig->order_format->name; ?>" />
@@ -91,7 +87,17 @@ if (!empty($form_id)) {
     </div>  
     <div id="vtabs-3">
       <div class="sendmail">
-        <h5><?php _e("Custom settings", "ws"); ?></h5>
+        <h4><?php _e("Custom settings", "ws"); ?></h4>
+        <label class="checkbox inline">
+          <input type="checkbox" name="generalconfig[email][setup][active][thanks]" id="inlineCheckbox1" value="1" <?php checked($generalConfig->email->setup->active->thanks,true);?>> <?php _e("Send mail for thanking", "ws");?>
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" name="generalconfig[email][setup][active][tax]" id="inlineCheckbox2" value="1" <?php  checked($generalConfig->email->setup->active->tax,true);?>> <?php _e("Send mail for tax receipt", "ws");?>
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" name="generalconfig[email][setup][active][admin]" id="inlineCheckbox3" value="1" <?php  checked($generalConfig->email->setup->active->admin,true);?>> <?php _e("Send mail to admin", "ws");?>
+        </label>
+        <br/><br/>
         <div class="input-prepend">
             <span class="add-on"><?php _e("Email success Title", "ws"); ?></span>
             <input placeholder = "<?php _e("Title of successful email", "ws");?>" type="text" id="email_success_title" name="generalconfig[email][setup][title_success]" value="<?php echo $generalConfig->email->setup->title_success; ?>" />
@@ -116,24 +122,33 @@ if (!empty($form_id)) {
   </div>
   <div id="vtabs-4">
     <div class="sendmail">
-        <h5><?php _e("Custom pages", "ws"); ?></h5>
+        <h4><?php _e("Custom pages", "ws"); ?></h4>
         <div class="input-prepend">
             <span class="add-on"><?php _e("Confirmation page", "ws"); ?></span>
             <?php 
             $page_name = "confirm";
-            print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+            $id = $generalConfig->pages->$page_name->id;
+            print_page_list($page_name, $id);?>
+            <?php $permalink = get_permalink( $id ); ?>
+            <a class="btn btn-info" title="<?php echo get_the_title($id);?>" href="<?php echo $permalink;?>" target="_blank"><?php _e("Voir la page", "ws");?></a>
         </div><div class="clear-fix"></div><br/>
         <div class="input-prepend">
             <span class="add-on"><?php _e("Return page", "ws"); ?></span>
             <?php
             $page_name = "return";
-            print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+            $id = $generalConfig->pages->$page_name->id;
+            print_page_list($page_name, $id);?>
+            <?php $permalink = get_permalink( $id ); ?>
+            <a class="btn btn-info" title="<?php echo get_the_title($id);?>" href="<?php echo $permalink;?>" target="_blank"><?php _e("Voir la page", "ws");?></a>
         </div><div class="clear-fix"></div><br/>
         <div class="input-prepend">
             <span class="add-on"><?php _e("Analysis page", "ws"); ?></span>
             <?php
             $page_name = "analysis";
+            $id = $generalConfig->pages->$page_name->id;
             print_page_list($page_name, $generalConfig->pages->$page_name->id);?>
+            <?php $permalink = get_permalink( $id ); ?>
+            <a class="btn btn-info" title="<?php echo get_the_title($id);?>" href="<?php echo $permalink;?>" target="_blank"><?php _e("Voir la page", "ws");?></a>
         </div>
     </div>
   </div>

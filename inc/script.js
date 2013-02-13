@@ -4,7 +4,10 @@ var forms = {
 
 var WS_inputs_index = 1000; //we put a large int , cause we don't know how many inputs would be loaded
 jQuery(document).ready(function() {
-  jQuery(".chosen").chosen();
+  jQuery(".chosen").chosen().change(function(e){
+    var url = jQuery(this).find('option:selected').attr("data-url");
+    jQuery(this).parent().find('a.btn').attr('href',url);
+  });
   jQuery( "#vtabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
   jQuery( "#vtabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );  
 

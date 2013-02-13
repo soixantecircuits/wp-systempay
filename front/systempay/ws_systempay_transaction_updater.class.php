@@ -119,80 +119,26 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
         return $this->useSwiftMailer($order_id, $to_email, $subject, $content);
     }
 
-    private function useSwiftMailer($order_id, $to_email, $subject, $content)
+    public function get_thanks_mail()
     {
-        //use the swiftMailer library to send the mail.
-        $form_id          = $this->get_form_id($order_id);
-        $emailConfig      = $this->getFormWSConfig($form_id)->email;
-        switch ($emailConfig->transport) :
-        case "smtp" : 
-            $SMTPEmail    = $emailConfig->smtp->username;
-            $SMTPPassword = $emailConfig->smtp->password;
-            $FromName     = get_bloginfo('name'); //displayed name
-            //create the transport
-            $smtp         = $emailConfig->smtp->smtp;
-            $port         = $emailConfig->smtp->port;
-            if ($emailConfig->smtp->ssl) {
-                $transport = Swift_SmtpTransport::newInstance($smtp, $port, 'ssl');
-            } else {
-                $transport = Swift_SmtpTransport::newInstance($smtp, $port);
-            }
-            $transport->setUsername($SMTPEmail);
-            $transport->setPassword($SMTPPassword);
-            break;
-        case "sendmail":
-            $transport = Swift_SendmailTransport::newInstance($emailConfig->sendmail->path);
-            break;
-        default :
-            /**
-             * We use the default Unix system
-             * 
-             */
-            $transport = Swift_SendmailTransport::newInstance("/usr/sbin/sendmail -bs");    
-            break;
-        endswitch;
-
-        $Mailer = Swift_Mailer::newInstance($transport);
-        //create the email
-        $Email = Swift_Message::newInstance();
-        $Email->setSubject($subject);
-        $Email->setTo($to_email);
-        
-        ($emailConfig->setup->email_admin) ? $bccEmail = $emailConfig->setup->email_admin : $email_admin = get_bloginfo("admin_email");
-        $Email->setBcc($bccEmail);
-
-        ($emailConfig->setup->email != "") ? $email_admin = $emailConfig->setup->email : $email_admin = get_bloginfo("admin_email");
-        ($emailConfig->setup->email != "") ? $name = $emailConfig->setup->name : $name = get_bloginfo("name");
-        $Email->setFrom(array($email_admin => $name));
-
-        $Email->setBody($content, 'text/html');
-        //send it
-        if ($Mailer->send($Email) == 1) {
-            if ($emailConfig->setup->msg_success != "") {
-                return __($emailConfig->setup->msg_success, "ws");
-            } else {
-                return __("An email has been sent, you will get it soon. Thank you very much.", "ws");    
-            }
+        ob_start(); 
+        if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/emails_templates/thanks_email.php")) {
+            include_once get_stylesheet_directory()."/wp-systempay/templates/emails_templates/thanks_email.php";
         } else {
-            if ($emailConfig->setup->msg_error != "") {
-                return __($emailConfig->setup->msg_error, "ws");
-            } else {
-                return __("An error occured while sending the email.", "ws");
-            }
-        }
+            include_once dirname(__FILE__)."/../../templates/emails_templates/thanks_email.php";    
+        }  
+        $mail = ob_get_clean(); 
+        return $mail;
     }
-
 
     public function get_success_mail()
     {
         ob_start(); 
-
         if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/emails_templates/success_email.php")) {
             include_once get_stylesheet_directory()."/wp-systempay/templates/emails_templates/success_email.php";
         } else {
             include_once dirname(__FILE__)."/../../templates/emails_templates/success_email.php";    
-        }
-        
+        }  
         $mail = ob_get_clean(); 
         return $mail;
     }
@@ -207,7 +153,6 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
         } else {
             include_once dirname(__FILE__)."/../../templates/emails_templates/error_email.php";
         }
-    
         $mail = ob_get_clean(); 
         return $mail;
     }
