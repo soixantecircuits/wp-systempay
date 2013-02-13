@@ -347,7 +347,7 @@ class WSManager extends WSTools
             $ws_rename = "RENAME TABLE ".$wpdb->prefix."payform_payformconfig TO ".$this->getSystempay()->get_WSconfig_table_name().";";
             //create process
             $res = $wpdb->query($ws_rename);
-            $ws_rename = "ALTER ".$this->getSystempay()->get_WSconfig_table_name()." CHANGE payformconfig_id WSconfig_id INTEGER".
+            $ws_rename = "ALTER TABLE ".$this->getSystempay()->get_WSconfig_table_name()." CHANGE payformconfig_id WSconfig_id INTEGER".
                          ", CHANGE payformconfig_form_id WSconfig_form_id INTEGER".
                          ", CHANGE payformconfig_json WSconfig_json TEXT;";
             //create process   
