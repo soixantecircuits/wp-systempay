@@ -343,7 +343,7 @@ class WSManager extends WSTools
         $installed_ver = get_option("wp_systempay_db_version");
         
         if (version_compare($installed_ver,  "1.1.3", "<")) {
-            $ws_rename = "RENAME TABLE 'payform_payformconfig' TO ".$this->getSystempay()->get_WSconfig_table_name().";";
+            $ws_rename = "RENAME TABLE ".$wpdb->prefix."payform_payformconfig TO ".$this->getSystempay()->get_WSconfig_table_name().";";
             //create process
             global $wpdb;
             $res = $wpdb->query($ws_rename);
