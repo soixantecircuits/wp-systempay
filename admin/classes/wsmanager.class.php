@@ -328,6 +328,7 @@ class WSManager extends WSTools
     public function updatedb()
     {
         //ob_start();
+        $this->renameTable();
         $this->insertDbOption();
         $this->addfield();    
     
@@ -335,6 +336,24 @@ class WSManager extends WSTools
         update_option("wp_systempay_db_version", $wp_systempay_db_version);
         //trigger_error(ob_get_contents(),E_USER_ERROR);
         wp_redirect( admin_url()."admin.php?page=WS_main" ); exit;
+    }
+
+    public function renameTable(){
+        $wsConfigTable = $this->getSystempay()->get_WSconfig_table_name();
+        $installed_ver = get_option("wp_systempay_db_version");
+        
+        if (version_compare($installed_ver,  "1.1.3", "<")) {
+            $ws_rename = "RENAME TABLE 'payform_payformconfig' TO ".$this->getSystempay()->get_WSconfig_table_name().";";
+            //create process
+            global $wpdb;
+            $res = $wpdb->query($ws_rename);
+            $ws_rename = "ALTER ".$this->getSystempay()->get_WSconfig_table_name()." CHANGE payformconfig_id WSconfig_id INTEGER".
+                         "CHANGE payformconfig_form_id WSconfig_form_id INTEGER".
+                         "CHANGE payformconfig_json WSconfig_json TEXT;";
+            //create process   
+            global $wpdb;
+            $res = $wpdb->query($ws_rename);
+        }
     }
 
     public function addfield()

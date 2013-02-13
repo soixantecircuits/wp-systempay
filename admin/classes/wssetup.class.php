@@ -4,7 +4,7 @@
  * 
  */
 global $wp_systempay_db_version;
-$wp_systempay_db_version = "1.1.2";
+$wp_systempay_db_version = "1.1.3";
 
 /**
  * WSSetup allow to setup the install
