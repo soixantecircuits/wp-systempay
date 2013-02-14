@@ -49,7 +49,7 @@ if ($mobile) {
     <?php foreach ($additionalsinputs_data as $groupe) {
             foreach ($groupe as $additionalinput) {
                 (bool)($additionalinput["hide"]);
-                $value = (empty($additionalinput['value']))?" ":$additionalinput['value'];?>
+                $value = (empty($additionalinput['value']))?" ":$additionalinput['value'];
                 if ($additionalinput["type"] == "checkbox") {
                     foreach ($value as $val) {?>
                       <tr style='display:none;'><td><input type='hidden' name='<?php echo $additionalinput['name'];?>[]' value='<?php echo esc_attr($val); ?>'></tr></td>      

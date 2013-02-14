@@ -8,8 +8,10 @@
 function WS_Add_confirmation($atts, $content)
 {
     wp_enqueue_style('WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
-    if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
-        wp_enqueue_style("WS_style", get_bloginfo("stylesheet_directory")."/wp-systempay/templates/forms_templates/styles.css");
+    $themes_form_template = "/plugins/wp-systempay/templates/forms_templates";
+
+    if (file_exists(get_stylesheet_directory().$themes_form_template."/styles.css") ) {
+        wp_enqueue_style("WS_style", get_bloginfo("stylesheet_directory").$themes_form_template."/styles.css");
     }
     $WS             = new WS();
     $WSConfirmation = new WSConfirmation($WS);

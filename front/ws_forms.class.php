@@ -15,8 +15,9 @@ class WSForms extends WSTools
     public function getFormById($form_id, $template)
     { 
         (int)($form_id);
-        if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/styles.css") ) {
-        		wp_enqueue_style('WS_template_css', get_bloginfo("stylesheet_directory")."/wp-systempay/templates/forms_templates/styles.css");
+        $themes_form_template = "/plugins/wp-systempay/templates/forms_templates";
+        if (file_exists(get_stylesheet_directory().$themes_form_template."/styles.css") ) {
+        		wp_enqueue_style('WS_template_css', get_bloginfo("stylesheet_directory").$themes_form_template."/styles.css");
         } else {
         		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
       	}
@@ -28,14 +29,17 @@ class WSForms extends WSTools
         $additionalsinputs_data = $this->prepare_data($additionalsinputs_data);
 
         if ($template) {
-            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template) ) {
-                $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/".$template ;
-            } else {
+            if (file_exists(get_stylesheet_directory().$themes_form_template."/".$template) ) {
+                $path = get_stylesheet_directory().$themes_form_template."/".$template ;
+            } else if (file_exists(dirname(__FILE__)."/../templates/forms_templates/".$template) ) {
                 $path = dirname(__FILE__)."/../templates/forms_templates/".$template; 
+            } else {
+                //Should throw a warning
+                $path = dirname(__FILE__)."/../templates/forms_templates/default_form.php";  
             }
         } else {
-            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/default_form.php") ) {
-                $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/default_form.php";
+            if (file_exists(get_stylesheet_directory().$themes_form_template."/default_form.php") ) {
+                $path = get_stylesheet_directory().$themes_form_template."/default_form.php";
             } else {
                 $path = dirname(__FILE__)."/../templates/forms_templates/default_form.php"; 
             }       

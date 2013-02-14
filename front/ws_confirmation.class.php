@@ -229,7 +229,7 @@ class WSConfirmation extends WSTools
                         case "checkbox":
                             for ($i = 0, $c = count($value); $i < $c; $i++) {
                                 $input["value"] = $input["value"].$value[$i];
-                                if ($i != ($c -1)) $input["value"]  =$input["value"].";"; //pas de point ';' à la dernière
+                                if ($i != ($c -1)) $input["value"] = $input["value"].";"; //pas de point ';' à la dernière
                             }
                             $options = $this->splitMultipleOptions($input["value"]);
 
