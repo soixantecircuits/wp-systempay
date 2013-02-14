@@ -101,6 +101,7 @@ function WS_ajax_fillTables(data) {
 
       jQuery("button#addTable").click(function(e) {
         e.preventDefault();
+
         var tab = jQuery(".group:last").clone();
         //remove all row except the first one
         tab.find('tr').not(':last').not(':first').remove();
@@ -137,7 +138,7 @@ function WS_ajax_fillTables(data) {
             });
           }
         }).disableSelection();
-        jQuery(".group:last").parent().append(tab);
+        jQuery(".group:last").parent().append(tab.removeClass("visuallyhidden"));
 
         assign_button();
         return false;

@@ -38,9 +38,14 @@ function WS_load_admin_scripts()
 {
     if (is_admin() && !is_front_page()) {
         //jquery UI
-        wp_enqueue_script('jquery_ui_core', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.core.js');
-        wp_enqueue_script('jquery_ui_widget', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.widget.js');
-        wp_enqueue_script('jquery_ui_tabs', WP_PLUGIN_URL .'/wp-systempay/inc/jquery-ui/js/jquery.ui.tabs.js');
+        
+        
+        
+        wp_enqueue_script( 'jquery-ui-core' );
+        wp_enqueue_script( 'jquery-ui-widget' );
+        wp_enqueue_script( 'jquery-ui-sortable' );
+        wp_enqueue_script( 'jquery-ui-tabs' );
+
         wp_enqueue_script('jquery_chosen', WP_PLUGIN_URL .'/wp-systempay/inc/chosen.jquery.min.js');
         wp_enqueue_script('bootstrap', WP_PLUGIN_URL .'/wp-systempay/inc/bootstrap.min.js');
         wp_enqueue_script('WS_script', WP_PLUGIN_URL.'/wp-systempay/inc/script.js',array('jquery'));
