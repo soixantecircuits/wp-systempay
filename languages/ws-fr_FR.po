@@ -1,2190 +1,2821 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: wp-systempay\n"
-
-#: payformcontroller.class.php:145
-msgid "new Form"
-msgstr "Nouveau formulaire"
-
-#: payformcontroller.class.php:145
-msgid "add New"
-msgstr "Ajouter un nouveau"
-
-#: payformcontroller.class.php:146
-msgid "edit Page"
-msgstr "Editer la page"
-
-#: payformcontroller.class.php:147
-msgid "transactions menu"
-msgstr "transactions menu"
-
-#: payformcontroller.class.php:147
-#: payformcontroller.class.php:148
-msgid "transactions"
-msgstr "Transactions"
-
-#: payformcontroller.class.php:149
-msgid "transaction"
-msgstr "Transactions"
-
-#: forms_templates/form_adhere.php:9
-msgid "Informations générales"
-msgstr "Informations générales"
-
-#: forms_templates/form_adhere.php:12
-msgid "Informations personnelles"
-msgstr "Informations personnelles"
-
-#: forms_templates/form_adhere.php:15
-msgid "Adhésion à ELA (valable 12 mois)"
-msgstr "Adhésion à ELA (valable 12 mois)"
-
-#: forms_templates/form_adhere.php:18
-msgid "Faire un don à ELA"
-msgstr "Faire un don à ELA"
-
-#: forms_templates/form_adhere.php:21
-msgid "Abonnement à la revue ELA Infos (4 numéros par an)"
-msgstr "Abonnement à la revue ELA Infos (4 numéros par an)"
-
-#: forms_templates/form_adhere.php:51
-msgid "Envoyer"
-msgstr "Envoyer"
-
-#: forms_templates/form_don.php:4
-msgid "Amount of your donation"
-msgstr "Montant de votre don"
-
-#: forms_templates/form_don.php:9
-#: forms_templates/form_don.php:15
-msgid "Amount after deduction"
-msgstr "Montant après réduction"
-
-#: forms_templates/form_don.php:10
-#: forms_templates/form_don.php:43
-msgid "Continue"
-msgstr "Continuer"
-
-#: forms_templates/form_don.php:14
-msgid "Change the amount"
-msgstr "Choisir un autre montant"
-
-#: forms_templates/form_don.php:21
-msgid "Infos"
-msgstr "Coordonnées"
-
-#: forms_templates/form_don.php:51
-msgid "Conditions"
-msgstr "Réglement"
-
-#: forms_templates/form_subscriptions.php:10
-msgid "General information"
-msgstr "Informations générales"
-
-#: forms_templates/form_subscriptions.php:13
-msgid "Personnal information"
-msgstr "Informations personnelles"
-
-#: forms_templates/form_subscriptions.php:16
-msgid "Subscribe to the magazine (4 editions per year)"
-msgstr "Inscription à ELA info (4 numéros par an)"
-
-#: forms_templates/form_subscriptions.php:19
-msgid "Annuel membership to ELA (12 month long)"
-msgstr "Adhésion à ELA (valable 12 mois)"
-
-#: forms_templates/form_subscriptions.php:22
-msgid "Make a donation to ELA"
-msgstr "Faire un don à ELA"
-
-#: forms_templates/form_subscriptions.php:52
-msgid "Send"
-msgstr "Envoyer"
-
-#: frontend_methods/payform_confirmation.class.php:163
-msgid "Cancel"
-msgstr "Retour"
-
-#: frontend_methods/payform_confirmation.class.php:196
-msgid "The total amount of your transaction is: "
-msgstr "Le montant total de votre transaction sera de :"
-
-#: frontend_methods/payform_confirmation.class.php:211
-msgid "Confirm"
-msgstr "Confirmer"
-
-#: frontend_methods/payform_confirmation.class.php:216
-msgid "The wanted confirmation PayForm is missing"
-msgstr "La page de confirmation du formulaire est manquante"
-
-#: frontend_methods/payform_confirmation.class.php:289
-#: frontend_methods/payform_confirmation.class.php:292
-#: frontend_methods/payform_confirmation.class.php:293
-#: frontend_methods/payform_confirmation.class.php:303
-msgid "On hold"
-msgstr "En attente"
-
-#: frontend_methods/payform_confirmation.class.php:291
-msgid "Processing"
-msgstr "En cours"
-
-#: frontend_methods/payform_confirmation.class.php:326
-msgid "Please wait, you'll be redirected in a few moments."
-msgstr "Veuillez patienter, vous êtes redirigé."
-
-#: frontend_methods/payform_confirmation.class.php:336
-msgid "Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster."
-msgstr "Erreur pendant la sauvegarde de confirmation, veuillez réessayer. Si l&#39;erreur persiste, contactez le webmaster."
-
-#: frontend_methods/payform_confirmation.class.php:430
-msgid "Retry"
-msgstr "Réessayer"
-
-#: frontend_methods/payform_countries.class.php:7
-msgid "Afghanistan"
-msgstr "Afghanistan"
-
-#: frontend_methods/payform_countries.class.php:8
-msgid "&#197;land Islands"
-msgstr "&#197;land Islands"
-
-#: frontend_methods/payform_countries.class.php:9
-msgid "Albania"
-msgstr "Albanie"
-
-#: frontend_methods/payform_countries.class.php:10
-msgid "Algeria"
-msgstr "Algérie"
-
-#: frontend_methods/payform_countries.class.php:11
-msgid "American Samoa"
-msgstr "Samoa américaines "
-
-#: frontend_methods/payform_countries.class.php:12
-msgid "Andorra"
-msgstr "Andorre"
-
-#: frontend_methods/payform_countries.class.php:13
-msgid "Angola"
-msgstr "Angola"
-
-#: frontend_methods/payform_countries.class.php:14
-msgid "Anguilla"
-msgstr "Anguilla"
-
-#: frontend_methods/payform_countries.class.php:15
-msgid "Antarctica"
-msgstr "Antartique"
-
-#: frontend_methods/payform_countries.class.php:16
-msgid "Antigua and Barbuda"
-msgstr "Antigua-et-Barbuda"
-
-#: frontend_methods/payform_countries.class.php:17
-msgid "Argentina"
-msgstr "Argentine"
-
-#: frontend_methods/payform_countries.class.php:18
-msgid "Armenia"
-msgstr "Arménie"
-
-#: frontend_methods/payform_countries.class.php:19
-msgid "Aruba"
-msgstr "Aruba"
-
-#: frontend_methods/payform_countries.class.php:20
-msgid "Australia"
-msgstr "Australie"
-
-#: frontend_methods/payform_countries.class.php:21
-msgid "Austria"
-msgstr "Autriche"
-
-#: frontend_methods/payform_countries.class.php:22
-msgid "Azerbaijan"
-msgstr "Azerbaijan"
-
-#: frontend_methods/payform_countries.class.php:23
-msgid "Bahamas"
-msgstr "Bahamas"
-
-#: frontend_methods/payform_countries.class.php:24
-msgid "Bahrain"
-msgstr "Barhain"
-
-#: frontend_methods/payform_countries.class.php:25
-msgid "Bangladesh"
-msgstr "Bangladesh"
-
-#: frontend_methods/payform_countries.class.php:26
-msgid "Barbados"
-msgstr "Barbados"
-
-#: frontend_methods/payform_countries.class.php:27
-msgid "Belarus"
-msgstr "Biélorussie"
-
-#: frontend_methods/payform_countries.class.php:28
-msgid "Belgium"
-msgstr "Belgique"
-
-#: frontend_methods/payform_countries.class.php:29
-msgid "Belize"
-msgstr "Bélize"
-
-#: frontend_methods/payform_countries.class.php:30
-msgid "Benin"
-msgstr "Benin"
-
-#: frontend_methods/payform_countries.class.php:31
-msgid "Bermuda"
-msgstr "Bermudes"
-
-#: frontend_methods/payform_countries.class.php:32
-msgid "Bhutan"
-msgstr "Bhoutan"
-
-#: frontend_methods/payform_countries.class.php:33
-msgid "Bolivia"
-msgstr "Bolivie"
-
-#: frontend_methods/payform_countries.class.php:34
-msgid "Bosnia and Herzegovina"
-msgstr "Bosnie Herzegovine"
-
-#: frontend_methods/payform_countries.class.php:35
-msgid "Botswana"
-msgstr "Botswana"
-
-#: frontend_methods/payform_countries.class.php:36
-msgid "Brazil"
-msgstr "Brésil"
-
-#: frontend_methods/payform_countries.class.php:37
-msgid "British Indian Ocean Territory"
-msgstr "Territoire britannique de l&#39;océan Indien"
-
-#: frontend_methods/payform_countries.class.php:38
-msgid "British Virgin Islands"
-msgstr "Îles Vierges britanniques"
-
-#: frontend_methods/payform_countries.class.php:39
-msgid "Brunei"
-msgstr "Brunei"
-
-#: frontend_methods/payform_countries.class.php:40
-msgid "Bulgaria"
-msgstr "Bulgarie"
-
-#: frontend_methods/payform_countries.class.php:41
-msgid "Burkina Faso"
-msgstr "Burkina Faso"
-
-#: frontend_methods/payform_countries.class.php:42
-msgid "Burundi"
-msgstr "Burundi"
-
-#: frontend_methods/payform_countries.class.php:43
-msgid "Cambodia"
-msgstr "Cambodge"
-
-#: frontend_methods/payform_countries.class.php:44
-msgid "Cameroon"
-msgstr "Cameroun"
-
-#: frontend_methods/payform_countries.class.php:45
-msgid "Canada"
-msgstr "Canada"
-
-#: frontend_methods/payform_countries.class.php:46
-msgid "Cape Verde"
-msgstr "Cap-Vert"
-
-#: frontend_methods/payform_countries.class.php:47
-msgid "Cayman Islands"
-msgstr "Îles Caïmans"
-
-#: frontend_methods/payform_countries.class.php:48
-msgid "Central African Republic"
-msgstr "République centrafricaine"
-
-#: frontend_methods/payform_countries.class.php:49
-msgid "Chad"
-msgstr "Tchad"
-
-#: frontend_methods/payform_countries.class.php:50
-msgid "Chile"
-msgstr "Chili"
-
-#: frontend_methods/payform_countries.class.php:51
-msgid "China"
-msgstr "Chine"
-
-#: frontend_methods/payform_countries.class.php:52
-msgid "Christmas Island"
-msgstr "île Christmas"
-
-#: frontend_methods/payform_countries.class.php:53
-msgid "Cocos (Keeling) Islands"
-msgstr "Îles Cocos"
-
-#: frontend_methods/payform_countries.class.php:54
-msgid "Colombia"
-msgstr "Colombie"
-
-#: frontend_methods/payform_countries.class.php:55
-msgid "Comoros"
-msgstr "îles Comores"
-
-#: frontend_methods/payform_countries.class.php:56
-msgid "Congo (Brazzaville)"
-msgstr "République du Congo "
-
-#: frontend_methods/payform_countries.class.php:57
-msgid "Congo (Kinshasa)"
-msgstr "République démocratique du Congo"
-
-#: frontend_methods/payform_countries.class.php:58
-msgid "Cook Islands"
-msgstr "Îles Cook"
-
-#: frontend_methods/payform_countries.class.php:59
-msgid "Costa Rica"
-msgstr "Costa Rica"
-
-#: frontend_methods/payform_countries.class.php:60
-msgid "Croatia"
-msgstr "Croatie"
-
-#: frontend_methods/payform_countries.class.php:61
-msgid "Cuba"
-msgstr "Cuba"
-
-#: frontend_methods/payform_countries.class.php:62
-msgid "Cyprus"
-msgstr "Chipre"
-
-#: frontend_methods/payform_countries.class.php:63
-msgid "Czech Republic"
-msgstr "République tchèque"
-
-#: frontend_methods/payform_countries.class.php:64
-msgid "Denmark"
-msgstr "Danemark"
-
-#: frontend_methods/payform_countries.class.php:65
-msgid "Djibouti"
-msgstr "Djibouti"
-
-#: frontend_methods/payform_countries.class.php:66
-msgid "Dominica"
-msgstr "Dominique"
-
-#: frontend_methods/payform_countries.class.php:67
-msgid "Dominican Republic"
-msgstr "République dominicaine "
-
-#: frontend_methods/payform_countries.class.php:68
-msgid "Ecuador"
-msgstr "Équateur"
-
-#: frontend_methods/payform_countries.class.php:69
-msgid "Egypt"
-msgstr "Égypte"
-
-#: frontend_methods/payform_countries.class.php:70
-msgid "El Salvador"
-msgstr "Salvador"
-
-#: frontend_methods/payform_countries.class.php:71
-msgid "Equatorial Guinea"
-msgstr "Guinée équatoriale"
-
-#: frontend_methods/payform_countries.class.php:72
-msgid "Eritrea"
-msgstr "Érythrée"
-
-#: frontend_methods/payform_countries.class.php:73
-msgid "Estonia"
-msgstr "Estonie"
-
-#: frontend_methods/payform_countries.class.php:74
-msgid "Ethiopia"
-msgstr "Ethiopie"
-
-#: frontend_methods/payform_countries.class.php:75
-msgid "Falkland Islands"
-msgstr "Îles Malouines"
-
-#: frontend_methods/payform_countries.class.php:76
-msgid "Faroe Islands"
-msgstr "Îles Féroé"
-
-#: frontend_methods/payform_countries.class.php:77
-msgid "Fiji"
-msgstr "Fidji"
-
-#: frontend_methods/payform_countries.class.php:78
-msgid "Finland"
-msgstr "Finlande "
-
-#: frontend_methods/payform_countries.class.php:79
-msgid "France"
-msgstr "France"
-
-#: frontend_methods/payform_countries.class.php:80
-msgid "French Guiana"
-msgstr "Guyane"
-
-#: frontend_methods/payform_countries.class.php:81
-msgid "French Polynesia"
-msgstr "Polynésie française"
-
-#: frontend_methods/payform_countries.class.php:82
-msgid "French Southern Territories"
-msgstr "Antarctique français"
-
-#: frontend_methods/payform_countries.class.php:83
-msgid "Gabon"
-msgstr "Gabon"
-
-#: frontend_methods/payform_countries.class.php:84
-msgid "Gambia"
-msgstr "Gambie"
-
-#: frontend_methods/payform_countries.class.php:85
-msgid "Georgia"
-msgstr "Géorgie"
-
-#: frontend_methods/payform_countries.class.php:86
-msgid "Germany"
-msgstr "Allemagne"
-
-#: frontend_methods/payform_countries.class.php:87
-msgid "Ghana"
-msgstr "Ghana"
-
-#: frontend_methods/payform_countries.class.php:88
-msgid "Gibraltar"
-msgstr "Gibraltar"
-
-#: frontend_methods/payform_countries.class.php:89
-msgid "Greece"
-msgstr "Grèce"
-
-#: frontend_methods/payform_countries.class.php:90
-msgid "Greenland"
-msgstr "Groenland"
-
-#: frontend_methods/payform_countries.class.php:91
-msgid "Grenada"
-msgstr "Grenade"
-
-#: frontend_methods/payform_countries.class.php:92
-msgid "Guadeloupe"
-msgstr "Guadeloupe"
-
-#: frontend_methods/payform_countries.class.php:93
-msgid "Guam"
-msgstr "Guam"
-
-#: frontend_methods/payform_countries.class.php:94
-msgid "Guatemala"
-msgstr "Guatemala"
-
-#: frontend_methods/payform_countries.class.php:95
-msgid "Guernsey"
-msgstr "Guernesey"
-
-#: frontend_methods/payform_countries.class.php:96
-msgid "Guinea"
-msgstr "Guiné"
-
-#: frontend_methods/payform_countries.class.php:97
-msgid "Guinea-Bissau"
-msgstr "Guinée-Bissau"
-
-#: frontend_methods/payform_countries.class.php:98
-msgid "Guyana"
-msgstr "Guyanne"
-
-#: frontend_methods/payform_countries.class.php:99
-msgid "Haiti"
-msgstr "Haïti"
-
-#: frontend_methods/payform_countries.class.php:100
-msgid "Honduras"
-msgstr "Honduras"
-
-#: frontend_methods/payform_countries.class.php:101
-msgid "Hong Kong"
-msgstr "Hong-Kong"
-
-#: frontend_methods/payform_countries.class.php:102
-msgid "Hungary"
-msgstr "Hongrie"
-
-#: frontend_methods/payform_countries.class.php:103
-msgid "Iceland"
-msgstr "Island"
-
-#: frontend_methods/payform_countries.class.php:104
-msgid "India"
-msgstr "Inde"
-
-#: frontend_methods/payform_countries.class.php:105
-msgid "Indonesia"
-msgstr "Indonésie"
-
-#: frontend_methods/payform_countries.class.php:106
-msgid "Iran"
-msgstr "Iran"
-
-#: frontend_methods/payform_countries.class.php:107
-msgid "Iraq"
-msgstr "Iraq"
-
-#: frontend_methods/payform_countries.class.php:108
-msgid "Ireland"
-msgstr "Irland"
-
-#: frontend_methods/payform_countries.class.php:109
-msgid "Isle of Man"
-msgstr "îles"
-
-#: frontend_methods/payform_countries.class.php:110
-msgid "Israel"
-msgstr "Israël"
-
-#: frontend_methods/payform_countries.class.php:111
-msgid "Italy"
-msgstr "Italie"
-
-#: frontend_methods/payform_countries.class.php:112
-msgid "Ivory Coast"
-msgstr "Côte d'Ivoir"
-
-#: frontend_methods/payform_countries.class.php:113
-msgid "Jamaica"
-msgstr "Jamaica"
-
-#: frontend_methods/payform_countries.class.php:114
-msgid "Japan"
-msgstr "Japon"
-
-#: frontend_methods/payform_countries.class.php:115
-msgid "Jersey"
-msgstr "Jersey"
-
-#: frontend_methods/payform_countries.class.php:116
-msgid "Jordan"
-msgstr "Jordanie"
-
-#: frontend_methods/payform_countries.class.php:117
-msgid "Kazakhstan"
-msgstr "Kazakhstan"
-
-#: frontend_methods/payform_countries.class.php:118
-msgid "Kenya"
-msgstr "Kenya"
-
-#: frontend_methods/payform_countries.class.php:119
-msgid "Kiribati"
-msgstr "Kiribati"
-
-#: frontend_methods/payform_countries.class.php:120
-msgid "Kuwait"
-msgstr "Koweït"
-
-#: frontend_methods/payform_countries.class.php:121
-msgid "Kyrgyzstan"
-msgstr "Kirghizistan"
-
-#: frontend_methods/payform_countries.class.php:122
-msgid "Laos"
-msgstr "Laos"
-
-#: frontend_methods/payform_countries.class.php:123
-msgid "Latvia"
-msgstr "Lettonie"
-
-#: frontend_methods/payform_countries.class.php:124
-msgid "Lebanon"
-msgstr "Liban"
-
-#: frontend_methods/payform_countries.class.php:125
-msgid "Lesotho"
-msgstr "Lesotho"
-
-#: frontend_methods/payform_countries.class.php:126
-msgid "Liberia"
-msgstr "Liberia"
-
-#: frontend_methods/payform_countries.class.php:127
-msgid "Libya"
-msgstr "Libye"
-
-#: frontend_methods/payform_countries.class.php:128
-msgid "Liechtenstein"
-msgstr "Liechtenstein"
-
-#: frontend_methods/payform_countries.class.php:129
-msgid "Lithuania"
-msgstr "Lituanie"
-
-#: frontend_methods/payform_countries.class.php:130
-msgid "Luxembourg"
-msgstr "Luxembourg"
-
-#: frontend_methods/payform_countries.class.php:131
-msgid "Macao S.A.R., China"
-msgstr "Macao"
-
-#: frontend_methods/payform_countries.class.php:132
-msgid "Macedonia"
-msgstr "Macédoine"
-
-#: frontend_methods/payform_countries.class.php:133
-msgid "Madagascar"
-msgstr "Madagascar"
-
-#: frontend_methods/payform_countries.class.php:134
-msgid "Malawi"
-msgstr "Malawi"
-
-#: frontend_methods/payform_countries.class.php:135
-msgid "Malaysia"
-msgstr "Malaisie"
-
-#: frontend_methods/payform_countries.class.php:136
-msgid "Maldives"
-msgstr "Maldives"
-
-#: frontend_methods/payform_countries.class.php:137
-msgid "Mali"
-msgstr "Mali"
-
-#: frontend_methods/payform_countries.class.php:138
-msgid "Malta"
-msgstr "île de Malte"
-
-#: frontend_methods/payform_countries.class.php:139
-msgid "Marshall Islands"
-msgstr "Îles Marshall"
-
-#: frontend_methods/payform_countries.class.php:140
-msgid "Martinique"
-msgstr "Martinique"
-
-#: frontend_methods/payform_countries.class.php:141
-msgid "Mauritania"
-msgstr "Mauritanie"
-
-#: frontend_methods/payform_countries.class.php:142
-msgid "Mauritius"
-msgstr "Maurice"
-
-#: frontend_methods/payform_countries.class.php:143
-msgid "Mayotte"
-msgstr "Mayotte"
-
-#: frontend_methods/payform_countries.class.php:144
-msgid "Mexico"
-msgstr "Méxique"
-
-#: frontend_methods/payform_countries.class.php:145
-msgid "Micronesia"
-msgstr "Micronésie"
-
-#: frontend_methods/payform_countries.class.php:146
-msgid "Moldova"
-msgstr "Moldavie"
-
-#: frontend_methods/payform_countries.class.php:147
-msgid "Monaco"
-msgstr "Monaco"
-
-#: frontend_methods/payform_countries.class.php:148
-msgid "Mongolia"
-msgstr "Mongolie"
-
-#: frontend_methods/payform_countries.class.php:149
-msgid "Montenegro"
-msgstr "Montenegro"
-
-#: frontend_methods/payform_countries.class.php:150
-msgid "Montserrat"
-msgstr "Montserrat"
-
-#: frontend_methods/payform_countries.class.php:151
-msgid "Morocco"
-msgstr "Maroc"
-
-#: frontend_methods/payform_countries.class.php:152
-msgid "Mozambique"
-msgstr "Mozambique"
-
-#: frontend_methods/payform_countries.class.php:153
-msgid "Myanmar"
-msgstr "Birmanie"
-
-#: frontend_methods/payform_countries.class.php:154
-msgid "Namibia"
-msgstr "Namibie"
-
-#: frontend_methods/payform_countries.class.php:155
-msgid "Nauru"
-msgstr "Nauru"
-
-#: frontend_methods/payform_countries.class.php:156
-msgid "Nepal"
-msgstr "Népal"
-
-#: frontend_methods/payform_countries.class.php:157
-msgid "Netherlands"
-msgstr "Pays-Bas"
-
-#: frontend_methods/payform_countries.class.php:158
-msgid "Netherlands Antilles"
-msgstr "Antilles néerlandaises"
-
-#: frontend_methods/payform_countries.class.php:159
-msgid "New Caledonia"
-msgstr "Nouvelle-Calédonie"
-
-#: frontend_methods/payform_countries.class.php:160
-msgid "New Zealand"
-msgstr "Nouvelle-Zélande"
-
-#: frontend_methods/payform_countries.class.php:161
-msgid "Nicaragua"
-msgstr "Nicaragua"
-
-#: frontend_methods/payform_countries.class.php:162
-msgid "Niger"
-msgstr "Niger"
-
-#: frontend_methods/payform_countries.class.php:163
-msgid "Nigeria"
-msgstr "Nigeria"
-
-#: frontend_methods/payform_countries.class.php:164
-msgid "Niue"
-msgstr "Niue"
-
-#: frontend_methods/payform_countries.class.php:165
-msgid "Norfolk Island"
-msgstr "Île Norfolk"
-
-#: frontend_methods/payform_countries.class.php:166
-msgid "North Korea"
-msgstr "Corée du Nord"
-
-#: frontend_methods/payform_countries.class.php:167
-msgid "Northern Mariana Islands"
-msgstr "Îles Mariannes du Nord"
-
-#: frontend_methods/payform_countries.class.php:168
-msgid "Norway"
-msgstr "Norvège"
-
-#: frontend_methods/payform_countries.class.php:169
-msgid "Oman"
-msgstr "Oman"
-
-#: frontend_methods/payform_countries.class.php:170
-msgid "Pakistan"
-msgstr "Pakistan"
-
-#: frontend_methods/payform_countries.class.php:171
-msgid "Palau"
-msgstr "Palau"
-
-#: frontend_methods/payform_countries.class.php:172
-msgid "Palestinian Territory"
-msgstr "Territoire palestinien"
-
-#: frontend_methods/payform_countries.class.php:173
-msgid "Panama"
-msgstr "Panama"
-
-#: frontend_methods/payform_countries.class.php:174
-msgid "Papua New Guinea"
-msgstr "Papouasie-Nouvelle-Guinée"
-
-#: frontend_methods/payform_countries.class.php:175
-msgid "Paraguay"
-msgstr "Paraguay"
-
-#: frontend_methods/payform_countries.class.php:176
-msgid "Peru"
-msgstr "Pérou"
-
-#: frontend_methods/payform_countries.class.php:177
-msgid "Philippines"
-msgstr "Philippines"
-
-#: frontend_methods/payform_countries.class.php:178
-msgid "Pitcairn"
-msgstr "Île Pitcairn"
-
-#: frontend_methods/payform_countries.class.php:179
-msgid "Poland"
-msgstr "Pologne"
-
-#: frontend_methods/payform_countries.class.php:180
-msgid "Portugal"
-msgstr "Portugal"
-
-#: frontend_methods/payform_countries.class.php:181
-msgid "Puerto Rico"
-msgstr "Puerto Rico"
-
-#: frontend_methods/payform_countries.class.php:182
-msgid "Qatar"
-msgstr "Quatar"
-
-#: frontend_methods/payform_countries.class.php:183
-msgid "Reunion"
-msgstr "Réunion"
-
-#: frontend_methods/payform_countries.class.php:184
-msgid "Romania"
-msgstr "Roumanie"
-
-#: frontend_methods/payform_countries.class.php:185
-msgid "Russia"
-msgstr "Russie"
-
-#: frontend_methods/payform_countries.class.php:186
-msgid "Rwanda"
-msgstr "Rwanda"
-
-#: frontend_methods/payform_countries.class.php:187
-msgid "Saint Barth&eacute;lemy"
-msgstr "Saint Barthélémy"
-
-#: frontend_methods/payform_countries.class.php:188
-msgid "Saint Helena"
-msgstr "Saint Hélène"
-
-#: frontend_methods/payform_countries.class.php:189
-msgid "Saint Kitts and Nevis"
-msgstr "Saint-Christophe-et-Niévès"
-
-#: frontend_methods/payform_countries.class.php:190
-msgid "Saint Lucia"
-msgstr "Sainte-Lucie"
-
-#: frontend_methods/payform_countries.class.php:191
-msgid "Saint Martin (French part)"
-msgstr "Saint Martin (Française)"
-
-#: frontend_methods/payform_countries.class.php:192
-msgid "Saint Pierre and Miquelon"
-msgstr "Saint-Pierre-et-Miquelon"
-
-#: frontend_methods/payform_countries.class.php:193
-msgid "Saint Vincent and the Grenadines"
-msgstr "Saint-Vincent-et-les-Grenadines"
-
-#: frontend_methods/payform_countries.class.php:194
-msgid "Samoa"
-msgstr "Samoa"
-
-#: frontend_methods/payform_countries.class.php:195
-msgid "San Marino"
-msgstr "San Marino"
-
-#: frontend_methods/payform_countries.class.php:196
-msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
-msgstr "Sao Tomé-et-Principe"
-
-#: frontend_methods/payform_countries.class.php:197
-msgid "Saudi Arabia"
-msgstr "Arabie saoudite"
-
-#: frontend_methods/payform_countries.class.php:198
-msgid "Senegal"
-msgstr "Sénégal"
-
-#: frontend_methods/payform_countries.class.php:199
-msgid "Serbia"
-msgstr "Serbie"
-
-#: frontend_methods/payform_countries.class.php:200
-msgid "Seychelles"
-msgstr "Seychelles"
-
-#: frontend_methods/payform_countries.class.php:201
-msgid "Sierra Leone"
-msgstr "La Sierra Leone"
-
-#: frontend_methods/payform_countries.class.php:202
-msgid "Singapore"
-msgstr "Singapoure"
-
-#: frontend_methods/payform_countries.class.php:203
-msgid "Slovakia"
-msgstr "Slovakie"
-
-#: frontend_methods/payform_countries.class.php:204
-msgid "Slovenia"
-msgstr "Slovenie"
-
-#: frontend_methods/payform_countries.class.php:205
-msgid "Solomon Islands"
-msgstr "Îles Salomon"
-
-#: frontend_methods/payform_countries.class.php:206
-msgid "Somalia"
-msgstr "Somalie"
-
-#: frontend_methods/payform_countries.class.php:207
-msgid "South Africa"
-msgstr "Afrique du Sud"
-
-#: frontend_methods/payform_countries.class.php:208
-msgid "South Georgia/Sandwich Islands"
-msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
-
-#: frontend_methods/payform_countries.class.php:209
-msgid "South Korea"
-msgstr "Corée du Sud"
-
-#: frontend_methods/payform_countries.class.php:210
-msgid "Spain"
-msgstr "Espagne"
-
-#: frontend_methods/payform_countries.class.php:211
-msgid "Sri Lanka"
-msgstr "Sri Lanka"
-
-#: frontend_methods/payform_countries.class.php:212
-msgid "Sudan"
-msgstr "Soudan"
-
-#: frontend_methods/payform_countries.class.php:213
-msgid "Suriname"
-msgstr "Suriname"
-
-#: frontend_methods/payform_countries.class.php:214
-msgid "Svalbard and Jan Mayen"
-msgstr "Île Jan Mayen"
-
-#: frontend_methods/payform_countries.class.php:215
-msgid "Swaziland"
-msgstr "Swaziland"
-
-#: frontend_methods/payform_countries.class.php:216
-msgid "Sweden"
-msgstr "Suède"
-
-#: frontend_methods/payform_countries.class.php:217
-msgid "Switzerland"
-msgstr "Suisse"
-
-#: frontend_methods/payform_countries.class.php:218
-msgid "Syria"
-msgstr "Syrie"
-
-#: frontend_methods/payform_countries.class.php:219
-msgid "Taiwan"
-msgstr "Taïwan"
-
-#: frontend_methods/payform_countries.class.php:220
-msgid "Tajikistan"
-msgstr "Tadjikistan"
-
-#: frontend_methods/payform_countries.class.php:221
-msgid "Tanzania"
-msgstr "Tanzanie"
-
-#: frontend_methods/payform_countries.class.php:222
-msgid "Thailand"
-msgstr "Thaïlande"
-
-#: frontend_methods/payform_countries.class.php:223
-msgid "Timor-Leste"
-msgstr "Timor oriental"
-
-#: frontend_methods/payform_countries.class.php:224
-msgid "Togo"
-msgstr "Togo"
-
-#: frontend_methods/payform_countries.class.php:225
-msgid "Tokelau"
-msgstr "Tokelau"
-
-#: frontend_methods/payform_countries.class.php:226
-msgid "Tonga"
-msgstr "Tonga"
-
-#: frontend_methods/payform_countries.class.php:227
-msgid "Trinidad and Tobago"
-msgstr "Trinité-et-Tobago"
-
-#: frontend_methods/payform_countries.class.php:228
-msgid "Tunisia"
-msgstr "Tunisie"
-
-#: frontend_methods/payform_countries.class.php:229
-msgid "Turkey"
-msgstr "Turquie"
-
-#: frontend_methods/payform_countries.class.php:230
-msgid "Turkmenistan"
-msgstr "Turkménistan"
-
-#: frontend_methods/payform_countries.class.php:231
-msgid "Turks and Caicos Islands"
-msgstr "Îles Turques-et-Caïques"
-
-#: frontend_methods/payform_countries.class.php:232
-msgid "Tuvalu"
-msgstr "Tuvalu"
-
-#: frontend_methods/payform_countries.class.php:233
-msgid "U.S. Virgin Islands"
-msgstr "Îles Vierges des États-Unis"
-
-#: frontend_methods/payform_countries.class.php:234
-msgid "US Armed Forces"
-msgstr "Forces armées des États-Unis"
-
-#: frontend_methods/payform_countries.class.php:235
-msgid "US Minor Outlying Islands"
-msgstr "Îles mineures éloignées des États-Unis"
-
-#: frontend_methods/payform_countries.class.php:236
-msgid "Uganda"
-msgstr "Ouganda"
-
-#: frontend_methods/payform_countries.class.php:237
-msgid "Ukraine"
-msgstr "Ukraine"
-
-#: frontend_methods/payform_countries.class.php:238
-msgid "United Arab Emirates"
-msgstr "Émirats arabes unis"
-
-#: frontend_methods/payform_countries.class.php:239
-msgid "United Kingdom"
-msgstr "Royaume-Uni"
-
-#: frontend_methods/payform_countries.class.php:240
-msgid "United States"
-msgstr "États-Unis"
-
-#: frontend_methods/payform_countries.class.php:241
-msgid "Uruguay"
-msgstr "Uruguay"
-
-#: frontend_methods/payform_countries.class.php:242
-msgid "Uzbekistan"
-msgstr "Ouzbékistan"
-
-#: frontend_methods/payform_countries.class.php:243
-msgid "Vanuatu"
-msgstr "Vanuatu"
-
-#: frontend_methods/payform_countries.class.php:244
-msgid "Vatican"
-msgstr "Vatican"
-
-#: frontend_methods/payform_countries.class.php:245
-msgid "Venezuela"
-msgstr "Venezuela"
-
-#: frontend_methods/payform_countries.class.php:246
-msgid "Vietnam"
-msgstr "Vietnam"
-
-#: frontend_methods/payform_countries.class.php:247
-msgid "Wallis and Futuna"
-msgstr "Wallis-et-Futuna"
-
-#: frontend_methods/payform_countries.class.php:248
-msgid "Western Sahara"
-msgstr "Sahara occidental"
-
-#: frontend_methods/payform_countries.class.php:249
-msgid "Yemen"
-msgstr "Yémen"
-
-#: frontend_methods/payform_countries.class.php:250
-msgid "Zambia"
-msgstr "Zambie"
-
-#: frontend_methods/payform_countries.class.php:251
-msgid "Zimbabwe"
-msgstr "Zimbabwe"
-
-#: frontend_methods/payform_forms.class.php:44
-msgid "This field is required"
-msgstr "Ce champ est obligatoire"
-
-#: frontend_methods/payform_forms.class.php:45
-msgid "Your email is not valid"
-msgstr "Votre email n&#39;est pas valide"
-
-#: frontend_methods/payform_forms.class.php:46
-msgid "Your number is not valid"
-msgstr "Le nombre est invalide"
-
-#: frontend_methods/payform_gateways.class.php:26
-#: frontend_methods/systempay/payform_systempay_results.class.php:52
-msgid "currency"
-msgstr "Devise"
-
-#: frontend_methods/payform_gateways.class.php:30
-msgid "currency, 978 for Euro, 840 for American Dolar."
-msgstr "Devise, 978 pour l&#39;Euro, 840 pour les Dollars"
-
-#: frontend_methods/payform_gateways.class.php:34
-#: frontend_methods/systempay/payform_systempay_results.class.php:51
-msgid "amount"
-msgstr "montant"
-
-#: frontend_methods/payform_gateways.class.php:38
-msgid "Amount of the order expressed in the smallest unit of currency. Cents for EURO Ex: 1000 for 10 euros."
-msgstr "Montant de la commande exprimé dans la plus petite unité. Exemple en centimes d'euros : 1000 pour 10 euros."
-
-#: frontend_methods/payform_gateways.class.php:42
-msgid "site_id"
-msgstr "ID du site"
-
-#: frontend_methods/payform_gateways.class.php:46
-msgid "Identifiant Boutique à récupérer dans le Back office Payzen"
-msgstr "Identifiant Boutique à récupérer dans le Back office Payzen"
-
-#: frontend_methods/payform_gateways.class.php:50
-msgid "certificate"
-msgstr "Certificat"
-
-#: frontend_methods/payform_gateways.class.php:54
-msgid "To get from the Payzen BackOffice. Please note this certificate is different depending on the mode TEST or PRODUCTION.The certificate is needed by the function systemPay_GetSignature() ."
-msgstr "À récupérer depuis systempay. Attention, ce dernier change entre TEST et PRODUCTION. Le certificat est nécessaire pour la fonction systemPay_GetSignature()."
-
-#: frontend_methods/payform_gateways.class.php:58
-msgid "operation mode"
-msgstr "Mode opératoire"
-
-#: frontend_methods/payform_gateways.class.php:62
-msgid "operation mode . Value = TEST or PRODUCTION"
-msgstr "Mode opératoire. Valeur = TEST ou PRODUCTION"
-
-#: frontend_methods/payform_gateways.class.php:66
-#: frontend_methods/systempay/payform_systempay_results.class.php:43
-msgid "version"
-msgstr "version"
-
-#: frontend_methods/payform_gateways.class.php:70
-msgid "this parametre MUST BE 'V2'"
-msgstr "Ce paramètre doit valoir V2"
-
-#: frontend_methods/payform_gateways.class.php:74
-#: frontend_methods/systempay/payform_systempay_results.class.php:42
-msgid "signature"
-msgstr "signature"
-
-#: frontend_methods/payform_gateways.class.php:78
-msgid "calculated by the function systempay_GetSignature() / payform_GetSignature from the class Payform"
-msgstr "Calculé par la fonction systempay_GetSignature() / payform_GetSignature from the class PayForm"
-
-#: frontend_methods/payform_gateways.class.php:82
-msgid "transaction date"
-msgstr "Date de transaction"
-
-#: frontend_methods/payform_gateways.class.php:86
-msgid "date of the transaction exprimée sous la forme YYMMDDHHMMSS on the time zone UTC=0"
-msgstr "Date de la transaction exprimé sous la forme YYMMDDHHMMSS sur la zone UTC=0"
-
-#: frontend_methods/payform_gateways.class.php:90
-msgid "transaction id"
-msgstr "ID de transaction"
-
-#: frontend_methods/payform_gateways.class.php:94
-msgid "unique id of the transaction"
-msgstr "L&#39;unique ID de transaction"
-
-#: frontend_methods/payform_gateways.class.php:99
-msgid "page action"
-msgstr "page action"
-
-#: frontend_methods/payform_gateways.class.php:103
-msgid "this parameter MUST BE PAYMENT"
-msgstr "Ce paramètre doit être sur Payment"
-
-#: frontend_methods/payform_gateways.class.php:111
-msgid "This parameter is valued at INTERACTIVE if the entry is made on the card payment platform."
-msgstr "Ce paramètre doit avoir la valeur INTERACTIVE si l&#39;entée est configuré pour accepté les cartes"
-
-#: frontend_methods/payform_gateways.class.php:115
-msgid "payment config"
-msgstr "Configuration du paiement"
-
-#: frontend_methods/payform_gateways.class.php:119
-msgid "This parameter is valued at SINGLE for a unitary payment , MULTI for payement in several times"
-msgstr "Ce paramètre vaut SINGLE pour un paiement unique, MULTI pour un paiement en plusieurs fois"
-
-#: frontend_methods/payform_gateways.class.php:125
-#: frontend_methods/payform_gateways.class.php:157
-msgid "redirect success timeout"
-msgstr "Redirection après succès"
-
-#: frontend_methods/payform_gateways.class.php:129
-msgid "This parameter sets the delay before client reroute on the site merchant in the case of a successful payment. This period is expressed in seconds and must bebetween 0 and 300 seconds."
-msgstr "Ce paramètre indique le temps avant que le client soit renvoyé sur le site marchand dans le cas d'un succès. Cette période s'exprime en seconde et est comprise entre 0 et 300 secondes maximum."
-
-#: frontend_methods/payform_gateways.class.php:133
-msgid "redirect success message"
-msgstr "Message de redirection après un succès"
-
-#: frontend_methods/payform_gateways.class.php:137
-#: frontend_methods/payform_gateways.class.php:161
-msgid "This parameter specifies the message to wait before redirecting to the sitemerchant in the case of a successful payment."
-msgstr "Ce paramètre permet de choisir le message à afficher avant la redirection sur le site."
-
-#: frontend_methods/payform_gateways.class.php:141
-msgid "redirect error timeout"
-msgstr "Redirection après une erreur "
-
-#: frontend_methods/payform_gateways.class.php:145
-msgid "Same that success timeout but in case of error."
-msgstr "Le même que le temps de retour en cas de succès mais pour les erreurs"
-
-#: frontend_methods/payform_gateways.class.php:149
-msgid "redirect error message"
-msgstr "redirect error message"
-
-#: frontend_methods/payform_gateways.class.php:153
-msgid "Same that success message but in case of error."
-msgstr "Même message que pour la réussite mais en cas d&#39;erreur."
-
-#: frontend_methods/payform_gateways.class.php:165
-#: frontend_methods/systempay/payform_systempay_results.class.php:54
-msgid "language"
-msgstr "Langage"
-
-#: frontend_methods/payform_gateways.class.php:171
-msgid "customer's language"
-msgstr "Le langage du client"
-
-#: frontend_methods/payform_gateways.class.php:175
-msgid "capture delay"
-msgstr "Le délai de capture"
-
-#: frontend_methods/payform_gateways.class.php:181
-msgid "This parameter defines the time for giving bank in days. After vacuum payment platform takes a default value defined in the back office 'management tool box'"
-msgstr "Ce paramètre définit le temps donné à la banque en jours. Ce paramètre peut également se configurer dans le back office"
-
-#: frontend_methods/payform_gateways.class.php:185
-msgid "contribution name"
-msgstr "Nom de contribution"
-
-#: frontend_methods/payform_gateways.class.php:191
-msgid "the name used when paying contributions (joomla, oscommerce ...)"
-msgstr "Le nom utilisé du CMS utilisé pendant le paiement (joomla, wordpress, oscommerce, ...)"
-
-#: frontend_methods/payform_gateways.class.php:195
-#: frontend_methods/payform_gateways.class.php:205
-#: frontend_methods/payform_gateways.class.php:215
-#: frontend_methods/systempay/payform_systempay_results.class.php:56
-msgid "order_info"
-msgstr "order_info"
-
-#: frontend_methods/payform_gateways.class.php:201
-#: frontend_methods/payform_gateways.class.php:211
-#: frontend_methods/payform_gateways.class.php:221
-msgid "Free optional fields that may for example be used to store a summary of order"
-msgstr "Un champ optionnel permettant de stocker un résumé de la commande"
-
-#: frontend_methods/payform_gateways.class.php:225
-#: frontend_methods/systempay/payform_systempay_results.class.php:50
-msgid "payment_cards"
-msgstr "payment_cards"
-
-#: frontend_methods/payform_gateways.class.php:231
-msgid "Lists the types of cards offer to the user, separated by ';'. Default value EMPTY is recommended"
-msgstr "Liste des types de cartes utilisées pour la paiement, séparés par &#39;;&#39;. Nous recommandons de laisser EMPTY."
-
-#: frontend_methods/payform_gateways.class.php:235
-msgid "return mode"
-msgstr "Mode de retour"
-
-#: frontend_methods/payform_gateways.class.php:241
-msgid "NONE , GET or POST"
-msgstr "NONE, GET or POST (Get est recommandé pour éviter HTTPS)"
-
-#: frontend_methods/payform_gateways.class.php:245
-msgid "url success"
-msgstr "url success"
-
-#: frontend_methods/payform_gateways.class.php:251
-msgid "URL where the customer is redirected if successful payment,after pressing the button 'return to the store'"
-msgstr "url de retour pour un client une fois un paiement correctement déroulé, après avoir pressé le bouton retour au magasin."
-
-#: frontend_methods/payform_gateways.class.php:256
-#: frontend_methods/systempay/payform_systempay_results.class.php:68
-msgid "url_referral"
-msgstr "url_referral"
-
-#: frontend_methods/payform_gateways.class.php:262
-msgid "URL where the customer is redirected in case of refusal of authorization 02 'contact the card issuer' after pressing the button 'return to the store. '"
-msgstr "url de retour pour un client, une fois un paiement refusé avec le code 02 contact the card issuer, après avoir pressé le bouton retour au magasin."
-
-#: frontend_methods/payform_gateways.class.php:268
-msgid "url refused"
-msgstr "url refused"
-
-#: frontend_methods/payform_gateways.class.php:274
-msgid "URL where the customer is redirected in case of refusal for any other cause that the refusal to allow the pattern 02"
-msgstr "URL de retour en cas de refus"
-
-#: frontend_methods/payform_gateways.class.php:280
-msgid "url cancel"
-msgstr "url cancel"
-
-#: frontend_methods/payform_gateways.class.php:286
-msgid "URL where the customer is redirected if it presses 'cancel and return to the store ' before payment is made."
-msgstr "url de retour en cas d&#39;annulation"
-
-#: frontend_methods/payform_gateways.class.php:290
-msgid "url error"
-msgstr "url error"
-
-#: frontend_methods/payform_gateways.class.php:296
-msgid "URL where the customer is redirected if an error processing internal"
-msgstr "URL de retour pour toutes autres erreurs"
-
-#: frontend_methods/payform_gateways.class.php:300
-msgid "url return"
-msgstr "url return"
-
-#: frontend_methods/payform_gateways.class.php:306
-msgid "Where URL is redirected by default the client after pressing the button to return to the shop ', if the URL corresponding to the scenarios seen above are not filled."
-msgstr "URL de retour ultime. Si aucun des précédents n&#39;est rempli alors c'est ce dernier qui est appelé."
-
-#: frontend_methods/payform_gateways.class.php:311
-msgid "contract"
-msgstr "contrat"
-
-#: frontend_methods/payform_gateways.class.php:317
-msgid "Optional parameter to specify for each network acceptance, merchant to use the contract. The formalism of the parameter is: Network 1 = contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
-msgstr "Paramètre optionnel pour préciser pour qul réseau de marchant le contrat s&#39;applique. Normalement cela se remplit comme suit : Network 1 = contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
-
-#: frontend_methods/payform_gateways.class.php:323
-msgid "title"
-msgstr "Titre"
-
-#: frontend_methods/payform_gateways.class.php:329
-msgid "customer's social title"
-msgstr "Titre social du client"
-
-#: frontend_methods/payform_gateways.class.php:339
-msgid "firstname"
-msgstr "Prénom"
-
-#: frontend_methods/payform_gateways.class.php:344
-#: frontend_methods/payform_gateways.class.php:359
-msgid "customer's name"
-msgstr "Nom du client"
-
-#: frontend_methods/payform_gateways.class.php:354
-msgid "lastname"
-msgstr "Nom"
-
-#: frontend_methods/payform_gateways.class.php:369
-msgid "addresse"
-msgstr "Adresse"
-
-#: frontend_methods/payform_gateways.class.php:375
-#: frontend_methods/payform_gateways.class.php:391
-msgid "customer's addresse"
-msgstr "Adresse du client"
-
-#: frontend_methods/payform_gateways.class.php:385
-msgid "addresse (rest)"
-msgstr "adresse (suite)"
-
-#: frontend_methods/payform_gateways.class.php:401
-msgid "city"
-msgstr "ville"
-
-#: frontend_methods/payform_gateways.class.php:407
-msgid "customer's city"
-msgstr "Ville du client"
-
-#: frontend_methods/payform_gateways.class.php:417
-msgid "zip"
-msgstr "code postal"
-
-#: frontend_methods/payform_gateways.class.php:423
-msgid "customer's zip"
-msgstr "Code postal du client"
-
-#: frontend_methods/payform_gateways.class.php:433
-msgid "country"
-msgstr "Pays"
-
-#: frontend_methods/payform_gateways.class.php:439
-msgid "customer's country"
-msgstr "Pays de l'acheteur"
-
-#: frontend_methods/payform_gateways.class.php:449
-msgid "cell phone"
-msgstr "Numéro de téléphone"
-
-#: frontend_methods/payform_gateways.class.php:455
-msgid "customer's cell phone"
-msgstr "Numéro de téléphone du client"
-
-#: frontend_methods/payform_gateways.class.php:465
-msgid "phone"
-msgstr "Téléphone"
-
-#: frontend_methods/payform_gateways.class.php:471
-msgid "customer's phone"
-msgstr "Téléphone du client"
-
-#: frontend_methods/payform_gateways.class.php:481
-msgid "email"
-msgstr "email"
-
-#: frontend_methods/payform_gateways.class.php:487
-msgid "customer's email"
-msgstr "email du client"
-
-#: frontend_methods/systempay/payform_systempay_methods.class.php:78
-msgid "Warning : the certificate is missing/empty"
-msgstr "Attention : le certificat est manquant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:17
-msgid "Paiement réalisé avec succès"
-msgstr "Paiement réalisé avec succès"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:18
-msgid "Le commerçant doit contacter la banque du porteur"
-msgstr "Le commerçant doit contacter la banque du porteur"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:19
-msgid "Paiement refusé"
-msgstr "Paiement refusé"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:20
-msgid "Annulation client"
-msgstr "Annulation client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:21
-msgid "Erreur de format de la requête"
-msgstr "Erreur de format de la requête"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:22
-msgid "Erreur technique lors du paiement"
-msgstr "Erreur technique lors du paiement"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:26
-msgid "Pas de contrôle effectué"
-msgstr "Pas de contrôle effectué"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:27
-msgid "Tous les contrôles se sont déroulés avec succès"
-msgstr "Tous les contrôles se sont déroulés avec succès"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:28
-msgid "La carte a dépassé l’encours autorisé"
-msgstr "La carte a dépassé l’encours autorisé"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:29
-msgid "La carte appartient à la liste grise du commerçant"
-msgstr "La carte appartient à la liste grise du commerçant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:30
-msgid "Le pays d’émission de la carte appartient à la liste grise du commerçant"
-msgstr "Le pays d’émission de la carte appartient à la liste grise du commerçant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:31
-msgid "L’adresse IP appartient à la liste grise du commerçant"
-msgstr "L’adresse IP appartient à la liste grise du commerçant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:32
-msgid "Le code BIN appartient à la liste grise du commerçant"
-msgstr "Le code BIN appartient à la liste grise du commerçant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:33
-msgid "Détection d'une e-carte bleue"
-msgstr "Détection d'une e-carte bleue"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:34
-msgid "Détection d'une carte commerciale nationale"
-msgstr "Détection d'une carte commerciale nationale"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:35
-msgid "Détection d'une carte commerciale étrangère"
-msgstr "Détection d'une carte commerciale étrangère"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:36
-msgid "La carte est une carte à autorisation systématique"
-msgstr "La carte est une carte à autorisation systématique"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:37
-msgid "Aucun pays ne correspond (pays IP, pays carte, pays client)"
-msgstr "Aucun pays ne correspond (pays IP, pays carte, pays client)"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:38
-msgid "Problème technique rencontré par le serveur lors du traitement d’un des contrôles locaux"
-msgstr "Problème technique rencontré par le serveur lors du traitement d’un des contrôles locaux"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:44
-msgid "merchant_site_id"
-msgstr "ID du site"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:45
-msgid "transaction_id"
-msgstr "ID de transaction"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:46
-msgid "date"
-msgstr "Date"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:47
-msgid "validation_mode"
-msgstr "Mode opératoire"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:48
-msgid "capture_delay"
-msgstr "Le délai de capture"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:49
-msgid "config"
-msgstr "Configuration"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:53
-msgid "ctx_mode"
-msgstr "ctx_mode"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:55
-msgid "order_id"
-msgstr "order_id"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:57
-msgid "cust_email"
-msgstr "email du client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:58
-msgid "cust_id"
-msgstr "ID du site"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:59
-msgid "cust_title"
-msgstr "Titre"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:60
-msgid "cust_name"
-msgstr "Nom"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:61
-msgid "cust_address"
-msgstr "Adresse du client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:62
-msgid "cust_zip"
-msgstr "Code postal du client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:63
-msgid "cust_city"
-msgstr "Ville du client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:64
-msgid "cust_country"
-msgstr "Pays"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:65
-msgid "cust_phone"
-msgstr "Téléphone du client"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:66
-msgid "url_success"
-msgstr "url success"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:67
-msgid "url_refused"
-msgstr "url refused"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:69
-msgid "url_cancel"
-msgstr "url cancel"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:70
-msgid "url_return"
-msgstr "url return"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:71
-msgid "url_error"
-msgstr "url error"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:72
-msgid "identifier"
-msgstr "identifiant"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:73
-msgid "contrib"
-msgstr "contribution"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:74
-msgid "theme_config"
-msgstr "configuration de thème"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:75
-msgid "redirect_success_timeout"
-msgstr "redirect_success_timeout"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:76
-msgid "redirect_success_message"
-msgstr "redirect_success_message"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:77
-msgid "redirect_error_timeout"
-msgstr "redirect_error_timeout"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:78
-msgid "redirect_error_message"
-msgstr "redirect_error_message"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:79
-msgid "return_post_params"
-msgstr "return_post_params"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:80
-msgid "return_get_params"
-msgstr "return_get_params"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:81
-msgid "card_number"
-msgstr "card_number"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:82
-msgid "expiry_month"
-msgstr "expiry_month"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:83
-msgid "expiry_year"
-msgstr "expiry_year"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:84
-msgid "card_cvv"
-msgstr "card_cvv"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:85
-msgid "card_info"
-msgstr "information de carte"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:86
-msgid "card_options"
-msgstr "options de la carte"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:87
-msgid "page_action"
-msgstr "page action"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:88
-msgid "action_mode"
-msgstr "Mode opératoire"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:89
-msgid "return_mode"
-msgstr "Mode de retour"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:90
-msgid "secure_mpi"
-msgstr "secure_mpi"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:91
-msgid "secure_enrolled"
-msgstr "secure_enrolled"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:92
-msgid "secure_cavv"
-msgstr "secure_cavv"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:93
-msgid "secure_eci"
-msgstr "secure_eci"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:94
-msgid "secure_xid"
-msgstr "secure_xid"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:95
-msgid "secure_cavv_alg"
-msgstr "secure_cavv_alg"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:96
-msgid "secure_status"
-msgstr "secure_status"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:97
-msgid "payment_src"
-msgstr "payment_src"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:98
-msgid "user_info"
-msgstr "user_info"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:99
-msgid "contracts"
-msgstr "contrat"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:100
-msgid "empty_params"
-msgstr "empty_params"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:101
-msgid "other"
-msgstr "autre"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:104
-msgid "transaction approuvée ou traitée avec succès"
-msgstr "transaction approuvée ou traitée avec succès"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:105
-msgid "contacter l’émetteur de carte"
-msgstr "contacter l’émetteur de carte"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:106
-msgid "accepteur invalide"
-msgstr "accepteur invalide"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:107
-msgid "conserver la carte"
-msgstr "conserver la carte"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:108
-msgid "ne pas honorer"
-msgstr "ne pas honorer"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:109
-msgid "conserver la carte, conditions spéciales"
-msgstr "conserver la carte, conditions spéciales"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:110
-msgid "approuver après identification"
-msgstr "approuver après identification"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:111
-msgid "transaction invalide"
-msgstr "transaction invalide"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:112
-msgid "montant invalide"
-msgstr "montant invalide"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:113
-msgid "numéro de porteur invalide"
-msgstr "numéro de porteur invalide"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:114
-msgid "erreur de format"
-msgstr "erreur de format"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:115
-msgid "identifiant de l’organisme acquéreur inconnu"
-msgstr "identifiant de l’organisme acquéreur inconnu"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:116
-#: frontend_methods/systempay/payform_systempay_results.class.php:121
-msgid "date de validité de la carte dépassée"
-msgstr "date de validité de la carte dépassée"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:117
-#: frontend_methods/systempay/payform_systempay_results.class.php:125
-msgid "suspicion de fraude"
-msgstr "suspicion de fraude"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:118
-msgid "carte perdue"
-msgstr "carte perdue"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:119
-msgid "carte volée"
-msgstr "carte volée"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:120
-msgid "provision insuffisante ou crédit dépassé"
-msgstr "provision insuffisante ou crédit dépassé"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:122
-msgid "carte absente du fichier"
-msgstr "carte absente du fichier"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:123
-msgid "transaction non permise à ce porteur"
-msgstr "transaction non permise à ce porteur"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:124
-msgid "transaction interdite au terminal"
-msgstr "transaction interdite au terminal"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:126
-msgid "l’accepteur de carte doit contacter l’acquéreur"
-msgstr "l’accepteur de carte doit contacter l’acquéreur"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:127
-msgid "montant de retrait hors limite"
-msgstr "montant de retrait hors limite"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:128
-msgid "règles de sécurité non respectées"
-msgstr "règles de sécurité non respectées"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:129
-msgid "réponse non parvenue ou reçue trop tard"
-msgstr "réponse non parvenue ou reçue trop tard"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:130
-msgid "arrêt momentané du système"
-msgstr "arrêt momentané du système"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:131
-msgid "émetteur de cartes inaccessible"
-msgstr "émetteur de cartes inaccessible"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:132
-msgid "mauvais fonctionnement du système"
-msgstr "mauvais fonctionnement du système"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:133
-msgid "transaction dupliquée"
-msgstr "transaction dupliquée"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:134
-msgid "échéance de la temporisation de surveillance globale"
-msgstr "échéance de la temporisation de surveillance globale"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:135
-msgid "serveur indisponible routage réseau demandé à nouveau"
-msgstr "serveur indisponible routage réseau demandé à nouveau"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:136
-msgid "incident domaine initiateur"
-msgstr "incident domaine initiateur"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:139
-msgid "Le paiement est garanti"
-msgstr "Le paiement est garanti"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:140
-msgid "Le paiement n'est pas garanti"
-msgstr "Le paiement n'est pas garanti"
-
-#: frontend_methods/systempay/payform_systempay_results.class.php:141
-msgid "Suite à une erreur technique, le paiment ne peut pas être garanti"
-msgstr "Suite à une erreur technique, le paiment ne peut pas être garanti"
-
-#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:45
-msgid "Email invalide/vide"
-msgstr "Email invalide/vide"
-
-#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:48
-msgid "Numéro de commande vide"
-msgstr "Numéro de commande vide"
-
-#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:59
-msgid "Votre transaction sur Systempay c'est bien déroulée"
-msgstr "Votre transaction sur Systempay c'est bien déroulée"
-
-#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:63
-msgid "Une erreur c'est produite lors de votre transaction sur systempay"
-msgstr "Une erreur c'est produite lors de votre transaction sur systempay"
-
-#: frontend_methods/systempay/payform_systempay_transaction_updater.class.php:87
-msgid "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
-msgstr "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
-
-#: view/payform_edit.php:2
-msgid "Edit Form"
-msgstr "Editer le formulaire"
-
-#: view/payform_edit.php:9
-#: view/payform_newform.php:10
-msgid "Plateforms"
-msgstr "Plateformes"
-
-#: view/payform_edit.php:23
-#: view/payform_inputs_tabs.php:5
-#: view/payform_newform.php:20
-msgid "Mandatorys Configurations"
-msgstr "Configurations obligatoires"
-
-#: view/payform_edit.php:24
-#: view/payform_inputs_tabs.php:26
-#: view/payform_newform.php:21
-msgid "Optionals Configurations"
-msgstr "Configuration optionnelles"
-
-#: view/payform_edit.php:25
-#: view/payform_inputs_tabs.php:45
-#: view/payform_newform.php:22
-msgid "Customer Informations Inputs"
-msgstr "Champs optionnels du formulaire (client/achats/autre)"
-
-#: view/payform_edit.php:26
-#: view/payform_edit.php:30
-#: view/payform_newform.php:23
-#: view/payform_newform.php:27
-msgid "Customizable Inputs"
-msgstr "Champs paramètrables"
-
-#: view/payform_edit.php:36
-#: view/payform_inputs_tabs.php:10
-#: view/payform_inputs_tabs.php:31
-#: view/payform_inputs_tabs.php:50
-#: view/payform_newform.php:33
-#: view/payform_transaction.php:5
+"POT-Creation-Date: 2013-02-14 14:02+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gabriel Delattre <gabriel@soixantecircuits.fr>\n"
+"Language-Team: Soixante circuits <contact@soixantecircuits.fr>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/"
+"plugins/wp-systempay\n"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/wp-systempay.php:94
+#, php-format
+msgid ""
+"Hey, they've been update on database, you should run the <a href='%s'>update "
+"script now</a> ! Thanks"
+msgstr ""
+"He ! Il y a eu des changements sur la structure de donnée du plugin, vous "
+"devriez lancer une petite migration en cliquant <a href='%s'>ici</a>. Cela "
+"ne touche que le plugin concerné. Merci"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/helper.php:27
+msgid "Select page"
+msgstr "Choisissez une page"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:199
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:21
+msgid "Choose a nice fieldset name"
+msgstr "Choisissez un joli nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:223
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:45
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:7
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:28
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:48
 msgid "Label"
 msgstr "Label"
 
-#: view/payform_edit.php:37
-#: view/payform_inputs_tabs.php:11
-#: view/payform_inputs_tabs.php:32
-#: view/payform_inputs_tabs.php:51
-#: view/payform_management.php:11
-#: view/payform_newform.php:34
-#: view/payform_transaction.php:6
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:224
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:82
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:46
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:8
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:29
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:49
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:12
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:11
 msgid "Name"
 msgstr "Nom"
 
-#: view/payform_edit.php:38
-#: view/payform_inputs_tabs.php:12
-#: view/payform_inputs_tabs.php:33
-#: view/payform_inputs_tabs.php:52
-#: view/payform_newform.php:35
-#: view/payform_transaction.php:7
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:225
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:47
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:9
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:30
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:50
 msgid "Value"
 msgstr "Valeur"
 
-#: view/payform_edit.php:39
-#: view/payform_inputs_tabs.php:53
-#: view/payform_newform.php:36
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:226
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:48
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:51
 msgid "Order"
 msgstr "Ordre"
 
-#: view/payform_edit.php:40
-#: view/payform_inputs_tabs.php:54
-#: view/payform_newform.php:37
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:227
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:49
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:52
 msgid "Fieldset"
 msgstr "Fieldset"
 
-#: view/payform_edit.php:41
-#: view/payform_inputs_tabs.php:14
-#: view/payform_inputs_tabs.php:35
-#: view/payform_inputs_tabs.php:55
-#: view/payform_newform.php:38
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:228
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:50
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:11
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:32
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:53
 msgid "Hide"
 msgstr "Caché"
 
-#: view/payform_edit.php:42
-#: view/payform_inputs_tabs.php:56
-#: view/payform_newform.php:39
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:229
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:51
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:54
 msgid "Required"
 msgstr "Requis"
 
-#: view/payform_edit.php:43
-#: view/payform_inputs_tabs.php:57
-#: view/payform_newform.php:40
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:230
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:52
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:55
 msgid "Class"
 msgstr "Class"
 
-#: view/payform_edit.php:44
-#: view/payform_inputs_tabs.php:58
-#: view/payform_newform.php:41
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:231
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:53
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:56
 msgid "Type"
 msgstr "Type"
 
-#: view/payform_edit.php:45
-#: view/payform_inputs_tabs.php:59
-#: view/payform_newform.php:42
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:232
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:54
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:57
 msgid "Options"
 msgstr "Options"
 
-#: view/payform_edit.php:90
-#: view/payform_newform.php:74
-msgid "Save"
-msgstr "Sauvegarder"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:272
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:80
+msgid "Add a field"
+msgstr "Ajouter un champ"
 
-#: view/payform_inputs_tabs.php:13
-#: view/payform_inputs_tabs.php:34
-msgid "Function ?"
-msgstr "Fonction ?"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:273
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:79
+msgid "Remove the whole fieldset !"
+msgstr "Supprimer tout le groupe !"
 
-#: view/payform_inputs_tabs.php:15
-#: view/payform_inputs_tabs.php:36
-#: view/payform_inputs_tabs.php:60
-msgid "Description"
-msgstr "Description"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:352
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:353
+msgid "WS-Sytempay"
+msgstr "WS-Systempay"
 
-#: view/payform_management.php:5
-msgid "No link"
-msgstr "Pas de lien"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:358
+msgid "All the payment forms"
+msgstr "Tous les formulaires de paiement"
 
-#: view/payform_management.php:12
-msgid "ID"
-msgstr "ID"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:358
+msgid "List all"
+msgstr "Lister tout"
 
-#: view/payform_management.php:13
-msgid "css_classe"
-msgstr "css_classe"
-
-#: view/payform_management.php:14
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: view/payform_newform.php:2
-msgid "New Form"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:359
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:32
+msgid "New form"
 msgstr "Nouveau formulaire"
 
-#: view/payform_transaction.php:2
-#: view/payform_transaction_details.php:2
-msgid "Transactions"
-msgstr "Transactions"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:359
+msgid "Add new"
+msgstr "Ajouter un nouveau"
 
-#: view/payform_transaction.php:10
-#: view/payform_transaction_details.php:32
-msgid "Customer Name"
-msgstr "Nom du client"
-
-#: view/payform_transaction.php:15
-#: view/payform_transaction_details.php:34
-msgid "Customer Address"
-msgstr "Adresse du client"
-
-#: view/payform_transaction.php:20
-#: view/payform_transaction_details.php:36
-msgid "Customer Phone"
-msgstr "Téléphone du client"
-
-#: view/payform_transaction.php:25
-#: view/payform_transaction_details.php:37
-msgid "Customer Cell phone"
-msgstr "Téléphone mobile du client"
-
-#: view/payform_transaction.php:29
-#: view/payform_transaction_details.php:38
-msgid "Customer Email"
-msgstr "Email du client"
-
-#: view/payform_transaction.php:34
-#: view/payform_transaction_details.php:35
-msgid "Customer Country"
-msgstr "Pays du client"
-
-#: view/payform_transaction_details.php:4
-msgid "Detail order"
-msgstr "Détail de la commande"
-
-#: view/payform_transaction_details.php:5
-msgid "Coordinated"
-msgstr "Coordonnées"
-
-#: view/payform_transaction_details.php:6
-msgid "Informations"
-msgstr "Informations"
-
-#: view/payform_transaction_details.php:10
-msgid "Transaction Identification"
-msgstr "Transaction Identification"
-
-#: view/payform_transaction_details.php:11
-msgid "Order Id"
-msgstr "ID de l'ordre"
-
-#: view/payform_transaction_details.php:12
-msgid "Platform"
-msgstr "Plateformes"
-
-#: view/payform_transaction_details.php:13
-msgid "Certificate"
-msgstr "Certificat"
-
-#: view/payform_transaction_details.php:17
-msgid "Transaction Statut"
-msgstr "Statut de la transaction"
-
-#: view/payform_transaction_details.php:18
-msgid "Statut"
-msgstr "Statur"
-
-#: view/payform_transaction_details.php:19
-msgid "Statut details"
-msgstr "Détail du statut"
-
-#: view/payform_transaction_details.php:20
-msgid "Authentification"
-msgstr "Authentification"
-
-#: view/payform_transaction_details.php:21
-msgid "3D Secure"
-msgstr "3D Secure"
-
-#: view/payform_transaction_details.php:24
-msgid "Transaction Information"
-msgstr "Information sur la transaction"
-
-#: view/payform_transaction_details.php:25
-msgid "Date"
-msgstr "Date"
-
-#: view/payform_transaction_details.php:26
-msgid "Amount"
-msgstr "Montant"
-
-#: view/payform_transaction_details.php:27
-msgid "Currency"
-msgstr "Devise"
-
-#: view/payform_transaction_details.php:28
-msgid "Info"
-msgstr "Info"
-
-#: view/payform_transaction_details.php:31
-msgid "Customer Information"
-msgstr "Information du client"
-
-#: view/payform_transaction_details.php:33
-msgid "Customer Card Number"
-msgstr "Numéro de carte du client"
-
-#: view/payform_transaction_details.php:41
-msgid "Additional Information"
-msgstr "Informations personnelles"
-
-#: view/payform_transaction_details.php:43
-msgid "Empty"
-msgstr "Vide"
-
-#: view/payform_transactions.php:5
-msgid "Command id"
-msgstr "Id de la commande"
-
-#: view/payform_transactions.php:6
-msgid "Plateforme"
-msgstr "Plateforme"
-
-#: view/payform_transactions.php:37
-msgid "Details"
-msgstr "Détails"
-
-#: view/payform_transactions_menu.php:3
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:360
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions_menu.php:2
 msgid "Transactions menu"
 msgstr "Transactions"
 
-#: 
-msgid "The amount of your transaction is:"
-msgstr "Le montant de votre don sera : "
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:360
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:363
+msgid "transactions"
+msgstr "Transactions"
 
-#: 
-msgid "Please find bellow the information about your payment:"
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:361
+msgid "general Configuration"
+msgstr "configuration générale"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:361
+msgid "Config"
+msgstr "Configuration"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:362
+msgid "Edit page"
+msgstr "Editer la page"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/wscontroller.class.php:364
+msgid "transaction"
+msgstr "Transactions"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wsmanager.class.php:403
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:45
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:12
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:486
+msgid "Address"
+msgstr "Adresse"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wssetup.class.php:44
+msgid "If you want that Payfom works, please don't change the subpages"
+msgstr ""
+"Si vous voulez que les formulaire de paiement fonctionne, ne changez pas les "
+"sous-pages (pages parentes)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wssetup.class.php:313
+msgid ""
+"<strong>Welcome to WP-Systempay</strong> &#8211; You'll soon be able to gain "
+"some bucks thru forms :)"
+msgstr ""
+"<strong>Bienvenue sur WP-Systempay</strong> &#8211; Vous pourrez bientôt "
+"facturer à l'aide de formulaire :)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wssetup.class.php:330
+msgid ""
+"<strong>WP-Systempay has been installed</strong> &#8211; Now go make some "
+"forms :)"
+msgstr ""
+"<strong>WP-Systempay est installé</strong> &#8211; Maintenant allez créer "
+"des formulaires :)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wssetup.class.php:331
+msgid "Settings"
+msgstr "Paramètres"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/classes/wssetup.class.php:331
+msgid "Documentation"
+msgstr "Documentation"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config.php:3
+msgid "General Configurations"
+msgstr "Configuration générale"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config.php:8
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:9
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:34
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:10
+msgid "Mail setup"
+msgstr "Configuration email"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:11
+msgid "Billing format"
+msgstr "Format de la facturation"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:12
+msgid "Mail template"
+msgstr "Template des emails"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:13
+msgid "Page setup"
+msgstr "Configuration des pages"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:17
+msgid "Set your prefered method to send email"
+msgstr "Choisissez votre méthode préférée pour envoyer des emails"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:18
+msgid "Email sender information:"
+msgstr "Informations de l'émetteur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:20
+msgid "From / name"
+msgstr "De / Nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:24
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:16
+msgid "Email"
+msgstr "Email"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:27
+msgid "Email Transport used:"
+msgstr "Choix du transport pour les mails"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:42
+msgid "SMTP"
+msgstr "SMTP"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:49
+msgid "Port"
+msgstr "Port"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:53
+msgid "SSL"
+msgstr "SSL"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:69
+msgid "SendMail"
+msgstr "SendMail"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:71
+msgid "Path"
+msgstr "Chemin"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:80
+msgid "Custom order format"
+msgstr "Format des commandes"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:83
+msgid "Simple name"
+msgstr "Nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:84
+msgid "Format : time-name-trans_id"
+msgstr "Format : date-nom-id_de_transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:90
+msgid "Custom settings"
+msgstr "Paramètre personnel"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:92
+msgid "Send mail for thanking"
+msgstr "Envoyer un email de remerciement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:95
+msgid "Send mail for tax receipt"
+msgstr "Envoyer un email pour le reçu"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:98
+msgid "Send mail to admin"
+msgstr "Envoyer un email à l'admin"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:102
+msgid "Email success Title"
+msgstr "Titre en cas de succès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:103
+msgid "Title of successful email"
+msgstr "Titre du mail de succès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:106
+msgid "Email error Title"
+msgstr "Titre de l'email d'erreur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:107
+msgid "Title of error email"
+msgstr "Titre de l'email d'erreur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:110
+msgid "Message success return"
+msgstr "Message en cas de retour de paiement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:111
+msgid "Message for successful payment"
+msgstr "Message pour un paiement réussi"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:114
+msgid "Message error return"
+msgstr "Message en cas de retour"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:115
+msgid "Message for error during payment"
+msgstr "Message en cas d'erreur pendant le paiement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:118
+msgid "Email admin"
+msgstr "Email de l'administrateur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:119
+msgid "Email of this payment account manager"
+msgstr "Email du gérant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:125
+msgid "Custom pages"
+msgstr "Choix des pages"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:127
+msgid "Confirmation page"
+msgstr "Page de confirmation"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:133
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:142
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:151
+msgid "Voir la page"
+msgstr "Voir la page"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:136
+msgid "Return page"
+msgstr "Page de retour"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_config_inputs.php:145
+msgid "Analysis page"
+msgstr "Page d'analyse"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_custom_inputs.php:10
+msgid "Add a fieldset"
+msgstr "Ajouter un groupe"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:4
+msgid "Edit form"
+msgstr "Editer le formulaire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:25
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:20
+msgid "Mandatorys Configurations"
+msgstr "Configurations obligatoires"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:26
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:21
+msgid "Optionals Configurations"
+msgstr "Configuration optionnelles"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:27
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:22
+msgid "Customer Informations Inputs"
+msgstr "Champs optionnels du formulaire (client/achats/autre)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:28
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:23
+msgid "Customizable Inputs"
+msgstr "Champs paramètrables"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_edit.php:29
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:24
+msgid "Option (Mail, etc.)"
+msgstr "Option (Email, etc.)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_emailconfig_tab.php:2
+msgid "Email configuration"
+msgstr "Configuration des mails"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:10
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:31
+msgid "Function ?"
+msgstr "Fonction ?"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:12
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:33
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_inputs_tabs.php:58
+msgid "Description"
+msgstr "Description"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:6
+msgid "Info"
+msgstr "Info"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:6
+msgid "Link for server-side feedbacks:"
+msgstr "Lien pour le serveur de paiement : "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:13
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions_menu.php:8
+msgid "ID"
+msgstr "ID"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:14
+msgid "CSS class"
+msgstr "Class CSS"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:15
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_management.php:27
+msgid "Delete"
+msgstr "Supprimer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:4
+msgid "New Form"
+msgstr "Nouveau formulaire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:9
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_newform.php:32
+msgid "Create"
+msgstr "Créer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:2
+msgid "Details of the transaction"
+msgstr "Détails de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:4
+msgid "Transaction Identification"
+msgstr "Transaction Identification"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:7
+msgid "Order Id"
+msgstr "ID de l'ordre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:8
+msgid "Platform"
+msgstr "Plateformes"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:9
+msgid "Certificate"
+msgstr "Certificat"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:17
+msgid "Transaction Statut"
+msgstr "Statut de la transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:20
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:9
+msgid "Statut"
+msgstr "Statur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:21
+msgid "Statut details"
+msgstr "Détail du statut"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:22
+msgid "Authentification"
+msgstr "Authentification"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:23
+msgid "3D Secure"
+msgstr "3D Secure"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:32
+msgid "Transaction Information"
+msgstr "Information sur la transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:35
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:8
+msgid "Date"
+msgstr "Date"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:36
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:10
+msgid "Amount"
+msgstr "Montant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:37
+msgid "Currency"
+msgstr "Devise"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:38
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:21
+msgid "Infos"
+msgstr "Coordonnées"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:48
+msgid "Customer Information"
+msgstr "Information du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:51
+msgid "Customer Name"
+msgstr "Nom du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:52
+msgid "Customer Card Number"
+msgstr "Numéro de carte du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:53
+msgid "Customer Address"
+msgstr "Adresse du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:54
+msgid "Customer Zip"
+msgstr "Email du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:55
+msgid "Customer City"
+msgstr "Pays du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:56
+msgid "Customer Country"
+msgstr "Pays du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:57
+msgid "Customer Phone"
+msgstr "Téléphone du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:58
+msgid "Customer Cell Phone"
+msgstr "Téléphone mobile du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:59
+msgid "Customer Email"
+msgstr "Email du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:75
+msgid "Additional Information"
+msgstr "Informations personnelles"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transaction_details.php:77
+msgid "No additionnal input"
+msgstr "Pas de champs additionnels"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:2
+msgid "Transactions"
+msgstr "Transactions"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:7
+msgid "id"
+msgstr "id"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:13
+msgid "Zip"
+msgstr "Code postal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:14
+msgid "City"
+msgstr "Ville"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:15
+msgid "Phone"
+msgstr "Téléphone"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:17
+msgid "Actions"
+msgstr "Actions"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions.php:47
+msgid "Details"
+msgstr "Détails"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions_menu.php:4
+msgid ""
+"If the desired group does not appear, please make a new transaction (step "
+"needed is when you are redirect the payment platform, no need to go further)."
+"<br/> If the problem persist, go to the table SQL transactions, look "
+"transaction_form_id corresponding to the desired form and just change the "
+"\"transaction_form_name\" of one of its transactions."
+msgstr ""
+"Si les transactions de voter formula ire n'apparaissent pas, essayer de "
+"créer une nouvelle transaction. Si le problème persiste, alors vérifiez dans "
+"la table mysql les champs  transaction_form_id correspondant à votre "
+"formulaire et changez le \"transaction_form_name\" en celui de votre "
+"formulaire."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions_menu.php:9
+msgid "Nom"
+msgstr "Nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/admin/view/ws_transactions_menu.php:10
+msgid "Total transactions"
+msgstr "Total des transactions"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws.class.php:153
+msgid ""
+"Sorry we could not find the requiered page, try to reinstall the plugin or "
+"setup the pages in the option tab"
+msgstr ""
+"Désolé nous n'avons pas trouvé cette page, veuillez réinstaller le plugin ou "
+"configurer les pages dans les options"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws.class.php:325
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws.class.php:345
+msgid "No link"
+msgstr "Pas de lien"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:160
+msgid "Cancel"
+msgstr "Retour"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:205
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_forms.class.php:86
+msgid "No template file found"
+msgstr "Pas de template trouvé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:210
+msgid "The wanted confirmation ID is missing"
+msgstr "La page de confirmation du formulaire est manquante"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:287
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:290
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:291
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:301
+msgid "En Attente"
+msgstr "En attente"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:289
+msgid "En cours"
+msgstr "En cours"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:329
+msgid "Please wait, you'll be redirected in a few moments."
+msgstr "Veuillez patienter, vous êtes redirigé."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:339
+msgid ""
+"Error during the confirmation backup, please retry. If the problem persists, "
+"please contact the webmaster."
+msgstr ""
+"Erreur pendant la sauvegarde de confirmation, veuillez réessayer. Si l&#39;"
+"erreur persiste, contactez le webmaster."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:481
+msgid "Signature is empty, check your certificate please."
+msgstr "La signature est vide, merci de vérifier vos certificats"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_confirmation.class.php:508
+msgid "Retry"
+msgstr "Réessayer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:8
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:9
+msgid "&#197;land Islands"
+msgstr "&#197;land Islands"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:10
+msgid "Albania"
+msgstr "Albanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:11
+msgid "Algeria"
+msgstr "Algérie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:12
+msgid "American Samoa"
+msgstr "Samoa américaines "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:13
+msgid "Andorra"
+msgstr "Andorre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:14
+msgid "Angola"
+msgstr "Angola"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:15
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:16
+msgid "Antarctica"
+msgstr "Antartique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:17
+msgid "Antigua and Barbuda"
+msgstr "Antigua-et-Barbuda"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:18
+msgid "Argentina"
+msgstr "Argentine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:19
+msgid "Armenia"
+msgstr "Arménie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:20
+msgid "Aruba"
+msgstr "Aruba"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:21
+msgid "Australia"
+msgstr "Australie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:22
+msgid "Austria"
+msgstr "Autriche"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:23
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:24
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:25
+msgid "Bahrain"
+msgstr "Barhain"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:26
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:27
+msgid "Barbados"
+msgstr "Barbados"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:28
+msgid "Belarus"
+msgstr "Biélorussie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:29
+msgid "Belgium"
+msgstr "Belgique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:30
+msgid "Belize"
+msgstr "Bélize"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:31
+msgid "Benin"
+msgstr "Benin"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:32
+msgid "Bermuda"
+msgstr "Bermudes"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:33
+msgid "Bhutan"
+msgstr "Bhoutan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:34
+msgid "Bolivia"
+msgstr "Bolivie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:35
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnie Herzegovine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:36
+msgid "Botswana"
+msgstr "Botswana"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:37
+msgid "Brazil"
+msgstr "Brésil"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:38
+msgid "British Indian Ocean Territory"
+msgstr "Territoire britannique de l&#39;océan Indien"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:39
+msgid "British Virgin Islands"
+msgstr "Îles Vierges britanniques"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:40
+msgid "Brunei"
+msgstr "Brunei"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:41
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:42
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:43
+msgid "Burundi"
+msgstr "Burundi"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:44
+msgid "Cambodia"
+msgstr "Cambodge"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:45
+msgid "Cameroon"
+msgstr "Cameroun"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:46
+msgid "Canada"
+msgstr "Canada"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:47
+msgid "Cape Verde"
+msgstr "Cap-Vert"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:48
+msgid "Cayman Islands"
+msgstr "Îles Caïmans"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:49
+msgid "Central African Republic"
+msgstr "République centrafricaine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:50
+msgid "Chad"
+msgstr "Tchad"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:51
+msgid "Chile"
+msgstr "Chili"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:52
+msgid "China"
+msgstr "Chine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:53
+msgid "Christmas Island"
+msgstr "île Christmas"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:54
+msgid "Cocos (Keeling) Islands"
+msgstr "Îles Cocos"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:55
+msgid "Colombia"
+msgstr "Colombie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:56
+msgid "Comoros"
+msgstr "îles Comores"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:57
+msgid "Congo (Brazzaville)"
+msgstr "République du Congo "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:58
+msgid "Congo (Kinshasa)"
+msgstr "République démocratique du Congo"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:59
+msgid "Cook Islands"
+msgstr "Îles Cook"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:60
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:61
+msgid "Croatia"
+msgstr "Croatie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:62
+msgid "Cuba"
+msgstr "Cuba"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:63
+msgid "Cyprus"
+msgstr "Chipre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:64
+msgid "Czech Republic"
+msgstr "République tchèque"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:65
+msgid "Denmark"
+msgstr "Danemark"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:66
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:67
+msgid "Dominica"
+msgstr "Dominique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:68
+msgid "Dominican Republic"
+msgstr "République dominicaine "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:69
+msgid "Ecuador"
+msgstr "Équateur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:70
+msgid "Egypt"
+msgstr "Égypte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:71
+msgid "El Salvador"
+msgstr "Salvador"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:72
+msgid "Equatorial Guinea"
+msgstr "Guinée équatoriale"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:73
+msgid "Eritrea"
+msgstr "Érythrée"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:74
+msgid "Estonia"
+msgstr "Estonie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:75
+msgid "Ethiopia"
+msgstr "Ethiopie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:76
+msgid "Falkland Islands"
+msgstr "Îles Malouines"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:77
+msgid "Faroe Islands"
+msgstr "Îles Féroé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:78
+msgid "Fiji"
+msgstr "Fidji"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:79
+msgid "Finland"
+msgstr "Finlande "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:80
+msgid "France"
+msgstr "France"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:81
+msgid "French Guiana"
+msgstr "Guyane"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:82
+msgid "French Polynesia"
+msgstr "Polynésie française"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:83
+msgid "French Southern Territories"
+msgstr "Antarctique français"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:84
+msgid "Gabon"
+msgstr "Gabon"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:85
+msgid "Gambia"
+msgstr "Gambie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:86
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:87
+msgid "Germany"
+msgstr "Allemagne"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:88
+msgid "Ghana"
+msgstr "Ghana"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:89
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:90
+msgid "Greece"
+msgstr "Grèce"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:91
+msgid "Greenland"
+msgstr "Groenland"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:92
+msgid "Grenada"
+msgstr "Grenade"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:93
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:94
+msgid "Guam"
+msgstr "Guam"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:95
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:96
+msgid "Guernsey"
+msgstr "Guernesey"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:97
+msgid "Guinea"
+msgstr "Guiné"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:98
+msgid "Guinea-Bissau"
+msgstr "Guinée-Bissau"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:99
+msgid "Guyana"
+msgstr "Guyanne"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:100
+msgid "Haiti"
+msgstr "Haïti"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:101
+msgid "Honduras"
+msgstr "Honduras"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:102
+msgid "Hong Kong"
+msgstr "Hong-Kong"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:103
+msgid "Hungary"
+msgstr "Hongrie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:104
+msgid "Iceland"
+msgstr "Island"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:105
+msgid "India"
+msgstr "Inde"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:106
+msgid "Indonesia"
+msgstr "Indonésie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:107
+msgid "Iran"
+msgstr "Iran"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:108
+msgid "Iraq"
+msgstr "Iraq"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:109
+msgid "Ireland"
+msgstr "Irland"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:110
+msgid "Isle of Man"
+msgstr "îles"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:111
+msgid "Israel"
+msgstr "Israël"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:112
+msgid "Italy"
+msgstr "Italie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:113
+msgid "Ivory Coast"
+msgstr "Côte d'Ivoir"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:114
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:115
+msgid "Japan"
+msgstr "Japon"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:116
+msgid "Jersey"
+msgstr "Jersey"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:117
+msgid "Jordan"
+msgstr "Jordanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:118
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:119
+msgid "Kenya"
+msgstr "Kenya"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:120
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:121
+msgid "Kuwait"
+msgstr "Koweït"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:122
+msgid "Kyrgyzstan"
+msgstr "Kirghizistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:123
+msgid "Laos"
+msgstr "Laos"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:124
+msgid "Latvia"
+msgstr "Lettonie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:125
+msgid "Lebanon"
+msgstr "Liban"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:126
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:127
+msgid "Liberia"
+msgstr "Liberia"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:128
+msgid "Libya"
+msgstr "Libye"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:129
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:130
+msgid "Lithuania"
+msgstr "Lituanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:131
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:132
+msgid "Macao S.A.R., China"
+msgstr "Macao"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:133
+msgid "Macedonia"
+msgstr "Macédoine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:134
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:135
+msgid "Malawi"
+msgstr "Malawi"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:136
+msgid "Malaysia"
+msgstr "Malaisie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:137
+msgid "Maldives"
+msgstr "Maldives"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:138
+msgid "Mali"
+msgstr "Mali"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:139
+msgid "Malta"
+msgstr "île de Malte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:140
+msgid "Marshall Islands"
+msgstr "Îles Marshall"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:141
+msgid "Martinique"
+msgstr "Martinique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:142
+msgid "Mauritania"
+msgstr "Mauritanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:143
+msgid "Mauritius"
+msgstr "Maurice"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:144
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:145
+msgid "Mexico"
+msgstr "Méxique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:146
+msgid "Micronesia"
+msgstr "Micronésie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:147
+msgid "Moldova"
+msgstr "Moldavie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:148
+msgid "Monaco"
+msgstr "Monaco"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:149
+msgid "Mongolia"
+msgstr "Mongolie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:150
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:151
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:152
+msgid "Morocco"
+msgstr "Maroc"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:153
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:154
+msgid "Myanmar"
+msgstr "Birmanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:155
+msgid "Namibia"
+msgstr "Namibie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:156
+msgid "Nauru"
+msgstr "Nauru"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:157
+msgid "Nepal"
+msgstr "Népal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:158
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:159
+msgid "Netherlands Antilles"
+msgstr "Antilles néerlandaises"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:160
+msgid "New Caledonia"
+msgstr "Nouvelle-Calédonie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:161
+msgid "New Zealand"
+msgstr "Nouvelle-Zélande"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:162
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:163
+msgid "Niger"
+msgstr "Niger"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:164
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:165
+msgid "Niue"
+msgstr "Niue"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:166
+msgid "Norfolk Island"
+msgstr "Île Norfolk"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:167
+msgid "North Korea"
+msgstr "Corée du Nord"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:168
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:169
+msgid "Norway"
+msgstr "Norvège"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:170
+msgid "Oman"
+msgstr "Oman"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:171
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:172
+msgid "Palau"
+msgstr "Palau"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:173
+msgid "Palestinian Territory"
+msgstr "Territoire palestinien"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:174
+msgid "Panama"
+msgstr "Panama"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:175
+msgid "Papua New Guinea"
+msgstr "Papouasie-Nouvelle-Guinée"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:176
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:177
+msgid "Peru"
+msgstr "Pérou"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:178
+msgid "Philippines"
+msgstr "Philippines"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:179
+msgid "Pitcairn"
+msgstr "Île Pitcairn"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:180
+msgid "Poland"
+msgstr "Pologne"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:181
+msgid "Portugal"
+msgstr "Portugal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:182
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:183
+msgid "Qatar"
+msgstr "Quatar"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:184
+msgid "Reunion"
+msgstr "Réunion"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:185
+msgid "Romania"
+msgstr "Roumanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:186
+msgid "Russia"
+msgstr "Russie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:187
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:188
+msgid "Saint Barth&eacute;lemy"
+msgstr "Saint Barthélémy"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:189
+msgid "Saint Helena"
+msgstr "Saint Hélène"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:190
+msgid "Saint Kitts and Nevis"
+msgstr "Saint-Christophe-et-Niévès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:191
+msgid "Saint Lucia"
+msgstr "Sainte-Lucie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:192
+msgid "Saint Martin (French part)"
+msgstr "Saint Martin (Française)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:193
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre-et-Miquelon"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:194
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint-Vincent-et-les-Grenadines"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:195
+msgid "Samoa"
+msgstr "Samoa"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:196
+msgid "San Marino"
+msgstr "San Marino"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:197
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr "Sao Tomé-et-Principe"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:198
+msgid "Saudi Arabia"
+msgstr "Arabie saoudite"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:199
+msgid "Senegal"
+msgstr "Sénégal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:200
+msgid "Serbia"
+msgstr "Serbie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:201
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:202
+msgid "Sierra Leone"
+msgstr "La Sierra Leone"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:203
+msgid "Singapore"
+msgstr "Singapoure"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:204
+msgid "Slovakia"
+msgstr "Slovakie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:205
+msgid "Slovenia"
+msgstr "Slovenie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:206
+msgid "Solomon Islands"
+msgstr "Îles Salomon"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:207
+msgid "Somalia"
+msgstr "Somalie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:208
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:209
+msgid "South Georgia/Sandwich Islands"
+msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:210
+msgid "South Korea"
+msgstr "Corée du Sud"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:211
+msgid "Spain"
+msgstr "Espagne"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:212
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:213
+msgid "Sudan"
+msgstr "Soudan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:214
+msgid "Suriname"
+msgstr "Suriname"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:215
+msgid "Svalbard and Jan Mayen"
+msgstr "Île Jan Mayen"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:216
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:217
+msgid "Sweden"
+msgstr "Suède"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:218
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:219
+msgid "Syria"
+msgstr "Syrie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:220
+msgid "Taiwan"
+msgstr "Taïwan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:221
+msgid "Tajikistan"
+msgstr "Tadjikistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:222
+msgid "Tanzania"
+msgstr "Tanzanie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:223
+msgid "Thailand"
+msgstr "Thaïlande"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:224
+msgid "Timor-Leste"
+msgstr "Timor oriental"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:225
+msgid "Togo"
+msgstr "Togo"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:226
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:227
+msgid "Tonga"
+msgstr "Tonga"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:228
+msgid "Trinidad and Tobago"
+msgstr "Trinité-et-Tobago"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:229
+msgid "Tunisia"
+msgstr "Tunisie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:230
+msgid "Turkey"
+msgstr "Turquie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:231
+msgid "Turkmenistan"
+msgstr "Turkménistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:232
+msgid "Turks and Caicos Islands"
+msgstr "Îles Turques-et-Caïques"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:233
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:234
+msgid "U.S. Virgin Islands"
+msgstr "Îles Vierges des États-Unis"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:235
+msgid "US Armed Forces"
+msgstr "Forces armées des États-Unis"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:236
+msgid "US Minor Outlying Islands"
+msgstr "Îles mineures éloignées des États-Unis"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:237
+msgid "Uganda"
+msgstr "Ouganda"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:238
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:239
+msgid "United Arab Emirates"
+msgstr "Émirats arabes unis"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:240
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:241
+msgid "United States"
+msgstr "États-Unis"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:242
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:243
+msgid "Uzbekistan"
+msgstr "Ouzbékistan"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:244
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:245
+msgid "Vatican"
+msgstr "Vatican"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:246
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:247
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:248
+msgid "Wallis and Futuna"
+msgstr "Wallis-et-Futuna"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:249
+msgid "Western Sahara"
+msgstr "Sahara occidental"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:250
+msgid "Yemen"
+msgstr "Yémen"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:251
+msgid "Zambia"
+msgstr "Zambie"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_countries.class.php:252
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_forms.class.php:74
+msgid "This field is requiered"
+msgstr "Ce champ est obligatoire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_forms.class.php:75
+msgid "Your email is not valid"
+msgstr "Votre email n&#39;est pas valide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_forms.class.php:76
+msgid "This is not a number"
+msgstr "Ce n'est pas un nombre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:42
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:46
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:64
+msgid "currency"
+msgstr "Devise"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:53
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:63
+msgid "amount"
+msgstr "montant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:57
+msgid ""
+"Amount of the order expressed in the normal.Example : 10.5 euros = 10.5 euros"
+msgstr ""
+"Montant de la commande exprimé dans la plus petite unité. Exemple en "
+"centimes d'euros : 1000 pour 10 euros."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:64
+msgid "site_id"
+msgstr "ID du site"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:68
+msgid "Identifiant Boutique à récupérer dans le Back office Payzen"
+msgstr "Identifiant Boutique à récupérer dans le Back office Payzen"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:75
+msgid "certificate test"
+msgstr "Certificat de test"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:79
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:90
+msgid ""
+"To get from the Payzen BackOffice. Please note this certificate is different "
+"depending on the mode TEST or PRODUCTION.The certificate is needed by the "
+"function systemPay_GetSignature() ."
+msgstr ""
+"À récupérer depuis systempay. Attention, ce dernier change entre TEST et "
+"PRODUCTION. Le certificat est nécessaire pour la fonction "
+"systemPay_GetSignature()."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:86
+msgid "certificate production"
+msgstr "Certificat de production"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:97
+msgid "operation mode"
+msgstr "Mode opératoire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:101
+msgid "operation mode . Value = TEST or PRODUCTION"
+msgstr "Mode opératoire. Valeur = TEST ou PRODUCTION"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:108
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:55
+msgid "version"
+msgstr "version"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:112
+msgid "this parametre MUST BE 'V2'"
+msgstr "Ce paramètre doit valoir V2"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:119
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:54
+msgid "signature"
+msgstr "signature"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:123
+msgid ""
+"calculated by the function systempay_GetSignature() / ws_GetSignature from "
+"the class ws"
+msgstr ""
+"Calculé par la function systempay_GetSignature() / payform_GetSignature from "
+"the class PayForm"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:130
+msgid "transaction date"
+msgstr "Date de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:134
+msgid ""
+"date of the transaction exprimée sous la forme YYMMDDHHMMSS on the time zone "
+"UTC=0"
+msgstr ""
+"Date de la transaction exprimé sous la forme YYMMDDHHMMSS sur la zone UTC=0"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:141
+msgid "transaction id"
+msgstr "ID de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:145
+msgid "unique id of the transaction"
+msgstr "L&#39;unique ID de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:153
+msgid "page action"
+msgstr "page action"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:157
+msgid "this parameter MUST BE PAYMENT"
+msgstr "Ce paramètre doit être sur Payment"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:168
+#, php-format
+msgid ""
+"This parameter is valued at INTERACTIVE if the entry is made on the card "
+"payment platform. See <a href='%s'>documentation</a>"
+msgstr ""
+"Ce paramètre doit avoir la valeur INTERACTIVE si l&#39;entée est configuré "
+"pour accepté les cartes. Voir la <a href='%s'>documentation</a>"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:175
+msgid "payment config"
+msgstr "Configuration du paiement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:179
+#, php-format
+msgid ""
+"This parameter is valued at SINGLE for a unitary payment , MULTI for "
+"payement in several times. See <a href='%s'>documentation</a>"
+msgstr ""
+"Ce paramètre vaut SINGLE pour un paiement unique, MULTI pour un paiement en "
+"plusieurs fois. Voir la <a href='%s'>documentation</a>"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:188
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:232
+msgid "redirect success timeout"
+msgstr "Redirection après succès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:192
+msgid ""
+"This parameter sets the delay before client reroute on the site merchant in "
+"the case of a successful payment. This period is expressed in seconds and "
+"must bebetween 0 and 300 seconds."
+msgstr ""
+"Ce paramètre indique le temps avant que le client soit renvoyé sur le site "
+"marchand dans le cas d'un succès. Cette période s'exprime en seconde et est "
+"comprise entre 0 et 300 secondes maximum."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:199
+msgid "redirect success message"
+msgstr "Message de redirection après un succès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:200
+msgid "The payement has been made, you'll be redirected to the website soon."
+msgstr "Veuillez patienter, vous êtes redirigé."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:203
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:236
+msgid ""
+"This parameter specifies the message to wait before redirecting to the "
+"sitemerchant in the case of a successful payment."
+msgstr ""
+"Ce paramètre permet de choisir le message à afficher avant la redirection "
+"sur le site."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:210
+msgid "redirect error timeout"
+msgstr "Redirection après une erreur "
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:214
+msgid "Same that success timeout but in case of error."
+msgstr "Le même que le temps de retour en cas de succès mais pour les erreurs"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:221
+msgid "redirect error message"
+msgstr "redirect error message"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:222
+msgid ""
+"Sorry, it has been an error during the payement. Please try again later. We "
+"did not charge you for this operation."
+msgstr ""
+"Désolé, une erreur s'est produite. Veuillez réessayer. Vous n'avez pas été "
+"débité pendant cette opération."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:225
+msgid "Same that success message but in case of error."
+msgstr "Même message que pour la réussite mais en cas d&#39;erreur."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:233
+msgid "You'll be redirected soon."
+msgstr "Vous allez être redirigé."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:243
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:66
+msgid "language"
+msgstr "Langage"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:249
+msgid "customer's language"
+msgstr "Le langage du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:256
+msgid "capture delay"
+msgstr "Le délai de capture"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:262
+msgid ""
+"This parameter defines the time for giving bank in days. After vacuum "
+"payment platform takes a default value defined in the back office "
+"'management tool box'"
+msgstr ""
+"Ce paramètre définit le temps donné à la banque en jours. Ce paramètre peut "
+"également se configurer dans le back office"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:269
+msgid "contribution name"
+msgstr "Nom de contribution"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:275
+msgid "the name used when paying contributions (joomla, oscommerce ...)"
+msgstr ""
+"Le nom utilisé du CMS utilisé pendant le paiement (joomla, wordpress, "
+"oscommerce, ...)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:282
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:295
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:308
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:68
+msgid "order_info"
+msgstr "order_info"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:288
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:301
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:314
+msgid ""
+"Free optional fields that may for example be used to store a summary of order"
+msgstr "Un champ optionnel permettant de stocker un résumé de la commande"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:321
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:62
+msgid "payment_cards"
+msgstr "payment_cards"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:327
+msgid ""
+"Lists the types of cards offer to the user, separated by ';'. Default value "
+"EMPTY is recommended"
+msgstr ""
+"Liste des types de cartes utilisées pour la paiement, séparés par &#39;;"
+"&#39;. Nous recommandons de laisser EMPTY."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:334
+msgid "return mode"
+msgstr "Mode de retour"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:340
+msgid "NONE , GET or POST"
+msgstr "NONE, GET or POST (Get est recommandé pour éviter HTTPS)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:347
+msgid "url success"
+msgstr "url success"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:353
+msgid ""
+"URL where the customer is redirected if successful payment,after pressing "
+"the button 'return to the store'"
+msgstr ""
+"url de retour pour un client une fois un paiement correctement déroulé, "
+"après avoir pressé le bouton retour au magasin."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:361
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:80
+msgid "url_referral"
+msgstr "url_referral"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:367
+msgid ""
+"URL where the customer is redirected in case of refusal of authorization 02 "
+"'contact the card issuer' after pressing the button 'return to the store. '"
+msgstr ""
+"url de retour pour un client, une fois un paiement refusé avec le code 02 "
+"contact the card issuer, après avoir pressé le bouton retour au magasin."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:374
+msgid "url refused"
+msgstr "url refused"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:380
+msgid ""
+"URL where the customer is redirected in case of refusal for any other cause "
+"that the refusal to allow the pattern 02"
+msgstr "URL de retour en cas de refus"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:387
+msgid "url cancel"
+msgstr "url cancel"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:393
+msgid ""
+"URL where the customer is redirected if it presses 'cancel and return to the "
+"store ' before payment is made."
+msgstr "url de retour en cas d&#39;annulation"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:400
+msgid "url error"
+msgstr "url error"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:406
+msgid "URL where the customer is redirected if an error processing internal"
+msgstr "URL de retour pour toutes autres erreurs"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:413
+msgid "url return"
+msgstr "url return"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:419
+msgid ""
+"Where URL is redirected by default the client after pressing the button to "
+"return to the shop ', if the URL corresponding to the scenarios seen above "
+"are not filled."
+msgstr ""
+"URL de retour ultime. Si aucun des précédents n&#39;est rempli alors c'est "
+"ce dernier qui est appelé."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:426
+msgid "contract"
+msgstr "contrat"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:432
+msgid ""
+"Optional parameter to specify for each network acceptance, merchant to use "
+"the contract. The formalism of the parameter is: Network 1 = "
+"contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
+msgstr ""
+"Paramètre optionnel pour préciser pour qul réseau de marchant le contrat "
+"s&#39;applique. Normalement cela se remplit comme suit : Network 1 = "
+"contratNetwork1; network2 = contratNetwork2; network3 = contratNetwork3"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:441
+msgid "Title"
+msgstr "Titre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:447
+msgid "Customer's social title"
+msgstr "Titre social du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:457
+msgid "Firstname"
+msgstr "Prénom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:462
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:477
+msgid "Customer's name"
+msgstr "Nom du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:472
+msgid "Lastname"
+msgstr "Nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:492
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:508
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:524
+msgid "Customer's address"
+msgstr "Adresse du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:502
+msgid "Shipping address"
+msgstr "Adresse de livraison"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:518
+msgid "Shipping address (rest)"
+msgstr "adresse (suite)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:534
+msgid "city"
+msgstr "ville"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:540
+msgid "Customer's city"
+msgstr "Ville du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:550
+msgid "zip"
+msgstr "code postal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:556
+msgid "Customer's zip"
+msgstr "Code postal du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:566
+msgid "country"
+msgstr "Pays"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:572
+msgid "Customer's country"
+msgstr "Pays de l'acheteur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:582
+msgid "cell phone"
+msgstr "Numéro de téléphone"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:588
+msgid "Customer's cell phone"
+msgstr "Numéro de téléphone du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:598
+msgid "phone"
+msgstr "Téléphone"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:604
+msgid "Customer's phone"
+msgstr "Téléphone du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:614
+msgid "email"
+msgstr "email"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/ws_gateways.class.php:620
+msgid "Customer's email"
+msgstr "Email du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_analyzer.class.php:187
+msgid "An email has been sent, you will get it soon. Thank you very much."
+msgstr "Un email a été envoyé. Vous le recevrez d'ici quelques minutes. Merci."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_analyzer.class.php:190
+msgid "Thank you very much."
+msgstr "Merci beaucoup !"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_analyzer.class.php:197
+msgid "An error occured while sending the confirmation email."
+msgstr "Une erreur s'est produite lors de l'envoi de l'email de confirmation."
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_methods.class.php:83
+msgid "<br/>Warning : the certificate is missing/empty<br/>"
+msgstr "Attention : le certificat est manquant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:29
+msgid "The payment went well"
+msgstr "Votre paiement s'est bien déroulé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:30
+msgid "The bank of the owner should be contacted"
+msgstr "Le commerçant doit contacter la banque du porteur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:31
+msgid "The payment has been refused"
+msgstr "Paiement refusé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:32
+msgid "The client cancel the payment"
+msgstr "Annulation client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:33
+msgid "Error in the query"
+msgstr "Erreur de format de la requête"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:34
+msgid "An error occured in the process"
+msgstr "Erreur technique lors du paiement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:38
+msgid "No checking has been made"
+msgstr "Pas de contrôle effectué"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:39
+msgid "Every checks have been done with success"
+msgstr "Tous les contrôles se sont déroulés avec succès"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:40
+msgid "The card has reach the maximum amount"
+msgstr "La carte a dépassé l’encours autorisé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:41
+msgid "The card is one of the shop owner"
+msgstr "La carte appartient à la liste grise du commerçant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:42
+msgid "The country from where the card come is in the grey list"
+msgstr ""
+"Le pays d’émission de la carte appartient à la liste grise du commerçant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:43
+msgid "The IP address is in the grey list "
+msgstr "L’adresse IP appartient à la liste grise du commerçant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:44
+msgid "The BIN code is in the grey list"
+msgstr "Le code BIN appartient à la liste grise du commerçant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:45
+msgid "A blue card has been detected"
+msgstr "Détection d'une e-carte bleue"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:46
+msgid "A national business card has been detected"
+msgstr "Détection d'une carte commerciale nationale"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:47
+msgid "An international business card has been detected"
+msgstr "Détection d'une carte commerciale étrangère"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:48
+msgid "The card is always accepted"
+msgstr "La carte est une carte à autorisation systématique"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:49
+msgid "No country are corresponding (IP, card, client)"
+msgstr "Aucun pays ne correspond (pays IP, pays carte, pays client)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:50
+msgid "Technical issue while validating the local control"
+msgstr ""
+"Problème technique rencontré par le serveur lors du traitement d’un des "
+"contrôles locaux"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:56
+msgid "merchant_site_id"
+msgstr "ID du site"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:57
+msgid "transaction_id"
+msgstr "ID de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:58
+msgid "date"
+msgstr "Date"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:59
+msgid "validation_mode"
+msgstr "Mode opératoire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:60
+msgid "capture_delay"
+msgstr "Le délai de capture"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:61
+msgid "config"
+msgstr "Configuration"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:65
+msgid "ctx_mode"
+msgstr "ctx_mode"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:67
+msgid "order_id"
+msgstr "order_id"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:69
+msgid "cust_email"
+msgstr "email du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:70
+msgid "cust_id"
+msgstr "ID du site"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:71
+msgid "cust_title"
+msgstr "Titre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:72
+msgid "cust_name"
+msgstr "Nom"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:73
+msgid "cust_address"
+msgstr "Adresse du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:74
+msgid "cust_zip"
+msgstr "Code postal du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:75
+msgid "cust_city"
+msgstr "Ville du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:76
+msgid "cust_country"
+msgstr "Pays"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:77
+msgid "cust_phone"
+msgstr "Téléphone du client"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:78
+msgid "url_success"
+msgstr "url success"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:79
+msgid "url_refused"
+msgstr "url refused"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:81
+msgid "url_cancel"
+msgstr "url cancel"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:82
+msgid "url_return"
+msgstr "url return"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:83
+msgid "url_error"
+msgstr "url error"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:84
+msgid "identifier"
+msgstr "identifiant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:85
+msgid "contrib"
+msgstr "contribution"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:86
+msgid "theme_config"
+msgstr "configuration de thème"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:87
+msgid "redirect_success_timeout"
+msgstr "redirect_success_timeout"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:88
+msgid "redirect_success_message"
+msgstr "redirect_success_message"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:89
+msgid "redirect_error_timeout"
+msgstr "redirect_error_timeout"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:90
+msgid "redirect_error_message"
+msgstr "redirect_error_message"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:91
+msgid "return_post_params"
+msgstr "return_post_params"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:92
+msgid "return_get_params"
+msgstr "return_get_params"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:93
+msgid "card_number"
+msgstr "card_number"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:94
+msgid "expiry_month"
+msgstr "expiry_month"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:95
+msgid "expiry_year"
+msgstr "expiry_year"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:96
+msgid "card_cvv"
+msgstr "card_cvv"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:97
+msgid "card_info"
+msgstr "information de carte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:98
+msgid "card_options"
+msgstr "options de la carte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:99
+msgid "page_action"
+msgstr "page action"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:100
+msgid "action_mode"
+msgstr "Mode opératoire"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:101
+msgid "return_mode"
+msgstr "Mode de retour"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:102
+msgid "secure_mpi"
+msgstr "secure_mpi"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:103
+msgid "secure_enrolled"
+msgstr "secure_enrolled"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:104
+msgid "secure_cavv"
+msgstr "secure_cavv"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:105
+msgid "secure_eci"
+msgstr "secure_eci"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:106
+msgid "secure_xid"
+msgstr "secure_xid"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:107
+msgid "secure_cavv_alg"
+msgstr "secure_cavv_alg"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:108
+msgid "secure_status"
+msgstr "secure_status"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:109
+msgid "payment_src"
+msgstr "payment_src"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:110
+msgid "user_info"
+msgstr "user_info"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:111
+msgid "contracts"
+msgstr "contrat"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:112
+msgid "empty_params"
+msgstr "empty_params"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:113
+msgid "other"
+msgstr "autre"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:116
+msgid "Successful transaction"
+msgstr "Transaction réussite"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:117
+msgid "Please contact the banq of the owner card"
+msgstr "Contacter l’émetteur de carte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:118
+msgid "Invalid accept"
+msgstr "Accepteur invalide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:119
+msgid "Keep the card"
+msgstr "Conserver la carte"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:120
+msgid "Do not honour"
+msgstr "Ne pas honorer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:121
+msgid "Keep the card, special conditions"
+msgstr "Conserver la carte, conditions spéciales"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:122
+msgid "Approved after identification"
+msgstr "Approuver après identification"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:123
+msgid "Invalid transaction"
+msgstr "Transaction invalide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:124
+msgid "Invalid amount"
+msgstr "Montant invalide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:125
+msgid "Invalid Holder number"
+msgstr "Numéro de porteur invalide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:126
+msgid "Format error"
+msgstr "Erreur de format"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:127
+msgid "Receiver id unknown"
+msgstr "Identifiant de l’organisme acquéreur inconnu"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:128
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:133
+msgid "Validity date of the card has expired"
+msgstr "Date de validité de la carte dépassée"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:129
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:137
+msgid "Suspicious transaction"
+msgstr "Suspicion de fraude"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:130
+msgid "Lost card"
+msgstr "Carte perdue"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:131
+msgid "Stolen card"
+msgstr "Carte volée"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:132
+msgid "Not enough money"
+msgstr "Provision insuffisante ou crédit dépassé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:134
+msgid "Card not found"
+msgstr "Carte absente du fichier"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:135
+msgid "Transaction is not available for this owner"
+msgstr "Transaction non permise à ce porteur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:136
+msgid "Transaction can not be done with terminal"
+msgstr "Transaction interdite au terminal"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:138
+msgid "The beneficiary should contact"
+msgstr "L’accepteur de carte doit contacter l’acquéreur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:139
+msgid "Amount is out of range"
+msgstr "Montant hors limite"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:140
+msgid "Security has not been respected"
+msgstr "Règles de sécurité non respectées"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:141
+msgid "Reply never arrived or too late"
+msgstr "Réponse non parvenue ou reçue trop tard"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:142
+msgid "Server is out for a few times"
+msgstr "Arrêt momentané du système"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:143
+msgid "The card sender can not be reach"
+msgstr "Émetteur de cartes inaccessible"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:144
+msgid "System doensn't work"
+msgstr "Mauvais fonctionnement du système"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:145
+msgid "Duplicated transaction"
+msgstr "Transaction dupliquée"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:146
+msgid "Global watchout will soon be suspend"
+msgstr "Échéance de la temporisation de surveillance globale"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:147
+msgid "Server can not be reached"
+msgstr "Serveur indisponible routage réseau demandé à nouveau"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:148
+msgid "An error occured on the domain"
+msgstr "Incident domaine initiateur"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:151
+msgid "The payment is guaranteed"
+msgstr "Le paiement est garanti"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:152
+msgid "The payment is not guaranteed"
+msgstr "Le paiement n'est pas garanti"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_results.class.php:153
+msgid "Due to an error, the payment could not be guaranteed"
+msgstr "Suite à une erreur technique, le paiment ne peut pas être garanti"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_transaction_updater.class.php:71
+msgid "Everything went well"
+msgstr "Tout s'est correctement passé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_transaction_updater.class.php:84
+msgid "Email is not valid, or empty"
+msgstr "Votre email n&#39;est pas valide"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_transaction_updater.class.php:90
+msgid "No order id"
+msgstr "Pas d'ordre de transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_transaction_updater.class.php:109
+msgid "Your payement went well"
+msgstr "Votre paiement s'est bien déroulé"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/front/systempay/ws_systempay_transaction_updater.class.php:116
+msgid "An error occured while making the transaction with your Bank account"
+msgstr "Une erreur s'est produite pendant la transaction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/confirmation.php:47
+#, php-format
+msgid "The amount of your transaction is: %s"
+msgstr "Le montant de votre don sera : %s"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/confirmation.php:48
+msgid "Please find bellow the information about your payement:"
 msgstr "Veuillez trouver ci-dessous les informations vous concernant : "
 
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/confirmation.php:82
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/default_form.php:4
+msgid "Montant"
+msgstr "Montant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/default_form.php:26
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:10
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:43
+msgid "Continue"
+msgstr "Continuer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_adhere.php:8
+msgid "Informations générales"
+msgstr "Informations générales"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_adhere.php:43
+msgid "Envoyer"
+msgstr "Envoyer"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:4
+msgid "Amount of your donation"
+msgstr "Montant de votre don"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:9
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:15
+msgid "Amount after deduction"
+msgstr "Montant après réduction"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:14
+msgid "Change the amount"
+msgstr "Choisir un autre montant"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_don.php:51
+msgid "Conditions"
+msgstr "Réglement"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:9
+msgid "General information"
+msgstr "Informations générales"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:12
+msgid "Personnal information"
+msgstr "Informations personnelles"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:15
+msgid "Subscribe to the magazine (4 editions per year)"
+msgstr "Inscription à ELA info (4 numéros par an)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:18
+msgid "Annuel membership to ELA (12 month long)"
+msgstr "Adhésion à ELA (valable 12 mois)"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:21
+msgid "Make a donation to ELA"
+msgstr "Faire un don à ELA"
+
+#: /Users/gabrielstuff/Sites/fondation-chirac/wp-content/plugins/wp-systempay/templates/forms_templates/form_subscriptions.php:51
+msgid "Send"
+msgstr "Envoyer"
+
+#~ msgid "Paiement réalisé avec succès"
+#~ msgstr "Paiement réalisé avec succès"
+
+#~ msgid "Le commerçant doit contacter la banque du porteur"
+#~ msgstr "Le commerçant doit contacter la banque du porteur"
+
+#~ msgid "Paiement refusé"
+#~ msgstr "Paiement refusé"
+
+#~ msgid "Annulation client"
+#~ msgstr "Annulation client"
+
+#~ msgid "Erreur de format de la requête"
+#~ msgstr "Erreur de format de la requête"
+
+#~ msgid "Erreur technique lors du paiement"
+#~ msgstr "Erreur technique lors du paiement"
+
+#~ msgid "Pas de contrôle effectué"
+#~ msgstr "Pas de contrôle effectué"
+
+#~ msgid "Tous les contrôles se sont déroulés avec succès"
+#~ msgstr "Tous les contrôles se sont déroulés avec succès"
+
+#~ msgid "La carte a dépassé l’encours autorisé"
+#~ msgstr "La carte a dépassé l’encours autorisé"
+
+#~ msgid "La carte appartient à la liste grise du commerçant"
+#~ msgstr "La carte appartient à la liste grise du commerçant"
+
+#~ msgid ""
+#~ "Le pays d’émission de la carte appartient à la liste grise du commerçant"
+#~ msgstr ""
+#~ "Le pays d’émission de la carte appartient à la liste grise du commerçant"
+
+#~ msgid "L’adresse IP appartient à la liste grise du commerçant"
+#~ msgstr "L’adresse IP appartient à la liste grise du commerçant"
+
+#~ msgid "Le code BIN appartient à la liste grise du commerçant"
+#~ msgstr "Le code BIN appartient à la liste grise du commerçant"
+
+#~ msgid "Détection d'une e-carte bleue"
+#~ msgstr "Détection d'une e-carte bleue"
+
+#~ msgid "Détection d'une carte commerciale nationale"
+#~ msgstr "Détection d'une carte commerciale nationale"
+
+#~ msgid "Détection d'une carte commerciale étrangère"
+#~ msgstr "Détection d'une carte commerciale étrangère"
+
+#~ msgid "La carte est une carte à autorisation systématique"
+#~ msgstr "La carte est une carte à autorisation systématique"
+
+#~ msgid ""
+#~ "Problème technique rencontré par le serveur lors du traitement d’un des "
+#~ "contrôles locaux"
+#~ msgstr ""
+#~ "Problème technique rencontré par le serveur lors du traitement d’un des "
+#~ "contrôles locaux"
+
+#~ msgid "transaction approuvée ou traitée avec succès"
+#~ msgstr "transaction approuvée ou traitée avec succès"
+
+#~ msgid "contacter l’émetteur de carte"
+#~ msgstr "contacter l’émetteur de carte"
+
+#~ msgid "accepteur invalide"
+#~ msgstr "accepteur invalide"
+
+#~ msgid "conserver la carte"
+#~ msgstr "conserver la carte"
+
+#~ msgid "ne pas honorer"
+#~ msgstr "ne pas honorer"
+
+#~ msgid "conserver la carte, conditions spéciales"
+#~ msgstr "conserver la carte, conditions spéciales"
+
+#~ msgid "transaction invalide"
+#~ msgstr "transaction invalide"
+
+#~ msgid "montant invalide"
+#~ msgstr "montant invalide"
+
+#~ msgid "numéro de porteur invalide"
+#~ msgstr "numéro de porteur invalide"
+
+#~ msgid "erreur de format"
+#~ msgstr "erreur de format"
+
+#~ msgid "identifiant de l’organisme acquéreur inconnu"
+#~ msgstr "identifiant de l’organisme acquéreur inconnu"
+
+#~ msgid "date de validité de la carte dépassée"
+#~ msgstr "date de validité de la carte dépassée"
+
+#~ msgid "suspicion de fraude"
+#~ msgstr "suspicion de fraude"
+
+#~ msgid "carte perdue"
+#~ msgstr "carte perdue"
+
+#~ msgid "carte volée"
+#~ msgstr "carte volée"
+
+#~ msgid "provision insuffisante ou crédit dépassé"
+#~ msgstr "provision insuffisante ou crédit dépassé"
+
+#~ msgid "carte absente du fichier"
+#~ msgstr "carte absente du fichier"
+
+#~ msgid "transaction non permise à ce porteur"
+#~ msgstr "transaction non permise à ce porteur"
+
+#~ msgid "l’accepteur de carte doit contacter l’acquéreur"
+#~ msgstr "l’accepteur de carte doit contacter l’acquéreur"
+
+#~ msgid "montant de retrait hors limite"
+#~ msgstr "montant de retrait hors limite"
+
+#~ msgid "règles de sécurité non respectées"
+#~ msgstr "règles de sécurité non respectées"
+
+#~ msgid "réponse non parvenue ou reçue trop tard"
+#~ msgstr "réponse non parvenue ou reçue trop tard"
+
+#~ msgid "arrêt momentané du système"
+#~ msgstr "arrêt momentané du système"
+
+#~ msgid "émetteur de cartes inaccessible"
+#~ msgstr "émetteur de cartes inaccessible"
+
+#~ msgid "mauvais fonctionnement du système"
+#~ msgstr "mauvais fonctionnement du système"
+
+#~ msgid "transaction dupliquée"
+#~ msgstr "transaction dupliquée"
+
+#~ msgid "échéance de la temporisation de surveillance globale"
+#~ msgstr "échéance de la temporisation de surveillance globale"
+
+#~ msgid "serveur indisponible routage réseau demandé à nouveau"
+#~ msgstr "serveur indisponible routage réseau demandé à nouveau"
+
+#~ msgid "incident domaine initiateur"
+#~ msgstr "incident domaine initiateur"
+
+#~ msgid "Le paiement n'est pas garanti"
+#~ msgstr "Le paiement n'est pas garanti"
+
+#~ msgid "Suite à une erreur technique, le paiment ne peut pas être garanti"
+#~ msgstr "Suite à une erreur technique, le paiment ne peut pas être garanti"
+
+#~ msgid "new Form"
+#~ msgstr "Nouveau formulaire"
+
+#~ msgid "add New"
+#~ msgstr "Ajouter un nouveau"
+
+#~ msgid "transactions menu"
+#~ msgstr "transactions menu"
+
+#~ msgid "Informations personnelles"
+#~ msgstr "Informations personnelles"
+
+#~ msgid "Adhésion à ELA (valable 12 mois)"
+#~ msgstr "Adhésion à ELA (valable 12 mois)"
+
+#~ msgid "Faire un don à ELA"
+#~ msgstr "Faire un don à ELA"
+
+#~ msgid "Abonnement à la revue ELA Infos (4 numéros par an)"
+#~ msgstr "Abonnement à la revue ELA Infos (4 numéros par an)"
+
+#~ msgid "The total amount of your transaction is: "
+#~ msgstr "Le montant total de votre transaction sera de :"
+
+#~ msgid "On hold"
+#~ msgstr "En attente"
+
+#~ msgid "Processing"
+#~ msgstr "En cours"
+
+#~ msgid "Your number is not valid"
+#~ msgstr "Le nombre est invalide"
+
+#~ msgid "currency, 978 for Euro, 840 for American Dolar."
+#~ msgstr "Devise, 978 pour l&#39;Euro, 840 pour les Dollars"
+
+#~ msgid "Numéro de commande vide"
+#~ msgstr "Numéro de commande vide"
+
+#~ msgid "Votre transaction sur Systempay c'est bien déroulée"
+#~ msgstr "Votre transaction sur Systempay c'est bien déroulée"
+
+#~ msgid "Une erreur c'est produite lors de votre transaction sur systempay"
+#~ msgstr "Une erreur c'est produite lors de votre transaction sur systempay"
+
+#~ msgid "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
+#~ msgstr "Un e-mail vient de vous être envoyé, merci beaucoup et à bientôt."
+
+#~ msgid "Plateforms"
+#~ msgstr "Plateformes"
+
+#~ msgid "css_classe"
+#~ msgstr "css_classe"
+
+#~ msgid "Detail order"
+#~ msgstr "Détail de la commande"
+
+#~ msgid "Coordinated"
+#~ msgstr "Coordonnées"
+
+#~ msgid "Empty"
+#~ msgstr "Vide"
+
+#~ msgid "Command id"
+#~ msgstr "Id de la commande"
+
+#~ msgid "Plateforme"
+#~ msgstr "Plateforme"
