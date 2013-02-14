@@ -1,4 +1,4 @@
-        <form id="form_don" method="POST" class="<?php echo $this->getCssClass($form_id);?>" action="<?php echo $this->get_confirmationpage_url($form_id); ?>">
+        <form id="form_don" method="POST" class="<?php echo $this->getCssClass($form_id);?>" action="<?php echo $this->getSystempay()->get_confirmationpage_url($form_id); ?>">
         <!-- Le slide du don-->
             <div class="title_phase" id="don_phaseone">
                 <p>1. <?php _e("Amount of your donation","ws"); ?> </p>
