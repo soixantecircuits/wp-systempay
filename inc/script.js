@@ -92,7 +92,7 @@ function WS_ajax_fillTables(data) {
         helper: fixHelper,
         stop: function(event, ui) {
           ui.item.parent().find('.order').each(function(i, el) {
-            jQuery(el).val(i);
+            jQuery(el).val(i+1);
           });
         }
       }).disableSelection();
@@ -134,7 +134,7 @@ function WS_ajax_fillTables(data) {
           helper: fixHelper,
           stop: function(event, ui) {
             ui.item.parent().find('.order').each(function(i, el) {
-              jQuery(el).val(i);
+              jQuery(el).val(i+1);
             });
           }
         }).disableSelection();
@@ -239,6 +239,7 @@ function button_Add_Row() {
     row = jQuery(this).parent().find('table tr:last');
     fieldset = row.find(".fieldset").val();
     order = Number(row.find(".order").val()) + 1;
+    order = (order<0) ? 0 : order; 
 
     var newRow = '<tr>';
     newRow += '<td class="delete_row"><button class="delete_row btn btn-warning"><i class="icon-minus icon-white"></i></button></td>';

@@ -190,9 +190,9 @@ class WSConfirmation extends WSTools
                 $correct_amount = $amount;
                 break;
             }
-          
-            if (file_exists(get_stylesheet_directory()."/wp-systempay/templates/forms_templates/confirmation.php") ) {
-                $path = get_stylesheet_directory()."/wp-systempay/templates/forms_templates/confirmation.php";
+            $themes_form_template = "/plugins/wp-systempay/templates/forms_templates";
+            if (file_exists(get_stylesheet_directory().$themes_form_template."/confirmation.php") ) {
+                $path = get_stylesheet_directory().$themes_form_template."/confirmation.php";
             } else {
                 $path = dirname(__FILE__)."/../templates/forms_templates/confirmation.php"; 
             }       
