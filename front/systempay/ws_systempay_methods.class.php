@@ -37,7 +37,7 @@ class WSSystempay
         $contenu_signature = "";
 
         foreach ($field as $nom => $valeur) {
-            $isEmpty=$this->valueIsEmpty($valeur);
+            $isEmpty = $this->valueIsEmpty($valeur);
             if ((substr($nom, 0, 5) == 'vads_') && !$isEmpty) {
                 $contenu_signature .= $valeur."+";
             }

@@ -221,41 +221,51 @@ class WSConfirmation extends WSTools
             }
         }
 
+        /*post_input does not contain sufficient information.... need to do this dummy loop*/
+        /* dirty need real refactor */
         foreach ($inputs_data as $groupe) {
-            foreach ($groupe as $input) {
-                foreach ($post_inputs as $key => $value) {
-                    if ($key == $input["name"]) {
-                        switch ($input["type"]) {
-                        case "checkbox":
-                            for ($i = 0, $c = count($value); $i < $c; $i++) {
-                                $input["value"] = $input["value"].$value[$i];
-                                if ($i != ($c -1)) $input["value"] = $input["value"].";"; //pas de point ';' à la dernière
-                            }
-                            $options = $this->splitMultipleOptions($input["value"]);
+            $temp_input = $groupe[0];
+            //if($temp_input->input_fieldset > -1) {
+                foreach ($groupe as $input) {
+                    foreach ($post_inputs as $key => $value) {
+                        if ( ($key == $input["name"]) && ($input["fieldset"] > -1) ) {
+                            /*switch ($input["type"]) {
+                            case "checkbox":
+                                for ($i = 0, $c = count($value); $i < $c; $i++) {
+                                    $input["value"] = $input["value"].$value[$i];
+                                    if ($i != ($c -1)) $input["value"] = $input["value"].";"; //pas de point ';' à la dernière
+                                }
+                                $options = $this->splitMultipleOptions($input["value"]);
 
-                            foreach ($options as $option) {
+                                foreach ($options as $option) {
+                                    $amount += (float)($option["amount"]);
+                                }
+                                break;
+                            case "radio" :
+                                $option  = $this->splitOption($value);
                                 $amount += (float)($option["amount"]);
-                            }
-                            break;
-                        case "radio" :
-                            $option  = $this->splitOption($value);
-                            $amount += (float)($option["amount"]);
-                            break;
-                        case "select" :
-                            $option  = $this->splitOption($value);
-                            $amount += (float)($option["amount"]);
-                            break;
-                        case "amountentry":
-                            $amount = (float)($input["value"]);
-                            break;
-                        default:
-                            $amount += (float)($input["option"]);
-                            break;
+                                break;
+                            case "select" :
+                                $option  = $this->splitOption($value);
+                                $amount += (float)($option["amount"]);
+                                break;
+                            case "amountentry":
+                                $amount = (float)($input["value"]);
+                                break;
+                            default:
+                                $amount += (float)($input["option"]);
+                                break;
+                            }*/
+                            //error_log($input["name"]);
+                            //error_log("VALUE");
+                            //error_log($value);
+                            $amount += is_numeric($value) ? ((float)($value)) : 0;
                         }
-                    }
-                } 
-            }
+                    } 
+                }
+            //}
         }
+        //error_log($amount);
         return $amount;
     }
 
@@ -426,21 +436,22 @@ class WSConfirmation extends WSTools
           $name = $input['value'];
           break;
       }
-      $name = (($name == "")||($name == " ")) ? "NC" : $name;
+      $name = (($name === "")||($name === " ")) ? "NC" : $name;
       return $name;
     }
 
     private function create_form_to_custom_info($configurations_data, $inputs_data)
     {
         /**
-         * 21 is a magic number used to retrieve the vads_order_info default value. 
+         * 21 is a magic number used to retrieve the vads_order_info default value
+         * and it is not a good idea.
          */
         $vads_order_info = $configurations_data[21]["value"];
         foreach ($inputs_data as $data) {
             if ($data[0]['fieldset'] > -1) {
                 foreach ($data as $input) {
                     $space = ($vads_order_info != "") ? ", " : "";
-                    $vads_order_info .= $space.$input["label"]." : ".$this->getOptionName($input);
+                    $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
                 }
             }
         }
@@ -449,7 +460,13 @@ class WSConfirmation extends WSTools
 
     private function alterConfiguration($configurations_data, $inputs_data)
     {
-        $configurations_data[21]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+        /*Dirty hack to pass the 255 character limit*/
+        $concatened_string = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+        $splitedResponse = str_split_unicode($concatened_string, 254);
+        for($i=0; $i<3; $i++){
+            $configurations_data[21+$i]["value"] = $splitedResponse[$i];
+        }
+        //$configurations_data[21+$i]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
         return $configurations_data;
     }
 

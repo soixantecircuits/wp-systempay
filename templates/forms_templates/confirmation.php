@@ -3,6 +3,7 @@
 function getOptionName($input){
 
   switch ($input["type"]) {
+    case 'radio' :
     case 'select':
       $options = split(";", $input["options"]);
       $value = $input["value"];
@@ -16,15 +17,17 @@ function getOptionName($input){
     case 'checkbox':
       $options = split(";", $input["options"]);
       $space = 0;
-      foreach ($input['value'] as $value) {
-        foreach ($options as $option) :
-            $optionegal = split("=", $option);
-            if ($optionegal[1] == $value){
-              $virgule = ($space > 0) ?  ", " : "";
-              $name.=$virgule.$optionegal[0];
-              $space++;
-            }
-        endforeach;
+      if(is_array($input['value'])){
+          foreach ($input['value'] as $value) {
+            foreach ($options as $option) :
+                $optionegal = split("=", $option);
+                if ($optionegal[1] == $value){
+                  $virgule = ($space > 0) ?  ", " : "";
+                  $name.=$virgule.$optionegal[0];
+                  $space++;
+                }
+            endforeach;
+          }
       }
       break;
     default:
