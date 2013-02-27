@@ -162,7 +162,7 @@ class WSConfirmation extends WSTools
         if($mobile){
             $link .= "?mobile=true";
         }
-        return "<a class='btn confirmation_button a-btn $class' href='".$link."'>".__('Cancel', 'ws')."</a>";
+        return "<a class='btn confirm_cancel a-btn $class' href='".$link."'>".__('Cancel', 'ws')."</a>";
     }
 
     /**
