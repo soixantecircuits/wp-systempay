@@ -157,7 +157,12 @@ class WSConfirmation extends WSTools
 
     private function getCancelLink($class = "")
     {
-        return "<a class='btn confirmation_button a-btn $class' href='".$_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()]."'>".__('Cancel', 'ws')."</a>";
+        $mobile = isset($_GET["mobile"]) ? $_GET["mobile"] : false;
+        $link = $_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()];
+        if($mobile){
+            $link .= "?mobile=true";
+        }
+        return "<a class='btn confirmation_button a-btn $class' href='".$link."'>".__('Cancel', 'ws')."</a>";
     }
 
     /**

@@ -104,7 +104,7 @@ class WSForms extends WSTools
         array_push($this->arrayRules, array($type,$value));
     }
     
-    public function getFormType($input)
+    public function getFormType($input, $placeholder=false)
     {
         switch ($input["type"]) {
         case "textarea" : ?> 
@@ -154,7 +154,7 @@ class WSForms extends WSTools
         <?php
             break;
         case "text" :?>
-            <input id="text-<?php echo $input["name"] ; ?>" class="<?php echo $input["class"] ; ?> general_input <?php if ($input["required"] == 1 ) { echo 'required';}?>" <?php if ($input["hide"] == 1 ) { echo 'type="hidden"';} else { echo 'type="text"';} ?> name="<?php echo $input["name"] ; ?>" value="<?php echo $input["value"] ;?>" />
+            <input id="text-<?php echo $input["name"] ; ?>" <?php if($placeholder):echo 'placeholder="'.$input["label"].'"'; endif; ?> class="<?php echo $input["class"] ; ?> general_input <?php if ($input["required"] == 1 ) { echo 'required';}?>" <?php if ($input["hide"] == 1 ) { echo 'type="hidden"';} else { echo 'type="text"';} ?> name="<?php echo $input["name"] ; ?>" value="<?php echo $input["value"] ;?>" />
       <?php 
             break;
         case "amountentry" :
@@ -162,9 +162,9 @@ class WSForms extends WSTools
         case "numeric" :
             $required  = ($input["required"] == 1) ? "required" : "";
             $class     = $input["class"].' general_input '.$required;
-            $type      = ($input["hide"]==1) ? "hidden" : "text";
+            $type      = ($input["hide"]==1) ? "hidden" : "number";
             $name      = ($input["name"] =="") ? "numeric" : $input["name"]; ?>
-            <input id="text-<?php echo $input["name"] ; ?>" class="<?php echo $class ; ?>" type="<?php echo $type; ?>" name="<?php echo $name;?>" value="<?php echo $input["value"] ;?>" />
+            <input id="text-<?php echo $input["name"] ; ?>" <?php if($placeholder):echo 'placeholder="'.$input["label"].'"'; endif; ?> class="<?php echo $class ; ?>" type="<?php echo $type; ?>" name="<?php echo $name;?>" value="<?php echo $input["value"] ;?>" />
             <?php $this->addRule("numeric", $name); 
             break;
         case "select" : ?>
@@ -200,8 +200,8 @@ class WSForms extends WSTools
             break;
         case "email": 
             $required = ($input["required"] == 1)?"required":"";
-            $type = ($input["hide"]==1)?"hidden":"text"; ?>
-            <input id="text-<?php echo $input["name"] ; ?>" class="general_input email <?php echo $required;?> <?php echo $input["class"] ; ?>" type="<?php echo $type; ?>" name="<?php echo $input["name"] ; ?>" value="<?php echo $input["value"] ;?>" />
+            $type = ($input["hide"]==1)?"hidden":"eamil"; ?>
+            <input id="text-<?php echo $input["name"] ; ?>" <?php if($placeholder):echo 'placeholder="'.$input["label"].'"'; endif; ?> class="general_input email <?php echo $required;?> <?php echo $input["class"] ; ?>" type="<?php echo $type; ?>" name="<?php echo $input["name"] ; ?>" value="<?php echo $input["value"] ;?>" />
             <?php
             $this->addRule("email", $input["name"]);
             break;
