@@ -1,3 +1,6 @@
+.table {
+  width: 100% !important;
+}
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
