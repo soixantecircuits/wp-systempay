@@ -103,14 +103,14 @@ class WSGateways{
                           ,"admin_options"=>json_encode(array("TEST"=>"TEST","PRODUCTION"=>"PRODUCTION"))
                           ,"admin_value"=>""
                         )
-                        ,array( 
+                        ,array(
                           "name"=>"vads_version"
                           ,"label"=>__("version", "ws")
                           ,"value" => "V2" //here is the name of the function
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("this parametre MUST BE 'V2'", "ws")
-                          ,"admin_type"=>"immutable"
+                          ,"admin_type"=>"texte"
                           ,"admin_options"=>""
                           ,"admin_value"=>""
                         )
@@ -155,7 +155,7 @@ class WSGateways{
                           ,"function" =>false
                           ,"hide"=>true
                           ,"description"=>__("this parameter MUST BE PAYMENT", "ws")
-                          ,"admin_type"=>"immutable"
+                          ,"admin_type"=>"texte"
                           ,"admin_options"=>""
                           ,"admin_value"=>""
                         )
