@@ -289,13 +289,18 @@ class WS
                 else {
                     $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$this->curPageURL();    
                 }
+                if(array_key_exists('protocole',$_REQUEST)){
+                    $permalink.="&protocole=".$_REQUEST['protocole'];
+                }
             } else {
                 if ($mobile) {
                     $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$previous_page."&mobile=true";
                 } else {
                     $permalink.="?".$this->get_GET_key_confirmation_formid()."=".$form_id."&".$previous_get_key."=".$previous_page;    
                 }
-                
+                if(array_key_exists('protocole',$_REQUEST)){
+                    $permalink.="&protocole=".$_REQUEST['protocole'];
+                }
             }
         }
         return $permalink;

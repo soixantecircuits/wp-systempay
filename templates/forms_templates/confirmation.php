@@ -38,10 +38,18 @@ function getOptionName($input){
 }
 
 
-$mobile = isset($_GET["mobile"]) ? $_GET["mobile"] : false;
-if ($mobile) {
-  $return_url = $return_url."&mobile=true";
+if ($mobile && (count($_GET) > 0 || count($_POST) > 0) ) {
+  $return_url .= "&mobile=true";
+} else if($mobile && (count($_GET) == 0 || count($_POST) == 0) ){
+  $return_url .= "?mobile=true";
 }
+if(array_key_exists('protocole',$_REQUEST)){
+  if ($mobile || count($_GET) > 0 || count($_POST) > 0)
+    $return_url .= "&protocole=".$_REQUEST['protocole'];
+  else if (count($_GET) == 0 || count($_POST) == 0)
+    $return_url .= "?protocole=".$_REQUEST['protocole'];
+}
+
 ?>
 <form method='POST' class='WS_confirmation' id='<?php echo $this->getSystempay()->get_confirmation_form_id();?>' action='<?php echo $return_url;?>'>
   <table>

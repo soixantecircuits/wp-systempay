@@ -86,9 +86,46 @@ class WSSystempayAnalyzer extends WSTools
         return false;
     }
 
+    public function get_template_return()
+    {
+        $themes_email_template = "/plugins/wp-systempay/templates/return_templates";
+        ob_start();
+        if (file_exists(get_stylesheet_directory().$themes_email_template."/return.php")) {
+            include_once get_stylesheet_directory().$themes_email_template."/return.php";
+        } else {
+            include_once dirname(__FILE__)."/../../templates/return_templates/return.php";
+        }
+        $content = ob_get_clean();
+        return $content;
+    }
+
     public function showResult()
     {
-        return "<p>".$this->message."<br/>".$this->get_vads_result()."</p>";
+        $form_id       = $this->get_form_id($this->get_or_post("vads_order_id"));
+        $messageConfig = $this->getFormWSConfig($form_id)->message;
+        $reason = "";
+        if($this->get_or_post("vads_result") == "00"){
+          $this->message = __($messageConfig->success->content, "ws");
+        } else {
+          $this->message = __($messageConfig->error->content, "ws");
+          $reason = $this->get_vads_result();
+        }
+        $template = ($messageConfig->template->use) ? $this->get_template_return() : "";
+
+        if($this->get_or_post("vads_result") == "00"){
+           $message = __("Back to the donation page", "ws");
+           if(array_key_exists('protocole',$_REQUEST)){
+             $script = "<div class='script'><script>window.location.replace('elaapp://?status=OK');</script></div>";
+           }
+         } else {
+           $message = __("Let's try another time.", "ws");
+           if(array_key_exists('protocole',$_REQUEST)){
+             $script = "<div class='script'><script>window.location.replace('elaapp://?status=KO');</script></div>";
+           }
+         }
+
+
+        return "<p>".$this->message."<br/>".$reason."</p>".$template.$script;
     }
 
     public function get_cust_email($order_id)
@@ -199,6 +236,4 @@ class WSSystempayAnalyzer extends WSTools
             }
         }
     }
-
-} //end class
-?>
+}

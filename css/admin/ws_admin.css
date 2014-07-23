@@ -15,7 +15,9 @@ a.chzn-single{
   height: 28px !important;
   line-height: 29px !important;
 }
-
+.wp-list-table{
+  width: 100%!important;
+}
 
 .btn{
   text-decoration: none;

@@ -1,5 +1,20 @@
 <?php
-
+if (!function_exists('array_diff_key'))
+{
+    function array_diff_key()
+    {
+        $arrs = func_get_args();
+        $result = array_shift($arrs);
+        foreach ($arrs as $array) {
+            foreach ($result as $key => $v) {
+                if (array_key_exists($key, $array)) {
+                    unset($result[$key]);
+                }
+            }
+        }
+        return $result;
+   }
+}
 class WSConfirmation extends WSTools
 {
     public function __construct($systempay)
@@ -135,7 +150,6 @@ class WSConfirmation extends WSTools
             $merged_configurations = $configurations;
             $merged_inputs         = $inputs;
         }
-
         if (!$use_function) {
             $WS_form = array(
                 "form_data"=> $this->getFormDataArrayById($form_id)
@@ -146,6 +160,7 @@ class WSConfirmation extends WSTools
             return $WS_form;
         }
         $configurations_with_function = $this->useFunctionOnInputs($merged_configurations, $form_id, $posts_inputs, array("WS_GetSignature", "systemPay_GetTransId"));
+
         $WS_form = array(
           "form_data"=> $this->getFormDataArrayById($form_id)
           ,"configurations_data"=> $configurations_with_function
@@ -161,6 +176,12 @@ class WSConfirmation extends WSTools
         $link = $_GET[$this->getSystempay()->get_GET_key_confirmation_previouspage()];
         if($mobile){
             $link .= "?mobile=true";
+        }
+        if(array_key_exists('protocole',$_REQUEST)){
+          if ($mobile)
+            $link .= "&protocole=".$_REQUEST['protocole'];
+          else 
+            $link .= "?protocole=".$_REQUEST['protocole'];
         }
         return "<a class='btn confirm_cancel a-btn $class' href='".$link."'>".__('Cancel', 'ws')."</a>";
     }
@@ -233,7 +254,7 @@ class WSConfirmation extends WSTools
             //if($temp_input->input_fieldset > -1) {
                 foreach ($groupe as $input) {
                     foreach ($post_inputs as $key => $value) {
-                        if ( ($key == $input["name"]) && ($input["fieldset"] > -1) ) {
+                        if ( ($key == $input["name"]) && ($input["fieldset"] > -1) && ($input["name"]!="telephone") ){
                             /*switch ($input["type"]) {
                             case "checkbox":
                                 for ($i = 0, $c = count($value); $i < $c; $i++) {
@@ -264,6 +285,7 @@ class WSConfirmation extends WSTools
                             //error_log($input["name"]);
                             //error_log("VALUE");
                             //error_log($value);
+                            
                             $amount += is_numeric($value) ? ((float)($value)) : 0;
                         }
                     } 
@@ -346,9 +368,10 @@ class WSConfirmation extends WSTools
         <?php //we create the hidden form
             $saved_inputs           = $this->getSystempay()->getSavedInputs();
             $return_url             = $saved_inputs[$plateforme]["return_url"];
+
             $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
             //we redirect to the plateforme page.
-            $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
+           $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
             //else we propose to retry or to cancel
         } else {
             _e("Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster.", "ws");
@@ -426,15 +449,17 @@ class WSConfirmation extends WSTools
         case 'checkbox':
           $options = split(";", $input["options"]);
           $space = 0;
-          foreach ($input['value'] as $value) {
-            foreach ($options as $option) :
-                $optionegal = split("=", $option);
-                if ($optionegal[1] == $value){
-                  $virgule = ($space > 0) ?  ", " : "";
-                  $name.=$virgule.$optionegal[0];
-                  $space++;
-                }
-            endforeach;
+          if(is_array($input['value'])) {
+             foreach ($input['value'] as $value) {
+               foreach ($options as $option) :
+                   $optionegal = split("=", $option);
+                   if ($optionegal[1] == $value){
+                     $virgule = ($space > 0) ?  ", " : "";
+                     $name.=$virgule.$optionegal[0];
+                     $space++;
+                   }
+               endforeach;
+             }
           }
           break;
         default:
@@ -447,20 +472,21 @@ class WSConfirmation extends WSTools
 
     private function create_form_to_custom_info($configurations_data, $inputs_data)
     {
-        /**
-         * 21 is a magic number used to retrieve the vads_order_info default value
-         * and it is not a good idea.
-         */
-        $vads_order_info = $configurations_data[21]["value"];
-        foreach ($inputs_data as $data) {
+      $vads_order_info = "";
+      foreach ($configurations_data as $config){
+        if ($config['name'] == 'vads_order_info'){
+          $vads_order_info = $config['value'];
+          foreach ($inputs_data as $data) {
             if ($data[0]['fieldset'] > -1) {
-                foreach ($data as $input) {
-                    $space = ($vads_order_info != "") ? ", " : "";
-                    $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
-                }
+              foreach ($data as $input) {
+                $space = ($vads_order_info != "") ? ", " : "";
+                $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
+              }
             }
+          }
         }
-        return $vads_order_info;
+      }
+      return $vads_order_info;
     }
 
     private function alterConfiguration($configurations_data, $inputs_data)
@@ -468,23 +494,91 @@ class WSConfirmation extends WSTools
         /*Dirty hack to pass the 255 character limit*/
         $concatened_string = $this->create_form_to_custom_info($configurations_data, $inputs_data);
         $splitedResponse = str_split_unicode($concatened_string, 254);
-        for($i=0; $i<3; $i++){
-            $configurations_data[21+$i]["value"] = $splitedResponse[$i];
-        }
+      foreach ($configurations_data as $config){
+        switch ($config['name']):
+          case  'vads_order_info':
+            $config["value"] = $splitedResponse[0];
+          case  'vads_order_info2':
+            $config["value"] = $splitedResponse[1];
+          case  'vads_order_info3':
+            $config["value"] = $splitedResponse[2];
+          default :
+            break;
+        endswitch;
+      }
         //$configurations_data[21+$i]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+        return $configurations_data;
+    }
+
+    private function remove_trailing_slash($url){
+        return ((strrpos($url, '/') + 1) == strlen($url)) ? substr($url, 0, - 1) : $url; 
+    }
+
+    private function getOutterQuery($configurations_data){
+        $request = array();
+        foreach ($configurations_data as $element){
+            array_push($request, $element['name']);
+        }
+
+        $supQuery = array_diff_key($_REQUEST, array_flip($request));
+        foreach( $supQuery as $key => $value ) {
+            if( $this->strposa( $key, array('vads_','ws_','WS_')) ) {
+                unset( $supQuery[ $key ] );
+            }
+        }
+
+        $configurations_data = $configurations_data;
+        $urlparam = "?";
+        $passcount = 0 ;
+        foreach( $supQuery as $key => $value) {
+           if($_REQUEST[$key] != "" && $_REQUEST[$key] != " "){
+            $urlparam.=$key."=".$_REQUEST[$key];
+            if($passcount < count($supQuery)-1)
+                $urlparam.="&";
+            $passcount++;
+          }
+        }
+        if(strlen($urlparam) > 1)
+           return $urlparam;
+        else
+           return "";
+    }
+
+    private function strposa($haystack, $needle, $offset=0) {
+        if(!is_array($needle)) $needle = array($needle);
+        foreach($needle as $query) {
+            if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
+        }
+        return false;
+    }
+
+    private function add_custom_return_url($configurations_data){
+        $other_request = $this->getOutterQuery($configurations_data);
+        $url_name_array = array('vads_url_success', 'vads_url_referral', 'vads_url_refused', 'vads_url_cancel', 'vads_url_error', 'vads_url_return');
+
+        foreach ($configurations_data as $config){
+          if (in_array($config['name'], $url_name_array)){
+            $config["value"] = $this->remove_trailing_slash($config["value"])."/".$other_request;
+          }
+        }
         return $configurations_data;
     }
 
     private function create_hidden_form($confirmation_datas, $confirmation_form_id, $return_url, $order_id, $trans_id, $excludeds)
     {
+
         $form_data           = $confirmation_datas["form_data"];
         $plateforme          = $form_data["form_plateforme"];
         $configurations_data = $confirmation_datas["configurations_data"];
+
         /**
          * This allow us to export custom info to the gateway plateform. Kind of spagheti code. Should be rewrite. 
          */
         $inputs_data         = $confirmation_datas["inputs_data"];
         $configurations_data = $this->alterConfiguration($configurations_data, $inputs_data);
+        
+         $configurations_data = $this->add_custom_return_url($configurations_data);
+
         echo "<form id='".$confirmation_form_id."' action='".$return_url."' method='post'>";
         //create unique inputs (transID,Order id);
         $this->createSpecialsInputs($plateforme, $order_id, $trans_id);
@@ -560,4 +654,3 @@ class WSConfirmation extends WSTools
         echo "<input type='hidden' value='".$trans_id."' name='".$trans_id_name."' />";
     }
 }
-?>

@@ -117,7 +117,13 @@
          */
         if (!empty($form_id)) {
             (int)($form_id);
-            $generalconfig = json_decode($wpdb->get_var($wpdb->prepare("SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id)));
+            $generalconfig = json_decode(
+                $wpdb->get_var(
+                    $wpdb->prepare(
+                        "SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = %d", $form_id
+                    )
+                )
+            );
             return $generalconfig->order_format->name;
         } else {
             /**
