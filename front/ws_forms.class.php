@@ -70,10 +70,10 @@ class WSForms extends WSTools
                 ".$rules."
                 }
               });
-            jQuery('#vads_amount').rules('add', {
-                minlength: 1,
-                number: true
-            });
+//            jQuery('#vads_amount').rules('add', {
+//                minlength: 1,
+//                number: true
+//            });
           jQuery.extend(jQuery.validator.messages, {
             required: '".esc_attr(__('This field is requiered', 'ws'))."',
             email: '".esc_attr(__('Your email is not valid', 'ws'))."',
