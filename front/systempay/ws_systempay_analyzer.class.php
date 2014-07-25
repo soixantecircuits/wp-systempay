@@ -155,8 +155,8 @@ class WSSystempayAnalyzer extends WSTools
         //create the transport
         $smtp         = $emailConfig->smtp->smtp;
         $port         = $emailConfig->smtp->port;
-        if ($emailConfig->smtp->ssl) {
-          $transport = Swift_SmtpTransport::newInstance($smtp, $port, 'ssl');
+        if ($emailConfig->smtp->tls) {
+          $transport = Swift_SmtpTransport::newInstance($smtp, $port, 'tls');
         } else {
           $transport = Swift_SmtpTransport::newInstance($smtp, $port);
         }
