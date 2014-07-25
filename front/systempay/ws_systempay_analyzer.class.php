@@ -216,7 +216,7 @@ class WSSystempayAnalyzer extends WSTools
         $Email->setBody($content, 'text/html');
         //send it
         if($emailConfig->setup->active->tax || $emailConfig->setup->active->admin ) {
-            if ($Mailer->send($Email, $failures) == 1) {
+            if ($Mailer->send($Email, $failures) != 0) {
                 if($emailConfig->setup->active->tax){
                     if ($emailConfig->setup->msg_success != "") {
                         return __($emailConfig->setup->msg_success, "ws");
