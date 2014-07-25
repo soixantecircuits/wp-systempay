@@ -309,7 +309,6 @@ class WSConfirmation extends WSTools
         $transactions_data = array();
         //create the datas to save for each plateforme
         $trans_id          = $this->getSystempay()->getSystempayEl()->systemPay_GetTransId();
-        //$order_id          = $this->generateOrderId("ELA", $trans_id);
         $order_id          = $this->generateOrderId($this->getOrderString($form_id), $trans_id);
         $amount            = floatval(mysql_real_escape_string($datas["vads_amount"]))/100;
 
