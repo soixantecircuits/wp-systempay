@@ -123,8 +123,8 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     {
         $themes_email_template = "/plugins/wp-systempay/templates/emails_templates";
         ob_start(); 
-        if (file_exists(get_stylesheet_directory().$themes_email_template."/thanks_email.php")) {
-            include_once get_stylesheet_directory().$themes_email_template."/thanks_email.php";
+        if (file_exists(get_template_directory_uri().$themes_email_template."/thanks_email.php")) {
+            include_once get_template_directory_uri().$themes_email_template."/thanks_email.php";
         } else {
             include_once dirname(__FILE__)."/../../templates/emails_templates/thanks_email.php";    
         }  
@@ -136,8 +136,8 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
     {
         $themes_email_template = "/plugins/wp-systempay/templates/emails_templates";
         ob_start(); 
-        if (file_exists(get_stylesheet_directory().$themes_email_template."/success_email.php")) {
-            include_once get_stylesheet_directory().$themes_email_template."/success_email.php";
+        if (file_exists(get_template_directory_uri().$themes_email_template."/success_email.php")) {
+            include_once get_template_directory_uri().$themes_email_template."/success_email.php";
         } else {
             include_once dirname(__FILE__)."/../../templates/emails_templates/success_email.php";    
         }  
