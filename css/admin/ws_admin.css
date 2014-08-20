@@ -1,4 +1,4 @@
-.table {
+/*.table {
   width: 100% !important;
 }
 .visuallyhidden { 
@@ -185,7 +185,6 @@ tbody.ui-sortable tr{
   width: 10px;
 }
 
-
 .ws_warp .sorting_asc{
   background: #F1F1F1 url("../../images/sort_asc.png") no-repeat;
   background-position: center right ;
@@ -298,4 +297,4 @@ width: 39em;}
   border-left:1px solid grey;
   border-top:1px solid grey;
   border-bottom:1px solid grey;
-}
+}*/

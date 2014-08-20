@@ -20,6 +20,7 @@ function load_custom_wp_admin_style($hook)
           return;
     wp_enqueue_style('WS_adminCSS', WP_PLUGIN_URL .'/wp-systempay/css/admin/ws_admin.css');
     wp_enqueue_style('bootstrap', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', WP_PLUGIN_URL .'/wp-systempay/css/admin/bootstrap-theme.min.css');
     wp_enqueue_style('chosen', WP_PLUGIN_URL .'/wp-systempay/css/admin/chosen.css');
 }
 
