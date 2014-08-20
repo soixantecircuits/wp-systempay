@@ -354,7 +354,7 @@ class WSController
                       'edit_pages',
                        $this->_mainPageName,
                        array($this, 'mainPage'),
-                       WP_PLUGIN_URL .'/wp-systempay/images/ws.png');
+                       plugins_url( '../images/ws.png', __FILE__ ));
         $all_the_forms      = add_submenu_page($this->_mainPageName, __("All the payment forms", "ws"), __("List all", "ws"), 'edit_pages', $this->_mainPageName, array($this, 'mainPage'));
         $newForm            = add_submenu_page($this->_mainPageName, __("New form", "ws"), __("Add new", "ws"), 'edit_pages', $this->_newFormPageName, array($this, 'newForm'));
         $transactionsMenu   = add_submenu_page($this->_mainPageName, __("Transactions menu", "ws"), __("transactions", "ws"), 'edit_pages', $this->_transactionsPageNameMenu, array($this, 'transactionsPageMenu'));

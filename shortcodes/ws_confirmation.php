@@ -7,7 +7,7 @@
  */
 function WS_Add_confirmation($atts, $content)
 {
-    wp_enqueue_style('WS_confirmation_css', WP_PLUGIN_URL .'/wp-systempay/css/shortcodes/ws_confirmation.css');
+    wp_enqueue_style('WS_confirmation_css', plugins_url( '../css/shortcodes/ws_confirmation.css', __FILE__ ));
     $themes_form_template = "/plugins/wp-systempay/templates/forms_templates";
 
     if (file_exists(get_stylesheet_directory().$themes_form_template."/styles.css") ) {
