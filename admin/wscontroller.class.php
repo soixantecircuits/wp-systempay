@@ -157,7 +157,7 @@ class WSController
 
     private function adminControllPages() 
     {
-        if ($page = $_GET["page"]) {
+        if (isset($_GET["page"]) && ($page = $_GET["page"])) {
             switch($page) {
             case $this->_mainPageName :
                 $this->mainControll();
