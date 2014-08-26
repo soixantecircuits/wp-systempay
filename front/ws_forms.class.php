@@ -19,9 +19,9 @@ class WSForms extends WSTools
         if (file_exists(get_stylesheet_directory().$themes_form_template."/styles.css") ) {
         		wp_enqueue_style('WS_template_css', get_bloginfo("stylesheet_directory").$themes_form_template."/styles.css");
         } else {
-        		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
+        		wp_enqueue_style('WS_template_css', plugins_url( '../css/templates/styles.css', __FILE__ ));
       	}
-        wp_enqueue_script('wp_footer', WP_PLUGIN_URL .'/wp-systempay/inc/jquery.validate.min.js');
+        wp_enqueue_script('wp_footer', plugins_url( '../inc/jquery.validate.min.js', __FILE__ ));
         $WS_data   = parent::getFormArrayById($form_id);
         $form_data = $WS_data["form_data"];
         $additionalsinputs_data = $WS_data["inputs_data"];

@@ -361,7 +361,7 @@ class WSConfirmation extends WSTools
         //if the insert is good , we go to the plateform
         if ($insert) {?>
             <div class='loading'>
-              <img src='<?php echo WP_PLUGIN_URL;?>/wp-systempay/images/ajax-loader.gif'>
+              <img src="<?php echo plugins_url( '../images/ajax-loader.gif', __FILE__ );?>">
               <br/><p><?php _e("Please wait, you'll be redirected in a few moments.", "ws"); ?></p>
             </div>
         <?php //we create the hidden form
