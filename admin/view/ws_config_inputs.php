@@ -50,8 +50,8 @@ if (!empty($form_id)) {
             <input type="text" class="span2" placeholder="port" id="smtp_smtp" name="generalconfig[email][smtp][port]" value="<?php echo $generalConfig->email->smtp->port; ?>" />
         </div>
             <div class="input-prepend input-append">
-                <span class="add-on"><?php _e("TLS", "ws"); ?></span>
-                <span class="add-on"><input type="checkbox" id="smtp_tls" name="generalconfig[email][smtp][tls]" value="1" <?php  checked($generalConfig->email->smtp->tls,true); ?>/>
+                <span class="add-on"><?php _e("SSL", "ws"); ?></span>
+                <span class="add-on"><input type="checkbox" id="smtp_ssl" name="generalconfig[email][smtp][ssl]" value="1" <?php  checked($generalConfig->email->smtp->ssl,true); ?>/>
             </span>
             </div>
         <br/><br/>

@@ -19,9 +19,9 @@ class WSForms extends WSTools
         if (file_exists(get_stylesheet_directory().$themes_form_template."/styles.css") ) {
         		wp_enqueue_style('WS_template_css', get_bloginfo("stylesheet_directory").$themes_form_template."/styles.css");
         } else {
-        		wp_enqueue_style('WS_template_css', plugins_url( '../css/templates/styles.css', __FILE__ ));
+        		wp_enqueue_style('WS_template_css', WP_PLUGIN_URL .'/wp-systempay/css/templates/styles.css');
       	}
-        wp_enqueue_script('wp_footer', plugins_url( '../inc/jquery.validate.min.js', __FILE__ ));
+        wp_enqueue_script('wp_footer', WP_PLUGIN_URL .'/wp-systempay/inc/jquery.validate.min.js');
         $WS_data   = parent::getFormArrayById($form_id);
         $form_data = $WS_data["form_data"];
         $additionalsinputs_data = $WS_data["inputs_data"];
@@ -70,10 +70,10 @@ class WSForms extends WSTools
                 ".$rules."
                 }
               });
-//            jQuery('#vads_amount').rules('add', {
-//                minlength: 1,
-//                number: true
-//            });
+            jQuery('#vads_amount').rules('add', {
+                minlength: 1,
+                number: true
+            });
           jQuery.extend(jQuery.validator.messages, {
             required: '".esc_attr(__('This field is requiered', 'ws'))."',
             email: '".esc_attr(__('Your email is not valid', 'ws'))."',

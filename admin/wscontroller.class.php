@@ -157,7 +157,7 @@ class WSController
 
     private function adminControllPages() 
     {
-        if (isset($_GET["page"]) && ($page = $_GET["page"])) {
+        if ($page = $_GET["page"]) {
             switch($page) {
             case $this->_mainPageName :
                 $this->mainControll();
@@ -354,7 +354,7 @@ class WSController
                       'edit_pages',
                        $this->_mainPageName,
                        array($this, 'mainPage'),
-                       plugins_url( '../images/ws.png', __FILE__ ));
+                       WP_PLUGIN_URL .'/wp-systempay/images/ws.png');
         $all_the_forms      = add_submenu_page($this->_mainPageName, __("All the payment forms", "ws"), __("List all", "ws"), 'edit_pages', $this->_mainPageName, array($this, 'mainPage'));
         $newForm            = add_submenu_page($this->_mainPageName, __("New form", "ws"), __("Add new", "ws"), 'edit_pages', $this->_newFormPageName, array($this, 'newForm'));
         $transactionsMenu   = add_submenu_page($this->_mainPageName, __("Transactions menu", "ws"), __("transactions", "ws"), 'edit_pages', $this->_transactionsPageNameMenu, array($this, 'transactionsPageMenu'));

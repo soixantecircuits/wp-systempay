@@ -368,7 +368,7 @@ class WSConfirmation extends WSTools
         <?php //we create the hidden form
             $saved_inputs           = $this->getSystempay()->getSavedInputs();
             $return_url             = $saved_inputs[$plateforme]["return_url"];
-            $this->create_hidden_form($form_data, $inputs_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
+            $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
             //we redirect to the plateforme page.
             $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
             //else we propose to retry or to cancel
@@ -380,7 +380,7 @@ class WSConfirmation extends WSTools
             }
             $form_id = $_GET[$this->getSystempay()->get_GET_key_confirmation_formid()];
             $return_url = $this->getSystempay()->get_confirmationpage_url($form_id)."&WS_method=".$this->getSystempay()->get_method_saveTransaction();
-            $this->create_hidden_form($form_data, $inputs_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
+            $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
         }
     }
     /**
@@ -448,17 +448,15 @@ class WSConfirmation extends WSTools
         case 'checkbox':
           $options = split(";", $input["options"]);
           $space = 0;
-          if(is_array($input['value'])) {
-             foreach ($input['value'] as $value) {
-               foreach ($options as $option) :
-                   $optionegal = split("=", $option);
-                   if ($optionegal[1] == $value){
-                     $virgule = ($space > 0) ?  ", " : "";
-                     $name.=$virgule.$optionegal[0];
-                     $space++;
-                   }
-               endforeach;
-             }
+          foreach ($input['value'] as $value) {
+            foreach ($options as $option) :
+                $optionegal = split("=", $option);
+                if ($optionegal[1] == $value){
+                  $virgule = ($space > 0) ?  ", " : "";
+                  $name.=$virgule.$optionegal[0];
+                  $space++;
+                }
+            endforeach;
           }
           break;
         default:
@@ -503,41 +501,28 @@ class WSConfirmation extends WSTools
         return ((strrpos($url, '/') + 1) == strlen($url)) ? substr($url, 0, - 1) : $url; 
     }
 
-    private function getOutterQuery($configurations_data, $inputs_data){
+    private function getOutterQuery($configurations_data){
         $request = array();
         foreach ($configurations_data as $element){
             array_push($request, $element['name']);
         }
 
-        $inputs_names = array();
-         foreach ($inputs_data as $groupe) {
-                foreach ($groupe as $input) {
-                    array_push($inputs_names, $input['name']);
-                }
-            }
-
         $supQuery = array_diff_key($_REQUEST, array_flip($request));
         foreach( $supQuery as $key => $value ) {
-            if( $this->strposa( $key, array_merge(array('vads_','ws_','WS_'), $inputs_names) )) {
+            if( $this->strposa( $key, array('vads_','ws_','WS_')) ) {
                 unset( $supQuery[ $key ] );
             }
         }
-
         $configurations_data = $configurations_data;
         $urlparam = "?";
         $passcount = 0 ;
         foreach( $supQuery as $key => $value) {
-           if($_REQUEST[$key] != "" && $_REQUEST[$key] != " "){
             $urlparam.=$key."=".$_REQUEST[$key];
             if($passcount < count($supQuery)-1)
                 $urlparam.="&";
             $passcount++;
-          }
         }
-        if(strlen($urlparam) > 1)
-           return $urlparam;
-        else
-           return "";
+        return $urlparam;
     }
 
     private function strposa($haystack, $needle, $offset=0) {
@@ -548,8 +533,8 @@ class WSConfirmation extends WSTools
         return false;
     }
 
-    private function add_custom_return_url($configurations_data, $inputs_data){
-        $other_request = $this->getOutterQuery($configurations_data, $inputs_data);
+    private function add_custom_return_url($configurations_data){
+        $other_request = $this->getOutterQuery($configurations_data);
         //url success
         $configurations_data[26]["value"] = $this->remove_trailing_slash($configurations_data[26]["value"])."/".$other_request;
         //url refused
@@ -564,7 +549,7 @@ class WSConfirmation extends WSTools
         return $configurations_data;
     }
 
-    private function create_hidden_form($confirmation_datas, $inputs_data, $confirmation_form_id, $return_url, $order_id, $trans_id, $excludeds)
+    private function create_hidden_form($confirmation_datas, $confirmation_form_id, $return_url, $order_id, $trans_id, $excludeds)
     {
         $form_data           = $confirmation_datas["form_data"];
         $plateforme          = $form_data["form_plateforme"];
@@ -574,7 +559,7 @@ class WSConfirmation extends WSTools
          */
         $inputs_data         = $confirmation_datas["inputs_data"];
         $configurations_data = $this->alterConfiguration($configurations_data, $inputs_data);
-        $configurations_data = $this->add_custom_return_url($configurations_data, $inputs_data);
+        $configurations_data = $this->add_custom_return_url($configurations_data);
 
         echo "<form id='".$confirmation_form_id."' action='".$return_url."' method='post'>";
         //create unique inputs (transID,Order id);

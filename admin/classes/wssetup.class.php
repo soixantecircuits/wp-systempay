@@ -267,7 +267,7 @@ class WSSetup
                         ,"port"=>25
                         ,"username"=>""
                         ,"password"=>""
-                        ,"tls"=>""
+                        ,"ssl"=>""
                     )
                   ,"send_mail"=>array(
                       "path"=>"/usr/sbin/sendmail"

@@ -120,7 +120,7 @@
             $generalconfig = json_decode(
                 $wpdb->get_var(
                     $wpdb->prepare(
-                        "SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id
+                        "SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = %d", $form_id
                     )
                 )
             );
@@ -260,7 +260,7 @@
     public function getLastGeneralConfigId()
     {
         global $wpdb;
-        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM ".$this->getSystempay()->get_generalconfig_table_name()." ORDER BY generalconfig_id DESC"));
+        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM ".$this->getSystempay()->get_generalconfig_table_name()." ORDER BY generalconfig_id DESC")); 
         if (empty($lastId)) {
             return false;
         }

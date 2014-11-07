@@ -35,6 +35,7 @@ class WSSystempay
     {
         ksort($field); // tri des paramétres par ordre alphabétique
         $contenu_signature = "";
+
         foreach ($field as $nom => $valeur) {
             $isEmpty = $this->valueIsEmpty($valeur);
             if ((substr($nom, 0, 5) == 'vads_') && !$isEmpty) {

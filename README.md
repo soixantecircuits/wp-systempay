@@ -19,7 +19,7 @@ None
 ## Usage 
 
 First, activate the plugin. Then go to configuration page. There, configure your mail sender (SMTP or SendMail).
-If you don't have personal SMTP , you can use the gmail one's (smtp.gmail.com and check tls).
+If you don't have personal SMTP , you can use the gmail one's (smtp.gmail.com and check ssl).
 
 Then create your form and don't forget to complete all the mandatories configurations.If you want, you can create your own inputs into 
 the "customisable inputs" tab.

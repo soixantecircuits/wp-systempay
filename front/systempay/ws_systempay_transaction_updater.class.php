@@ -45,12 +45,12 @@ class WSSystempayTransactionUpdater extends WSSystempayAnalyzer
             );
 
             $form_data = array(
-              "transaction_command_statut" => mysqli::escape_string($this->get_vads_result()),
-              "transaction_command_extrastatut" => mysqli::escape_string($this->get_vads_extra_results()),
-              "transaction_command_auth" => mysqli::escape_string($this->get_vads_auth()),
-              "transaction_command_3dsecure" => mysqli::escape_string($this->get_vads_warranty_result()),
-              "transaction_command_certificat" => mysqli::escape_string($payment_certificat),
-              "transaction_command_cardnumber" => mysqli::escape_string($cardnumber)
+              "transaction_command_statut" => mysql_real_escape_string($this->get_vads_result()),
+              "transaction_command_extrastatut" => mysql_real_escape_string($this->get_vads_extra_results()),
+              "transaction_command_auth" => mysql_real_escape_string($this->get_vads_auth()),
+              "transaction_command_3dsecure" => mysql_real_escape_string($this->get_vads_warranty_result()),
+              "transaction_command_certificat" => mysql_real_escape_string($payment_certificat),
+              "transaction_command_cardnumber" => mysql_real_escape_string($cardnumber)
             );
 
             $data_formats = array(
