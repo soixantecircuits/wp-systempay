@@ -8,7 +8,7 @@ add_action('init', 'WS_Start');
 add_action('init', 'ws_register_shortcodes');
 add_action('init', 'ws_register_taxonomy');
 add_action('plugins_loaded', 'WS_Language_call');
-add_action( 'wp', 'custom_theme_admin' );
+add_action( 'init', 'custom_theme_admin' );
 
 /**
  * load_custom_wp_admin_style
@@ -30,6 +30,7 @@ function load_custom_wp_admin_style($hook)
 function custom_theme_admin(){
     if (is_admin() && !is_front_page()) {
         add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style', 200);
+      add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style', 200);
     }
 }
 

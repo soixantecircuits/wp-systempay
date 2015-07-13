@@ -42,8 +42,8 @@ class WSManager extends WSTools
                     ." LEFT JOIN ".$this->getSystempay()->get_configurations_table_name()." AS config ON config.configuration_form_id = form.form_id"
                     ." LEFT JOIN ".$this->getSystempay()->get_inputs_table_name()." AS input ON input.input_form_id = form.form_id"
                     ." LEFT JOIN ".$this->getSystempay()->get_WSconfig_table_name()." AS wsconfig ON WSconfig.WSconfig_form_id = form.form_id"
-                    ." WHERE form.form_id = "
-                .$form_id
+                    ." WHERE form.form_id = %d"
+                ,$form_id
             )
         );
     }
@@ -170,7 +170,7 @@ class WSManager extends WSTools
             //UPDATE configurations (delete all then insert them)
             $wpdb->query(
                 $wpdb->prepare(
-                    "DELETE FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = ".
+                    "DELETE FROM ".$this->getSystempay()->get_configurations_table_name()." WHERE configuration_form_id = %d",
                     $form_id
                 )
             );
@@ -198,7 +198,7 @@ class WSManager extends WSTools
             //UPDATE INPUTS (delete all then insert them) - DIRTY HACK, to modify
             $wpdb->query( 
                 $wpdb->prepare( 
-                    "DELETE FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = ".
+                    "DELETE FROM ".$this->getSystempay()->get_inputs_table_name()." WHERE input_form_id = %d",
                     $form_id
                 )
             );
