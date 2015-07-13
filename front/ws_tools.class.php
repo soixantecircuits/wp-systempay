@@ -120,7 +120,7 @@
             $generalconfig = json_decode(
                 $wpdb->get_var(
                     $wpdb->prepare(
-                        "SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = ".$form_id
+                        "SELECT WSconfig_json FROM ".$this->getSystempay()->get_WSconfig_table_name()." WHERE WSconfig_form_id = %d",$form_id
                     )
                 )
             );
@@ -273,7 +273,9 @@
         $config_id = $this->getLastGeneralConfigId();
         if (!empty($config_id)) {
             (int)($config_id);
-            return json_decode($wpdb->get_var($wpdb->prepare("SELECT generalconfig_json FROM ".$this->getSystempay()->get_generalconfig_table_name()." WHERE generalconfig_id='".$config_id."'")));
+            return json_decode($wpdb->get_var(
+              $wpdb->prepare("SELECT generalconfig_json FROM ".$this->getSystempay()->get_generalconfig_table_name()." WHERE generalconfig_id= %d", $config_id)
+            ));
         }
         return false;
     }
