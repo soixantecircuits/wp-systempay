@@ -260,7 +260,7 @@
     public function getLastGeneralConfigId()
     {
         global $wpdb;
-        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM ".$this->getSystempay()->get_generalconfig_table_name()." ORDER BY generalconfig_id DESC"));
+        $lastId = $wpdb->get_var($wpdb->prepare("SELECT generalconfig_id FROM %s ORDER BY generalconfig_id DESC", $this->getSystempay()->get_generalconfig_table_name()));
         if (empty($lastId)) {
             return false;
         }

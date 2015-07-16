@@ -370,7 +370,7 @@ class WSConfirmation extends WSTools
 
             $this->create_hidden_form($form_data, $confirmation_form_id, $return_url, $order_id, $trans_id, array("certificate_test", "certificate_test", "certificate_production", "vads_trans_id"));
             //we redirect to the plateforme page.
-           $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').submit();");
+            $this->getSystempay()->add_inline_js("jQuery('#".$confirmation_form_id."').attr('action', 'https:' + jQuery('#".$confirmation_form_id."').attr('action')).submit();");
             //else we propose to retry or to cancel
         } else {
             _e("Error during the confirmation backup, please retry. If the problem persists, please contact the webmaster.", "ws");
@@ -575,9 +575,9 @@ class WSConfirmation extends WSTools
          */
         $inputs_data         = $confirmation_datas["inputs_data"];
         $configurations_data = $this->alterConfiguration($configurations_data, $inputs_data);
-        
-         $configurations_data = $this->add_custom_return_url($configurations_data);
 
+        $configurations_data = $this->add_custom_return_url($configurations_data);
+        $return_url = array_pop(explode(":", $return_url));
         echo "<form id='".$confirmation_form_id."' action='".$return_url."' method='post'>";
         //create unique inputs (transID,Order id);
         $this->createSpecialsInputs($plateforme, $order_id, $trans_id);
