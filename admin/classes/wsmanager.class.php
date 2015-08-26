@@ -17,7 +17,7 @@ class WSManager extends WSTools
     public function getTransactionGroupes()
     {
         global $wpdb;
-        $WS_forms = $wpdb->get_results($wpdb->prepare( "SELECT transaction_form_name, transaction_form_id, count(*) as transaction_total FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_form_name IS NOT NULL GROUP BY transaction_form_id;"));
+        $WS_forms = $wpdb->get_results($wpdb->prepare( "SELECT transaction_form_name, %d, count(*) as transaction_total FROM ".$this->getSystempay()->get_transactions_table_name()." WHERE transaction_form_name IS NOT NULL GROUP BY transaction_form_id;", transaction_form_id));
         return $WS_forms;
     }
 
