@@ -471,42 +471,66 @@ class WSConfirmation extends WSTools
 
     private function create_form_to_custom_info($configurations_data, $inputs_data)
     {
-      $vads_order_info = "";
-      foreach ($configurations_data as $config){
-        if ($config['name'] == 'vads_order_info'){
-          $vads_order_info = $config['value'];
-          foreach ($inputs_data as $data) {
-            if ($data[0]['fieldset'] > -1) {
-              foreach ($data as $input) {
-                $space = ($vads_order_info != "") ? ", " : "";
-                $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
-              }
-            }
+      /**
+       * 21 is a magic number used to retrieve the vads_order_info default value
+       * and it is not a good idea.
+       */
+      $vads_order_info = $configurations_data[21]["value"];
+      foreach ($inputs_data as $data) {
+        if ($data[0]['fieldset'] > -1) {
+          foreach ($data as $input) {
+            $space = ($vads_order_info != "") ? ", " : "";
+            $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
           }
         }
       }
       return $vads_order_info;
+
+//      $vads_order_info = "";
+//      foreach ($configurations_data as $config){
+//        if ($config['name'] == 'vads_order_info'){
+//          $vads_order_info = $config['value'];
+//          foreach ($inputs_data as $data) {
+//            if ($data[0]['fieldset'] > -1) {
+//              foreach ($data as $input) {
+//                $space = ($vads_order_info != "") ? ", " : "";
+//                $vads_order_info .= $space.$input["label"].":".$this->getOptionName($input);
+//              }
+//            }
+//          }
+//        }
+//      }
+//      return $vads_order_info;
     }
 
     private function alterConfiguration($configurations_data, $inputs_data)
     {
-        /*Dirty hack to pass the 255 character limit*/
-        $concatened_string = $this->create_form_to_custom_info($configurations_data, $inputs_data);
-        $splitedResponse = str_split_unicode($concatened_string, 254);
-      foreach ($configurations_data as $config){
-        switch ($config['name']):
-          case  'vads_order_info':
-            $config["value"] = $splitedResponse[0];
-          case  'vads_order_info2':
-            $config["value"] = $splitedResponse[1];
-          case  'vads_order_info3':
-            $config["value"] = $splitedResponse[2];
-          default :
-            break;
-        endswitch;
+//        /*Dirty hack to pass the 255 character limit*/
+//        $concatened_string = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+//        $splitedResponse = str_split_unicode($concatened_string, 254);
+//      foreach ($configurations_data as $config){
+//        switch ($config['name']):
+//          case  'vads_order_info':
+//            $config["value"] = $splitedResponse[0];
+//          case  'vads_order_info2':
+//            $config["value"] = $splitedResponse[1];
+//          case  'vads_order_info3':
+//            $config["value"] = $splitedResponse[2];
+//          default :
+//            break;
+//        endswitch;
+//      }
+////        $configurations_data[21+$i]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+//        return $configurations_data;
+
+      /*Dirty hack to pass the 255 character limit*/
+      $concatened_string = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+      $splitedResponse = str_split_unicode($concatened_string, 254);
+      for($i=0; $i<3; $i++){
+        $configurations_data[21+$i]["value"] = $splitedResponse[$i];
       }
-        //$configurations_data[21+$i]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
-        return $configurations_data;
+      //$configurations_data[21+$i]["value"] = $this->create_form_to_custom_info($configurations_data, $inputs_data);
+      return $configurations_data;
     }
 
     private function remove_trailing_slash($url){
